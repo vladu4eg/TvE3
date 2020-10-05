@@ -1,0 +1,97 @@
+@define TotalLength: 40s;
+@define TimingFunc: linear;
+@define IterationCount: 1;
+@define AnimationDelay: 0s;
+
+.AddonLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: clip;
+	background-size:100% 100%;
+	background-image: url("file://{images}/custom_game/loading_screen/gamemode.png");
+}
+.AspectRatio4x3 .AddonLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+}
+.AspectRatio5x4 .AddonLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+}
+.AspectRatio16x10 .AddonLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+}
+
+#TitlePanel
+{
+  horizontal-align: left;
+  vertical-align: bottom;
+  margin-bottom: 150px;
+  margin-left: 100px;
+  flow-children: right;
+}
+
+#AddonTitle
+{
+  margin-bottom: -15px;
+  vertical-align: center;
+  text-transform: uppercase;
+  font-size: 80px;
+  color: #cccccc;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+
+
+#LoadingTextContainer
+{
+	margin-top:70px;
+	margin-left:-20px;
+    max-width: 750px;
+    flow-children: down;
+	vertical-align:center;
+}
+
+#LoadingTextNoTrollContainer
+{
+  horizontal-align: center;
+  vertical-align: top;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  flow-children: right;
+}
+
+#LoadingText
+{
+    text-align: left;
+    margin-left: 50px;
+    color: #FFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    font-family: Radiance;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #000000F5;
+    box-shadow: #88888840 0px 0px 40px 0px;
+}
+
+
+@keyframes 'gamemode_anim'
+{
+  0%
+  {
+    transform: translateX( 0px ) translateY( 0px );
+    pre-transform-scale2d: .8;
+  }
+
+  100%
+  {
+    transform: translateX( 0px ) translateY( -200px );
+  }
+}

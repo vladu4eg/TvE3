@@ -1,0 +1,46 @@
+.AbilityTooltip {
+	flow-children:down;
+	max-width:650px;
+}
+
+#AbilityName {
+	horizontal-align:left;
+	color:white;
+}
+
+
+#costs {
+	width: 100%;
+	text-align: right;
+	vertical-align: center;
+}
+
+#AbilityDetails {
+	width: 100%;
+	flow-children: down;
+}
+
+#Header {
+	width: 100%;
+}
+#AbilityHeader{
+	width: 100%;
+}
+
+#AbilityCoreDetails{
+	flow-children: down;
+	margin-top: 15px;
+}
+
+#requirements{
+	color:orange;
+}
+#lumber_interval ,#lumber_amount{
+	color:green;
+}
+#gold_gain{
+	color:yellow;
+}
+#repair_speed{
+	color:brown;
+}

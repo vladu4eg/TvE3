@@ -1,0 +1,21 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/game_info.css" />
+	<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+  </styles>
+	<Panel class="AddonLoadingRoot">
+		<Panel id = "LoadingTextContainer">
+			<Panel id = "TrollTips" class = "TipContainer">
+				<Label id = "TrollTipsText" text = "#troll_tips" html = "true"/>
+				<Image id = "TrollImage" src = "file://{images}/custom_game/troll.png"/>
+			</Panel>
+			<Label text = "#elf_tips1" html = "true" style = "width:550px;"/>
+			<Panel id = "ElfTips" class ="TipContainer">
+				<Label id = "ElfTipsText" text = "#elf_tips2" html = "true"/>
+				<Image id = "ElfImage" src = "file://{images}/custom_game/elf.png"/>
+			</Panel>
+			<Label text = "#elf_tips3" html = "true" style = "width:550px;"/>
+			<Label text = "#angel_tips" html = "true" style = "width:550px;"/>
+		</Panel>
+	</Panel>
+</root>

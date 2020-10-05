@@ -1,0 +1,643 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/tops.vcss_c" />
+	</styles>
+	<script>
+		function ToggleInfo()
+		{
+			$.GetContextPanel().ToggleClass('gameinfo_visible');
+		}
+	</script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/tops.vjs_c" />
+	</scripts>
+
+	<Panel hittest="false" class="CustomUIContainerGameInfo2">
+		<Panel id="GameInfoPanel">
+			<Panel id="GameInfoPanelScrollArea">
+				<Panel id="GameInfoPanelPaddingTop"/>
+                    <Panel id="CustomUIContainer" class="CustomGameTop" style="margin-top:0px;">
+                        <Label hittest="false" id="topptext" text="#topptext" style="width:110px; margin-top:-42px; margin-left:0px;"/>
+                        <Label hittest="false" id="topwtext" text="#topwtext" style="width:110px; margin-top:-42px; margin-left:180px;"/>
+                        <Label hittest="false" id="tophtext" text="#tophtext" style="width:110px; margin-top:-42px; margin-left:370px;"/>
+                        <Image id="st" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:8910px;width:8px; margin-top:-55px; margin-left:150px;"/>
+                        <Image id="st2" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:8910px;width:8px; margin-top:-55px; margin-left:340px;"/>
+                        <Panel id="TopPlays" hittest="false" style="margin-top:40px; margin-left:0px;">
+                            <DOTAAvatarImage id="top1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top3" steamid="" style="height:80px;width:80px; margin-top:180px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top4" steamid="" style="height:80px;width:80px; margin-top:270px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top5" steamid="" style="height:80px;width:80px; margin-top:360px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top6" steamid="" style="height:80px;width:80px; margin-top:450px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top7" steamid="" style="height:80px;width:80px; margin-top:540px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:0px;"/>
+                            <DOTAAvatarImage id = "top11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top14" steamid = "" style = "height:80px;width:80px; margin-top:1170px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top15" steamid = "" style = "height:80px;width:80px; margin-top:1260px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top16" steamid = "" style = "height:80px;width:80px; margin-top:1350px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top17" steamid = "" style = "height:80px;width:80px; margin-top:1440px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top18" steamid = "" style = "height:80px;width:80px; margin-top:1530px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top19" steamid = "" style = "height:80px;width:80px; margin-top:1620px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top20" steamid = "" style = "height:80px;width:80px; margin-top:1710px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top21" steamid = "" style = "height:80px;width:80px; margin-top:1800px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top22" steamid = "" style = "height:80px;width:80px; margin-top:1890px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top23" steamid = "" style = "height:80px;width:80px; margin-top:1980px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top24" steamid = "" style = "height:80px;width:80px; margin-top:2070px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top25" steamid = "" style = "height:80px;width:80px; margin-top:2160px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top26" steamid = "" style = "height:80px;width:80px; margin-top:2250px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top27" steamid = "" style = "height:80px;width:80px; margin-top:2340px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top28" steamid = "" style = "height:80px;width:80px; margin-top:2430px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top29" steamid = "" style = "height:80px;width:80px; margin-top:2520px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top30" steamid = "" style = "height:80px;width:80px; margin-top:2610px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top31" steamid = "" style = "height:80px;width:80px; margin-top:2700px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top32" steamid = "" style = "height:80px;width:80px; margin-top:2790px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top33" steamid = "" style = "height:80px;width:80px; margin-top:2880px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top34" steamid = "" style = "height:80px;width:80px; margin-top:2970px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top35" steamid = "" style = "height:80px;width:80px; margin-top:3060px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top36" steamid = "" style = "height:80px;width:80px; margin-top:3150px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top37" steamid = "" style = "height:80px;width:80px; margin-top:3240px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top38" steamid = "" style = "height:80px;width:80px; margin-top:3330px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top39" steamid = "" style = "height:80px;width:80px; margin-top:3420px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top40" steamid = "" style = "height:80px;width:80px; margin-top:3510px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top41" steamid = "" style = "height:80px;width:80px; margin-top:3600px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top42" steamid = "" style = "height:80px;width:80px; margin-top:3690px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top43" steamid = "" style = "height:80px;width:80px; margin-top:3780px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top44" steamid = "" style = "height:80px;width:80px; margin-top:3870px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top45" steamid = "" style = "height:80px;width:80px; margin-top:3960px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top46" steamid = "" style = "height:80px;width:80px; margin-top:4050px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top47" steamid = "" style = "height:80px;width:80px; margin-top:4140px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top48" steamid = "" style = "height:80px;width:80px; margin-top:4230px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top49" steamid = "" style = "height:80px;width:80px; margin-top:4320px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top50" steamid = "" style = "height:80px;width:80px; margin-top:4410px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top51" steamid = "" style = "height:80px;width:80px; margin-top:4500px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top52" steamid = "" style = "height:80px;width:80px; margin-top:4590px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top53" steamid = "" style = "height:80px;width:80px; margin-top:4680px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top54" steamid = "" style = "height:80px;width:80px; margin-top:4770px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top55" steamid = "" style = "height:80px;width:80px; margin-top:4860px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top56" steamid = "" style = "height:80px;width:80px; margin-top:4950px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top57" steamid = "" style = "height:80px;width:80px; margin-top:5040px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top58" steamid = "" style = "height:80px;width:80px; margin-top:5130px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top59" steamid = "" style = "height:80px;width:80px; margin-top:5220px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top60" steamid = "" style = "height:80px;width:80px; margin-top:5310px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top61" steamid = "" style = "height:80px;width:80px; margin-top:5400px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top62" steamid = "" style = "height:80px;width:80px; margin-top:5490px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top63" steamid = "" style = "height:80px;width:80px; margin-top:5580px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top64" steamid = "" style = "height:80px;width:80px; margin-top:5670px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top65" steamid = "" style = "height:80px;width:80px; margin-top:5760px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top66" steamid = "" style = "height:80px;width:80px; margin-top:5850px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top67" steamid = "" style = "height:80px;width:80px; margin-top:5940px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top68" steamid = "" style = "height:80px;width:80px; margin-top:6030px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top69" steamid = "" style = "height:80px;width:80px; margin-top:6120px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top70" steamid = "" style = "height:80px;width:80px; margin-top:6210px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top71" steamid = "" style = "height:80px;width:80px; margin-top:6300px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top72" steamid = "" style = "height:80px;width:80px; margin-top:6390px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top73" steamid = "" style = "height:80px;width:80px; margin-top:6480px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top74" steamid = "" style = "height:80px;width:80px; margin-top:6570px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top75" steamid = "" style = "height:80px;width:80px; margin-top:6660px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top76" steamid = "" style = "height:80px;width:80px; margin-top:6750px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top77" steamid = "" style = "height:80px;width:80px; margin-top:6840px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top78" steamid = "" style = "height:80px;width:80px; margin-top:6930px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top79" steamid = "" style = "height:80px;width:80px; margin-top:7020px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top80" steamid = "" style = "height:80px;width:80px; margin-top:7110px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top81" steamid = "" style = "height:80px;width:80px; margin-top:7200px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top82" steamid = "" style = "height:80px;width:80px; margin-top:7290px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top83" steamid = "" style = "height:80px;width:80px; margin-top:7380px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top84" steamid = "" style = "height:80px;width:80px; margin-top:7470px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top85" steamid = "" style = "height:80px;width:80px; margin-top:7560px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top86" steamid = "" style = "height:80px;width:80px; margin-top:7650px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top87" steamid = "" style = "height:80px;width:80px; margin-top:7740px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top88" steamid = "" style = "height:80px;width:80px; margin-top:7830px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top89" steamid = "" style = "height:80px;width:80px; margin-top:7920px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top90" steamid = "" style = "height:80px;width:80px; margin-top:8010px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top91" steamid = "" style = "height:80px;width:80px; margin-top:8100px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top92" steamid = "" style = "height:80px;width:80px; margin-top:8190px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top93" steamid = "" style = "height:80px;width:80px; margin-top:8280px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top94" steamid = "" style = "height:80px;width:80px; margin-top:8370px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top95" steamid = "" style = "height:80px;width:80px; margin-top:8460px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top96" steamid = "" style = "height:80px;width:80px; margin-top:8550px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top97" steamid = "" style = "height:80px;width:80px; margin-top:8640px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:0px;" />
+                            <DOTAAvatarImage id = "top100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:0px;" />
+                            <Label hittest="false" id="coltop1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop4" text="-" style="height:80px;width:80px; margin-top:300px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop5" text="-" style="height:80px;width:80px; margin-top:390px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop6" text="-" style="height:80px;width:80px; margin-top:480px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop7" text="-" style="height:80px;width:80px; margin-top:570px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:100px;"/>
+							<Label hittest="false" id="coltop11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop12" text="-" style="height:80px; width:80px; margin-top:1020px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop13" text="-" style="height:80px; width:80px; margin-top:1110px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop14" text="-" style="height:80px; width:80px; margin-top:1200px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop15" text="-" style="height:80px; width:80px; margin-top:1290px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop16" text="-" style="height:80px; width:80px; margin-top:1380px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop17" text="-" style="height:80px; width:80px; margin-top:1470px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop18" text="-" style="height:80px; width:80px; margin-top:1560px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop19" text="-" style="height:80px; width:80px; margin-top:1650px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop20" text="-" style="height:80px; width:80px; margin-top:1740px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop21" text="-" style="height:80px; width:80px; margin-top:1830px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop22" text="-" style="height:80px; width:80px; margin-top:1920px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop23" text="-" style="height:80px; width:80px; margin-top:2010px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop24" text="-" style="height:80px; width:80px; margin-top:2100px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop25" text="-" style="height:80px; width:80px; margin-top:2190px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop26" text="-" style="height:80px; width:80px; margin-top:2280px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop27" text="-" style="height:80px; width:80px; margin-top:2370px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop28" text="-" style="height:80px; width:80px; margin-top:2460px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop29" text="-" style="height:80px; width:80px; margin-top:2550px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop30" text="-" style="height:80px; width:80px; margin-top:2640px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop31" text="-" style="height:80px; width:80px; margin-top:2730px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop32" text="-" style="height:80px; width:80px; margin-top:2820px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop33" text="-" style="height:80px; width:80px; margin-top:2910px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop34" text="-" style="height:80px; width:80px; margin-top:3000px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop35" text="-" style="height:80px; width:80px; margin-top:3090px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop36" text="-" style="height:80px; width:80px; margin-top:3180px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop37" text="-" style="height:80px; width:80px; margin-top:3270px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop38" text="-" style="height:80px; width:80px; margin-top:3360px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop39" text="-" style="height:80px; width:80px; margin-top:3450px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop40" text="-" style="height:80px; width:80px; margin-top:3540px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop41" text="-" style="height:80px; width:80px; margin-top:3630px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop42" text="-" style="height:80px; width:80px; margin-top:3720px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop43" text="-" style="height:80px; width:80px; margin-top:3810px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop44" text="-" style="height:80px; width:80px; margin-top:3900px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop45" text="-" style="height:80px; width:80px; margin-top:3990px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop46" text="-" style="height:80px; width:80px; margin-top:4080px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop47" text="-" style="height:80px; width:80px; margin-top:4170px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop48" text="-" style="height:80px; width:80px; margin-top:4260px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop49" text="-" style="height:80px; width:80px; margin-top:4350px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop50" text="-" style="height:80px; width:80px; margin-top:4440px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop51" text="-" style="height:80px; width:80px; margin-top:4530px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop52" text="-" style="height:80px; width:80px; margin-top:4620px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop53" text="-" style="height:80px; width:80px; margin-top:4710px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop54" text="-" style="height:80px; width:80px; margin-top:4800px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop55" text="-" style="height:80px; width:80px; margin-top:4890px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop56" text="-" style="height:80px; width:80px; margin-top:4980px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop57" text="-" style="height:80px; width:80px; margin-top:5070px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop58" text="-" style="height:80px; width:80px; margin-top:5160px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop59" text="-" style="height:80px; width:80px; margin-top:5250px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop60" text="-" style="height:80px; width:80px; margin-top:5340px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop61" text="-" style="height:80px; width:80px; margin-top:5430px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop62" text="-" style="height:80px; width:80px; margin-top:5520px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop63" text="-" style="height:80px; width:80px; margin-top:5610px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop64" text="-" style="height:80px; width:80px; margin-top:5700px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop65" text="-" style="height:80px; width:80px; margin-top:5790px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop66" text="-" style="height:80px; width:80px; margin-top:5880px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop67" text="-" style="height:80px; width:80px; margin-top:5970px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop68" text="-" style="height:80px; width:80px; margin-top:6060px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop69" text="-" style="height:80px; width:80px; margin-top:6150px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop70" text="-" style="height:80px; width:80px; margin-top:6240px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop71" text="-" style="height:80px; width:80px; margin-top:6330px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop72" text="-" style="height:80px; width:80px; margin-top:6420px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop73" text="-" style="height:80px; width:80px; margin-top:6510px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop74" text="-" style="height:80px; width:80px; margin-top:6600px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop75" text="-" style="height:80px; width:80px; margin-top:6690px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop76" text="-" style="height:80px; width:80px; margin-top:6780px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop77" text="-" style="height:80px; width:80px; margin-top:6870px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop78" text="-" style="height:80px; width:80px; margin-top:6960px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop79" text="-" style="height:80px; width:80px; margin-top:7050px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop80" text="-" style="height:80px; width:80px; margin-top:7140px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop81" text="-" style="height:80px; width:80px; margin-top:7230px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop82" text="-" style="height:80px; width:80px; margin-top:7320px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop83" text="-" style="height:80px; width:80px; margin-top:7410px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop84" text="-" style="height:80px; width:80px; margin-top:7500px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop85" text="-" style="height:80px; width:80px; margin-top:7590px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop86" text="-" style="height:80px; width:80px; margin-top:7680px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop87" text="-" style="height:80px; width:80px; margin-top:7770px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop88" text="-" style="height:80px; width:80px; margin-top:7860px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop89" text="-" style="height:80px; width:80px; margin-top:7950px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop90" text="-" style="height:80px; width:80px; margin-top:8040px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop91" text="-" style="height:80px; width:80px; margin-top:8130px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop92" text="-" style="height:80px; width:80px; margin-top:8220px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop93" text="-" style="height:80px; width:80px; margin-top:8310px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop94" text="-" style="height:80px; width:80px; margin-top:8400px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop95" text="-" style="height:80px; width:80px; margin-top:8490px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop96" text="-" style="height:80px; width:80px; margin-top:8580px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop97" text="-" style="height:80px; width:80px; margin-top:8670px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop98" text="-" style="height:80px; width:80px; margin-top:8760px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop99" text="-" style="height:80px; width:80px; margin-top:8850px; margin-left:100px; "/>
+                            <Label hittest="false" id="coltop100" text="-" style="height:80px; width:80px; margin-top:8940px; margin-left:100px; "/>
+                        </Panel>
+                        <Panel id="TopWins" hittest="false" style="margin-top:40px; margin-left:-100px;">
+                            <DOTAAvatarImage id="norm1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm3" steamid="" style="height:80px;width:80px; margin-top:180px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm4" steamid="" style="height:80px;width:80px; margin-top:270px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm5" steamid="" style="height:80px;width:80px; margin-top:360px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm6" steamid="" style="height:80px;width:80px; margin-top:450px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm7" steamid="" style="height:80px;width:80px; margin-top:540px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="norm10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:280px;"/>
+                            <DOTAAvatarImage id = "norm11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm14" steamid = "" style = "height:80px;width:80px; margin-top:1170px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm15" steamid = "" style = "height:80px;width:80px; margin-top:1260px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm16" steamid = "" style = "height:80px;width:80px; margin-top:1350px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm17" steamid = "" style = "height:80px;width:80px; margin-top:1440px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm18" steamid = "" style = "height:80px;width:80px; margin-top:1530px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm19" steamid = "" style = "height:80px;width:80px; margin-top:1620px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm20" steamid = "" style = "height:80px;width:80px; margin-top:1710px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm21" steamid = "" style = "height:80px;width:80px; margin-top:1800px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm22" steamid = "" style = "height:80px;width:80px; margin-top:1890px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm23" steamid = "" style = "height:80px;width:80px; margin-top:1980px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm24" steamid = "" style = "height:80px;width:80px; margin-top:2070px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm25" steamid = "" style = "height:80px;width:80px; margin-top:2160px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm26" steamid = "" style = "height:80px;width:80px; margin-top:2250px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm27" steamid = "" style = "height:80px;width:80px; margin-top:2340px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm28" steamid = "" style = "height:80px;width:80px; margin-top:2430px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm29" steamid = "" style = "height:80px;width:80px; margin-top:2520px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm30" steamid = "" style = "height:80px;width:80px; margin-top:2610px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm31" steamid = "" style = "height:80px;width:80px; margin-top:2700px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm32" steamid = "" style = "height:80px;width:80px; margin-top:2790px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm33" steamid = "" style = "height:80px;width:80px; margin-top:2880px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm34" steamid = "" style = "height:80px;width:80px; margin-top:2970px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm35" steamid = "" style = "height:80px;width:80px; margin-top:3060px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm36" steamid = "" style = "height:80px;width:80px; margin-top:3150px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm37" steamid = "" style = "height:80px;width:80px; margin-top:3240px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm38" steamid = "" style = "height:80px;width:80px; margin-top:3330px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm39" steamid = "" style = "height:80px;width:80px; margin-top:3420px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm40" steamid = "" style = "height:80px;width:80px; margin-top:3510px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm41" steamid = "" style = "height:80px;width:80px; margin-top:3600px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm42" steamid = "" style = "height:80px;width:80px; margin-top:3690px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm43" steamid = "" style = "height:80px;width:80px; margin-top:3780px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm44" steamid = "" style = "height:80px;width:80px; margin-top:3870px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm45" steamid = "" style = "height:80px;width:80px; margin-top:3960px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm46" steamid = "" style = "height:80px;width:80px; margin-top:4050px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm47" steamid = "" style = "height:80px;width:80px; margin-top:4140px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm48" steamid = "" style = "height:80px;width:80px; margin-top:4230px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm49" steamid = "" style = "height:80px;width:80px; margin-top:4320px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm50" steamid = "" style = "height:80px;width:80px; margin-top:4410px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm51" steamid = "" style = "height:80px;width:80px; margin-top:4500px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm52" steamid = "" style = "height:80px;width:80px; margin-top:4590px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm53" steamid = "" style = "height:80px;width:80px; margin-top:4680px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm54" steamid = "" style = "height:80px;width:80px; margin-top:4770px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm55" steamid = "" style = "height:80px;width:80px; margin-top:4860px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm56" steamid = "" style = "height:80px;width:80px; margin-top:4950px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm57" steamid = "" style = "height:80px;width:80px; margin-top:5040px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm58" steamid = "" style = "height:80px;width:80px; margin-top:5130px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm59" steamid = "" style = "height:80px;width:80px; margin-top:5220px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm60" steamid = "" style = "height:80px;width:80px; margin-top:5310px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm61" steamid = "" style = "height:80px;width:80px; margin-top:5400px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm62" steamid = "" style = "height:80px;width:80px; margin-top:5490px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm63" steamid = "" style = "height:80px;width:80px; margin-top:5580px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm64" steamid = "" style = "height:80px;width:80px; margin-top:5670px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm65" steamid = "" style = "height:80px;width:80px; margin-top:5760px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm66" steamid = "" style = "height:80px;width:80px; margin-top:5850px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm67" steamid = "" style = "height:80px;width:80px; margin-top:5940px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm68" steamid = "" style = "height:80px;width:80px; margin-top:6030px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm69" steamid = "" style = "height:80px;width:80px; margin-top:6120px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm70" steamid = "" style = "height:80px;width:80px; margin-top:6210px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm71" steamid = "" style = "height:80px;width:80px; margin-top:6300px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm72" steamid = "" style = "height:80px;width:80px; margin-top:6390px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm73" steamid = "" style = "height:80px;width:80px; margin-top:6480px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm74" steamid = "" style = "height:80px;width:80px; margin-top:6570px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm75" steamid = "" style = "height:80px;width:80px; margin-top:6660px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm76" steamid = "" style = "height:80px;width:80px; margin-top:6750px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm77" steamid = "" style = "height:80px;width:80px; margin-top:6840px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm78" steamid = "" style = "height:80px;width:80px; margin-top:6930px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm79" steamid = "" style = "height:80px;width:80px; margin-top:7020px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm80" steamid = "" style = "height:80px;width:80px; margin-top:7110px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm81" steamid = "" style = "height:80px;width:80px; margin-top:7200px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm82" steamid = "" style = "height:80px;width:80px; margin-top:7290px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm83" steamid = "" style = "height:80px;width:80px; margin-top:7380px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm84" steamid = "" style = "height:80px;width:80px; margin-top:7470px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm85" steamid = "" style = "height:80px;width:80px; margin-top:7560px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm86" steamid = "" style = "height:80px;width:80px; margin-top:7650px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm87" steamid = "" style = "height:80px;width:80px; margin-top:7740px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm88" steamid = "" style = "height:80px;width:80px; margin-top:7830px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm89" steamid = "" style = "height:80px;width:80px; margin-top:7920px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm90" steamid = "" style = "height:80px;width:80px; margin-top:8010px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm91" steamid = "" style = "height:80px;width:80px; margin-top:8100px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm92" steamid = "" style = "height:80px;width:80px; margin-top:8190px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm93" steamid = "" style = "height:80px;width:80px; margin-top:8280px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm94" steamid = "" style = "height:80px;width:80px; margin-top:8370px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm95" steamid = "" style = "height:80px;width:80px; margin-top:8460px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm96" steamid = "" style = "height:80px;width:80px; margin-top:8550px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm97" steamid = "" style = "height:80px;width:80px; margin-top:8640px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "norm100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:280px;" />
+                            <Label hittest="false" id="colnorm1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left: 380px;"/>
+                            <Label hittest="false" id="colnorm2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm4" text="-" style="height:80px;width:80px; margin-top:300px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm5" text="-" style="height:80px;width:80px; margin-top:390px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm6" text="-" style="height:80px;width:80px; margin-top:480px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm7" text="-" style="height:80px;width:80px; margin-top:570px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:380px;"/>
+                            <Label hittest="false" id="colnorm10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:380px;"/>
+							<Label hittest="false" id="colnorm11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm12" text="-" style="height:80px; width:80px; margin-top:1020px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm13" text="-" style="height:80px; width:80px; margin-top:1110px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm14" text="-" style="height:80px; width:80px; margin-top:1200px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm15" text="-" style="height:80px; width:80px; margin-top:1290px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm16" text="-" style="height:80px; width:80px; margin-top:1380px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm17" text="-" style="height:80px; width:80px; margin-top:1470px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm18" text="-" style="height:80px; width:80px; margin-top:1560px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm19" text="-" style="height:80px; width:80px; margin-top:1650px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm20" text="-" style="height:80px; width:80px; margin-top:1740px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm21" text="-" style="height:80px; width:80px; margin-top:1830px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm22" text="-" style="height:80px; width:80px; margin-top:1920px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm23" text="-" style="height:80px; width:80px; margin-top:2010px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm24" text="-" style="height:80px; width:80px; margin-top:2100px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm25" text="-" style="height:80px; width:80px; margin-top:2190px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm26" text="-" style="height:80px; width:80px; margin-top:2280px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm27" text="-" style="height:80px; width:80px; margin-top:2370px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm28" text="-" style="height:80px; width:80px; margin-top:2460px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm29" text="-" style="height:80px; width:80px; margin-top:2550px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm30" text="-" style="height:80px; width:80px; margin-top:2640px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm31" text="-" style="height:80px; width:80px; margin-top:2730px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm32" text="-" style="height:80px; width:80px; margin-top:2820px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm33" text="-" style="height:80px; width:80px; margin-top:2910px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm34" text="-" style="height:80px; width:80px; margin-top:3000px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm35" text="-" style="height:80px; width:80px; margin-top:3090px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm36" text="-" style="height:80px; width:80px; margin-top:3180px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm37" text="-" style="height:80px; width:80px; margin-top:3270px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm38" text="-" style="height:80px; width:80px; margin-top:3360px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm39" text="-" style="height:80px; width:80px; margin-top:3450px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm40" text="-" style="height:80px; width:80px; margin-top:3540px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm41" text="-" style="height:80px; width:80px; margin-top:3630px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm42" text="-" style="height:80px; width:80px; margin-top:3720px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm43" text="-" style="height:80px; width:80px; margin-top:3810px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm44" text="-" style="height:80px; width:80px; margin-top:3900px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm45" text="-" style="height:80px; width:80px; margin-top:3990px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm46" text="-" style="height:80px; width:80px; margin-top:4080px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm47" text="-" style="height:80px; width:80px; margin-top:4170px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm48" text="-" style="height:80px; width:80px; margin-top:4260px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm49" text="-" style="height:80px; width:80px; margin-top:4350px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm50" text="-" style="height:80px; width:80px; margin-top:4440px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm51" text="-" style="height:80px; width:80px; margin-top:4530px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm52" text="-" style="height:80px; width:80px; margin-top:4620px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm53" text="-" style="height:80px; width:80px; margin-top:4710px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm54" text="-" style="height:80px; width:80px; margin-top:4800px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm55" text="-" style="height:80px; width:80px; margin-top:4890px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm56" text="-" style="height:80px; width:80px; margin-top:4980px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm57" text="-" style="height:80px; width:80px; margin-top:5070px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm58" text="-" style="height:80px; width:80px; margin-top:5160px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm59" text="-" style="height:80px; width:80px; margin-top:5250px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm60" text="-" style="height:80px; width:80px; margin-top:5340px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm61" text="-" style="height:80px; width:80px; margin-top:5430px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm62" text="-" style="height:80px; width:80px; margin-top:5520px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm63" text="-" style="height:80px; width:80px; margin-top:5610px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm64" text="-" style="height:80px; width:80px; margin-top:5700px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm65" text="-" style="height:80px; width:80px; margin-top:5790px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm66" text="-" style="height:80px; width:80px; margin-top:5880px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm67" text="-" style="height:80px; width:80px; margin-top:5970px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm68" text="-" style="height:80px; width:80px; margin-top:6060px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm69" text="-" style="height:80px; width:80px; margin-top:6150px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm70" text="-" style="height:80px; width:80px; margin-top:6240px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm71" text="-" style="height:80px; width:80px; margin-top:6330px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm72" text="-" style="height:80px; width:80px; margin-top:6420px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm73" text="-" style="height:80px; width:80px; margin-top:6510px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm74" text="-" style="height:80px; width:80px; margin-top:6600px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm75" text="-" style="height:80px; width:80px; margin-top:6690px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm76" text="-" style="height:80px; width:80px; margin-top:6780px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm77" text="-" style="height:80px; width:80px; margin-top:6870px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm78" text="-" style="height:80px; width:80px; margin-top:6960px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm79" text="-" style="height:80px; width:80px; margin-top:7050px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm80" text="-" style="height:80px; width:80px; margin-top:7140px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm81" text="-" style="height:80px; width:80px; margin-top:7230px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm82" text="-" style="height:80px; width:80px; margin-top:7320px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm83" text="-" style="height:80px; width:80px; margin-top:7410px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm84" text="-" style="height:80px; width:80px; margin-top:7500px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm85" text="-" style="height:80px; width:80px; margin-top:7590px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm86" text="-" style="height:80px; width:80px; margin-top:7680px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm87" text="-" style="height:80px; width:80px; margin-top:7770px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm88" text="-" style="height:80px; width:80px; margin-top:7860px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm89" text="-" style="height:80px; width:80px; margin-top:7950px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm90" text="-" style="height:80px; width:80px; margin-top:8040px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm91" text="-" style="height:80px; width:80px; margin-top:8130px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm92" text="-" style="height:80px; width:80px; margin-top:8220px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm93" text="-" style="height:80px; width:80px; margin-top:8310px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm94" text="-" style="height:80px; width:80px; margin-top:8400px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm95" text="-" style="height:80px; width:80px; margin-top:8490px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm96" text="-" style="height:80px; width:80px; margin-top:8580px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm97" text="-" style="height:80px; width:80px; margin-top:8670px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm98" text="-" style="height:80px; width:80px; margin-top:8760px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm99" text="-" style="height:80px; width:80px; margin-top:8850px; margin-left:380px; "/>
+                            <Label hittest="false" id="colnorm100" text="-" style="height:80px; width:80px; margin-top:8940px; margin-left:380px; "/>
+                        </Panel>
+                        <Panel id="TopHardWins" hittest="false" style="margin-top:40px; margin-left:90px;">
+                            <DOTAAvatarImage id="hard1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard3" steamid="" style="height:80px;width:80px; margin-top:180px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard4" steamid="" style="height:80px;width:80px; margin-top:270px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard5" steamid="" style="height:80px;width:80px; margin-top:360px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard6" steamid="" style="height:80px;width:80px; margin-top:450px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard7" steamid="" style="height:80px;width:80px; margin-top:540px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:280px;"/>
+                            <DOTAAvatarImage id="hard10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:280px;"/>
+                            <DOTAAvatarImage id = "hard11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard14" steamid = "" style = "height:80px;width:80px; margin-top:1170px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard15" steamid = "" style = "height:80px;width:80px; margin-top:1260px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard16" steamid = "" style = "height:80px;width:80px; margin-top:1350px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard17" steamid = "" style = "height:80px;width:80px; margin-top:1440px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard18" steamid = "" style = "height:80px;width:80px; margin-top:1530px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard19" steamid = "" style = "height:80px;width:80px; margin-top:1620px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard20" steamid = "" style = "height:80px;width:80px; margin-top:1710px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard21" steamid = "" style = "height:80px;width:80px; margin-top:1800px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard22" steamid = "" style = "height:80px;width:80px; margin-top:1890px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard23" steamid = "" style = "height:80px;width:80px; margin-top:1980px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard24" steamid = "" style = "height:80px;width:80px; margin-top:2070px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard25" steamid = "" style = "height:80px;width:80px; margin-top:2160px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard26" steamid = "" style = "height:80px;width:80px; margin-top:2250px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard27" steamid = "" style = "height:80px;width:80px; margin-top:2340px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard28" steamid = "" style = "height:80px;width:80px; margin-top:2430px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard29" steamid = "" style = "height:80px;width:80px; margin-top:2520px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard30" steamid = "" style = "height:80px;width:80px; margin-top:2610px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard31" steamid = "" style = "height:80px;width:80px; margin-top:2700px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard32" steamid = "" style = "height:80px;width:80px; margin-top:2790px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard33" steamid = "" style = "height:80px;width:80px; margin-top:2880px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard34" steamid = "" style = "height:80px;width:80px; margin-top:2970px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard35" steamid = "" style = "height:80px;width:80px; margin-top:3060px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard36" steamid = "" style = "height:80px;width:80px; margin-top:3150px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard37" steamid = "" style = "height:80px;width:80px; margin-top:3240px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard38" steamid = "" style = "height:80px;width:80px; margin-top:3330px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard39" steamid = "" style = "height:80px;width:80px; margin-top:3420px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard40" steamid = "" style = "height:80px;width:80px; margin-top:3510px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard41" steamid = "" style = "height:80px;width:80px; margin-top:3600px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard42" steamid = "" style = "height:80px;width:80px; margin-top:3690px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard43" steamid = "" style = "height:80px;width:80px; margin-top:3780px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard44" steamid = "" style = "height:80px;width:80px; margin-top:3870px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard45" steamid = "" style = "height:80px;width:80px; margin-top:3960px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard46" steamid = "" style = "height:80px;width:80px; margin-top:4050px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard47" steamid = "" style = "height:80px;width:80px; margin-top:4140px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard48" steamid = "" style = "height:80px;width:80px; margin-top:4230px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard49" steamid = "" style = "height:80px;width:80px; margin-top:4320px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard50" steamid = "" style = "height:80px;width:80px; margin-top:4410px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard51" steamid = "" style = "height:80px;width:80px; margin-top:4500px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard52" steamid = "" style = "height:80px;width:80px; margin-top:4590px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard53" steamid = "" style = "height:80px;width:80px; margin-top:4680px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard54" steamid = "" style = "height:80px;width:80px; margin-top:4770px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard55" steamid = "" style = "height:80px;width:80px; margin-top:4860px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard56" steamid = "" style = "height:80px;width:80px; margin-top:4950px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard57" steamid = "" style = "height:80px;width:80px; margin-top:5040px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard58" steamid = "" style = "height:80px;width:80px; margin-top:5130px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard59" steamid = "" style = "height:80px;width:80px; margin-top:5220px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard60" steamid = "" style = "height:80px;width:80px; margin-top:5310px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard61" steamid = "" style = "height:80px;width:80px; margin-top:5400px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard62" steamid = "" style = "height:80px;width:80px; margin-top:5490px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard63" steamid = "" style = "height:80px;width:80px; margin-top:5580px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard64" steamid = "" style = "height:80px;width:80px; margin-top:5670px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard65" steamid = "" style = "height:80px;width:80px; margin-top:5760px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard66" steamid = "" style = "height:80px;width:80px; margin-top:5850px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard67" steamid = "" style = "height:80px;width:80px; margin-top:5940px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard68" steamid = "" style = "height:80px;width:80px; margin-top:6030px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard69" steamid = "" style = "height:80px;width:80px; margin-top:6120px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard70" steamid = "" style = "height:80px;width:80px; margin-top:6210px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard71" steamid = "" style = "height:80px;width:80px; margin-top:6300px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard72" steamid = "" style = "height:80px;width:80px; margin-top:6390px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard73" steamid = "" style = "height:80px;width:80px; margin-top:6480px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard74" steamid = "" style = "height:80px;width:80px; margin-top:6570px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard75" steamid = "" style = "height:80px;width:80px; margin-top:6660px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard76" steamid = "" style = "height:80px;width:80px; margin-top:6750px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard77" steamid = "" style = "height:80px;width:80px; margin-top:6840px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard78" steamid = "" style = "height:80px;width:80px; margin-top:6930px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard79" steamid = "" style = "height:80px;width:80px; margin-top:7020px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard80" steamid = "" style = "height:80px;width:80px; margin-top:7110px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard81" steamid = "" style = "height:80px;width:80px; margin-top:7200px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard82" steamid = "" style = "height:80px;width:80px; margin-top:7290px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard83" steamid = "" style = "height:80px;width:80px; margin-top:7380px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard84" steamid = "" style = "height:80px;width:80px; margin-top:7470px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard85" steamid = "" style = "height:80px;width:80px; margin-top:7560px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard86" steamid = "" style = "height:80px;width:80px; margin-top:7650px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard87" steamid = "" style = "height:80px;width:80px; margin-top:7740px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard88" steamid = "" style = "height:80px;width:80px; margin-top:7830px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard89" steamid = "" style = "height:80px;width:80px; margin-top:7920px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard90" steamid = "" style = "height:80px;width:80px; margin-top:8010px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard91" steamid = "" style = "height:80px;width:80px; margin-top:8100px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard92" steamid = "" style = "height:80px;width:80px; margin-top:8190px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard93" steamid = "" style = "height:80px;width:80px; margin-top:8280px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard94" steamid = "" style = "height:80px;width:80px; margin-top:8370px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard95" steamid = "" style = "height:80px;width:80px; margin-top:8460px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard96" steamid = "" style = "height:80px;width:80px; margin-top:8550px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard97" steamid = "" style = "height:80px;width:80px; margin-top:8640px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:280px;" />
+                            <DOTAAvatarImage id = "hard100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:280px;" />
+                            <Label hittest="false" id="colhard1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left: 380px;"/>
+                            <Label hittest="false" id="colhard2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard4" text="-" style="height:80px;width:80px; margin-top:300px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard5" text="-" style="height:80px;width:80px; margin-top:390px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard6" text="-" style="height:80px;width:80px; margin-top:480px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard7" text="-" style="height:80px;width:80px; margin-top:570px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:380px;"/>
+                            <Label hittest="false" id="colhard10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:380px;"/>
+							<Label hittest="false" id="colhard11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard12" text="-" style="height: 80px; width: 80px; margin-top:1020px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard13" text="-" style="height: 80px; width: 80px; margin-top:1110px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard14" text="-" style="height: 80px; width: 80px; margin-top:1200px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard15" text="-" style="height: 80px; width: 80px; margin-top:1290px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard16" text="-" style="height: 80px; width: 80px; margin-top:1380px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard17" text="-" style="height: 80px; width: 80px; margin-top:1470px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard18" text="-" style="height: 80px; width: 80px; margin-top:1560px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard19" text="-" style="height: 80px; width: 80px; margin-top:1650px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard20" text="-" style="height: 80px; width: 80px; margin-top:1740px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard21" text="-" style="height: 80px; width: 80px; margin-top:1830px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard22" text="-" style="height: 80px; width: 80px; margin-top:1920px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard23" text="-" style="height: 80px; width: 80px; margin-top:2010px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard24" text="-" style="height: 80px; width: 80px; margin-top:2380px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard25" text="-" style="height: 80px; width: 80px; margin-top:2190px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard26" text="-" style="height: 80px; width: 80px; margin-top:2280px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard27" text="-" style="height: 80px; width: 80px; margin-top:2370px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard28" text="-" style="height: 80px; width: 80px; margin-top:2460px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard29" text="-" style="height: 80px; width: 80px; margin-top:2550px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard30" text="-" style="height: 80px; width: 80px; margin-top:2640px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard31" text="-" style="height: 80px; width: 80px; margin-top:2730px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard32" text="-" style="height: 80px; width: 80px; margin-top:2820px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard33" text="-" style="height: 80px; width: 80px; margin-top:2910px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard34" text="-" style="height: 80px; width: 80px; margin-top:3000px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard35" text="-" style="height: 80px; width: 80px; margin-top:3090px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard36" text="-" style="height: 80px; width: 80px; margin-top:3180px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard37" text="-" style="height: 80px; width: 80px; margin-top:3270px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard38" text="-" style="height: 80px; width: 80px; margin-top:3360px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard39" text="-" style="height: 80px; width: 80px; margin-top:3450px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard40" text="-" style="height: 80px; width: 80px; margin-top:3540px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard41" text="-" style="height: 80px; width: 80px; margin-top:3630px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard42" text="-" style="height: 80px; width: 80px; margin-top:3720px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard43" text="-" style="height: 80px; width: 80px; margin-top:3810px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard44" text="-" style="height: 80px; width: 80px; margin-top:3900px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard45" text="-" style="height: 80px; width: 80px; margin-top:3990px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard46" text="-" style="height: 80px; width: 80px; margin-top:4080px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard47" text="-" style="height: 80px; width: 80px; margin-top:4170px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard48" text="-" style="height: 80px; width: 80px; margin-top:4260px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard49" text="-" style="height: 80px; width: 80px; margin-top:4350px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard50" text="-" style="height: 80px; width: 80px; margin-top:4440px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard51" text="-" style="height: 80px; width: 80px; margin-top:4530px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard52" text="-" style="height: 80px; width: 80px; margin-top:4620px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard53" text="-" style="height: 80px; width: 80px; margin-top:4710px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard54" text="-" style="height: 80px; width: 80px; margin-top:4800px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard55" text="-" style="height: 80px; width: 80px; margin-top:4890px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard56" text="-" style="height: 80px; width: 80px; margin-top:4980px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard57" text="-" style="height: 80px; width: 80px; margin-top:5070px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard58" text="-" style="height: 80px; width: 80px; margin-top:5160px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard59" text="-" style="height: 80px; width: 80px; margin-top:5250px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard60" text="-" style="height: 80px; width: 80px; margin-top:5340px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard61" text="-" style="height: 80px; width: 80px; margin-top:5430px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard62" text="-" style="height: 80px; width: 80px; margin-top:5520px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard63" text="-" style="height: 80px; width: 80px; margin-top:5610px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard64" text="-" style="height: 80px; width: 80px; margin-top:5700px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard65" text="-" style="height: 80px; width: 80px; margin-top:5790px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard66" text="-" style="height: 80px; width: 80px; margin-top:5880px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard67" text="-" style="height: 80px; width: 80px; margin-top:5970px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard68" text="-" style="height: 80px; width: 80px; margin-top:6060px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard69" text="-" style="height: 80px; width: 80px; margin-top:6150px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard70" text="-" style="height: 80px; width: 80px; margin-top:6240px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard71" text="-" style="height: 80px; width: 80px; margin-top:6330px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard72" text="-" style="height: 80px; width: 80px; margin-top:6420px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard73" text="-" style="height: 80px; width: 80px; margin-top:6510px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard74" text="-" style="height: 80px; width: 80px; margin-top:6600px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard75" text="-" style="height: 80px; width: 80px; margin-top:6690px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard76" text="-" style="height: 80px; width: 80px; margin-top:6780px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard77" text="-" style="height: 80px; width: 80px; margin-top:6870px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard78" text="-" style="height: 80px; width: 80px; margin-top:6960px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard79" text="-" style="height: 80px; width: 80px; margin-top:7050px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard80" text="-" style="height: 80px; width: 80px; margin-top:7140px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard81" text="-" style="height: 80px; width: 80px; margin-top:7230px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard82" text="-" style="height: 80px; width: 80px; margin-top:7320px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard83" text="-" style="height: 80px; width: 80px; margin-top:7410px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard84" text="-" style="height: 80px; width: 80px; margin-top:7500px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard85" text="-" style="height: 80px; width: 80px; margin-top:7590px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard86" text="-" style="height: 80px; width: 80px; margin-top:7680px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard87" text="-" style="height: 80px; width: 80px; margin-top:7770px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard88" text="-" style="height: 80px; width: 80px; margin-top:7860px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard89" text="-" style="height: 80px; width: 80px; margin-top:7950px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard90" text="-" style="height: 80px; width: 80px; margin-top:8040px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard91" text="-" style="height: 80px; width: 80px; margin-top:8130px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard92" text="-" style="height: 80px; width: 80px; margin-top:8220px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard93" text="-" style="height: 80px; width: 80px; margin-top:8310px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard94" text="-" style="height: 80px; width: 80px; margin-top:8400px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard95" text="-" style="height: 80px; width: 80px; margin-top:8490px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard96" text="-" style="height: 80px; width: 80px; margin-top:8580px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard97" text="-" style="height: 80px; width: 80px; margin-top:8670px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard98" text="-" style="height: 80px; width: 80px; margin-top:8760px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard99" text="-" style="height: 80px; width: 80px; margin-top:8850px; margin-left:380px; "/>
+                            <Label hittest="false" id="colhard100" text="-" style="height: 80px; width: 80px; margin-top:8940px; margin-left:380px; "/>
+                        </Panel>
+                </Panel>
+				<Panel id="GameInfoPanelPaddingBottom"/>
+			</Panel>
+			<Panel hittest="false" id="GameInfoGradientOverlayTop"/>
+			<Panel hittest="false" id="GameInfoGradientOverlayBottom"/>
+		</Panel>
+		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Tops)' onmouseout='DOTAHideTextTooltip()'>
+			<Panel id="GameInfoIcon"/>
+			<Panel id="GameInfoOpenClose"/>
+		</Button>
+	</Panel>
+</root>

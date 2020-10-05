@@ -1,0 +1,216 @@
+.Hud {
+	width: 100%;
+	height: 100%;
+}
+
+.__Root,
+
+#DonatePanel {
+	horizontal-align: center;
+	vertical-align: center;
+	/*background-color: rgb( 40, 40, 40 );*/
+	background-image: url("s2r://panorama/images/backgrounds/gallery_background.png");
+	flow-children: down;
+	background-size: 100% 100%;
+	/*border-radius: 30px;*/
+	/*margin-bottom: 150px;*/
+    /*visibility: collapse;*/
+    box-shadow:#000000aa 0px 0px 8px 2px;
+    border-radius: 30px;
+}
+
+#QuitButton{
+	width: 33px;
+	height: 33px;
+	background-image: url('s2r://panorama/images/control_icons/x_close_png.vtex');
+	horizontal-align:right;
+	vertical-align: center;
+	background-size: 100% 100%;
+	wash-color: #bd5e2d;
+	margin-right: 10px;
+	transition-property: background-color, wash-color;
+	transition-delay: 0.0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+
+}
+
+#QuitButton:hover
+{
+	wash-color: #bd5e2daa;
+}
+
+#DonateContainer.Visible{
+	transform:none;
+	pre-transform-scale2d:1;
+	opacity: 1;
+}
+#DonateItemsList {
+	width: 800px;
+	height: 450px;
+	flow-children: down;
+	padding: 25px;
+	overflow: clip scroll;
+
+}
+
+.ListName {
+	color: gradient( linear, 0% 0%, 0% 100%, from( white  ), to( #5A3D6F) );  
+	font-size: 34px;
+	font-family: Radiance;
+	text-shadow: 2px 2px 0px 1.0 #00000090;
+	horizontal-align:center;
+}
+
+.DonateItemsList {
+	border-top-width: 2px;
+	border-top-color: rgb( 166, 166, 166 );
+	border-top-style: solid;
+	width: 100%;
+	flow-children: down;
+	padding-top: 10px;
+}
+
+.Row {
+	flow-children: right;
+	horizontal-align:center;
+}
+
+.DonateItemButton {
+	margin: 8px;
+	opacity: 0.6;
+	transition-property: opacity,brightness,saturation;
+	transition-duration: 0.25s;
+	box-shadow:#000000aa 0px 0px 8px 2px;
+	/*border-radius: 50%;*/
+}
+
+.DonateItemButton:hover {
+	opacity: 1;
+}
+
+.DonateItemButtonHidden {
+	margin: 8px;
+	opacity: 0.25;
+	brightness:0.1;
+	saturation:0;
+}
+
+.DonateInfoPanel {
+	background-color: rgb( 12, 12, 12 );
+	width: 100%;
+	height: 45px;
+	flow-children: right;
+	padding: 5px;
+	border-top-width: 2px;
+	border-top-color: rgb( 4, 4, 4 );
+	border-top-style: solid;
+}
+
+.DonateInfo {
+	/*margin-right: 20px;*/
+	horizontal-align: right;
+	width: 100px;
+	height: 100px;
+	margin-right: 75px;
+	margin-bottom: 35px;
+	background-image: url('file://{resources}/images/custom_game/donate/patreon.png');
+	background-size: 100%;
+	transition-property: pre-transform-scale2d;
+	transition-duration: .25s;
+	pre-transform-scale2d:0.8;
+	vertical-align: bottom;
+	horizontal-align:right;
+}
+#DonateContainer{
+	align:center center;
+	width: 940px;
+	height: 600px;
+	transition-property: pre-transform-scale2d,transform,opacity;
+	transition-duration: .25s;
+	pre-transform-scale2d:0.4;
+	transform: translateX(-700px) translateY(-320px);
+    opacity:0;
+}
+#DonateButton{
+	width: 200px; 
+	height: 200px;
+	transition-property: pre-transform-scale2d;
+	transition-duration: .25s;
+	pre-transform-scale2d:0.8;
+}
+.DonateInfo:hover,
+#DonateButton:hover{
+	pre-transform-scale2d:1;
+}
+/* url("s2r://panorama/images/hud/reborn/bg_timer_psd.vtex") */
+
+#DonateContainerButton{
+	horizontal-align: right;
+	vertical-align: top;
+	background-image: url("s2r://panorama/images/hud/reborn/bg_timer_psd.vtex");
+	background-size: 100% 100%;
+	margin-right: 200px;
+	width: 280px;
+	height: 60px;
+}
+
+#DonateToggleButton {
+	width: 60px;
+	height: 60px;
+	background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_psd.vtex");
+	brightness: 1.0;
+	z-index: -1;
+	/*box-shadow: #000000aa 0px 0px 2px 2px;*/
+	transition-property: background-image,brightness,transform;
+	transition-duration: .25s;
+	background-size: 100% 100%;
+	transition-timing-function: ease-in-out;
+	vertical-align: top;
+	/*transform: translateX(-150px);*/
+	horizontal-align: left;
+/*	margin-left: 1120px;
+	margin-bottom: 30px;*/
+	margin-top: 140px;
+	text-align: center;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+#Arrow{
+	width: 100%;
+	height: 100%;
+	background-image: url('file://{resources}/images/custom_game/donate/patreon_logo.png');
+	background-size: 80% 80%;
+	background-repeat: no-repeat; 
+	background-position: 50% 50%;
+	/*transform: scaleX(-1);*/
+	transition-duration: 0.25s;
+	transition-property: opacity;
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+#DonateToggleButton:Hover {
+	brightness:1.6;
+	transform: none;
+	/*background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_hover_psd.vtex");*/
+}
+
+#DonateToggleButton:Hover #DonateToggleButtonText{
+	margin-left: 0px;
+}
+#DonateToggleButtonText {
+	color: #ffcc33;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 2px;
+	min-width: 60px;
+	vertical-align: center;
+	text-transform: uppercase;
+	margin-right: 7px;
+}
+

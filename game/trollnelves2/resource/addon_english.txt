@@ -1,0 +1,1625 @@
+﻿"lang"
+{
+	"Language"		"english"
+	"Tokens"
+	{
+		"addon_game_name"			"Troll vs Elves 3"
+		
+		// ******************** HEROES ********************
+		"npc_dota_hero_treant"                                                  "Elf"
+		"npc_dota_hero_troll_warlord"                                                     "Troll"
+		"npc_dota_hero_lycan"                                                             "Wolf"
+		"npc_dota_hero_crystal_maiden"                                                    "Angel"
+		"npc_dota_hero_bear"                                                    		  "Baby Bear"
+
+		// ******************** UNITS ********************
+		"tent"                                                                            "Tent"
+		"tent_2"                                                                          "Tent 2"
+		"tent_3"                                                                          "Tent 3"
+		"tent_4"                                                                          "Tent 4"
+		"tent_5"                                                                          "Tent 5"
+		"tent_6"                                                                          "Tent 6"
+		"tent_7"                                                                          "Tent 7"
+		"barracks_1"                                                                      "Barracks 1"
+		"barracks_2"                                                                      "Barracks 2"
+		"barracks_3"                                                                      "Barracks 3"
+		"rock_1"                                                                          "Rock 1"
+		"rock_2"                                                                          "Rock 2"
+		"rock_3"                                                                          "Rock 3"
+		"rock_4"                                                                          "Rock 4"
+		"rock_5"                                                                          "Rock 5"
+		"rock_6"                                                                    "Ultra Wall 1"
+		"rock_7"                                                                    "Ultra Wall 2"
+		"rock_8"                                                                    "Ultra Wall 3"
+		"rock_9"                                                                    "Ultra Wall 4"
+		"rock_10"                                                                    "Ultra Wall 5"
+		"rock_11"                                                                  "Demonic Wall 1"
+		"rock_12"                                                                  "Demonic Wall 2"
+		"rock_13"                                                                  "Demonic Wall 3"
+		"rock_14"                                                                  "Demonic Wall 4"
+		"rock_15"                                                                  "Demonic Wall 5"
+		"rock_16"                                                                   "Dragon Wall 1"
+		"rock_17"                                                                   "Dragon Wall 2"
+		"rock_18"                                                              	"Golden Dragon Wall"
+		"rock_19"                                                              	"Water Dragon Wall"
+		"tower_1"                                                                         "Tower 1"
+		"tower_2"                                                                         "Tower 2"
+		"tower_3"                                                                         "Tower 3"
+		"tower_4"                                                                         "Tower 4"
+		"tower_5"                                                                         "Tower 5"
+		"tower_6"                                                                         "Tower 6"
+		"tower_7"                                                                         "Tower 7"
+		"tower_8"                                                                         "Tower 8"
+		"tower_9"                                                                         "Tower 9"
+		"tower_10"                                                                        "Tower 10 lvl 1"
+		"tower_10_1"                                                                        "Tower 10 lvl 2"
+		"tower_11"                                                                        "Tower 11 lvl 1"
+		"tower_11_1"                                                                        "Tower 11 lvl 2"
+		"tower_12"                                                                        "Tower 12"
+		"tower_13"                                                                        "Tower 13"
+		"tower_14"                                                                        "Tower 14"
+		"tower_15"                                                                        "Tower 15 lvl 1"
+		"tower_15_1"                                                                      "Tower 15 lvl 2"
+		"tower_16"                                                                        "Tower 16"
+		"tower_17"                                                                        "Tower 17"
+		"tower_18"                                                                        "Tower 18"
+		"tower_19"                                                                        "Tower 19 lvl 1(3 min!) NO DAMAGE!!!"
+		"tower_19_1"                                                                      "Tower 19 lvl 2(3 min!) NO DAMAGE!!!"
+		"tower_19_2"                                                                      "Tower 19 lvl 3(3 min!) NO DAMAGE!!!"
+		"tower_20"                                                                        "End Game"
+		"true_sight_tower"                                                                "True Sight Tower"
+		"trader_1"                                                                        "Trader 1"
+		"trader_2"                                                                        "Trader 2"
+		"trader_3"                                                                        "Trader 3"
+		"workers_guild"                                                                   "Workers Guild"
+		"mother_of_nature"                                                                "Mother Of Nature"
+		"research_lab"                                                                    "Research Lab 1"
+		"research_lab_2"                                                                  "Research Lab 2"
+		"research_lab_3"                                                                  "Research Lab 3"
+		"research_lab_4"                                                                  "Research Lab 4"
+		"worker_1"                                                                        "Worker 1"
+		"worker_2"                                                                        "Worker 2"
+		"worker_3"                                                                        "Worker 3"
+		"worker_4"                                                                        "Worker 4"
+		"worker_5"                                                                        "Worker 5"
+		"worker_6"                                                                        "Worker 6"
+		"attacker_1"                                                                      "Warrior 1"
+		"attacker_2"                                                                      "Warrior 2"
+		"attacker_3"                                                                      "Warrior 3"
+		"attacker_4"                                                                      "Warrior 4"
+		"attacker_5"                                                                      "Warrior 5"
+		"attacker_6"                                                                      "Warrior 6"
+		"attacker_7"                                                                      "Warrior 7"
+		"attacker_8"                                                                      "Warrior 8"
+		"attacker_9"                                                                      "Warrior 9"
+		"attacker_10"                                                                     "Warrior 10"
+		"attacker_11"                                                                     "Warrior 11"
+		"attacker_12"                                                                     "Warrior 12"
+		"wisp_1"                                                                          "Wisp 1"
+		"wisp_2"                                                                          "Wisp 2"
+		"wisp_3"                                                                          "Wisp 3"
+		"wisp_4"                                                                          "Wisp 4"
+		"wisp_5"                                                                          "Wisp 5"
+		"wisp_6"                                                                          "Wisp 6"
+		"wisp_7"                                                                          "Wisp 7"
+		"wisp_8"                                                                          "Wisp 8"
+		"gold_wisp"                                                                       "Gold Wisp"
+		"gold_mine_1"                                                                     "Gold Mine 1"
+		"gold_mine_2"                                                                     "Gold Mine 2"
+		"gold_mine_3"                                                                     "Gold Mine 3"
+		"gold_mine_4"                                                                     "Gold Mine 4"
+		"gold_mine_5"                                                                     "Gold Mine 5"
+		"gold_mine_6"                                                                     "Gold Mine 6"
+		"gold_mine_7"                                                                     "Gold Mine 7"
+		"gold_mine_8"                                                                     "Gold Mine 8"
+		"weapon_shop"                                                                     "Weapon Shop"
+		"armor_shop"                                                                      "Armor Shop"
+		"hp_shop"                                                                         "HP Shop"
+		"hp_reg_shop"                                                                     "HP Reg Shop"
+		"atk_spd_shop"                                                                    "Atk Spd Shop"
+		"troll_hut_1"                                                                     "Troll Hut 1"
+		"troll_hut_2"                                                                     "Troll Hut 2"
+		"troll_hut_3"                                                                     "Troll Hut 3"
+		"troll_hut_4"                                                                     "Troll Hut 4"
+		"troll_hut_5"                                                                     "Troll Hut 5"
+		"troll_hut_6"                                                                     "Troll Hut 6"
+		"troll_hut_7"                                                                     "Troll Hut 7"
+		
+		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
+		"DOTA_Tooltip_modifier_gain_gold_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_gain_gold_team"                                            "Gain Gold Team"
+		"DOTA_Tooltip_modifier_gain_gold_team_Description"                                ""
+
+		"DOTA_Tooltip_modifier_truesight_datadriven"                                      "Truesight Datadriven"
+		"DOTA_Tooltip_modifier_truesight_datadriven_Description"                          ""
+
+		"DOTA_Tooltip_modifier_truesight_reveal"                                          "Truesight Reveal"
+		"DOTA_Tooltip_modifier_truesight_reveal_Description"                              ""
+
+		"DOTA_Tooltip_modifier_teleportation"                                             "Teleportation"
+		"DOTA_Tooltip_modifier_teleportation_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_builder_repairing"                                         "Builder Repairing"
+		"DOTA_Tooltip_modifier_builder_repairing_Description"                             ""
+
+		"DOTA_Tooltip_modifier_repairing_building"                                        "Repairing Building"
+		"DOTA_Tooltip_modifier_repairing_building_Description"                            ""
+
+		"DOTA_Tooltip_modifier_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_Description"                              ""
+		
+		"DOTA_Tooltip_modifier_gathering_lumber_1"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_1_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_6"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_6_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_256"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_256_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_1296"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_1296_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_Description"                              ""
+		
+		"DOTA_Tooltip_ability_gathering_lumber_1"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_1_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_6"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_6_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_36"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_36_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_216"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_216_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_1296"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_1296_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_Description"                              ""
+		"DOTA_Tooltip_modifier_gold_mine"                                                 "Gold Mine"
+		"DOTA_Tooltip_modifier_gold_mine_Description"                                     ""
+
+		"DOTA_Tooltip_fountain_regen"                                                     "Fountain Regen"
+		"DOTA_Tooltip_fountain_regen_Description"                                         ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven"                                  "Darkness Aura Datadriven"
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven_Description"                      ""
+
+		"DOTA_Tooltip_modifier_darkness_datadriven"                                       "Darkness Datadriven"
+		"DOTA_Tooltip_modifier_darkness_datadriven_Description"                           ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_ability_building"                                           "Ability Building"
+		"DOTA_Tooltip_ability_ability_building_Description"                               ""
+
+		"DOTA_Tooltip_ability_max_building_level"                                         "Max building level"
+		"DOTA_Tooltip_ability_max_building_level_Description"                             "This ability does nothing, it's just here, so the hotkeys don't get messed up."
+
+		"DOTA_Tooltip_ability_ability_tower"                                              "Ability Tower"
+		"DOTA_Tooltip_ability_ability_tower_Description"                                  ""
+
+		"DOTA_Tooltip_ability_dummy_tree"                                                 "Dummy Tree"
+		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
+
+		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
+		"DOTA_Tooltip_ability_build_tent_Description"                                     "Build tent to gain gold every second. Can build only one. "
+		"DOTA_Tooltip_ability_build_tent_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_build_tent_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_2"                                          "Upgrade To Tent 2"
+		"DOTA_Tooltip_ability_upgrade_to_tent_2_Description"                              "Upgrade your tent! X1:2 or X2:4 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_3"                                          "Upgrade To Tent 3"
+		"DOTA_Tooltip_ability_upgrade_to_tent_3_Description"                              "Upgrade your tent! X1:4 or X2:8 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_4"                                          "Upgrade To Tent 4"
+		"DOTA_Tooltip_ability_upgrade_to_tent_4_Description"                              "Upgrade your tent! X1:8 or X2:16 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_5"                                          "Upgrade To Tent 5"
+		"DOTA_Tooltip_ability_upgrade_to_tent_5_Description"                              "Upgrade your tent! X1:16 or X2:32 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_6"                                          "Upgrade To Tent 6"
+		"DOTA_Tooltip_ability_upgrade_to_tent_6_Description"                              "Upgrade your tent! X1:32 or X2:64 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_7"                                          "Upgrade To Tent 7"
+		"DOTA_Tooltip_ability_upgrade_to_tent_7_Description"                              "Upgrade your tent! X1:64 or X2:128 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1"                                      "Upgrade To Barracks 1"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1_Description"                          "Upgrade your tent! X1:128 or X2:256 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2"                                      "Upgrade To Barracks 2"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2_Description"                          "Upgrade your barracks! X1:256 or X2:512 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3"                                      "Upgrade To Barracks 3"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3_Description"                          "Upgrade your barracks! X1:512 or X2:1024 gold per/sec"
+
+		"DOTA_Tooltip_ability_gain_gold"                                                  "Gain Gold"
+		"DOTA_Tooltip_ability_gain_gold_Description"                                      "Gives certain amount of gold every second"
+
+		"DOTA_Tooltip_ability_build_rock_1"                                                 "Build Rock"
+		"DOTA_Tooltip_ability_build_rock_1_Description"                                     "Build rock. Use this to block troll's way from entering your base. Make sure to center it! "
+		"DOTA_Tooltip_ability_build_rock_1_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_build_rock_1_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_2"                                          "Upgrade To Rock 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_2_Description"                              "Upgrade your rock!<br>HP:70<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_3"                                          "Upgrade To Rock 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_3_Description"                              "Upgrade your rock!<br>HP:110<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_4"                                          "Upgrade To Rock 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_4_Description"                              "Upgrade your rock!<br>HP:170<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_5"                                          "Upgrade To Rock 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_5_Description"                              "Upgrade your rock!<br>HP:210<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_6"                                    "Upgrade To Ultra Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_6_Description"                        "Upgrade your rock!<br>HP:320<br>ARMOR:1"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_7"                                    "Upgrade To Ultra Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_7_Description"                        "Upgrade your ultra wall!<br>HP:640<br>ARMOR:1"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_8"                                    "Upgrade To Ultra Wall 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_8_Description"                        "Upgrade your ultra wall!<br>HP:1280<br>ARMOR:3"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_9"                                    "Upgrade To Ultra Wall 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_9_Description"                        "Upgrade your ultra wall!<br>HP:2560<br>ARMOR:4"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_10"                                    "Upgrade To Ultra Wall 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_10_Description"                        "Upgrade your ultra wall!<br>HP:5120<br>ARMOR:5"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_11"                                  "Upgrade To Demonic Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_11_Description"                      "Upgrade your ultra wall!<br>HP:10240<br>ARMOR:6"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_12"                                  "Upgrade To Demonic Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_12_Description"                      "Upgrade your demonic wall!<br>HP:20480<br>ARMOR:7"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_13"                                  "Upgrade To Demonic Wall 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_13_Description"                      "Upgrade your demonic wall!<br>HP:40960<br>ARMOR:8"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_14"                                  "Upgrade To Demonic Wall 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_14_Description"                      "Upgrade your demonic wall!<br>HP:81920<br>ARMOR:10"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_15"                                  "Upgrade To Demonic Wall 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_15_Description"                      "Upgrade your demonic wall!<br>HP:163840<br>ARMOR:12"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_16"                                   "Dragon Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_16_Description"                       "Upgrade your demonic wall!<br>HP:327680<br>ARMOR:14"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_17"                                   "Dragon Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_17_Description"                       "Upgrade your dragon wall!<br>HP:655360<br>ARMOR:38"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_18"                              "Golden Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_18_Description"                  "Upgrade your dragon wall!<br>HP:999999<br>ARMOR:128"
+		
+		"DOTA_Tooltip_ability_upgrade_to_rock_19"                              "Water Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_19_Description"                  "Upgrade your dragon wall!<br>HP:999999<br>ARMOR:192"
+
+		"DOTA_Tooltip_ability_build_tower_1"                                              "Build Tower 1"
+		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "Build tower to defend yourself from the mighty troll!<br>Damage: 1"
+		"DOTA_Tooltip_ability_build_tower_1_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_build_tower_1_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_2"                                         "Upgrade To Tower 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_2_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 2"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_3"                                         "Upgrade To Tower 3"
+		"DOTA_Tooltip_ability_upgrade_to_tower_3_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 4"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_4"                                         "Upgrade To Tower 4"
+		"DOTA_Tooltip_ability_upgrade_to_tower_4_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 8"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_5"                                         "Upgrade To Tower 5"
+		"DOTA_Tooltip_ability_upgrade_to_tower_5_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 16"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_6"                                         "Upgrade To Tower 6"
+		"DOTA_Tooltip_ability_upgrade_to_tower_6_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 32"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_7"                                         "Upgrade To Tower 7"
+		"DOTA_Tooltip_ability_upgrade_to_tower_7_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 64"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_8"                                         "Upgrade To Tower 8"
+		"DOTA_Tooltip_ability_upgrade_to_tower_8_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 128"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_9"                                         "Upgrade To Tower 9"
+		"DOTA_Tooltip_ability_upgrade_to_tower_9_Description"                             "Upgrade your tower to improve your defence!<br>Damage: 1024-2048"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_10"                                        "Upgrade To Tower 10 lvl 1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 2048-4096"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1"                                        "Upgrade To Tower 10 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 1-10240"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_11"                                        "Upgrade To Tower 11 lvl 1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 40960"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_1"                                        "Upgrade To Tower 11 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_1_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 256000"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_12"                                        "Upgrade To Tower 12"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 81920"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_13"                                        "Upgrade To Tower 13"
+		"DOTA_Tooltip_ability_upgrade_to_tower_13_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 500100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_14"                                        "Upgrade To Tower 14"
+		"DOTA_Tooltip_ability_upgrade_to_tower_14_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 600100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_15"                                        "Upgrade To Tower 15 lvl  1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 700100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_1"                                      "Upgrade To Tower 15 lvl  2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_1_Description"                          "Upgrade your tower to improve your defence!<br>Damage: 700100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_16"                                        "Upgrade To Tower 16"
+		"DOTA_Tooltip_ability_upgrade_to_tower_16_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 800100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_17"                                        "Upgrade To Tower 17"
+		"DOTA_Tooltip_ability_upgrade_to_tower_17_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 900100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_18"                                        "Upgrade To Tower 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_18_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 999999"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_19"                                        "Upgrade To Tower 19 lvl 1 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_Description"                            "Upgrade your tower to anger the Troll!<br>NO DAMAGE!!!<br>The troll will receive a strong buff!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_1"                                      "Upgrade To Tower 19 lvl 2 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_1_Description"                          "Upgrade your tower to anger the Troll!<br>NO DAMAGE!!!<br>The troll will receive a strong buff!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_2"                                      "Upgrade To Tower 19 lvl 3 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_2_Description"                          "Upgrade your tower to anger the Troll!<br>NO DAMAGE!!!<br>The troll will receive a strong buff!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_20"                                        "Upgrade To End Game Tower "
+		"DOTA_Tooltip_ability_upgrade_to_tower_20_Description"                            "Upgrade your tower to win the game! "
+
+
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "Upgrade To True Sight Tower"
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower_Description"                    "Upgrade your tower to true sight tower, which reveals invisible units around itself.. "
+
+		"DOTA_Tooltip_ability_build_trader_1"                                             "Build Trader 1"
+		"DOTA_Tooltip_ability_build_trader_1_Description"                                 "Build Trader to exchange lumber-gold! "
+		"DOTA_Tooltip_ability_build_trader_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_build_trader_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_2"                                        "Upgrade To Trader 2"
+		"DOTA_Tooltip_ability_upgrade_to_trader_2_Description"                            "Improve your trader! "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_3"                                        "Upgrade To Trader 3"
+		"DOTA_Tooltip_ability_upgrade_to_trader_3_Description"                            "Improve your trader! "
+
+		"DOTA_Tooltip_ability_build_workers_guild"                                        "Build Workers Guild"
+		"DOTA_Tooltip_ability_build_workers_guild_Description"                            "You can hire workers here! "
+		"DOTA_Tooltip_ability_build_workers_guild_gold_cost"                              "GOLD COST: "
+		"DOTA_Tooltip_ability_build_workers_guild_lumber_cost"                            "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_mother_of_nature"                                                  "Build Mother of Nature"
+		"DOTA_Tooltip_ability_build_mother_of_nature_Description"                                      "Mother of nature produces wisps which can harvest trees! "
+		"DOTA_Tooltip_ability_build_mother_of_nature_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_build_mother_of_nature_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_research_lab"                                         "Build Research Lab 1"
+		"DOTA_Tooltip_ability_build_research_lab_Description"                             "Build research laboratory. It is necessary to improve your towers to a better level! "
+		"DOTA_Tooltip_ability_build_research_lab_gold_cost"                               "GOLD COST: "
+		"DOTA_Tooltip_ability_build_research_lab_lumber_cost"                             "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_2"                                         "Upgrade Research Lab 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_2_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_3"                                         "Upgrade Research Lab 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_3_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4"                                         "Upgrade Research Lab 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_true_sight_ability"                                         "True Sight Ability"
+		"DOTA_Tooltip_ability_true_sight_ability_Description"                             "Gives true sight around. Ability radius 1100."
+		"DOTA_Tooltip_ability_true_sight_ability_radius"                                  "RADIUS: "
+		
+		"DOTA_Tooltip_ability_tower_atk_spd"												"Practise aim"
+		"DOTA_Tooltip_ability_tower_atk_spd_Description"									"Provides bonus attack speed with every hit. The bonus attack speed debuff lasts 10seconds on the enemy after the last auto attack hit him. <br/>Bonus attack speed: 7/15/22/27/32/49/56/61/65/70"
+		
+		"DOTA_Tooltip_ability_tower_frost_slow"												"Ice arrow"
+		"DOTA_Tooltip_ability_tower_frost_slow_Description"									"Tower's arrows become cold thus slowing the enemies on attacks by 1% move speed and 7(not percent) attack speed.Stacks with other ice arrows.One stack lasts 3 seconds."
+
+		"DOTA_Tooltip_ability_tower_poison"													"Venom"
+		"DOTA_Tooltip_ability_tower_poison_Description"	    								"Each hit places a debuff on an enemy that reduces 5\% of his original HP Regen. Each stack lasts 3 seconds.HP Regen cannot get below 0."
+		
+		"DOTA_Tooltip_modifier_poison_attack"												"Each stack reduces 5\% of original hp regen"
+		
+		"DOTA_Tooltip_ability_tower_poison_2"													"Venom"
+		"DOTA_Tooltip_ability_tower_poison_2_Description"	    								"Each hit places a debuff on an enemy that reduces 5\% of his original HP Regen. Each stack lasts 6 seconds.HP Regen cannot get below 0."
+
+
+		"DOTA_Tooltip_modifier_poison_target"                                             "nothing"
+		"DOTA_Tooltip_modifier_poison_target_Description"                                 "gadfds"
+
+		"DOTA_Tooltip_modifier_poison_counter"                                             "Venom"
+		"DOTA_Tooltip_modifier_poison_counter_Description"                                 "Each stack reduces 5\% of original hp regen"
+		
+		"DOTA_Tooltip_modifier_dark_lord_presence"                                         "Nevermore"
+		"DOTA_Tooltip_modifier_dark_lord_presence_Description"                             "Aura -1500  amor"
+
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven"                                         		"Nevermore"
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_Description"                             	"Aura -1500  amor"
+		
+		"DOTA_Tooltip_modifier_dark_lord_presence_2"                                         "Nevermore"
+		"DOTA_Tooltip_modifier_dark_lord_presence_2_Description"                             "Aura -3065  amor"
+
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_2"                                         		"Nevermore"
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_2_Description"                             	"Aura -3065  amor"
+		
+		"DOTA_Tooltip_modifier_psi_blades"                                         		   "Templar"
+		"DOTA_Tooltip_modifier_psi_blades_Description"                             		   "Psi Blades.  Deals 5000 pure damage to a second target."
+		
+		"DOTA_Tooltip_modifier_dragon_blood_datadriven_effect"                             "Vengeful Spirit"
+		"DOTA_Tooltip_modifier_dragon_blood_datadriven_effect_Description"                 "Attack radius +45. Ability radius 700."
+
+		"DOTA_Tooltip_ability_dragon_blood_datadriven"                            			 "Vengeful Spirit"
+		"DOTA_Tooltip_ability_dragon_blood_datadriven_Description"                			 "Attack radius +45. Ability radius 700."
+		
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven"                           "Phantom Assassin"
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven_Description"               "Critical loss of 1000%. Chance of 13%"
+
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven"                           "Phantom Assassin"
+		"DOTA_Tooltip_ability_phantom_phantom_assassin_coup_de_grace_datadriven_Description"               "Critical loss of 1000%. Chance of 13%"		
+		
+		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven"								"Templar"
+		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven_Description"					"Psi Blades. Deals 5000 pure damage to a second target."
+		
+		"DOTA_Tooltip_modifier_fury_swipes2_caster_datadriven"                             "Ursa"
+		"DOTA_Tooltip_modifier_fury_swipes2_caster_datadriven_Description"                 "20 pure damage per hit. 6 seconds work"
+		
+		"DOTA_Tooltip_ability_ursa_fury_swipes2_datadriven"                             "Ursa"
+		"DOTA_Tooltip_ability_ursa_fury_swipes2_datadriven_Description"                 "20 pure damage per hit. 6 seconds work"
+
+		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven"                  "Buff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven_Description"      "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."
+
+		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven"                  "Buff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven_Description"      "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_presence"							  "Buff Troll"
+		"DOTA_Tooltip_modifier_troll_warlord_presence_Description"				  "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."
+		
+		"DOTA_Tooltip_modifier_weave_friendly_datadriven"							"Shadow Wave"
+		"DOTA_Tooltip_modifier_weave_friendly_datadriven_Description"				"+1 defense per second for allies. -50 defense for enemies. Lasts 20 seconds."
+		
+		"DOTA_Tooltip_modifier_weave_enemy_datadriven"								"Shadow Wave"
+		"DOTA_Tooltip_modifier_weave_enemy_datadriven_Description"					"+1 defense per second for allies. -50 defense for enemies. Lasts 20 seconds."
+		
+		"DOTA_Tooltip_Ability_weave_datadriven"							"Shadow Wave"
+		"DOTA_Tooltip_Ability_weave_datadriven_Description"				"+1 defense per second for allies. -50 defense for enemies. Lasts 20 seconds."
+		
+		"DOTA_Tooltip_Ability_shallow_grave_datadriven"								"Shallow Grave"
+		"DOTA_Tooltip_Ability_shallow_grave_datadriven_Description"					"Grants immortality for 6 seconds."
+		
+		"DOTA_Tooltip_modifier_shallow_grave_datadrive"								"Shallow Grave"
+		"DOTA_Tooltip_modifier_shallow_grave_datadrive_Description"					"Grants immortality for 6 seconds."
+		
+		"DOTA_Tooltip_modifier_shallow_grave_datadriven"							"Shallow Grave"
+		"DOTA_Tooltip_modifier_shallow_grave_datadriven_Description"				"Grants immortality for 6 seconds."
+		
+		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven"                  "Buff/Debuff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven_Description"      "Buff/Debuff: Atack speed +600 and Disclosure of visibility."
+
+		"DOTA_Tooltip_ability_troll_warlord_attack_presence_datadriven"                  "Buff/Debuff"
+		"DOTA_Tooltip_ability_troll_warlord_attack_presence_datadriven_Description"      "Buff/Debuff: Atack speed +600 and Disclosure of visibility."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_attack_presence"							  "Buff/Debuff"
+		"DOTA_Tooltip_modifier_troll_warlord_attack_presence_Description"				  "Buff/Debuff: Atack speed +600 and Disclosure of visibility."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_attack_speed"									"Buff/Debuff: Atack speed +600 and Disclosure of visibility."
+		"DOTA_Tooltip_modifier_troll_warlord_anti"											"Buff/Debuff: Atack speed +600 and Disclosure of visibility."
+		
+
+		"DOTA_Tooltip_ability_heartstopper_aura_datadriven"                  	 "End Game"
+		"DOTA_Tooltip_ability_heartstopper_aura_datadriven_Description"     	 "End Game."
+
+		"DOTA_Tooltip_ability_heartstopper_debuff_datadriven"                  	 "End Game"
+		"DOTA_Tooltip_ability_heartstopper_debuff_datadriven_Description"     	 "End Game."
+
+		"DOTA_Tooltip_modifier_buff_counter"                             				   "Root buff"
+		"DOTA_Tooltip_modifier_buff_counter_Description"                				   "1 stack - 4 sec. 2 stack - 3 sec. 3 stack - 1.5 sec. +4 stack - 1 sec Roots"
+	
+		"DOTA_Tooltip_ability_buy_lumber_10"                                              "Buy Lumber 10"
+		"DOTA_Tooltip_ability_buy_lumber_10_Description"                                  "Buy 10 lumber! Lumber is used for building/upgrading advanced buildings. Purchasing lumber increases lumber's price. The price is shown below your resources. "
+
+		"DOTA_Tooltip_ability_buy_lumber_200"                                             "Buy Lumber 200"
+		"DOTA_Tooltip_ability_buy_lumber_200_Description"                                 "Buy 200 lumber! Lumber is used for building/upgrading advanced buildings. Purchasing lumber increases lumber's price. The price is shown below your resources. "
+
+		"DOTA_Tooltip_ability_sell_lumber_10"                                             "Sell Lumber 10"
+		"DOTA_Tooltip_ability_sell_lumber_10_Description"                                 "Sell 10 lumber! Selling lumber decreases lumber's price. The price is shown below your resources. "
+
+		"DOTA_Tooltip_ability_sell_lumber_200"                                            "Sell Lumber 200"
+		"DOTA_Tooltip_ability_sell_lumber_200_Description"                                "Sell 200 lumber! Selling lumber decreases lumber's price. The price is shown below your resources. "
+
+		"DOTA_Tooltip_ability_reveal_area"                                                "Reveal Area"
+		"DOTA_Tooltip_ability_reveal_area_Description"                                    "Reveals 2600(1500 in Standart/Arena map) radius for 10 seconds. Great for scouting enemy bases! Makes enemy units unable to become invisible for the duration. "
+
+		"DOTA_Tooltip_ability_troll_invis"                                                "Troll Invis"
+		"DOTA_Tooltip_ability_troll_invis_Description"                                    "Become invisible to move around the map quicker or to escape your death! "
+
+		"DOTA_Tooltip_ability_troll_teleport"                                             "Troll Teleport"
+		"DOTA_Tooltip_ability_troll_teleport_Description"                                 "Teleport to base or your companions to move around faster! "
+
+		"DOTA_Tooltip_ability_attack_gold"                                                "Attack Gold"
+		"DOTA_Tooltip_ability_attack_gold_Description"                                    "Gives gold every time you deal damage to an enemy"
+		
+		"DOTA_Tooltip_ability_monkey_king"											"True strike."
+		"DOTA_Tooltip_ability_monkey_king_Description"  							"Ignores Angel Evasion."
+		
+		"DOTA_Tooltip_ability_treant_debuff"											"Treant Protector."
+		"DOTA_Tooltip_ability_treant_debuff_Description"  								"You were supposed to fight the evil, not become one of them!!! You were cursed by the mighty Treant Protector and your health regeneration does not work."
+		
+		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven"						"Teddy bear"
+		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven_Description"			"Creates a tame bear that fights by your side. If the bear died, then you will lose 99.9% HP and will be able to revive the bear in 6 minutes, and the bear itself will lose all its items. The skill becomes active after purchasing a level 7 Troll hut and if there are no wolves in the team."
+		
+		"DOTA_Tooltip_modifier_shrapnel_stack_counter_datadriven"							"Number of charges"
+		
+		"DOTA_Tooltip_ability_repair"                                                     "Repair"
+		"DOTA_Tooltip_ability_repair_Description"                                         "Repair your buildings!<br>Right click to auto-cast."
+		
+		"DOTA_Tooltip_ability_commit_suicide"											  "Commit Suicide"
+		"DOTA_Tooltip_ability_commit_suicide_Description"								  "Use this ability to commit suicide. Cannot be used when enemies are nearby! "
+		
+		"DOTA_Tooltip_ability_gather_lumber"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_8"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_8_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_4_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_2_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_1_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_6"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_6_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_6_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_36"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_36_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_36_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_216"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_216_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_216_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_1296"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_1296_Description"                                "Use this ability on a tree. Gives 'Lumber amount' every 'Gather interval' seconds. A tree can only be occupied by one Wisp! "
+		"DOTA_Tooltip_ability_gather_lumber_1296_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_train_worker_1"                                             "Train Worker 1"
+		"DOTA_Tooltip_ability_train_worker_1_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_1_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_1_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_1_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_2"                                             "Train Worker 2"
+		"DOTA_Tooltip_ability_train_worker_2_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_2_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_2_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_2_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_3"                                             "Train Worker 3"
+		"DOTA_Tooltip_ability_train_worker_3_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_3_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_3_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_3_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_4"                                             "Train Worker 4"
+		"DOTA_Tooltip_ability_train_worker_4_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_4_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_4_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_4_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_5"                                             "Train Worker 5"
+		"DOTA_Tooltip_ability_train_worker_5_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_5_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_5_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_5_unit_count"                                  "UNIT COUNT: "
+		
+		"DOTA_Tooltip_ability_train_worker_6"                                             "Train Worker 6"
+		"DOTA_Tooltip_ability_train_worker_6_Description"                                 "Train worker. Workers are great for repairing buildings! Repair speed depends on worker's damage. "
+		"DOTA_Tooltip_ability_train_worker_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_6_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_6_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_6_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_attacker_1"                                             "Train Worker 1"
+		"DOTA_Tooltip_ability_train_attacker_1_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_1_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_1_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_1_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_2"                                             "Train Worker 2"
+		"DOTA_Tooltip_ability_train_attacker_2_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_2_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_2_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_2_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_3"                                             "Train Worker 3"
+		"DOTA_Tooltip_ability_train_attacker_3_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_3_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_3_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_3_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_4"                                             "Train Worker 4"
+		"DOTA_Tooltip_ability_train_attacker_4_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_4_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_4_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_4_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_5"                                             "Train Worker 5"
+		"DOTA_Tooltip_ability_train_attacker_5_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_5_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_5_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_5_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_6"                                             "Train Worker 6"
+		"DOTA_Tooltip_ability_train_attacker_6_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_6_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_6_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_6_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_7"                                             "Train Worker 7"
+		"DOTA_Tooltip_ability_train_attacker_7_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_7_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_7_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_7_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_7_unit_count"                                  "UNIT COUNT: "
+		
+		"DOTA_Tooltip_ability_train_attacker_8"                                             "Train Worker 8"
+		"DOTA_Tooltip_ability_train_attacker_8_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_8_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_8_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_8_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_8_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_9"                                             "Train Worker 9"
+		"DOTA_Tooltip_ability_train_attacker_9_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_9_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_9_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_9_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_9_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_10"                                             "Train Worker 10"
+		"DOTA_Tooltip_ability_train_attacker_10_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_10_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_10_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_10_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_10_unit_count"                                  "UNIT COUNT: "
+		
+		
+		"DOTA_Tooltip_ability_train_attacker_11"                                             "Train Worker 11"
+		"DOTA_Tooltip_ability_train_attacker_11_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_11_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_11_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_11_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_11_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_attacker_12"                                             "Train Worker 12"
+		"DOTA_Tooltip_ability_train_attacker_12_Description"                                 "To battle!!! Death to enemy elves! The skin of the Troll will only be ours! "
+		"DOTA_Tooltip_ability_train_attacker_12_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_attacker_12_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_attacker_12_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_attacker_12_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_1"                                               "Train Son of Nature 1"
+		"DOTA_Tooltip_ability_train_wisp_1_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_1_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_2"                                               "Train Son of Nature 2"
+		"DOTA_Tooltip_ability_train_wisp_2_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_2_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_3"                                               "Train Son of Nature 3"
+		"DOTA_Tooltip_ability_train_wisp_3_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_3_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_4"                                               "Train Son of Nature 4"
+		"DOTA_Tooltip_ability_train_wisp_4_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_4_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_5"                                               "Train Son of Nature 5"
+		"DOTA_Tooltip_ability_train_wisp_5_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_5_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_6"                                               "Train Son of Nature 6"
+		"DOTA_Tooltip_ability_train_wisp_6_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_6_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_7"                                               "Train Son of Nature 7"
+		"DOTA_Tooltip_ability_train_wisp_7_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_7_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_8"                                               "Train Son of Nature 8"
+		"DOTA_Tooltip_ability_train_wisp_8_Description"                                   "Train Son of Nature. Son of Nature specialises in gathering lumber! "
+		"DOTA_Tooltip_ability_train_wisp_8_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_gold_wisp"                                            "Train Gold Wisp"
+		"DOTA_Tooltip_ability_train_gold_wisp_Description"                                "Train Gold Wisp. Gold Wisps are able to build additional gold mines, but sacrifice themselves in the process."
+		"DOTA_Tooltip_ability_train_gold_wisp_gold_cost"                                  "GOLD COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_lumber_cost"                                "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_food_cost"                                  "FOOD COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_unit_count"                                 "UNIT COUNT: "
+	
+		"DOTA_Tooltip_ability_reveal_area_radius"                                         "RADIUS: "
+		"DOTA_Tooltip_ability_reveal_area_duration"                                       "DURATION: "
+
+		"DOTA_Tooltip_ability_troll_invis_invis_duration"                                 "INVIS DURATION: "
+		"DOTA_Tooltip_ability_troll_invis_bonus_movement_speed"                           "BONUS MOVEMENT SPEED: "
+		
+		
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_1"                                             "Buy Item Dmg 1"
+		"DOTA_Tooltip_ability_buy_item_dmg_1_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_1_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_2"                                             "Buy Item Dmg 2"
+		"DOTA_Tooltip_ability_buy_item_dmg_2_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_2_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_3"                                             "Buy Item Dmg 3"
+		"DOTA_Tooltip_ability_buy_item_dmg_3_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_3_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_4"                                             "Buy Item Dmg 4"
+		"DOTA_Tooltip_ability_buy_item_dmg_4_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_4_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_5"                                             "Buy Item Dmg 5"
+		"DOTA_Tooltip_ability_buy_item_dmg_5_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_5_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_6"                                             "Buy Item Dmg 6"
+		"DOTA_Tooltip_ability_buy_item_dmg_6_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_6_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_lumber_cost"                                 "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_gold_mine_ability"                                          "Gold Mine Ability"
+		"DOTA_Tooltip_ability_gold_mine_ability_Description"                              ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2"                                     "Upgrade To Troll Hut 2"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3"                                     "Upgrade To Troll Hut 3"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4"                                     "Upgrade To Troll Hut 4"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_5"                                     "Upgrade To Troll Hut 5"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_5_Description"                         "Attack speed +600 and reveals the appearance of a troll."
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_6"                                     "Upgrade To Troll Hut 6"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_6_Description"                         "Allows you to buy a lumber all over the map."
+		
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_7"                                     "Upgrade To Troll Hut 7"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_7_Description"                         "Allows you to create a Bear."
+
+		"DOTA_Tooltip_ability_build_gold_mine_1"                                          "Build Gold Mine 1"
+		"DOTA_Tooltip_ability_build_gold_mine_1_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 8 min/x1 and 4 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_1_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_1_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_2"                                          "Build Gold Mine 2"
+		"DOTA_Tooltip_ability_build_gold_mine_2_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 8 min/x1 and 4 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_2_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_2_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_3"                                          "Build Gold Mine 3"
+		"DOTA_Tooltip_ability_build_gold_mine_3_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 8 min/x1 and 4 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_3_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_3_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_4"                                          "Build Gold Mine 4"
+		"DOTA_Tooltip_ability_build_gold_mine_4_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 8 min/x1 and 4 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_4_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_4_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_5"                                          "Build Gold Mine 5"
+		"DOTA_Tooltip_ability_build_gold_mine_5_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 8 min/x1 and 4 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_5_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_5_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_6"                                          "Build Gold Mine 6"
+		"DOTA_Tooltip_ability_build_gold_mine_6_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 16 min/x1 and 8 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_6_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_6_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_7"                                          "Build Gold Mine 7"
+		"DOTA_Tooltip_ability_build_gold_mine_7_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 4 min/x1 and 2 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_7_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_7_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_8"                                          "Build Gold Mine 8"
+		"DOTA_Tooltip_ability_build_gold_mine_8_Description"                              "Gold mine gives gold like a tent, but you can build as many as you like and it expires after 2 min/x1 and 1 min/x2."
+		"DOTA_Tooltip_ability_build_gold_mine_8_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_8_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_troll_range"                                                "Troll Range"
+		"DOTA_Tooltip_ability_troll_range_Description"                                    ""
+		
+		"DOTA_Tooltip_ability_gather_lumber_36_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_6_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_216_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_1296_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_7"                                             "Buy Sword Lv 7"
+		"DOTA_Tooltip_ability_buy_item_dmg_7_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_8"                                             "Buy Sword Lv 8"
+		"DOTA_Tooltip_ability_buy_item_dmg_8_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_9"                                             "Buy Sword Lv 9"
+		"DOTA_Tooltip_ability_buy_item_dmg_9_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_10"                                            "Buy Sword Lv 10"
+		"DOTA_Tooltip_ability_buy_item_dmg_10_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_11"                                            "Buy Sword Lv 11"
+		"DOTA_Tooltip_ability_buy_item_dmg_11_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_12"                                            "Buy Sword Lv 12"
+		"DOTA_Tooltip_ability_buy_item_dmg_12_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_13"                                            "Buy Sword Lv 13"
+		"DOTA_Tooltip_ability_buy_item_dmg_13_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_1"                                           "Buy Armor Lv 1"
+		"DOTA_Tooltip_ability_buy_item_armor_1_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_2"                                           "Buy Armor Lv 2"
+		"DOTA_Tooltip_ability_buy_item_armor_2_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_3"                                           "Buy Armor Lv 3"
+		"DOTA_Tooltip_ability_buy_item_armor_3_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_4"                                           "Buy Armor Lv 4"
+		"DOTA_Tooltip_ability_buy_item_armor_4_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_5"                                           "Buy Armor Lv 5"
+		"DOTA_Tooltip_ability_buy_item_armor_5_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_6"                                           "Buy Armor Lv 6"
+		"DOTA_Tooltip_ability_buy_item_armor_6_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_7"                                           "Buy Armor Lv 7"
+		"DOTA_Tooltip_ability_buy_item_armor_7_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_8"                                           "Buy Armor Lv 8"
+		"DOTA_Tooltip_ability_buy_item_armor_8_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_9"                                           "Buy Armor Lv 9"
+		"DOTA_Tooltip_ability_buy_item_armor_9_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_10"                                          "Buy Armor Lv 10"
+		"DOTA_Tooltip_ability_buy_item_armor_10_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_11"                                          "Buy Armor Lv 11"
+		"DOTA_Tooltip_ability_buy_item_armor_11_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_12"                                          "Buy Armor Lv 12"
+		"DOTA_Tooltip_ability_buy_item_armor_12_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_13"                                          "Buy Armor of God"
+		"DOTA_Tooltip_ability_buy_item_armor_13_Description"                              "HP: 199500<br>REGEN: 10000"
+
+		"DOTA_Tooltip_ability_buy_item_hp_1"                                              "Buy HP  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_1_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_2"                                              "Buy HP  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_2_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_3"                                              "Buy HP  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_3_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_4"                                              "Buy HP  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_4_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_5"                                              "Buy HP  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_5_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_6"                                              "Buy HP  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_6_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_7"                                              "Buy HP  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_7_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_8"                                              "Buy HP  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_8_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_9"                                              "Buy HP  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_9_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_10"                                             "Buy HP  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_10_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_11"                                             "Buy HP  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_11_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_12"                                             "Buy HP  Lv 12"
+		"DOTA_Tooltip_ability_buy_item_hp_12_Description"                                 ""   
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1"                                          "Buy HP Reg.  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2"                                          "Buy HP Reg.  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3"                                          "Buy HP Reg.  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4"                                          "Buy HP Reg.  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5"                                          "Buy HP Reg.  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6"                                          "Buy HP Reg.  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7"                                          "Buy HP Reg.  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8"                                          "Buy HP Reg.  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9"                                          "Buy HP Reg.  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10"                                         "Buy HP Reg.  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11"                                         "Buy HP Reg.  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11_Description"                             ""
+		
+		"DOTA_Tooltip_ability_buy_item_hp_reg_12"                                         "Buy HP Reg.  Lv 12"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_12_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1"                                         "Buy Atk. Speed Lv 1"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2"                                         "Buy Atk. Speed Lv 2"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3"                                         "Buy Atk. Speed Lv 3"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4"                                         "Buy Atk. Speed Lv 4"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5"                                         "Buy Atk. Speed Lv 5"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6"                                         "Buy Atk. Speed Lv 6"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6_Description"                             ""
+		
+		"DOTA_Tooltip_ability_buy_item_troll_boots"                                         "Buy Troll Boots"
+		"DOTA_Tooltip_ability_buy_item_troll_boots_Description"                             ""
+		
+		
+		"DOTA_Tooltip_ability_buy_item_disable_repair"                                                "Buy No Hammer Time! Level 1!"
+		"DOTA_Tooltip_ability_buy_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable! Lasts for 5 seconds. "
+
+		"DOTA_Tooltip_ability_buy_item_disable_repair_2"                                                "Buy No Hammer Time! Level 2!"
+		"DOTA_Tooltip_ability_buy_item_disable_repair_2_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable! Lasts for 5.5 seconds. Uses a neutral slot. Cannot be sold. Removed after death!"
+
+		"DOTA_Tooltip_ability_fountain_ability"                                           "Fountain Ability"
+		"DOTA_Tooltip_ability_fountain_ability_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_lumber_1"                                               "Buy Lumber"
+		"DOTA_Tooltip_ability_buy_lumber_1_Description"                                   "Buy 1 lumber for 64000 gold"
+
+		"DOTA_Tooltip_ability_buy_lumber_8"                                               "Buy 8 Lumber"
+		"DOTA_Tooltip_ability_buy_lumber_8_Description"                                   "Buy 8 lumber for 512000 gold"
+
+		"DOTA_Tooltip_ability_sell_lumber_1"                                              "Sell Lumber"
+		"DOTA_Tooltip_ability_sell_lumber_1_Description"                                  "Sell 1 lumber for 64000 gold"
+
+		"DOTA_Tooltip_ability_sell_lumber_8"                                              "Sell 8 Lumber"
+		"DOTA_Tooltip_ability_sell_lumber_8_Description"                                  "Sell 8 lumber for 512000 gold"
+
+		
+		"DOTA_Tooltip_ability_steal_gold"                                                 "Steal Gold"
+		"DOTA_Tooltip_ability_steal_gold_Description"                                     "Steals gold from troll. Can be used only on troll's hut! Works after 5 minutes!"
+
+		"DOTA_Tooltip_ability_stand_invis"                                                "Stealth"
+		"DOTA_Tooltip_ability_stand_invis_Description"                                    "Day Angel - Night Devil. Channels up for 2 seconds to become invisible. Any kind of movement will cancel invisibility. Works only at night. "
+
+		"DOTA_Tooltip_ability_cm_stun"                                                    "Stun"
+		"DOTA_Tooltip_ability_cm_stun_Description"                                        "Stuns the enemy for 2 seconds. "
+
+		"DOTA_Tooltip_ability_cm_haste"                                                   "Haste"
+		"DOTA_Tooltip_ability_cm_haste_Description"                                       "Increases your movement speed to the maximum. 100% evasion from wolves, but not from the Troll."
+
+		"DOTA_Tooltip_ability_cm_heal_building"                                           "Heal Building"
+		"DOTA_Tooltip_ability_cm_heal_building_Description"                               "Use this ability on the building to heal it. Restores 300 Health or 30% - whichever is bigger. For ability cooldown duration the building receives a debuff that makes other angel heals heal 3 times less. "
+
+		"DOTA_Tooltip_ability_invul_ability"                                              "Invulnerability"
+		"DOTA_Tooltip_ability_invul_ability_Description"                                  "Makes this unit invulnerable. "
+
+
+		// ***********************************************
+		// ******************** ITEMS ********************
+		// ***********************************************
+		
+		"DOTA_Tooltip_ability_item_building_destroy"                                      "Destroy Building"
+		"DOTA_Tooltip_ability_item_building_destroy_Description"                          "Destroy building. You do not get your resources back, cannot destroy if enemy is nearby! "
+
+		"DOTA_Tooltip_ability_item_building_cancel"                                       "Building Cancel"
+		"DOTA_Tooltip_ability_item_building_cancel_Description"                           "Cancel building"
+
+		"DOTA_Tooltip_ability_item_blink_datadriven"									  "Blink"
+		"DOTA_Tooltip_ability_item_blink_datadriven_Description"						  "Blink away from the mighty troll.<br/>Max range: 1200"
+
+		"DOTA_Tooltip_ability_item_root_ability"                                          "Root"
+		"DOTA_Tooltip_ability_item_root_ability_Description"                              "Roots the troll.<br/>The troll is unable to move and is visible throughout the duration, but still can cast spells. "
+
+		"DOTA_Tooltip_ability_item_silence_ability"                                       "Silence"
+		"DOTA_Tooltip_ability_item_silence_ability_Description"                           "Silences the troll.<br/>He still can move but cannot cast any spells. "
+
+		"DOTA_Tooltip_ability_item_glyph_ability"                                         "Glyph"
+		"DOTA_Tooltip_ability_item_glyph_ability_Description"                             "Makes the target invulnerable. "
+
+		"DOTA_Tooltip_ability_item_night_ability"                                         "Day?Nope"
+		"DOTA_Tooltip_ability_item_night_ability_Description"                             "Oh the sun is shining, the birds are singing. . . What?Night?Now?Why?I guess I'll have to accept this and move on. "
+		"DOTA_Tooltip_ability_item_night_ability_duration"                                "DURATION: "
+		"DOTA_Tooltip_ability_item_night_ability_blind_percentage"                        "BLIND PERCENTAGE: "
+		"DOTA_Tooltip_ability_item_night_ability_radius"                                  "RADIUS: "
+
+
+		"DOTA_Tooltip_ability_item_dmg_1"                                                 "Dmg 1"
+		"DOTA_Tooltip_ability_item_dmg_1_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_1_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_1_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_1_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_2"                                                 "Dmg 2"
+		"DOTA_Tooltip_ability_item_dmg_2_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_2_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_2_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_2_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_3"                                                 "Dmg 3"
+		"DOTA_Tooltip_ability_item_dmg_3_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_3_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_3_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_3_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_4"                                                 "Dmg 4"
+		"DOTA_Tooltip_ability_item_dmg_4_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_4_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_4_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_4_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_5"                                                 "Dmg 5"
+		"DOTA_Tooltip_ability_item_dmg_5_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_5_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_5_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_5_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_6"                                                 "Dmg 6"
+		"DOTA_Tooltip_ability_item_dmg_6_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_6_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_6_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_6_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_7"                                                 "Dmg 7"
+		"DOTA_Tooltip_ability_item_dmg_7_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_7_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_7_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_7_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_8"                                                 "Dmg 8"
+		"DOTA_Tooltip_ability_item_dmg_8_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_8_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_8_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_8_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_9"                                                 "Dmg 9"
+		"DOTA_Tooltip_ability_item_dmg_9_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_9_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_9_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_9_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_10"                                                "Dmg 10"
+		"DOTA_Tooltip_ability_item_dmg_10_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_10_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_10_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_10_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_11"                                                "Dmg 11"
+		"DOTA_Tooltip_ability_item_dmg_11_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_11_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_11_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_11_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_12"                                                "Dmg 12"
+		"DOTA_Tooltip_ability_item_dmg_12_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_12_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_12_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_12_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_13"                                                "Dmg 13"
+		"DOTA_Tooltip_ability_item_dmg_13_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_13_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_13_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_13_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_1"                                               "Armor 1"
+		"DOTA_Tooltip_ability_item_armor_1_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_1_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_1_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_1_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_2"                                               "Armor 2"
+		"DOTA_Tooltip_ability_item_armor_2_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_2_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_2_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_2_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_3"                                               "Armor 3"
+		"DOTA_Tooltip_ability_item_armor_3_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_3_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_3_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_3_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_4"                                               "Armor 4"
+		"DOTA_Tooltip_ability_item_armor_4_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_4_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_4_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_4_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_5"                                               "Armor 5"
+		"DOTA_Tooltip_ability_item_armor_5_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_5_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_5_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_5_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_6"                                               "Armor 6"
+		"DOTA_Tooltip_ability_item_armor_6_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_6_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_6_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_6_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_7"                                               "Armor 7"
+		"DOTA_Tooltip_ability_item_armor_7_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_7_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_7_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_7_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_8"                                               "Armor 8"
+		"DOTA_Tooltip_ability_item_armor_8_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_8_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_8_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_8_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_9"                                               "Armor 9"
+		"DOTA_Tooltip_ability_item_armor_9_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_9_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_9_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_9_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_10"                                              "Armor 10"
+		"DOTA_Tooltip_ability_item_armor_10_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_10_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_10_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_10_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_11"                                              "Armor 11"
+		"DOTA_Tooltip_ability_item_armor_11_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_11_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_11_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_11_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_12"                                              "Armor 12"
+		"DOTA_Tooltip_ability_item_armor_12_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_12_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_12_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_12_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_13"                                              "Armor of God"
+		"DOTA_Tooltip_ability_item_armor_13_Description"                                  "HP: 199500<br>REGEN: 10000"
+		"DOTA_Tooltip_ability_item_armor_13_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_13_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_1"                                                  "Hp 1"
+		"DOTA_Tooltip_ability_item_hp_1_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_1_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_1_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_1_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_2"                                                  "Hp 2"
+		"DOTA_Tooltip_ability_item_hp_2_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_2_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_2_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_2_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_3"                                                  "Hp 3"
+		"DOTA_Tooltip_ability_item_hp_3_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_3_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_3_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_3_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_4"                                                  "Hp 4"
+		"DOTA_Tooltip_ability_item_hp_4_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_4_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_4_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_4_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_5"                                                  "Hp 5"
+		"DOTA_Tooltip_ability_item_hp_5_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_5_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_5_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_5_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_6"                                                  "Hp 6"
+		"DOTA_Tooltip_ability_item_hp_6_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_6_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_6_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_6_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_7"                                                  "Hp 7"
+		"DOTA_Tooltip_ability_item_hp_7_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_7_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_7_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_7_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_8"                                                  "Hp 8"
+		"DOTA_Tooltip_ability_item_hp_8_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_8_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_8_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_8_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_9"                                                  "Hp 9"
+		"DOTA_Tooltip_ability_item_hp_9_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_9_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_9_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_9_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_10"                                                 "Hp 10"
+		"DOTA_Tooltip_ability_item_hp_10_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_10_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_10_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_10_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_11"                                                 "Hp 11"
+		"DOTA_Tooltip_ability_item_hp_11_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_11_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_11_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_11_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_12"                                                 "Hp 12"
+		"DOTA_Tooltip_ability_item_hp_12_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_12_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_12_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_12_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_1"                                              "Hp Reg 1"
+		"DOTA_Tooltip_ability_item_hp_reg_1_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_1_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_2"                                              "Hp Reg 2"
+		"DOTA_Tooltip_ability_item_hp_reg_2_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_2_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_3"                                              "Hp Reg 3"
+		"DOTA_Tooltip_ability_item_hp_reg_3_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_3_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_4"                                              "Hp Reg 4"
+		"DOTA_Tooltip_ability_item_hp_reg_4_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_4_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_5"                                              "Hp Reg 5"
+		"DOTA_Tooltip_ability_item_hp_reg_5_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_5_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_6"                                              "Hp Reg 6"
+		"DOTA_Tooltip_ability_item_hp_reg_6_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_6_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_7"                                              "Hp Reg 7"
+		"DOTA_Tooltip_ability_item_hp_reg_7_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_7_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_8"                                              "Hp Reg 8"
+		"DOTA_Tooltip_ability_item_hp_reg_8_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_8_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_9"                                              "Hp Reg 9"
+		"DOTA_Tooltip_ability_item_hp_reg_9_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_9_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_10"                                             "Hp Reg 10"
+		"DOTA_Tooltip_ability_item_hp_reg_10_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_10_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_11"                                             "Hp Reg 11"
+		"DOTA_Tooltip_ability_item_hp_reg_11_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_11_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_12"                                             "Hp Reg 12"
+		"DOTA_Tooltip_ability_item_hp_reg_12_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_12_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_12_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_12_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_1"                                             "Atk Spd 1"
+		"DOTA_Tooltip_ability_item_atk_spd_1_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_1_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_2"                                             "Atk Spd 2"
+		"DOTA_Tooltip_ability_item_atk_spd_2_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_2_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_3"                                             "Atk Spd 3"
+		"DOTA_Tooltip_ability_item_atk_spd_3_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_3_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_4"                                             "Atk Spd 4"
+		"DOTA_Tooltip_ability_item_atk_spd_4_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_4_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_5"                                             "Atk Spd 5"
+		"DOTA_Tooltip_ability_item_atk_spd_5_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_5_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_6"                                             "Atk Spd 6"
+		"DOTA_Tooltip_ability_item_atk_spd_6_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_6_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_lumber_cost"                                 "LUMBER COST: "
+		
+
+		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
+		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Provides bonus movement speed to the carrier. "
+		
+		"DOTA_Tooltip_ability_item_vip"                                           	"Event item"
+		"DOTA_Tooltip_ability_item_vip_Description"                               	"Activate the item and get the season effect. "
+		
+		
+		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
+		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable & lessens the effect of angel heal twice! Lasts for 5 seconds. "
+		"DOTA_Tooltip_ability_item_disable_repair_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_disable_repair_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_disable_repair_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_disable_repair_2"                                                "No Hammer Time! Level 2!"
+		"DOTA_Tooltip_ability_item_disable_repair_2_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable! Lasts for 5.5 seconds. Uses a neutral slot. Cannot be sold. Removed after death!"
+		"DOTA_Tooltip_ability_item_disable_repair_2_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_disable_repair_2_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_disable_repair_2_lumber_cost"                                    "LUMBER COST: "
+	
+        "topptext"                                      									"The best players in the overall ranking: "
+        "topwtext"                                      									"The best players for the Elf: "
+        "tophtext"                                      									"The best players for the Troll: "
+		
+		"summer"                                          										"Awarded for participating in a Summer event."
+		"patron7"                                          										"Level 7 Donation. Available to seventh level donater or higher."
+		"tester"                                          										"Awarded for participating in testing."
+		"top"                                          											"Players are rewarded for getting the TOP 1-10 of the season."
+		"top1"                                          											"Players are rewarded for getting the TOP 1 of the season."
+		"top2-3"                                          											"Players are rewarded for getting the TOP 2-3 of the season."
+		"spring"                                          										"Awarded for participating in a Spring event."
+		"developer2"                                          									"Developer Effect"
+		"moderator"                                          									"Moderator Effect"
+		"newyear"                                          										"Awarded for participating in the New Year event."
+		"autumn"                                          										"Awarded for participating in a Autumn event."
+		"patron1"                                          										"Level 1 Donation. Available to first level donater or higher."
+		"patron2"                                          										"Level 2 Donation. Available to second level donater or higher."
+		"patron3"                                          										"Level 3 Donation. Available to third level donater or higher."
+		"patron4"                                          										"Level 4 Donation. Available to fourth level donater or higher."
+		"patron5"                                          										"Level 5 Donation. Available to fifth level donater or higher."
+		"patron6"                                          										"Level 6 Donation. Available to sixth level donater or higher."
+		"birthday"                                          									"Awarded for participating in a Birthday event."
+		"patron8"                                          										"Level 8 Donation. Available to eighth level donater or higher."
+		"patron9"                                          										"Level 9 Donation. Available to ninth level donater or higher."
+		"patron10"                                          									"Level 10 Donation. Available to tenth level donater or higher."
+		"coldfire"																				"Awarded along with a level 9 effect or in special events."
+		"winter2"																				"Awarded along with a level 9 effect or in special events."
+		"suprise"																				"Awarded along with a level 9 effect or in special events."
+		"winter3"																				"Awarded along with a level 10 effect or in special events."
+		"spring2"																				"Awarded along with a level 10 effect or in special events."
+		"autumn2"																				"Awarded along with a level 10 effect or in special events."
+		"summer2"																				"Awarded along with a level 10 effect or in special events."
+		"dirt"																				    "Awarded along with a level 10 effect or in special events."
+		"storm"																				 	"Awarded along with a level 10 effect or in special events."
+		
+		"partnote"                                          									"Effect description"
+		"partname"                                          									"Effect name"
+		
+		"seveasdefault"																			"Save effect as default"
+		
+		
+		"patreonbuttontext"																	"Donate Patreon"
+		"patreonbuttontext1"																"Donate PayPal Page"
+		"patreonbuttontext2"																"Donate Yandex Page"
+		"patreontext"	"If you want to support the project and help in development, 
+then you can make your donations using the site https://patreon.com/troll_vs_elves3 or https://paypal.me/vladu4eg or https://donate.stream/en/vladu4eg
+The money received will be spent on maintaining the servers and improving the quality of the content.
+Be sure to include a link to the profile in Steam, nickname in Discord / Steam. 
+Please provide as much information as possible about yourself so that I can thank you for your support. 
+You can send any amount.
+The effect is issued for 1 year. Your support helps the game develop."
+		
+		"bonus_damage"																		"Bonus Damage"
+		"bonus_armor"																		"Bonus Armor"
+		"bonus_hp"																			"Bonus HP"
+		"bonus_hp_regen"																	"Bonus HP Regenaration"
+		"bonus_atk_spd"																		"Bonus Atk. Speed"
+		"bonus_ms"																			"Bonus Movement Speed"
+		"error_not_enough_gold"																"Not enough gold! "
+		"error_not_enough_lumber"															"Not enough lumber! "
+		"error_not_buy_wolf"																"Wolf can't upgrade a tent! "
+		"error_castable_only_on_troll_hut"													"Castable only on Troll Hut! "
+		"error_not_enough_food"																"Food beyond the capacity! "
+		"error_not_enough_wisp"																"Wisp limit exceeded! "
+		"error_full_inventory"																"Full inventory! "
+		"error_shop_out_of_range"															"Shop is out of range! "
+		"error_not_enough_resources"														"You do not have enough resources! "
+		"error_type_only_digits"															"Enter only numbers! "
+		"error_select_only_your_allies"														"Select your ally! "
+		"error_enemy_nearby"																"Enemy is nearby! "
+		"error_invalid_build_position"														"Invalid position! "
+		"error_only_troll_can_upgrade"														"Only the Troll can upgrade the Hut! "
+		"error_no_radar"																	"Sadly scans in custom games don't count towards the community challenge! "
+		"error_not_night"																	"Works only at night! "
+		"error_item_not_sellable"															"Item not sellable"
+		"error_not_time"																	"You can steal gold after 5 minutes! "
+		"error_place_is_taken"																"Place taken by another Elf! "
+		"team_choice_header"                                                                "Do you want to be the troll?"
+		"team_choice_yes"                                                                   "Yes"
+		"team_choice_no"                                                                    "No"
+		"error_not_spam_votekick"															"Voting can be run once every 1 minute!"
+		"error_construction_for_yourself"													"You cannot build on yourself after 10 (x2) and 20 (x1) minutes!"
+		"error_need_buy_hut_7"																"You need to buy a level 7 hut!"		
+		"error_not_upgrade_tower19_x4"														"You cannot build Enigma in x4."
+		"loading_text"																		"&lt;=Click this for tips!<br>
+		                                                                                    Don't change your hotkeys after starting the game.
+		                                                                                    "
+		"loading_text_no_troll"																"Do not choose Troll if you are playing for the first time, please."
+		"DOTA_Chat_PlayerKilled"                    ""
+        "DOTA_Chat_PlayerKilledNearby"              ""
+        "DOTA_Chat_PlayerKilledNearbySingle"        ""
+        "DOTA_Chat_PlayerKilledAssist"              ""
+        "DOTA_Chat_PlayerKilledAssistNearby"        ""
+		"DOTA_Chat_PlayerKilledAssistNearbySingle"  ""
+		
+		"elf_tips1"																		"<br><br><b>Elf Tips</b>
+		<br>·You can build tent at the very start of the game near the troll base while you go search for a base. That way you will have a head start, just don't finish building it otherwise you won't be able to destroy it since the troll will be nearby. 
+		<br>·Build your rock in the middle of the steps
+		"
+		"elf_tips2"																		"·You can use glyph on yourself to troll the troll for 10seconds
+					<br>·Good towers early on can scare the troll away for good and give you time to dig dem gold mines. 2 towers are enough at the beginning!  Just upgrade it! 
+					<br>·Don't foget to use your abilities! It's better to start with Root since it has a lower cooldown than Glyph. 
+					<br>·Use glyph not only to save yourself from the desperate situation but to also prevent troll from farming
+					<br>·Find a friend that will co-operate with you and build duo base. You will be two times as strong. 
+					<br>·Right click the repair ability for an autocast repair, it will repair the closest building to you that has a health deficit! "
+		"elf_tips3"																	"·Share your resources. If you have extra resources share them! Teamwork is needed in this game so the troll doesn't get farmed too fast! "
+		
+		"troll_tips"																		"<b>Troll/Wolf Tips</b>
+					<br>·Make sure you don't die. If you die even once it's game over! 
+					<br>·Every attack gives you gold depending on how much damage you did
+					<br>·Buy items to become stronger! 
+					<br>·You should replace items by selling them and buying better ones
+					<br>·Always use your 1st skill (Reveal) to avoid wasting time finding Elves!. 
+					<br>·Try to find enemies which do not have a lot of strong towers so it is easier to farm up
+					<br>·Don't forget to upgrade your hut! Not only it will help you in a bad time, but it's also really good if you have wolves on your team. 
+					<br>·You can use teleport and invis together. That way you will be able to teleport while being invisible. 
+					<br>·Have fun trolling these small elves. 
+					"
+		"angel_tips"																		"<br><br><b>Angel Tips</b>
+		<br/>·Donate gold to those who really need it, like the Elf who got attacked by the Troll at the beginning.. 
+		<br/>·Don't let the Troll kill you! You've got lots of gold in your hands.                            
+		<br/>·Always empty your pocket!  Give gold to players because the troll can steal it!               
+        <br/>·You can assist players under attack by healing their wall or stunning the troll.             
+        <br/>·RUN RUN RUN When the troll/wolf comes! 
+		"
+	}
+}

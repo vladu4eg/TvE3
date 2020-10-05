@@ -1,0 +1,8454 @@
+"DOTAAbilities"
+{
+	"ability_building"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+		"Modifiers"
+		{
+			"modifier_building"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED" // Prevents moving
+					"MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_DISABLED" // Allows attacking own buildings
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY" "MODIFIER_STATE_VALUE_ENABLED" // Makes it a secondary target when A-clicking ground
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED" // GridNav is blocked
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"0.1"
+				}
+			}
+		}		
+	}
+	"anti_deniable"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+		"Modifiers"
+		{
+			"modifier_anti"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_SPECIALLY_DENIABLE" 	"MODIFIER_STATE_VALUE_DISABLED" // Allows attacking own buildings
+				}
+			}
+		}		
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_cooldown_reduction_50"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6804"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+			}
+		}
+	}
+	
+		//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_cooldown_reduction_30"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6561"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
+	
+	"antiblock"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel" 						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Modifiers"
+		{
+			"modifier_antiblock"
+			{
+			"IsHidden"			"1" 
+			"Passive"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_BLOCK_DISABLED" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
+				}
+			}
+	}
+	}
+
+	"lina_dragon_slave_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"lina_dragon_slave"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.45"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.5"
+	"AbilityDuration"				"0.6875"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"50"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"dragon_slave_speed"		"1200"
+		}
+		
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"dragon_slave_width_initial"	"275"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"dragon_slave_width_end"		"200"
+		}
+		
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"dragon_slave_distance"			"1075"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"LinearProjectile"
+		{
+			"Target"      "POINT"
+		    "EffectName"  "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+		    "MoveSpeed"   "%dragon_slave_speed"
+		    "StartRadius"   "%dragon_slave_width_initial"
+		    "StartPosition" "attach_origin"
+		    "EndRadius"     "%dragon_slave_width_end"
+		    "FixedDistance" "%dragon_slave_distance"
+		    "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		    "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		    "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		    "HasFrontalCone"    "1"
+		    "ProvidesVision" "0"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Lina.DragonSlave"
+			"Target"		"CASTER"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"0"
+		"Damage"
+		{
+			"Target"	"TARGET"
+			"Type"		"DAMAGE_TYPE_MAGICAL"
+			"Damage"	"%AbilityDamage"
+		}
+	}
+}
+	"counter_helix_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"axe_counter_helix"
+	"AOERadius"						"%radius"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"particle"			"particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf"
+	}
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.3"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"275"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"trigger_chance"			"20"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown"					"0.3"
+		}
+		// Extra
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"trigger_radius"			"1000"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_counter_helix_aura_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+	
+			"Aura" 			"modifier_counter_helix_enemy_datadriven"
+			"Aura_Radius" 	"%trigger_radius"
+			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		}
+
+		"modifier_counter_helix_enemy_datadriven"
+		{
+			"IsHidden"			"1"
+
+			"OnAttackStart"
+			{
+				"Random"
+				{
+					"Chance"			"%trigger_chance"
+					"PseudoRandom" 		"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
+					"OnSuccess"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/hero_axe/counter_helix.lua"
+							"Function"		"CounterHelix"
+							"helix_modifier"	"modifier_counter_helix_datadriven"
+						}
+					}
+				}
+			}
+		}
+
+		"modifier_counter_helix_datadriven"
+		{
+			"Duration"		"%cooldown"
+			"IsHidden"		"1"
+
+			"EffectName"	"particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf"
+			"EffectAttachType"	"follow_origin"			
+
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Axe.CounterHelix"
+					"Target" 		"CASTER"
+				}
+
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+					}
+				
+					"Action"    
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_PHYSICAL"
+							"Damage"		"%AbilityDamage"
+						}
+					}
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_counter_helix_rotate_datadriven"
+					"Target" 		"CASTER"
+					"Duration"		"0.15"
+				}
+			}
+		}
+
+		"modifier_counter_helix_rotate_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"ThinkInterval"  "0.03"
+			"OnIntervalThink"
+			{
+				"Rotate"
+				{
+					"Target"	"CASTER"
+					"PitchYawRoll"	"0 72 0"
+				}
+			}
+		}
+	}
+}
+
+"juggernaut_healing_ward_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"350"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60.0"
+	"AbilityDuration"				"25.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"healing_ward_heal_amount"	"10"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"healing_ward_aura_radius"	"1100"
+		}
+	}
+}	
+	"mana_break_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"antimage_mana_break"
+
+	// Precache	
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage_per_burn"		"0.8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_per_hit"			"24"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_mana_break_orb_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"Orb"
+			{
+				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+			}
+
+			"OnOrbImpact"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Antimage.ManaBreak"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+					}
+				}
+
+				"FireEffect"
+				{
+					"EffectName"	"particles/generic_gameplay/generic_manaburn.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+					}
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_antimage/mana_break.lua"
+					"Function"		"ManaBreak"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+					}
+				}				
+			}
+		}
+	}
+}
+	
+	"blink_datadriven"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+	"AbilityTextureName"			"antimage_blink"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"particle"		"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+		"particle"		"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.4"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"35.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_range"			"925"
+		}
+		
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"min_blink_range"		"200"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"scripts/vscripts/heroes/hero_antimage/blink.lua"
+			"Function"		"Blink"
+			"Target"		"POINT"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Antimage.Blink_out"
+			"Target"		"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Antimage.Blink_in"
+			"Target"		"CASTER"
+		}
+
+		"AttachEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+			"Target"		"CASTER"
+			"EffectAttachType"	"follow_origin"
+		}
+	}
+	}
+
+"searing_arrows_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"clinkz_searing_arrows"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_bonus"					"2000"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	}
+
+	"Modifiers"
+	{
+		"modifier_searing_arrow"
+		{
+			"Passive"               "1"
+			"IsHidden"				"1"
+
+			"Orb"
+			{
+				"Priority"			"DOTA_ORB_PRIORITY_DEFAULT"
+				"ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+				"CastAttack"		"1"
+			}
+
+			"OnOrbFire"
+			{
+				"SpendMana"
+				{
+					"Mana"    		"%AbilityManaCost"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Clinkz.SearingArrows"
+					"Target"		"CASTER"
+				}
+			}
+			
+			"OnOrbImpact"
+			{
+				"Damage"
+				{
+					"Type"          "DAMAGE_TYPE_PHYSICAL"
+					"Damage"        "%AbilityDamage"
+					"Target"		"TARGET"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Clinkz.SearingArrows.Impact"
+					"Target"		"CASTER"
+				}
+			}
+		}
+	}
+}
+
+
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_huskar/burning_spear.lua
+"burning_spear_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"huskar_burning_spear"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0"
+	"AbilityDuration"				"8"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"25"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_cost"			"0"
+		}
+	}
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+		"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+	}
+
+	// Datadriven
+	//-------------------------------------------------------------------------------------------------------------
+
+	"Modifiers"
+	{
+		// Modifier to handle OrbEffect-Behaviour
+		"modifier_burning_spear_datadriven"
+		{
+			// Will always stay on the caster once the ability is upgraded
+			// Hidden
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+
+			// OrbEffect-Behaviour
+			"Orb"
+			{
+                "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                "ProjectileName"    "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+                "CastAttack"        "1"
+            }
+
+            // HealthCost is handled here
+			"OnOrbFire"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Huskar.Burning_Spear.Cast"
+					"Target"		"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+					"Function"		"DoHealthCost"
+				}
+			}
+
+			// Apply the hidden dot modifier to the target here
+			// Call IncreaseStackCount to keep stack count on modifier_burning_spear_datadriven_debuff_counter updated
+			"OnOrbImpact"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Huskar.Burning_Spear"
+					"Target"		"TARGET"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_burning_spear_datadriven_debuff"
+					"Target" 		"TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+					"Function"		"IncreaseStackCount"
+
+					"modifier_counter_name"		"modifier_burning_spear_datadriven_debuff_counter"
+				}
+			}
+		}
+
+		// Modifier to show stack count
+		// Only visual
+		"modifier_burning_spear_datadriven_debuff_counter"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"0"
+		}
+
+		// Modifier to handle the dot
+		"modifier_burning_spear_datadriven_debuff"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsBuff"			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"0"
+			"Duration"			"%AbilityDuration"
+
+			// Allow multiple instances of this modifier on the target
+			// Modifiers stack additivly (dmg) with independent durations
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+			"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+			
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				// Damage of %AbilityDamage every %ThinkInterval seconds
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%AbilityDamage"
+				}
+			}
+
+			// Updating visual modifier's stack count
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+					"Function"		"DecreaseStackCount"
+
+					"modifier_counter_name"		"modifier_burning_spear_datadriven_debuff_counter"
+				}
+			}
+		}
+	}
+}
+
+"weave_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"dazzle_weave"
+	"AOERadius"						"%radius"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_armor_friend.vpcf"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_armor_enemy.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"575"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"360"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"575"
+		}
+		"02"
+		{	
+			"var_type"					"FIELD_INTEGER"
+			"vision"					"575"
+		}
+		"03"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"armor_per_second"			"1"
+		}
+		"04"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"20.0"
+		}
+		"05"
+		{	
+			"var_type"					"FIELD_INTEGER"
+			"radius_scepter"			"775"
+		}
+		"06"
+		{	
+			"var_type"					"FIELD_INTEGER"
+			"duration_scepter"			"24"
+		}
+		"07"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"armor_per_second_scepter"	"10"
+		}
+		// Extra
+		"08"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"negative_armor_per_second"			"-50"
+		}
+		"09"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"tick_interval"				"1.0"
+		}
+		"10"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"vision_duration"				"3.0"
+		}
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Dazzle.Weave"
+			"Target" 		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+			"EffectAttachType"  "start_at_customorigin"
+			"TargetPoint"            "POINT"
+
+			"ControlPoints"
+			{
+				"01"	"%radius"
+			}
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"POINT"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Types" 	"DOTA_UNIT_TARGET_ALL"
+			}
+		
+			"Action"    
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_weave_friendly_datadriven"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					}
+					"Duration"		"%duration"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_weave_enemy_datadriven"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					}
+					"Duration"		"%duration"
+				}
+			}
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+			"Function"		"WeaveVision"
+			"Target"		"POINT"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_weave_friendly_datadriven"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeavePositiveParticle"
+					"particle_name"		"particles/units/heroes/hero_dazzle/dazzle_armor_friend.vpcf"
+					"modifier"		"modifier_weave_friendly_datadriven"
+				}
+			}			
+	
+			"ThinkInterval"  "%tick_interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeaveIncrement"
+					"modifier"		"modifier_weave_friendly_datadriven"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeaveRemoveModifier"
+					"modifier"		"modifier_weave_friendly_datadriven"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"EndWeaveParticle"
+					"modifier"		"modifier_weave_friendly_datadriven"
+					"particle_type"	"1"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_per_second" 
+			}
+		}
+
+		"modifier_weave_enemy_datadriven"
+		{
+			"IsDebuff"			"1"
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeaveNegativeParticle"
+					"particle_name"		"particles/units/heroes/hero_dazzle/dazzle_armor_enemy.vpcf"
+					"modifier"		"modifier_weave_enemy_datadriven"
+				}
+			}			
+
+			"ThinkInterval"  "%tick_interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeaveIncrement"
+					"modifier"		"modifier_weave_enemy_datadriven"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"WeaveRemoveModifier"
+					"modifier"		"modifier_weave_enemy_datadriven"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_dazzle/weave.lua"
+					"Function"		"EndWeaveParticle"
+					"modifier"		"modifier_weave_enemy_datadriven"
+					"particle_type"	"0"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%negative_armor_per_second" 
+			}
+		}
+	}
+}
+	
+"shallow_grave_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"dazzle_shallow_grave"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_shallow_grave.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"360"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"150"
+	
+	"AbilityDuration"				"5"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{	
+			"var_type"			"FIELD_FLOAT"
+			"duration_tooltip"		"6"
+		}
+		"02"
+		{	
+			"var_type"			"FIELD_INTEGER"
+			"range_tooltip"		"550"
+		}
+		// Extra
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"min_health"		"1"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Dazzle.Shallow_Grave"
+			"Target" 		"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_shallow_grave_datadriven"
+			"Target" 		"TARGET"
+			"Duration"		"%duration_tooltip"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_shallow_grave_datadriven"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+			"IsPurgable"		"0"
+			"IsBuff"			"1"
+
+			"EffectName"		"particles/units/heroes/hero_dazzle/dazzle_shallow_grave.vpcf"
+			"EffectAttachType"	"follow_origin"
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MIN_HEALTH" "%min_health" 
+			}
+		}
+	}
+}
+
+	"heartstopper_aura_datadriven"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"necrolyte_heartstopper_aura"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"999999"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_radius"		"999999"		// If you change this, also change the AbilityCastRange above
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"aura_damage"		"-50000" 
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"aura_damage_interval"		"0.2" 
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_heartstopper_aura_datadriven"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+
+			"Aura" 			"modifier_heartstopper_debuff_datadriven"
+			"Aura_Radius" 	"%aura_radius"
+			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		}
+
+		"modifier_heartstopper_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"IsHidden"	"1"
+
+			"ThinkInterval"	"%aura_damage_interval"
+
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_necrolyte/heartstopper_aura.lua"
+					"Function"				"HeartstopperAura"
+
+					"visibility_modifier"	"modifier_heartstopper_debuff_visibility"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_heartstopper_debuff_visibility"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+
+		"modifier_heartstopper_debuff_visibility"
+		{
+			"IsDebuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable" 	"0"
+			"Passive"		"0"
+		}
+	}
+}
+
+"lone_druid_spirit_bear_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"					"ability_datadriven"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"DisplayAdditionalHeroes"	"1"
+	"AbilityTextureName"		"lone_druid_spirit_bear"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.5"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"999999.0"
+
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		// This Values are mostly for tooltips, the unit stats are not affected
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bear_hp"					"500"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bear_regen_tooltip"		"1"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"bear_bat"					"1.75"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bear_armor"				"1"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"backlash_damage"			"99.9"
+		}
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+		"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf"
+		"particle"	"particles/status_fx/status_effect_spirit_bear.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+		"model"		"models/heroes/lone_druid/spirit_bear.vmdl"
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+	    {
+	        "ScriptFile"    "heroes/hero_lone_druid/spirit_bear.lua"
+	        "Function"      "SpiritBearLevel"
+	    }
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+	    {
+	        "ScriptFile"    "heroes/hero_lone_druid/spirit_bear.lua"
+	        "Function"      "SpiritBearSpawn"
+	        "unit_name"		"npc_dota_lone_druid_bear"
+	    }
+
+	    "FireSound"
+	    {
+	    	"EffectName"	"Hero_LoneDruid.SpiritBear.Cast" 
+	    	"Target"		"CASTER"
+	    }
+	}
+
+	"Modifiers"
+	{
+		"modifier_spirit_bear"
+		{
+			"IsHidden"		"1"
+
+			"StatusEffectName"		"particles/status_fx/status_effect_spirit_bear.vpcf"
+			"StatusEffectPriority"	"1"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+
+			"OnDeath"
+			{
+				"FireEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"RunScript"
+			    {
+			        "ScriptFile"    "heroes/hero_lone_druid/spirit_bear.lua"
+			        "Function"      "SpiritBearDeath"
+			    }
+			}
+		}
+	}
+}
+
+
+"troll_warlord_battle_trance_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"OnCastbar"					"0"
+	"AbilityTextureName"			"troll_warlord_battle_trance"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"999999"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_armor_reduction"		"6131"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_radius"				"999999"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"COOLDOWN_REDUCTION"			"90"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"ATTACKSPEED_BONUS"				"1200"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"regen"							"1000"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_troll_warlord"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+	
+			"Aura"          	"modifier_troll_warlord_presence"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+		}
+		
+		"modifier_troll_warlord_anti"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+	
+			"Aura"          	"modifier_troll_warlord_presence_anti"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_ALL" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NO_INVIS" //immune?
+			"States"
+			{
+				"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED" 
+			}
+		}
+
+		"modifier_troll_warlord_presence"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsBuff"			"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 			"%presence_armor_reduction"
+				"MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT" 	"%COOLDOWN_REDUCTION"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%ATTACKSPEED_BONUS"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%regen"
+			}
+		}
+	}
+}
+	
+"troll_warlord_attack_speed"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"OnCastbar"					"0"
+	"AbilityTextureName"			"item_atk_spd_6"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"999999"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"ATTACKSPEED_BONUS"				"600"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_radius"				"999999"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_troll_warlord_attack_speed"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+	
+			"Aura"          	"modifier_troll_warlord_attack_presence"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_ALL" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+		}
+		
+		"modifier_troll_warlord_anti"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+	
+			"Aura"          	"modifier_troll_warlord_attack_presence_anti"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_ALL" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+			"States"
+			{
+				"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED" 
+			}
+		}
+
+		"modifier_troll_warlord_attack_presence_anti"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsBuff"			"1"
+			"States"
+			{
+				"MODIFIER_STATE_PROVIDES_VISION" "MODIFIER_STATE_VALUE_ENABLED" 
+			}
+		}
+
+		"modifier_troll_warlord_attack_presence"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsBuff"			"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%ATTACKSPEED_BONUS"
+			}
+		}
+	}
+}
+	
+	"nevermore_dark_lord_datadriven"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"OnCastbar"					"0"
+	"AbilityTextureName"			"nevermore_dark_lord"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_armor_reduction"		"-1500"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_radius"				"900"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_dark_lord"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+	
+			"Aura"          	"modifier_dark_lord_presence"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+		}
+
+		"modifier_dark_lord_presence"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsDebuff"			"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%presence_armor_reduction"
+			}
+		}
+	}
+	}
+	
+	"nevermore_dark_lord_datadriven_2"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"OnCastbar"					"0"
+	"AbilityTextureName"			"nevermore_dark_lord"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_armor_reduction"		"-3065"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_radius"				"900"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_dark_lord_2"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+	
+			"Aura"          	"modifier_dark_lord_presence_2"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+		}
+
+		"modifier_dark_lord_presence_2"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsDebuff"			"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%presence_armor_reduction"
+			}
+		}
+	}
+	}
+	"sven_great_cleave_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"sven_great_cleave"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+	}
+			
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"great_cleave_radius"	"600.0"
+		}
+		
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"great_cleave_damage"	"1"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_great_cleave_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"CleaveAttack"
+				{
+					"CleavePercent"		"%great_cleave_damage"
+					"CleaveRadius"		"%great_cleave_radius"
+					"CleaveEffect"		"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+				}
+			}
+		}
+	}
+
+
+}
+
+"luna_moon_glaive2_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"            "luna_moon_glaive"
+	"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+		"particle"			"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"range"						"900"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bounces"					"3"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_reduction_percent"	"20"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_moon_glaive"
+		{
+			"Passive" 	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_luna/moon_glaive.lua"
+					"Function"		"moon_glaive_start_create_dummy"
+				}
+			}
+		}
+	}
+}
+
+
+"luna_moon_glaive2_dummy_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Luna.MoonGlaive.Impact"
+			"Target" 		"TARGET"
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_luna/moon_glaive.lua"
+			"Function"		"moon_glaive_bounce"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_moon_glaive2_dummy_unit"
+		{
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+		//=================================================================================================================
+	// Templar Assassin: 
+	//=================================================================================================================
+"templar_assassin_psi_blades_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"templar_assassin_psi_blades"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_psi_blade.vpcf"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_range"		"100"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_spill_range"		"600"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_spill_width"				"98"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_templar_assassin/psi_blades.lua"
+			"Function"		"DealDamage"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_psi_blades"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_templar_assassin/psi_blades.lua"
+					"Function"		"CheckAngles"
+					"particle"		"particles/units/heroes/hero_templar_assassin/templar_assassin_psi_blade.vpcf"
+				}
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+			}
+		}
+	}
+}
+	// Rewrite of the Dragon Knight Dragon Blood
+// Author: chrislotix
+// Date: January 27, 2016
+// Version: 6.86
+// Type: Datadriven
+"dragon_blood_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"vengefulspirit_command_aura"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_range"		"45"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"700"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_dragon_blood_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			
+			"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_negative_aura.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Aura" 				"modifier_dragon_blood_datadriven_effect"
+			"Aura_Radius" 		"%radius"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_BASIC"
+			
+		}
+		"modifier_dragon_blood_datadriven_effect"
+		{
+			"IsDebuff"			"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%bonus_attack_range"
+			}
+		}
+	}
+}
+
+"phantom_assassin_coup_de_grace_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"phantom_assassin_coup_de_grace"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crit_bonus"				"1000"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crit_chance"				"13"
+		}
+
+	}
+	"Modifiers"
+	{
+		"modifier_coup_de_grace_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			
+			"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnAttackStart"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_coup_de_grace_crit_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"Random"
+				{
+					"Chance"		"%crit_chance"
+					"PseudoRandom"	"DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_coup_de_grace_crit_datadriven"
+							"Target"		"CASTER"
+						}
+					}
+				}
+			}
+		}
+
+		"modifier_coup_de_grace_crit_datadriven"
+		{
+			"IsHidden"	"1"
+			"IsDebuff"	"0"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_bonus"
+			}
+
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_coup_de_grace_crit_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					
+					"ControlPointEntities"
+					{
+						"TARGET"	"follow_origin"
+						"TARGET"	"follow_origin"
+					}
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_PhantomAssassin.CoupDeGrace"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+}
+	"ursa_fury_swipes2_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"ursa_fury_swipes"	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bonus_reset_time"				"3"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"bonus_reset_time_roshan"		"6"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_per_stack"				"20"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+		"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+	}
+	
+	"Modifiers"
+	{
+		"modifier_fury_swipes2_caster_datadriven"
+		{
+			"Passive"						"1"
+			"IsHidden"						"0"
+			"IsPurgable"					"0"
+		
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_ursa/fury_swipes.lua"
+					"Function"				"fury_swipes_attack"
+				}
+			}
+		}
+		
+		"modifier_fury_swipes2_target_datadriven"
+		{
+			"IsHidden"					"0"
+			"IsPurgable"				"0"
+			"IsDebuff"					"1"
+			
+			"EffectName"				"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+			"EffectAttachType"			"follow_overhead"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+					"EffectAttachType"		"follow_overhead"
+				}
+			}
+		}
+	}
+}
+	"ability_tower"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"MaxLevel" 						"1"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+		"Modifiers"
+		{
+			"modifier_tower"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED" // Prevents moving
+					"MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED" // Allows attacking own buildings
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY" "MODIFIER_STATE_VALUE_ENABLED" // Makes it a secondary target when A-clicking ground
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED" // GridNav is blocked
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"0.1"
+				}
+			}
+		}		
+	}
+
+	"max_building_level"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+	}
+
+	"dummy_tree"
+	{
+	    "BaseClass"         "ability_datadriven"
+	    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "Modifiers"
+	    {
+	        "dummy_modifier"
+	        {
+	            "Passive"   "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_TEAM_MOVE_TO"    "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_TEAM_SELECT" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_ATTACK_IMMUNE"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+	                //"MODIFIER_STATE_FLYING"   "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_UNSELECTABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+	                //"MODIFIER_STATE_OUT_OF_GAME"  "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR"         "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }
+	}
+
+	"build_tent"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_tent"
+		"AbilityCastRange"		"300"
+		"Building"				"1"
+		"BuildTime"				"2.0"
+		"Scale"					"1"
+		"UnitName"				"tent"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"upgrade_to_tent_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_2"
+			}
+		}
+	}
+	"upgrade_to_tent_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_3"
+			}
+		}
+	}
+	"upgrade_to_tent_4"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_4"
+			}
+		}
+	}
+	"upgrade_to_tent_5"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_5"
+			}
+		}
+	}
+	"upgrade_to_tent_6"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent_6"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_6"
+			}
+		}
+	}
+	"upgrade_to_tent_7"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent_7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tent_7"
+			}
+		}
+	}
+	"upgrade_to_barracks_1"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_barracks"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"barracks_1"
+			}
+		}
+	}
+	"upgrade_to_barracks_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_barracks"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"barracks_2"
+			}
+		}
+	}
+	"upgrade_to_barracks_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_barracks"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"barracks_3"
+			}
+		}
+	}
+	"gain_gold"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"    		"alchemist_goblins_greed"
+		"MaxLevel"						"10"
+		
+		"ConstructionStartModifiers" {
+			"1"									"modifier_gain_gold"
+		}
+
+		"Modifiers" {
+			"modifier_gain_gold" {
+				"OnCreated"{
+					"RunScript"{
+						"ScriptFile"			"custom_abilities.lua"
+						"Function"				"GainGoldCreate"
+					}
+				}
+				"OnDestroy"{
+					"RunScript"{
+						"ScriptFile"			"custom_abilities.lua"
+						"Function"				"GainGoldDestroy"
+					}
+				}
+			}
+		}
+	}
+	"gain_gold_team"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"    		"alchemist_goblins_greed"
+		"MaxLevel"						"10"
+		
+		"Modifiers" {
+			"modifier_gain_gold_team"{
+				"Passive"				"1"
+				"ThinkInterval"			"1"
+				"OnIntervalThink"{
+					"RunScript"{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"GainGoldTeamThinker"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+	}
+
+	"gold_mine_ability"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"    		"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+
+		"ConstructionCompleteModifiers"{
+			"1"							"modifier_gold_mine"
+		}	
+		"Modifiers" {
+			"modifier_gold_mine" {
+				"OnCreated"{
+					"RunScript"{
+						"ScriptFile"			"custom_abilities.lua"
+						"Function"				"GoldMineCreate"
+					}
+				}
+				"OnDestroy"{
+					"RunScript"{
+						"ScriptFile"			"custom_abilities.lua"
+						"Function"				"GoldMineDestroy"
+					}
+				}
+			}
+		}
+	}
+
+	"build_rock_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_rock"
+		"AbilityCastRange"		"200"
+		"Building"				"1"
+		"BuildTime"				"2.0"
+		"Scale"					"1"
+		"UnitName"				"rock_1"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"upgrade_to_rock_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_rock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_2"
+			}
+		}
+	}
+	"upgrade_to_rock_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_rock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_3"
+			}
+		}
+	}
+	"upgrade_to_rock_4"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_rock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_4"
+			}
+		}
+	}
+	"upgrade_to_rock_5"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_rock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_5"
+			}
+		}
+	}
+	"upgrade_to_rock_6"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_ultra_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_6"
+			}
+		}
+	}
+	"upgrade_to_rock_7"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_ultra_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_7"
+			}
+		}
+	}
+	"upgrade_to_rock_8"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_ultra_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_8"
+			}
+		}
+	}
+	"upgrade_to_rock_9"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_ultra_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_9"
+			}
+		}
+	}
+	"upgrade_to_rock_10"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_ultra_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_10"
+			}
+		}
+	}
+	"upgrade_to_rock_11"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_demonic_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_11"
+			}
+		}
+	}
+	"upgrade_to_rock_12"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_demonic_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_12"
+			}
+		}
+	}
+	"upgrade_to_rock_13"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_demonic_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_13"
+			}
+		}
+	}
+	
+	"upgrade_to_rock_14"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_demonic_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_14"
+			}
+		}
+	}
+	"upgrade_to_rock_15"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_demonic_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_15"
+			}
+		}
+	}
+	"upgrade_to_rock_16"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_dragon_wall_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_16"
+			}
+		}
+	}
+	"upgrade_to_rock_17"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_dragon_wall_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_17"
+			}
+		}
+	}
+	"upgrade_to_rock_18"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_golden_dragon_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+			"16"						"rock_17"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_18"
+			}
+		}
+	}
+	"upgrade_to_rock_19"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_water_dragon_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+			"16"						"rock_17"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_19"
+			}
+		}
+	}
+	"upgrade_to_rock_20"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_water_dragon_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+			"16"						"rock_17"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_19"
+			}
+		}
+	}
+	"upgrade_to_rock_21"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_water_dragon_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+			"16"						"rock_17"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_19"
+			}
+		}
+	}
+	"build_tower_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_tower"
+		"AbilityCastRange"		"200"
+		"Building"				"1"
+		"BuildTime"				"1.0"
+		"Scale"					"1"
+		"UnitName"				"tower_1"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"upgrade_to_tower_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_2"
+			}
+		}
+	}
+	"upgrade_to_tower_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_3"
+			}
+		}
+	}
+	"upgrade_to_tower_4"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_4"
+			}
+		}
+	}
+	"upgrade_to_tower_5"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_5"
+			}
+		}
+	}
+	"upgrade_to_tower_6"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_6"
+			}
+		}
+	}
+	"upgrade_to_tower_7"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_7"
+			}
+		}
+	}
+	"upgrade_to_tower_8"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_8"
+			}
+		}
+	}
+	"upgrade_to_tower_9"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_9"
+			}
+		}
+	}
+	"upgrade_to_tower_10"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_10"
+			}
+		}
+	}
+	"upgrade_to_tower_10_1"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_10_1"
+			}
+		}
+	}
+	"upgrade_to_tower_11"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_11"
+			}
+		}
+	}
+	"upgrade_to_tower_11_1"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_11_1"
+			}
+		}
+	}
+	"upgrade_to_tower_12"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_12"
+			}
+		}
+	}
+	"upgrade_to_tower_13"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_13"
+			}
+		}
+	}
+	"upgrade_to_tower_14"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_14"
+			}
+		}
+	}
+	"upgrade_to_tower_15"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_15"
+			}
+		}
+	}
+	"upgrade_to_tower_15_1"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_15_1"
+			}
+		}
+	}
+	"upgrade_to_tower_16"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_16"
+			}
+		}
+	}
+	"upgrade_to_tower_17"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_17"
+			}
+		}
+	}
+	"upgrade_to_tower_18"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_18"
+			}
+		}
+	}
+	"upgrade_to_tower_19"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"180"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_19"
+			}
+		}
+	}
+	"upgrade_to_tower_19_1"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"180"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_19_1"
+			}
+		}
+	}
+	"upgrade_to_tower_19_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"180"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_19_2"
+			}
+		}
+	}
+	"upgrade_to_tower_20"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_20"
+			}
+		}
+	}
+	"upgrade_to_tower_21"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_21"
+			}
+		}
+	}
+	"upgrade_to_tower_22"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"tower_22"
+			}
+		}
+	}
+	"upgrade_to_true_sight_tower"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"true_sight_tower"
+			}
+		}
+	}
+	"upgrade_to_troll_hut_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_2"
+			}
+		}
+	}
+	"upgrade_to_troll_hut_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_3"
+			}
+		}
+	}
+	"upgrade_to_troll_hut_4"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_4"
+			}
+		}
+	}
+	
+	"upgrade_to_troll_hut_5"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_5"
+			}
+		}
+	}
+	
+	"upgrade_to_troll_hut_6"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_6"
+			}
+		}
+	}
+	
+	"upgrade_to_troll_hut_7"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_tent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"troll_hut_7"
+			}
+		}
+	}
+
+	"build_trader_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_trader"
+		"AbilityCastRange"		"300"
+		"Building"				"1"
+		"BuildTime"				"5.0"
+		"Scale"					"1"
+		"UnitName"				"trader_1"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"64"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"upgrade_to_trader_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_trader_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"5"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"trader_2"
+			}
+		}
+	}
+	"upgrade_to_trader_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_trader_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"5"
+		"SkipRequirements"{
+			"1"							"trader_2"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"trader_3"
+			}
+		}
+	}
+	"build_workers_guild"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_workers_guild"
+		"AbilityCastRange"		"300"
+		"Building"				"1"
+		"BuildTime"				"2.0"
+		"Scale"					"1"
+		"UnitName"				"workers_guild"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"32"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_mother_of_nature"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_mon"
+		"AbilityCastRange"		"300"
+		"Building"				"1"
+		"BuildTime"				"6.0"
+		"Scale"					"1"
+		"UnitName"				"mother_of_nature"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"256"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	
+	"build_research_lab"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_research_lab"
+		"AbilityCastRange"		"300"
+		"Building"				"1"
+		"BuildTime"				"6.0"
+		"Scale"					"1"
+		"UnitName"				"research_lab"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"512"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_2"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_2"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_2"
+			}
+		}
+	}
+	"upgrade_to_research_lab_3"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_3"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_3"
+			}
+		}
+	}
+	"upgrade_to_research_lab_4"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_4"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_4"
+			}
+		}
+	}
+	
+	
+	"build_gold_mine_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"Limit"					"1"
+		"UnitName"				"gold_mine_1"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"32"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_2"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_2"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"256"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_3"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_3"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"1024"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_4"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_4"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"4096"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_5"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_5"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"16384"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_6"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_6"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"65536"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_7"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_7"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"262144"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"build_gold_mine_8"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_gold_mine"
+		"AbilityCastRange"		"199"
+		"Building"				"1"
+		"BuildTime"				"3.0"
+		"Scale"					"1"
+		"UnitName"				"gold_mine_8"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"999999"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+	"true_sight_ability"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"    		"true_sight"
+		
+		"OnCreated"{
+			"ApplyModifier"{
+				"ModifierName"			"modifier_truesight_datadriven"
+				"Target"				"CASTER"
+			}
+		}
+		"OnOwnerDied"{
+			"RemoveModifier"{
+				"ModifierName"			"modifier_truesight_datadriven"
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"radius"                "1100"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_truesight_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_ALL"
+						}
+					
+						"Action"    
+						{
+							"RemoveModifier"
+							{
+								"ModifierName"	"modifier_truesight_reveal"
+								"Target" 		"TARGET"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_truesight_reveal"
+								"Target" 		"TARGET"
+							}
+						}
+					}			
+				}		
+			}
+
+			"modifier_truesight_reveal"
+			{
+				"IsHidden"			"1"
+				"Priority"                     "MODIFIER_PRIORITY_ULTRA"
+				"Duration"			"0.1"	//The True Sight effect lingers for 0.1 seconds.
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
+		}		
+	}
+	"buy_lumber_10"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"buy_lumber"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"ExchangeLumber"
+				"Target"				"CASTER"
+				"Amount"				"10"
+			}
+		}
+	}
+	"buy_lumber_200"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"buy_lumber"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"ExchangeLumber"
+				"Target"				"CASTER"
+				"Amount"				"200"
+			}
+		}
+	}
+	"sell_lumber_10"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"ExchangeLumber"
+				"Target"				"CASTER"
+				"Amount"				"-10"
+			}
+		}
+	}
+	"sell_lumber_200"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"ExchangeLumber"
+				"Target"				"CASTER"
+				"Amount"				"-200"
+			}
+		}
+	}
+		
+	"reveal_area"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"keeper_of_the_light_blinding_light"
+		//"AbilityCooldown"				"45"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"2600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maximum_charges"		"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_replenish_time"	"60.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"1.0"
+			}
+			
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"shrapnel_start_charge"
+			}
+		}
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"shrapnel_fire"
+				"TARGET"				"POINT"
+				"Radius"				"%radius"
+				"Duration"				"%duration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_shrapnel_stack_counter_datadriven"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsPurgable"			"0"
+				"IsDebuff"				"0"
+			}
+		}
+	}
+	"troll_invis"{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"				    "abilities/troll_invis"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"clinkz_wind_walk"
+		"AbilityCooldown"				"30"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			"soundfile"                     "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"      	"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_movement_speed"	"300"
+			}
+		}
+	}
+	"troll_teleport"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityTextureName"			"chen_penitence"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastRange"              "0"
+		"AbilityChannelTime" 			"3.0"
+		"AbilityCooldown"               "45"
+		"MaxLevel"						"1"
+		
+		
+		"OnAbilityPhaseStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_teleportation"
+				"Target"        "CASTER"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"{
+				"ModifierName"  "modifier_teleportation"
+				"Target"        "CASTER"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"FireSound"
+			{
+				"EffectName"    "Hero_Furion.Teleport_Disappear"
+				"Target"        "CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"    "custom_abilities.lua"
+				"Function"      "TeleportTo"
+			}
+
+			"FireSound"
+			{
+				"EffectName"    "Hero_Furion.Teleport_Appear"
+				"Target"        "CASTER"
+			}
+			"RemoveModifier"{
+				"ModifierName"  "modifier_teleportation"
+				"Target"        "CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_teleportation"
+			{
+				"IsHidden"          "0"
+		
+				"EffectName"        "particles/econ/events/league_teleport_2014/teleport_end_league.vpcf"
+				"EffectAttachType"  "follow_origin"
+			}
+		}
+	}
+	"attack_gold"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		"OnCreated"
+		{
+			"ApplyModifier"
+			{
+				"Target"            "CASTER"
+				"ModifierName"      "gold_on_attack"
+			}
+		}
+		"Modifiers"{
+			"gold_on_attack"{
+				"IsHidden"			"1"
+				"Passive"			"1"
+				"OnDealDamage"{
+					"RunScript"{
+						"ScriptFile"		"custom_abilities.lua"
+						"Function"			"GoldOnAttack"
+						"DamageDealt"		"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+	"troll_range"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "custom_abilities.lua"
+				"Function"      "MeleeRange"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_berserkers_rage_datadriven"
+				"Target"        "CASTER"
+			}
+		}
+		"Modifiers"{
+			"modifier_berserkers_rage_datadriven"
+			{
+				"IsHidden"          "1"
+				"IsPurgable"        "0"
+
+				"EffectName"    "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
+				"EffectAttachType"  "follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"          "-372"
+				}
+			}
+		}
+	}
+	
+	"repair"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityTextureName"			"repair"
+		"MaxLevel"						"1"
+		"Building"						"0"
+		"CanAssistConstruction"			"1"
+		"OnCreated"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"RepairAutocast"
+				"Radius"				"500"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"Repair"
+			}
+			
+		}
+	}
+
+	
+	"gather_lumber"{
+	
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"treant_living_armor"
+		"MaxLevel"					"1"
+			
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastRange"				"150"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"custom_abilities.lua"
+				"Function"		"GatherLumber"
+			}
+		}
+		
+		"Modifiers"
+		{
+	
+			"modifier_gathering_lumber"
+			{			
+				"OnOrder"
+				{			
+					"RunScript"
+					{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"CancelGather"
+					}
+				}
+	
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"CancelGather"
+					}
+				}
+	
+				"OnCreated" {
+					"RunScript"
+					{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"LumberGain"
+					}
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"		"MODIFIER_STATE_VALUE_ENABLED"
+				}	
+			}
+		}
+	}
+	
+	"train_worker_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_1"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"32"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"1"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"3"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_2"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"128"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"2"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"5"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_3"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"512"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"4"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"10"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_4"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"2048"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"6"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"20"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_5"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"8192"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"10"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"30"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_6"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_6"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"999999"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"999999"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"20"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"50"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"512"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}	
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"1024"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"2048"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"4096"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"20480"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_6"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"81920"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_7"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"262144"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_wisp_8"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"wisp_8"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"999999"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_gold_wisp"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_gold_wisp"
+		"MaxLevel"					"1"
+		"UnitName"					"gold_wisp"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"0"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"2"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"buy_item_dmg_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_1"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_1"
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+
+	}
+	"buy_item_dmg_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_3"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_4"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_4"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_5"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_5"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_6"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_6"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_7"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_7"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_8"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_8"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_8"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_9"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_9"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_9"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_10"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_10"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_10"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_11"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_11"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_11"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_12"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_12"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_12"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_dmg_13"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_13"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_13"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_14"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_14"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_14"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_dmg_15"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_15"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_15"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_armor_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_1"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_1"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_3"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_4"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_4"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_5"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_5"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_6"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_6"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_7"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_7"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_8"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_8"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_8"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_9"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_9"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_9"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_10"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_10"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_10"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_11"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_11"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_11"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_armor_12"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_12"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_12"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_armor_13"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_13"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_13"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_hp_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_1"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_1"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_3"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_4"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_4"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_5"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_5"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_6"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_6"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_7"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_7"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_8"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_8"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_8"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_9"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_9"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_9"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_10"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_10"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_10"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_11"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_11"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_11"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_12"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_12"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_12"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_1"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_1"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_3"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_4"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_4"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_5"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_5"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_6"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_6"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_7"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_7"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_8"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_8"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_8"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_9"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_9"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_9"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_10"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_10"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_10"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_11"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_11"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_11"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_hp_reg_12"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_hp_reg_12"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_hp_reg_12"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_1"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_1"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_3"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_4"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_4"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_5"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_5"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_atk_spd_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_atk_spd_6"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_6"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_disable_repair"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_disable_repair"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_disable_repair"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_disable_repair_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_disable_repair_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_disable_repair_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_troll_boots"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_boots"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_troll_boots"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"fountain_ability"{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"fountain_regen"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET || DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"					"1"
+		"ItemName"					"item_atk_spd_6"
+		"Hidden"					"1"
+				
+		"OnCreated"{
+			"ApplyModifier"{
+				"ModifierName"		"fountain_regen"
+				"Target"			"CASTER"
+			}
+		}
+		"Modifiers"{
+			"fountain_regen"{
+				"ThinkInterval"			"0.03"
+				"OnIntervalThink"{
+					"RunScript"{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"FountainRegen"
+						"Target" 		"CASTER"
+						"Radius"		"600"
+					}
+				}
+			}
+		}
+	}
+	"buy_lumber_1"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"buy_lumber"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"BuyLumberTroll"
+				"Target"				"CASTER"
+				"Amount"				"1"
+			}
+		}
+	}
+	"buy_lumber_8"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"buy_lumber"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"BuyLumberTroll"
+				"Target"				"CASTER"
+				"Amount"				"8"
+			}
+		}
+	}
+	"sell_lumber_1"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"BuyLumberTroll"
+				"Target"				"CASTER"
+				"Amount"				"-1"
+			}
+		}
+	}
+	"sell_lumber_8"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"BuyLumberTroll"
+				"Target"				"CASTER"
+				"Amount"				"-8"
+			}
+		}
+	}
+	"steal_gold"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+		"AbilityCastRange"				"300"
+		"MaxLevel"						"1"
+		"AbilityChannelTime"			"1"
+		"AbilityManaCost"				"20"
+		
+		"OnAbilityPhaseStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"CheckStealGoldTarget"
+				"Target"				"TARGET"
+			}
+		}
+		
+		"OnChannelSucceeded"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"StealGold"
+				"Target"				"TARGET"
+			}
+		}
+	}
+	"stand_invis"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET || DOTA_ABILITY_BEHAVIOR_CHANNELLED || DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityTextureName"			"treant_natures_guise"
+		"MaxLevel"						"1"
+		"AbilityChannelTime"			"1"
+		
+		"OnAbilityPhaseStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"CheckNight"
+			}
+		}
+		
+		"OnChannelSucceeded"{
+			"ApplyModifier"{
+				"Target"             "CASTER"
+				"ModifierName"        "modifier_stand_invis"
+			}
+		}
+		"Modifiers"{
+			"modifier_stand_invis"{
+				"ThinkInterval"			"0.5"
+				"OnIntervalThink"{
+					"RunScript"{
+						"ScriptFile"			"custom_abilities.lua"
+						"Function"				"CheckNightInvis"
+					}
+				}
+				"OnCreated"{
+					"ApplyModifier"{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_invisible"
+					}
+				}
+				"OnOrder"{
+					"RemoveModifier"{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_invisible"
+					}					
+					"RemoveModifier"{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_stand_invis"
+					}
+				}
+				"OnDestroy"{
+					"RemoveModifier"{
+						"Target"			"CASTER"
+						"ModifierName"		"modifier_invisible"
+					}
+				}
+			}
+		}
+		
+	}
+	"cm_stun"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"sven_storm_bolt"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"          "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+			"particle"          "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"          "particles/generic_gameplay/generic_stunned.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "600"
+		"AbilityCastPoint"              "0.3 0.3 0.3 0.3"
+
+		// Time     
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "30.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityDamage"                 "10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bolt_speed"            "1000"
+			}
+			"02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"bolt_stun_duration"    "2.0"
+			}
+			"04"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"vision_radius"     "225"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+				"Dodgeable"         "1"
+				"ProvidesVision"    "1"
+				"VisionRadius"      "%vision_radius"
+				"MoveSpeed"         "%bolt_speed"
+				"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+
+			"FireSound"
+			{
+				"EffectName"        "Hero_Sven.StormBolt"
+				"Target"            "CASTER"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"EffectName"        "Hero_Sven.StormBoltImpact"
+				"Target"            "TARGET"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"    "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+				"EffectAttachType"  "attach_origin"
+				"Target"        "TARGET"
+				"ControlPointEntities"
+				{
+					"TARGET"    "attach_origin"
+					"TARGET"    "attach_origin"
+					"TARGET"    "attach_origin"
+					"TARGET"    "attach_origin" //CP3 has a child explosion origin
+				}
+			}
+
+			//"Damage"
+			//{
+			//	"Target"    "TARGET"
+			//	"Type"      "DAMAGE_TYPE_MAGICAL"
+			//	"Damage"    "%AbilityDamage"
+			//}
+
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_storm_bolt_datadriven"
+				"Target"        "TARGET"
+			}
+			
+		}
+
+		"Modifiers"
+		{
+			"modifier_storm_bolt_datadriven"
+			{
+				"Duration"      "%bolt_stun_duration"
+				"IsDebuff"      "1"
+				"OverrideAnimation" "ACT_DOTA_DISABLED"
+
+				"EffectName"    "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		
+	}
+	
+	"monkey_king"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"no_miss"
+	"MaxLevel"						"1"
+	"Modifiers"
+	{
+		"modifier_item_monkey_king_bar_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"States"
+			{
+				"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+			}
+			
+		}
+
+	}
+	}
+	
+	"treant_debuff"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"treant_debuff"
+	"MaxLevel"						"1"
+	"Modifiers"
+	{
+		"modifier_item_treant_debuff"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+		}
+	}
+	}
+	
+	"cm_haste"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET || DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"windrunner_windrun"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"45"
+		
+		"precache"
+		{
+			"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"particle"                  "particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
+		}
+		
+		"OnSpellStart"{
+			"ApplyModifier"{
+				"ModifierName"			"modifier_bonus_ms"
+				"Target"				"CASTER"
+			}
+		}
+		"Modifiers"{
+			"modifier_bonus_ms"{
+				"Duration"				"5"
+			
+				"EffectName"            "particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
+				"EffectAttachType"      "follow_origin"
+				
+				"Properties"{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"500"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"100"
+				}
+			}
+		}
+		
+	}
+	"cm_heal_building"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"omniknight_purification"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"100"
+		
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"    "Hero_Omniknight.Purification"
+				"Target"        "TARGET"
+			}
+
+			"FireEffect"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"ControlPoints"
+				{
+					"00"    "0 0 0"
+					"01"    "180 180 180"
+				}
+			}
+			
+			"FireEffect"
+			{
+				"Target"            "TARGET"
+				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+			}
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"HealBuilding"
+				"FixedHeal"				"300"
+				"PercentageHeal"		"30"
+			}
+		}
+	}
+	"invul_ability"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE || DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"omniknight_purification"
+		"MaxLevel"						"1"
+
+
+		"OnCreated"
+		{
+			"ApplyModifier"{
+				"ModifierName"			"modifier_invulnerable"
+				"Target"				"CASTER"
+			}
+		}
+	}
+	"commit_suicide"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"cancel"
+		"MaxLevel"						"1"
+
+
+		"OnSpellStart"
+		{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"CommitSuicide"
+			}
+		}
+	}
+	
+	"tower_atk_spd"{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"windrunner_focusfire"
+		
+		// Casting
+		"AbilitySpecial"{
+			"01"{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"10"
+			}
+			"02"{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"7 15 22 27 32 49 56 61 65 70"
+			}
+		}
+		"OnCreated"{
+			"ApplyModifier"{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_fervor_datadriven"
+			}
+		}
+
+		"Modifiers"{
+			"modifier_fervor_datadriven"{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnAttack"{
+					"RunScript"{
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"TowerAttackSpeed"
+						"modifier"		"modifier_fervor_stack_datadriven"
+					}
+					"ApplyModifier"{
+						"ModifierName"	"modifier_fervor_target"
+						"Target"		"TARGET"
+					}
+				}
+			}
+
+			"modifier_fervor_stack_datadriven"{
+				"IsBuff"		"1"
+				"IsPurgable"	"0"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed" 
+				}
+			}
+			"modifier_fervor_target"{
+				"IsPurgable"	"0"
+				"Duration"		"10"
+			}
+		}
+	}
+	
+	"tower_frost_slow"{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"drow_ranger_frost_arrows"
+		
+		"OnCreated"{
+			"ApplyModifier"{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_frost_attack"
+			}
+		}
+
+		"Modifiers"{
+			"modifier_frost_attack"{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnAttack"{
+					"ApplyModifier"{
+						"ModifierName"	"modifier_frost_slow_target"
+						"Target"		"TARGET"
+					}
+				}
+			}
+			"modifier_frost_slow_target"{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsPurgable"		"0"
+				"Duration"			"3"
+				"Passive"			"0"
+				"IsDebuff"			"1"
+				//"EffectName"		"particles/generic_gameplay/generic_frozen.vpcf"
+				//"EffectAttachType"	"follow_origin"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-7" 
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1" 
+				}
+			}
+		}
+	}
+	
+	"tower_poison"{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"venomancer_poison_sting"
+		
+		"Modifiers"{
+			
+			"modifier_poison_attack" {
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"OnAttack"{
+					"ApplyModifier" {
+						"Target"        "TARGET"
+						"ModifierName"  "modifier_poison_target"
+					}
+					"ApplyModifier" {
+						"Target"        "TARGET"
+						"ModifierName"  "modifier_poison"
+						"Duration"		"3"
+					}
+				}
+			}
+
+			"modifier_poison_counter" {
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsPurgable"		"0"
+				"Passive"			"0"
+				"IsDebuff"			"1"
+				"IsHidden"          "0"
+
+			}
+			"modifier_poison_target"{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsPurgable"		"0"
+				"Duration"			"3"
+				"Passive"			"0"
+				"IsDebuff"			"1"
+				"IsHidden"          "1"
+
+				"OnCreated" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierCreated"
+						"Modifier"      "modifier_poison_counter"
+					}
+				}
+				
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierExpired"
+						"Modifier"      "modifier_poison_counter"
+					}
+				}
+			}
+		}
+	}
+	"tower_poison_2"{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"venomancer_poison_sting"
+		
+		"Modifiers"{
+			
+			"modifier_poison_attack" {
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"OnAttack"{
+					"ApplyModifier" {
+						"Target"        "TARGET"
+						"ModifierName"  "modifier_poison_target"
+					}
+					"ApplyModifier" {
+						"Target"        "TARGET"
+						"ModifierName"  "modifier_poison"
+						"Duration"		"6"
+					}
+				}
+			}
+
+			"modifier_poison_counter" {
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsPurgable"		"0"
+				"Passive"			"0"
+				"IsDebuff"			"1"
+				"IsHidden"          "0"
+
+			}
+			"modifier_poison_target"{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsPurgable"		"0"
+				"Duration"			"6"
+				"Passive"			"0"
+				"IsDebuff"			"1"
+				"IsHidden"          "1"
+
+				"OnCreated" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierCreated"
+						"Modifier"      "modifier_poison_counter"
+					}
+				}
+				
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierExpired"
+						"Modifier"      "modifier_poison_counter"
+					}
+				}
+			}
+		}
+	}
+	
+	"buy_item_book_of_intelligence"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_book_of_intelligence"
+		"AbilityTextureName"			"item_book_of_intelligence"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_book_of_agility"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_book_of_agility"
+		"AbilityTextureName"		"item_book_of_agility"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_book_of_strength"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_book_of_strength"
+		"AbilityTextureName"		"item_book_of_strength"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_satanic"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_satanic"
+		"AbilityTextureName"		"item_satanic"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"train_attacker_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_2"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"500000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"500000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_attacker_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_3"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"2000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"2000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_attacker_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_4"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"3000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"3000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_attacker_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_5"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"50000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"50000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	
+	"train_attacker_6"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_6"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_6"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"4000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"40000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+
+	"train_attacker_9"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_9"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_9"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"5000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"5000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		
+		}
+	}
+
+	"train_attacker_10"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_10"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_10"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"6000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"6000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		
+		}
+	}
+
+
+	"train_attacker_11"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_11"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_11"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"6000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"6000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		
+		}
+	}
+
+	"train_attacker_12"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_attacker_12"
+		"MaxLevel"					"1"
+		"UnitName"					"attacker_12"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"7000000"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"7000000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"15"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		
+		}
+	}
+
+	
+	"troll_boss_berserkers_rage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"troll_warlord_berserkers_rage"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilitySound"					"Hero_TrollWarlord.BerserkersRage.Toggle"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_move_speed"		"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"04"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"350"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_attack_time"		"1"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ensnare_chance"			"35"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ensnare_duration"			"0.5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	//=================================================================================================================
+	// Troll Warlord: Whirling Axes (Throw)
+	//=================================================================================================================
+	"troll_boss_whirling_axes_ranged"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"troll_warlord_whirling_axes_ranged"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Ranged"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_WHIRLING_AXES_RANGED"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_width"					"100"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"axe_speed"					"1500.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"axe_range"					"1000.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_damage"				"75"
+				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_3"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"axe_slow_duration"			"4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"40"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_spread"				"25"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_count"					"5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Troll Warlord: Whirling Axes Spin
+	//=================================================================================================================
+	"troll_boss_whirling_axes_melee"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"troll_warlord_whirling_axes_melee"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Melee"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100"
+				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hit_radius"				"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_range"					"450.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_movement_speed"		"1250"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"blind_duration"			"4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blind_pct"					"50"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"whirl_duration"			"3.0"
+			}
+		}
+	}
+
+	"troll_boss_fervor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"troll_warlord_fervor"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"10"
+				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_2"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	//  Troll Warlord: Battle Trance
+	//=================================================================================================================
+	"troll_boss_battle_trance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"troll_warlord_battle_trance"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_TrollWarlord.BattleTrance.Cast"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"3"
+        "HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastRange"				"525"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"trance_duration"		"6.5"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal"			"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed"			"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movement_speed"		"100"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"scepter_cooldown"	"20"
+				"RequiresScepter"	"1"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"scepter_duration_enemies"	"3.25"
+				"RequiresScepter"	"1"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"scepter_cast_range_tooltip"	"525"
+				"RequiresScepter"	"1"
+			}
+			
+		}
+	}
+	"respawn_boss"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/respawn"
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"respawn_duration"		"120"
+			}
+		}
+	}
+	
+}

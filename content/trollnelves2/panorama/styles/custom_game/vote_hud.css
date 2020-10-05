@@ -1,0 +1,69 @@
+.GameSetup
+{
+    width: 100%;
+    height: 100%;
+}
+
+#MapInfo{
+    horizontal-align: right;
+    margin-top: 5%;
+    margin-right: 3%;
+}
+
+#MapInfoLabel
+{
+    font-size: 32px;
+    color: #111111;
+	text-transform: uppercase;
+}
+
+#TeamChoiceWrapper
+{
+    width: 40%;
+    height: fit-children;
+    horizontal-align: center;
+    vertical-align: top;  
+    flow-children: down;
+    margin-top: 5%;
+    padding: 10px 1%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #404b4a11;
+}
+
+#TeamChoiceHeader
+{
+    font-size: 60px;
+    horizontal-align: center;
+    margin-left: 10px;
+    margin-top: 3px;
+    text-overflow: clip;
+    text-align: center;
+}
+
+#ChoiceButtonWrapper{
+    margin-top:10px;
+	flow-children:right;
+    horizontal-align:center;
+}
+
+.ChoiceButton {
+    padding: 0px 5px 0px 5px;
+}
+
+.ChoiceButton > Label {
+    font-size: 30px;
+    color: white;
+}
+
+.ChoiceButton > .RadioBox {
+    width: 40px;
+    height: 40px;
+}
+
+#TeamChoiceTimer
+{
+	margin-top: 8px;
+    font-size: 48px;
+    color: #CCCCCC;
+	horizontal-align: center;
+}

@@ -1,0 +1,68 @@
+.Hud {
+	width: 100%;
+	height: 100%;
+}
+
+.__Root,
+
+
+
+#DonateToggleButton {
+	width: 60px;
+	height: 60px;
+	background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_psd.vtex");
+	brightness: 1.0;
+	z-index: -1;
+	/*box-shadow: #000000aa 0px 0px 2px 2px;*/
+	transition-property: background-image,brightness,transform;
+	transition-duration: .25s;
+	background-size: 100% 100%;
+	transition-timing-function: ease-in-out;
+	vertical-align: top;
+	/*transform: translateX(-150px);*/
+	horizontal-align: left;
+/*	margin-left: 1120px;
+	margin-bottom: 30px;*/
+	margin-top: 220px;
+	text-align: center;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+#Arrow{
+	width: 100%;
+	height: 100%;
+	background-image: url('file://{images}/custom_game/loading_screen/discord.png');
+	background-size: 90% 90%;
+	background-repeat: no-repeat; 
+	background-position: 50% 50%;
+	/*transform: scaleX(-1);*/
+	transition-duration: 0.25s;
+	transition-property: opacity;
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+#DonateToggleButton:Hover {
+	brightness:1.6;
+	transform: none;
+	/*background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_hover_psd.vtex");*/
+}
+
+#DonateToggleButton:Hover #DonateToggleButtonText{
+	margin-left: 0px;
+}
+#DonateToggleButtonText {
+	color: #ffcc33;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 2px;
+	min-width: 60px;
+	vertical-align: center;
+	text-transform: uppercase;
+	margin-right: 7px;
+}
+

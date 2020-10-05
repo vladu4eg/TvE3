@@ -1,0 +1,8 @@
+desert2x
+{
+	material materials/overviews/desert2x.vmat
+	pos_x -9024
+	pos_y 9984
+	scale 17.750
+}
+

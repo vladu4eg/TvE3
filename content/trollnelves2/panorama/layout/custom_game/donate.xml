@@ -1,0 +1,26 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/donate.js" />
+	</scripts>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/donate.css" />
+	</styles>
+	<Panel class="Hud" hittest="false"> 
+		<Panel id="DonateContainer" hittest="false" >
+			<Panel id="DonatePanel">
+				<Panel class="DonateInfoPanel">
+					<Button id="QuitButton" onactivate="$('#DonateContainer').RemoveClass('Visible')" />
+				</Panel>
+				<Panel id="DonateItemsList">
+				</Panel> 
+				<Panel class="DonateInfoPanel" />
+			</Panel>
+			<Button class="DonateInfo"  onactivate="DOTADisplayURL('https://www.patreon.com/vulkantsk')">
+			</Button>
+		</Panel>
+		<Button id="DonateToggleButton" onactivate="DonateToggleButtonActivate()">
+			<Panel id="Arrow" />
+		</Button>
+	</Panel>
+</root>

@@ -1,0 +1,1220 @@
+"lang"
+{
+	"Language"		"schinese"
+	"Tokens"
+	{
+		"addon_game_name"			"巨魔与精灵3"
+		
+		// ******************** HEROES ********************
+		"npc_dota_hero_treant"                                                  "精灵"
+		"npc_dota_hero_troll_warlord"                                                     "巨魔"
+		"npc_dota_hero_lycan"                                                             "精灵狼"
+		"npc_dota_hero_crystal_maiden"                                                    "精灵使者"
+
+		// ******************** UNITS ********************
+		"tent_1"                                                                            "帐篷"
+		"tent_2"                                                                          "农场"
+		"tent_3"                                                                          "精灵农场"
+		"tent_4"                                                                          "高级精灵农场"
+		"tent_5"                                                                          "小型作坊"
+		"tent_6"                                                                          "中型作坊"
+		"tent_7"                                                                          "大型作坊"
+		"barracks_1"                                                                      "高级作坊"
+		"barracks_2"                                                                      "超级作坊"
+		"barracks_3"                                                                      "终极作坊"
+		"rock_1"                                                                          "石墙 1"
+		"rock_2"                                                                          "石墙 2"
+		"rock_3"                                                                          "石墙 3"
+		"rock_4"                                                                          "石墙 4"
+		"rock_5"                                                                          "石墙 5"
+		"rock_6"                                                                    "精灵墙 1"
+		"rock_7"                                                                    "精灵墙 2"
+		"rock_8"                                                                    "精灵墙 3"
+		"rock_9"                                                                    "精灵墙 4"
+		"rock_10"                                                                    "精灵墙 5"
+		"rock_11"                                                                  "恶魔墙 1"
+		"rock_12"                                                                  "恶魔墙 2"
+		"rock_13"                                                                  "恶魔墙 3"
+		"rock_14"                                                                  "恶魔墙 4"
+		"rock_15"                                                                  "恶魔墙 5"
+		"rock_16"                                                                   "龙墙 1"
+		"rock_17"                                                                   "龙墙 2"
+		"rock_18"                                                              "金龙墙"
+		"tower_1"                                                                         "塔 1"
+		"tower_2"                                                                         "塔 2"
+		"tower_3"                                                                         "塔 3"
+		"tower_4"                                                                         "塔 4"
+		"tower_5"                                                                         "塔 5"
+		"tower_6"                                                                         "塔 6"
+		"tower_7"                                                                         "塔 7"
+		"tower_8"                                                                         "塔 8"
+		"tower_9"                                                                         "塔 9"
+		"tower_10"                                                                        "塔 10"
+		"tower_11"                                                                        "塔 11"
+		"tower_12"                                                                        "塔 12"
+		"tower_13"                                                                        "塔 13"
+		"tower_14"                                                                        "塔 14"
+		"tower_15"                                                                        "塔 15"
+		"tower_16"                                                                        "塔 16"
+		"tower_17"                                                                        "塔 17"
+		"tower_18"                                                                        "塔 18"
+		"true_sight_tower"                                                                "真视之塔"
+		"trader_1"                                                                        "商人 1"
+		"trader_2"                                                                        "商人 2"
+		"trader_3"                                                                        "商人 3"
+		"workers_guild"                                                                   "修理工建筑师"
+		"mother_of_nature"                                                                "自然之母"
+		"research_lab"                                                                    "研究所 1"
+		"research_lab2"                                                                   "研究所 2"
+		"worker_1"                                                                        "修理工 1"
+		"worker_2"                                                                        "修理工 2"
+		"worker_3"                                                                        "修理工 3"
+		"worker_4"                                                                        "修理工 4"
+		"worker_5"                                                                        "修理工 5"
+		"wisp_1"                                                                          "小精灵 1"
+		"wisp_2"                                                                          "小精灵 2"
+		"wisp_3"                                                                          "小精灵 3"
+		"wisp_4"                                                                          "小精灵 4"
+		"wisp_5"                                                                          "小精灵 5"
+		"wisp_6"                                                                          "小精灵 6"
+		"wisp_7"                                                                          "小精灵 7"
+		"wisp_8"                                                                          "小精灵 8"
+		"gold_wisp"                                                                       "金矿小精灵"
+		"gold_mine_1"                                                                     "金矿 1"
+		"gold_mine_2"                                                                     "金矿 2"
+		"gold_mine_3"                                                                     "金矿 3"
+		"gold_mine_4"                                                                     "金矿 4"
+		"gold_mine_5"                                                                     "金矿 5"
+		"gold_mine_6"                                                                     "金矿 6"
+		"gold_mine_7"                                                                     "金矿 7"
+		"gold_mine_8"                                                                     "金矿 8"
+		"weapon_shop"                                                                     "武器商店"
+		"armor_shop"                                                                      "护甲商店"
+		"hp_shop"                                                                         "血量商店"
+		"hp_reg_shop"                                                                     "生命回复商店"
+		"atk_spd_shop"                                                                    "攻击速度商店"
+		"troll_hut_1"                                                                     "巨魔帐篷 1"
+		"troll_hut_2"                                                                     "巨魔帐篷 2"
+		"troll_hut_3"                                                                     "巨魔帐篷 3"
+		"troll_hut_4"                                                                     "巨魔帐篷 4"
+		
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_gain_gold"                                                 "产生金钱"
+		"DOTA_Tooltip_modifier_gain_gold_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_gain_gold_team"                                            "团队金钱增加"
+		"DOTA_Tooltip_modifier_gain_gold_team_Description"                                ""
+
+		"DOTA_Tooltip_modifier_truesight_datadriven"                                      "Truesight Datadriven"
+		"DOTA_Tooltip_modifier_truesight_datadriven_Description"                          ""
+
+		"DOTA_Tooltip_modifier_truesight_reveal"                                          "真视视野"
+		"DOTA_Tooltip_modifier_truesight_reveal_Description"                              ""
+
+		"DOTA_Tooltip_modifier_teleportation"                                             "传送中"
+		"DOTA_Tooltip_modifier_teleportation_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_builder_repairing"                                         "修理中"
+		"DOTA_Tooltip_modifier_builder_repairing_Description"                             ""
+
+		"DOTA_Tooltip_modifier_repairing_building"                                        "修理中"
+		"DOTA_Tooltip_modifier_repairing_building_Description"                            ""
+
+		"DOTA_Tooltip_modifier_gathering_lumber"                                          "收集木材"
+		"DOTA_Tooltip_modifier_gathering_lumber_Description"                              ""
+				
+		"DOTA_Tooltip_modifier_gold_mine"                                                 "金矿"
+		"DOTA_Tooltip_modifier_gold_mine_Description"                                     ""
+
+		"DOTA_Tooltip_fountain_regen"                                                     "基地恢复加快"
+		"DOTA_Tooltip_fountain_regen_Description"                                         ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven"                                  "Darkness Aura Datadriven"
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven_Description"                      ""
+
+		"DOTA_Tooltip_modifier_darkness_datadriven"                                       "Darkness Datadriven"
+		"DOTA_Tooltip_modifier_darkness_datadriven_Description"                           ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_ability_building"                                           "Ability Building"
+		"DOTA_Tooltip_ability_ability_building_Description"                               ""
+
+		"DOTA_Tooltip_ability_max_building_level"                                         "最高建筑等级"
+		"DOTA_Tooltip_ability_max_building_level_Description"                             "这个技能没用，就是为了防止你按错键才有的。"
+
+		"DOTA_Tooltip_ability_ability_tower"                                              "Ability Tower"
+		"DOTA_Tooltip_ability_ability_tower_Description"                                  ""
+
+		"DOTA_Tooltip_ability_dummy_tree"                                                 "Dummy Tree"
+		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
+
+		"DOTA_Tooltip_ability_build_tent"                                                 "建造帐篷"
+		"DOTA_Tooltip_ability_build_tent_Description"                                     "建造一个每秒产生金钱的帐篷，只能建造一个。 "
+		"DOTA_Tooltip_ability_build_tent_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_build_tent_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_2"                                          "升级至农场"
+		"DOTA_Tooltip_ability_upgrade_to_tent_2_Description"                              "升级你的帐篷! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_3"                                          "升级至精灵农场"
+		"DOTA_Tooltip_ability_upgrade_to_tent_3_Description"                              "升级你的农场! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_4"                                          "升级至高级精灵农场"
+		"DOTA_Tooltip_ability_upgrade_to_tent_4_Description"                              "升级你的精灵农场! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_5"                                          "升级至小型作坊"
+		"DOTA_Tooltip_ability_upgrade_to_tent_5_Description"                              "升级你的高级精灵农场! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_6"                                          "升级至中级作坊"
+		"DOTA_Tooltip_ability_upgrade_to_tent_6_Description"                              "升级你的小型作坊! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_7"                                          "升级至大型作坊"
+		"DOTA_Tooltip_ability_upgrade_to_tent_7_Description"                              "升级你的中级作坊! "
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1"                                      "升级至高级作坊"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1_Description"                          "升级你的大型作坊! "
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2"                                      "升级至超级作坊"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2_Description"                          "升级你的高级作坊! "
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3"                                      "升级至终极作坊"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3_Description"                          "升级你的终极作坊! "
+
+		"DOTA_Tooltip_ability_gain_gold"                                                  "产生金钱"
+		"DOTA_Tooltip_ability_gain_gold_Description"                                      "每秒产生一定金钱！"
+
+		"DOTA_Tooltip_ability_build_rock"                                                 "建造石墙"
+		"DOTA_Tooltip_ability_build_rock_Description"                                     "基础防御建筑，可以阻碍巨魔的入侵!/n 提示：升级农场的前置建筑，最好只在重要位置建造一个以节约资源发展。 "
+		"DOTA_Tooltip_ability_build_rock_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_build_rock_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_2"                                          "升级至石墙 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_2_Description"                              "升级你的石墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_3"                                          "升级至石墙 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_3_Description"                              "升级你的石墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_4"                                          "升级至石墙 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_4_Description"                              "升级你的石墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_5"                                          "升级至石墙 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_5_Description"                              "升级你的石墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_6"                                    "升级至精灵墙 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_6_Description"                        "升级你的石墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_7"                                    "升级至精灵墙 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_7_Description"                        "升级你的精灵墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_8"                                    "升级至精灵墙 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_8_Description"                        "升级你的精灵墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_9"                                    "升级至精灵墙 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_9_Description"                        "升级你的精灵墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_10"                                    "升级至精灵墙 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_10_Description"                        "升级你的精灵墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_11"                                  "升级至恶魔墙 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_11_Description"                      "升级你的精灵墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_12"                                  "升级至恶魔墙 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_12_Description"                      "升级你的恶魔墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_13"                                  "升级至恶魔墙 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_13_Description"                      "升级你的恶魔墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_14"                                  "升级至恶魔墙 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_14_Description"                      "升级你的恶魔墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_15"                                  "升级至恶魔墙 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_15_Description"                      "升级你的恶魔墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_16"                                   "龙墙 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_16_Description"                       "升级你的恶魔墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_17"                                   "龙墙 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_17_Description"                       "升级你的龙墙! "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_18"                              "金龙墙"
+		"DOTA_Tooltip_ability_upgrade_to_rock_18_Description"                  "升级你的龙墙! "
+
+		"DOTA_Tooltip_ability_build_tower_1"                                              "建造塔 1"
+		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "基础塔，拥有较低攻击力!/n 提示：尽早的建造它 可以阻碍巨魔攻击建筑掠夺资源 "
+		"DOTA_Tooltip_ability_build_tower_1_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_build_tower_1_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_2"                                         "升级至塔 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_2_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_3"                                         "升级至塔 3"
+		"DOTA_Tooltip_ability_upgrade_to_tower_3_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_4"                                         "升级至塔 4"
+		"DOTA_Tooltip_ability_upgrade_to_tower_4_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_5"                                         "升级至塔 5"
+		"DOTA_Tooltip_ability_upgrade_to_tower_5_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_6"                                         "升级至塔 6"
+		"DOTA_Tooltip_ability_upgrade_to_tower_6_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_7"                                         "升级至塔 7"
+		"DOTA_Tooltip_ability_upgrade_to_tower_7_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_8"                                         "升级至塔 8"
+		"DOTA_Tooltip_ability_upgrade_to_tower_8_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_9"                                         "升级至塔 9"
+		"DOTA_Tooltip_ability_upgrade_to_tower_9_Description"                             "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_10"                                        "升级至塔 10"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_Description"                            "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_11"                                        "升级至塔 11"
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_Description"                            "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_12"                                        "升级至塔 12"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_13"                                        "升级至塔 13"
+		"DOTA_Tooltip_ability_upgrade_to_tower_13_Description"                            "升级你的防御塔来提升你的防御能力! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_14"                                        "升级至塔 14"
+		"DOTA_Tooltip_ability_upgrade_to_tower_14_Description"                            "升级你的防御塔来提升你的防御能力! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_15"                                        "升级至塔 15"
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_Description"                            "升级你的防御塔来提升你的防御能力! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_16"                                        "升级至塔 16"
+		"DOTA_Tooltip_ability_upgrade_to_tower_16_Description"                            "升级你的防御塔来提升你的防御能力! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_17"                                        "升级至塔 17"
+		"DOTA_Tooltip_ability_upgrade_to_tower_17_Description"                            "升级你的防御塔来提升你的防御能力! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_18"                                        "升级至塔 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_18_Description"                            "升级你的防御塔来提升你的防御能力! "
+
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "升级至真视之塔"
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower_Description"                    "可以看见周围隐身单位，但塔本身没有攻击力.. "
+
+		"DOTA_Tooltip_ability_build_trader_1"                                             "建造商人 1"
+		"DOTA_Tooltip_ability_build_trader_1_Description"                                 "建造商人，可以在商人这里交换木材和金钱! "
+		"DOTA_Tooltip_ability_build_trader_1_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_build_trader_1_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_2"                                        "升级至商人 2"
+		"DOTA_Tooltip_ability_upgrade_to_trader_2_Description"                            "升级你的商人! "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_3"                                        "升级至商人 3"
+		"DOTA_Tooltip_ability_upgrade_to_trader_3_Description"                            "升级你的商人! "
+
+		"DOTA_Tooltip_ability_build_workers_guild"                                        "建造修理工建筑师"
+		"DOTA_Tooltip_ability_build_workers_guild_Description"                            "你可以在这里培养修理工! "
+		"DOTA_Tooltip_ability_build_workers_guild_gold_cost"                              "花费金钱: "
+		"DOTA_Tooltip_ability_build_workers_guild_lumber_cost"                            "花费木材: "
+
+		"DOTA_Tooltip_ability_build_mon"                                                  "建造自然之母"
+		"DOTA_Tooltip_ability_build_mon_Description"                                      "自然之母可以生产可以采集金钱和木材的小精灵! "
+		"DOTA_Tooltip_ability_build_mon_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_build_mon_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_build_research_lab"                                         "建造研究所 1"
+		"DOTA_Tooltip_ability_build_research_lab_Description"                             "建造一个研究所，可以解锁更高级别的防御塔! "
+		"DOTA_Tooltip_ability_build_research_lab_gold_cost"                               "花费金钱: "
+		"DOTA_Tooltip_ability_build_research_lab_lumber_cost"                             "花费木材: "
+
+		"DOTA_Tooltip_ability_upgrade_to_research_lab2"                                         "升级至研究所 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab2_Description"                             "升级你的研究所，可以解锁更高级别的防御塔! "
+		
+
+		"DOTA_Tooltip_ability_true_sight_ability"                                         "真视"
+		"DOTA_Tooltip_ability_true_sight_ability_Description"                             "可以看见周围的隐身单位。 "
+		"DOTA_Tooltip_ability_true_sight_ability_radius"                                  "范围: "
+		
+		"DOTA_Tooltip_ability_tower_atk_spd"												"集中火力"
+		"DOTA_Tooltip_ability_tower_atk_spd_Description"									"每一击都提供额外的攻击速度. 最后一次自动攻击将对敌方造成10秒的攻击速度减慢. <br/>攻击速度提升: 7/15/22/27/32/49/56/61/65/70"
+		
+		"DOTA_Tooltip_ability_tower_frost_slow"												"冰箭"
+		"DOTA_Tooltip_ability_tower_frost_slow_Description"									"塔射出的箭变的寒冷，使敌人的攻击速度减慢1%，移动速度减7（不是百分比）攻击速度。与其他冰箭叠加，叠加持续三秒"
+
+		"DOTA_Tooltip_ability_tower_poison"													"毒刺"
+		"DOTA_Tooltip_ability_tower_poison_Description"	    								"每一次命中都会对敌人施加一次debuff，使其生命回复降低5%。叠加持续3秒，生命回复不能低于0."
+
+		"DOTA_Tooltip_modifier_poison_target"                                             "nothing"
+		"DOTA_Tooltip_modifier_poison_target_Description"                                 "gadfds"
+
+		"DOTA_Tooltip_modifier_poison_counter"                                             "毒刺"
+		"DOTA_Tooltip_modifier_poison_counter_Description"                                 "每次攻击减少 5\% 生命回复"
+		
+		"DOTA_Tooltip_ability_buy_lumber_10"                                              "购买木头 10"
+		"DOTA_Tooltip_ability_buy_lumber_10_Description"                                  "购买10木材，木材可以用于升级或者建造建筑 ，木材价格显示在你的资源下方"
+
+		"DOTA_Tooltip_ability_buy_lumber_200"                                             "购买木头 200"
+		"DOTA_Tooltip_ability_buy_lumber_200_Description"                                 "购买10木材，木材可以用于升级或者建造建筑 ，木材价格显示在你的资源下方 "
+
+		"DOTA_Tooltip_ability_sell_lumber_10"                                             "出售木头 10"
+		"DOTA_Tooltip_ability_sell_lumber_10_Description"                                 "出售10木材，木材可以用于升级或者建造建筑 ，木材价格显示在你的资源下方 "
+
+		"DOTA_Tooltip_ability_sell_lumber_200"                                            "出售木头 200"
+		"DOTA_Tooltip_ability_sell_lumber_200_Description"                                "出售10木材，木材可以用于升级或者建造建筑 ，木材价格显示在你的资源下方"
+
+		"DOTA_Tooltip_ability_reveal_area"                                                "巨魔之眼"
+		"DOTA_Tooltip_ability_reveal_area_Description"                                    "揭示 1500(冬季地图中为 2600 ) 范围的视野，持续 5 秒. 非常适合侦察敌人的基地！使敌人在持续时间内无法隐身 "
+
+		"DOTA_Tooltip_ability_troll_invis"                                                "疾风步"
+		"DOTA_Tooltip_ability_troll_invis_Description"                                    "变的隐身并且提高你的移动速度直到你攻击或者持续时间结束为止！ "
+
+		"DOTA_Tooltip_ability_troll_teleport"                                             "传送"
+		"DOTA_Tooltip_ability_troll_teleport_Description"                                 "可以传送至你的基地或你的盟友身边! "
+
+		"DOTA_Tooltip_ability_attack_gold"                                                "掠夺"
+		"DOTA_Tooltip_ability_attack_gold_Description"                                    "巨魔在攻击时可以掠夺资源，每次攻击获得的金钱取决于你的攻击力。"
+
+		"DOTA_Tooltip_ability_repair"                                                     "修复"
+		"DOTA_Tooltip_ability_repair_Description"                                         "修复你的建筑!<br>右键自动施放。"
+		
+		"DOTA_Tooltip_ability_commit_suicide"											  "自杀"
+		"DOTA_Tooltip_ability_commit_suicide_Description"								  "自杀，敌人在身边时无法使用! "
+
+		"DOTA_Tooltip_ability_gather_lumber_8"                                            "获取木材"
+		"DOTA_Tooltip_ability_gather_lumber_8_Description"                                "对树木使用这个技能，从树木中采集木材. 获取 'Lumber amount' 木材每 'Gather interval' 秒. 一棵树上只能环绕一个小精灵! "
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_interval"                            "采集间隔: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4"                                            "获取木材"
+		"DOTA_Tooltip_ability_gather_lumber_4_Description"                                "对树木使用这个技能，从树木中采集木材. 获取 'Lumber amount' 木材每 'Gather interval' 秒. 一棵树上只能环绕一个小精灵!"
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_interval"                            "采集间隔: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2"                                            "获取木材"
+		"DOTA_Tooltip_ability_gather_lumber_2_Description"                                "对树木使用这个技能，从树木中采集木材. 获取 'Lumber amount' 木材每 'Gather interval' 秒. 一棵树上只能环绕一个小精灵! "
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_interval"                            "采集间隔: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1"                                            "获取木材"
+		"DOTA_Tooltip_ability_gather_lumber_1_Description"                                "对树木使用这个技能，从树木中采集木材. 获取 'Lumber amount' 木材每 'Gather interval' 秒. 一棵树上只能环绕一个小精灵! "
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_interval"                            "采集间隔 "
+
+		"DOTA_Tooltip_ability_train_worker_1"                                             "训练修理工 1"
+		"DOTA_Tooltip_ability_train_worker_1_Description"                                 "培训修理工，工人们是修理建筑物的好手！修理速度取决于修理工的攻击力。 "
+		"DOTA_Tooltip_ability_train_worker_1_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_train_worker_1_lumber_cost"                                 "花费木材: "
+		"DOTA_Tooltip_ability_train_worker_1_food_cost"                                   "花费食物: "
+		"DOTA_Tooltip_ability_train_worker_1_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_2"                                             "训练修理工 2"
+		"DOTA_Tooltip_ability_train_worker_2_Description"                                 "培训修理工，工人们是修理建筑物的好手！修理速度取决于修理工的攻击力。 "
+		"DOTA_Tooltip_ability_train_worker_2_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_train_worker_2_lumber_cost"                                 "花费木材: "
+		"DOTA_Tooltip_ability_train_worker_2_food_cost"                                   "花费食物: "
+		"DOTA_Tooltip_ability_train_worker_2_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_3"                                             "训练修理工 3"
+		"DOTA_Tooltip_ability_train_worker_3_Description"                                 "培训修理工，工人们是修理建筑物的好手！修理速度取决于修理工的攻击力。 "
+		"DOTA_Tooltip_ability_train_worker_3_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_train_worker_3_lumber_cost"                                 "花费木材: "
+		"DOTA_Tooltip_ability_train_worker_3_food_cost"                                   "花费食物: "
+		"DOTA_Tooltip_ability_train_worker_3_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_4"                                             "训练修理工 4"
+		"DOTA_Tooltip_ability_train_worker_4_Description"                                 "培训修理工，工人们是修理建筑物的好手！修理速度取决于修理工的攻击力。 "
+		"DOTA_Tooltip_ability_train_worker_4_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_train_worker_4_lumber_cost"                                 "花费木材: "
+		"DOTA_Tooltip_ability_train_worker_4_food_cost"                                   "花费食物: "
+		"DOTA_Tooltip_ability_train_worker_4_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_5"                                             "训练修理工 5"
+		"DOTA_Tooltip_ability_train_worker_5_Description"                                 "培训修理工，工人们是修理建筑物的好手！修理速度取决于修理工的攻击力。 "
+		"DOTA_Tooltip_ability_train_worker_5_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_train_worker_5_lumber_cost"                                 "花费木材: "
+		"DOTA_Tooltip_ability_train_worker_5_food_cost"                                   "花费食物: "
+		"DOTA_Tooltip_ability_train_worker_5_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_1"                                               "训练小精灵 1"
+		"DOTA_Tooltip_ability_train_wisp_1_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_1_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_1_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_1_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_1_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_2"                                               "训练小精灵 2"
+		"DOTA_Tooltip_ability_train_wisp_2_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_2_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_2_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_2_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_2_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_3"                                               "训练小精灵 3"
+		"DOTA_Tooltip_ability_train_wisp_3_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_3_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_3_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_3_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_3_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_4"                                               "训练小精灵 4"
+		"DOTA_Tooltip_ability_train_wisp_4_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_4_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_4_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_4_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_4_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_5"                                               "训练小精灵 5"
+		"DOTA_Tooltip_ability_train_wisp_5_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_5_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_5_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_5_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_5_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_6"                                               "训练小精灵 6"
+		"DOTA_Tooltip_ability_train_wisp_6_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_6_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_6_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_6_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_6_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_7"                                               "训练小精灵 7"
+		"DOTA_Tooltip_ability_train_wisp_7_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_7_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_7_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_7_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_7_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_8"                                               "训练小精灵 8"
+		"DOTA_Tooltip_ability_train_wisp_8_Description"                                   "训练小精灵. 小精灵可以收集木材! "
+		"DOTA_Tooltip_ability_train_wisp_8_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_train_wisp_8_lumber_cost"                                   "花费木材: "
+		"DOTA_Tooltip_ability_train_wisp_8_food_cost"                                     "花费食物: "
+		"DOTA_Tooltip_ability_train_wisp_8_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_gold_wisp"                                            "训练金矿小精灵"
+		"DOTA_Tooltip_ability_train_gold_wisp_Description"                                "训练金矿小精灵.，金矿小精灵可以创造金矿，增加每秒收入。"
+		"DOTA_Tooltip_ability_train_gold_wisp_gold_cost"                                  "花费金钱: "
+		"DOTA_Tooltip_ability_train_gold_wisp_lumber_cost"                                "花费木材: "
+		"DOTA_Tooltip_ability_train_gold_wisp_food_cost"                                  "花费食物: "
+		"DOTA_Tooltip_ability_train_gold_wisp_unit_count"                                 "UNIT COUNT: "
+	
+		"DOTA_Tooltip_ability_reveal_area_radius"                                         "范围: "
+		"DOTA_Tooltip_ability_reveal_area_duration"                                       "持续时间: "
+
+		"DOTA_Tooltip_ability_troll_invis_invis_duration"                                 "隐身时间: "
+		"DOTA_Tooltip_ability_troll_invis_bonus_movement_speed"                           "移动速度增加: "
+		
+		
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_1"                                             "购买伤害武器 1"
+		"DOTA_Tooltip_ability_buy_item_dmg_1_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_1_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_2"                                             "购买伤害武器 2"
+		"DOTA_Tooltip_ability_buy_item_dmg_2_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_2_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_3"                                             "购买伤害武器 3"
+		"DOTA_Tooltip_ability_buy_item_dmg_3_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_3_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_4"                                             "购买伤害武器 4"
+		"DOTA_Tooltip_ability_buy_item_dmg_4_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_4_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_5"                                             "购买伤害武器 5"
+		"DOTA_Tooltip_ability_buy_item_dmg_5_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_5_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_6"                                             "购买伤害武器 6"
+		"DOTA_Tooltip_ability_buy_item_dmg_6_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_6_bonus_damage"                                "攻击力增加: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_lumber_cost"                                 "花费木材: "
+		
+		"DOTA_Tooltip_ability_gold_mine_ability"                                          "金矿"
+		"DOTA_Tooltip_ability_gold_mine_ability_Description"                              ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2"                                     "升级至巨魔小屋 2"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3"                                     "升级至巨魔小屋 3"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4"                                     "升级至巨魔小屋 4"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4_Description"                         ""
+
+		"DOTA_Tooltip_ability_build_gold_mine_1"                                          "创造金矿 1"
+		"DOTA_Tooltip_ability_build_gold_mine_1_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。"
+		"DOTA_Tooltip_ability_build_gold_mine_1_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_1_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_2"                                          "创造金矿 2"
+		"DOTA_Tooltip_ability_build_gold_mine_2_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_2_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_2_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_3"                                          "创造金矿 3"
+		"DOTA_Tooltip_ability_build_gold_mine_3_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_3_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_3_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_4"                                          "创造金矿 4"
+		"DOTA_Tooltip_ability_build_gold_mine_4_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_4_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_4_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_5"                                          "创造金矿 5"
+		"DOTA_Tooltip_ability_build_gold_mine_5_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_5_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_5_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_6"                                          "创造金矿 6"
+		"DOTA_Tooltip_ability_build_gold_mine_6_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_6_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_6_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_7"                                          "创造金矿 7"
+		"DOTA_Tooltip_ability_build_gold_mine_7_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_7_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_7_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_8"                                          "创造金矿 8"
+		"DOTA_Tooltip_ability_build_gold_mine_8_Description"                              "金矿可以和帐篷一样提供金钱，但是你可以想造多少造多少，金矿会在被采集光之后消失。 "
+		"DOTA_Tooltip_ability_build_gold_mine_8_gold_cost"                                "花费金钱: "
+		"DOTA_Tooltip_ability_build_gold_mine_8_lumber_cost"                              "花费木材: "
+
+		"DOTA_Tooltip_ability_troll_range"                                                "Troll Range"
+		"DOTA_Tooltip_ability_troll_range_Description"                                    ""
+
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_per_interval"                        "每秒木材: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_per_interval"                        "每秒木材: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_per_interval"                        "每秒木材: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_per_interval"                        "每秒木材: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_7"                                             "购买巨剑 Lv 7"
+		"DOTA_Tooltip_ability_buy_item_dmg_7_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_8"                                             "购买巨剑 Lv 8"
+		"DOTA_Tooltip_ability_buy_item_dmg_8_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_9"                                             "购买巨剑 Lv 9"
+		"DOTA_Tooltip_ability_buy_item_dmg_9_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_10"                                            "购买巨剑 Lv 10"
+		"DOTA_Tooltip_ability_buy_item_dmg_10_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_11"                                            "购买巨剑 Lv 11"
+		"DOTA_Tooltip_ability_buy_item_dmg_11_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_12"                                            "购买巨剑 Lv 12"
+		"DOTA_Tooltip_ability_buy_item_dmg_12_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_1"                                           "购买护甲 Lv 1"
+		"DOTA_Tooltip_ability_buy_item_armor_1_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_2"                                           "购买护甲 Lv 2"
+		"DOTA_Tooltip_ability_buy_item_armor_2_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_3"                                           "购买护甲 Lv 3"
+		"DOTA_Tooltip_ability_buy_item_armor_3_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_4"                                           "购买护甲 Lv 4"
+		"DOTA_Tooltip_ability_buy_item_armor_4_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_5"                                           "购买护甲 Lv 5"
+		"DOTA_Tooltip_ability_buy_item_armor_5_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_6"                                           "购买护甲 Lv 6"
+		"DOTA_Tooltip_ability_buy_item_armor_6_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_7"                                           "购买护甲 Lv 7"
+		"DOTA_Tooltip_ability_buy_item_armor_7_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_8"                                           "购买护甲 Lv 8"
+		"DOTA_Tooltip_ability_buy_item_armor_8_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_9"                                           "购买护甲 Lv 9"
+		"DOTA_Tooltip_ability_buy_item_armor_9_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_10"                                          "购买护甲 Lv 10"
+		"DOTA_Tooltip_ability_buy_item_armor_10_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_11"                                          "购买护甲 Lv 11"
+		"DOTA_Tooltip_ability_buy_item_armor_11_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_12"                                          "购买护甲 Lv 12"
+		"DOTA_Tooltip_ability_buy_item_armor_12_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_1"                                              "购买血量  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_1_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_2"                                              "购买血量  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_2_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_3"                                              "购买血量  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_3_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_4"                                              "购买血量  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_4_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_5"                                              "购买血量  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_5_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_6"                                              "购买血量  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_6_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_7"                                              "购买血量  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_7_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_8"                                              "购买血量  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_8_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_9"                                              "购买血量  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_9_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_10"                                             "购买血量  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_10_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_11"                                             "购买血量  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_11_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_12"                                             "购买血量  Lv 12"
+		"DOTA_Tooltip_ability_buy_item_hp_12_Description"                                 ""   
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1"                                          "购买生命回复.  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2"                                          "购买生命回复.  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3"                                          "购买生命回复.  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4"                                          "购买生命回复.  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5"                                          "购买生命回复.  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6"                                          "购买生命回复.  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7"                                          "购买生命回复.  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8"                                          "购买生命回复.  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9"                                          "购买生命回复.  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10"                                         "购买生命回复.  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11"                                         "购买生命回复.  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1"                                         "购买攻击速度 Lv 1"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2"                                         "购买攻击速度 Lv 2"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3"                                         "购买攻击速度 Lv 3"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4"                                         "购买攻击速度 Lv 4"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5"                                         "购买攻击速度 Lv 5"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6"                                         "购买攻击速度 Lv 6"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6_Description"                             ""
+		
+		"DOTA_Tooltip_ability_buy_item_troll_boots"                                         "购买巨魔鞋"
+		"DOTA_Tooltip_ability_buy_item_troll_boots_Description"                             ""
+		
+		
+		"DOTA_Tooltip_ability_buy_item_disable_repair"                                                "购买 从此没有建筑！ "
+		"DOTA_Tooltip_ability_buy_item_disable_repair_Description"                                    "攻击时对建筑造成一个持续5s的debuff，debuff持续时间内建筑无法被修复。 "
+
+		"DOTA_Tooltip_ability_fountain_ability"                                           "泉水回复"
+		"DOTA_Tooltip_ability_fountain_ability_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_lumber_1"                                               "购买木材 1"
+		"DOTA_Tooltip_ability_buy_lumber_1_Description"                                   "使用 64000金币换取1木材"
+
+		"DOTA_Tooltip_ability_buy_lumber_8"                                               "购买木材 8"
+		"DOTA_Tooltip_ability_buy_lumber_8_Description"                                   "使用512000金币换取8木材"
+
+		"DOTA_Tooltip_ability_sell_lumber_1"                                              "出售木材 1"
+		"DOTA_Tooltip_ability_sell_lumber_1_Description"                                  "出售1木材换取64000金币"
+
+		"DOTA_Tooltip_ability_sell_lumber_8"                                              "出售木材 8"
+		"DOTA_Tooltip_ability_sell_lumber_8_Description"                                  "出售8木材换取512000金币"
+
+		
+		"DOTA_Tooltip_ability_steal_gold"                                                 "偷取金钱"
+		"DOTA_Tooltip_ability_steal_gold_Description"                                     "从巨魔那里偷钱，只能对巨魔帐篷使用! "
+
+		"DOTA_Tooltip_ability_stand_invis"                                                "隐身"
+		"DOTA_Tooltip_ability_stand_invis_Description"                                    "白日天使，夜晚恶魔。 等待两秒后隐身。 任何行动都会取消隐身。 只在夜晚有用。 "
+
+		"DOTA_Tooltip_ability_cm_stun"                                                    "晕眩"
+		"DOTA_Tooltip_ability_cm_stun_Description"                                        "对敌方造成两秒眩晕。 "
+
+		"DOTA_Tooltip_ability_cm_haste"                                                   "加速"
+		"DOTA_Tooltip_ability_cm_haste_Description"                                       增加你的移动速度至极致， 使用这个技能逃离巨魔。"
+
+		"DOTA_Tooltip_ability_cm_heal_building"                                           "修复建筑"
+		"DOTA_Tooltip_ability_cm_heal_building_Description"                               "此技能可以对建筑使用，恢复建筑300或30%其生命值，以更大值为准，同时建筑获得一个debuff，其它精灵使者对它的治疗效果减少2/3. "
+
+		"DOTA_Tooltip_ability_invul_ability"                                              "无懈可击"
+		"DOTA_Tooltip_ability_invul_ability_Description"                                  "令这个单位无敌。 "
+
+		
+		"DOTA_Tooltip_ability_item_building_destroy"                                      "销毁建筑"
+		"DOTA_Tooltip_ability_item_building_destroy_Description"                          "销毁建筑， 你无法收回花费的金钱, 如果敌人在附近你也无法销毁! "
+
+		"DOTA_Tooltip_ability_item_building_cancel"                                       "取消建造"
+		"DOTA_Tooltip_ability_item_building_cancel_Description"                           "取消建造"
+
+		"DOTA_Tooltip_ability_item_blink_datadriven"									  "闪烁"
+		"DOTA_Tooltip_ability_item_blink_datadriven_Description"						  "从强大的巨魔身边逃脱。<br/>最大距离: 1200"
+
+		"DOTA_Tooltip_ability_item_root_ability"                                          "缠绕"
+		"DOTA_Tooltip_ability_item_root_ability_Description"                              "缠绕巨魔.<br/>巨魔不能移动并且无法隐身，隐身也会被看的见。但他仍然可以使用技能。 "
+
+		"DOTA_Tooltip_ability_item_silence_ability"                                       "沉默"
+		"DOTA_Tooltip_ability_item_silence_ability_Description"                           "沉默巨魔.<br/>巨魔可以移动但是无法使用技能。 "
+
+		"DOTA_Tooltip_ability_item_glyph_ability"                                         "月光守护"
+		"DOTA_Tooltip_ability_item_glyph_ability_Description"                             "使目标变得无懈可击。 "
+
+		"DOTA_Tooltip_ability_item_night_ability"                                         "白天？想多了"
+		"DOTA_Tooltip_ability_item_night_ability_Description"                             "今天是多么美好的一天啊,鸟儿在绽放,鲜花在歌唱...啥？今天是黑夜？为啥？好吧，那咱们明天再说。 "
+		"DOTA_Tooltip_ability_item_night_ability_duration"                                "持续时间: "
+		"DOTA_Tooltip_ability_item_night_ability_blind_percentage"                        "视野丢失: "
+		"DOTA_Tooltip_ability_item_night_ability_radius"                                  "范围: "
+
+
+		"DOTA_Tooltip_ability_item_dmg_1"                                                 "攻击力无限大！ 1"
+		"DOTA_Tooltip_ability_item_dmg_1_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_1_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_1_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_1_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_2"                                                 "攻击力无限大！ 2"
+		"DOTA_Tooltip_ability_item_dmg_2_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_2_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_2_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_2_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_3"                                                 "攻击力无限大！ 3"
+		"DOTA_Tooltip_ability_item_dmg_3_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_3_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_3_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_3_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_4"                                                 "攻击力无限大！ 4"
+		"DOTA_Tooltip_ability_item_dmg_4_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_4_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_4_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_4_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_5"                                                 "攻击力无限大！ 5"
+		"DOTA_Tooltip_ability_item_dmg_5_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_5_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_5_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_5_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_6"                                                 "攻击力无限大！ 6"
+		"DOTA_Tooltip_ability_item_dmg_6_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_6_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_6_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_6_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_7"                                                 "攻击力无限大！ 7"
+		"DOTA_Tooltip_ability_item_dmg_7_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_7_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_7_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_7_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_8"                                                 "攻击力无限大！ 8"
+		"DOTA_Tooltip_ability_item_dmg_8_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_8_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_8_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_8_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_9"                                                 "攻击力无限大！ 9"
+		"DOTA_Tooltip_ability_item_dmg_9_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_9_bonus_damage"                                    "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_9_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_9_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_10"                                                "攻击力无限大！ 10"
+		"DOTA_Tooltip_ability_item_dmg_10_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_10_bonus_damage"                                   "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_10_gold_cost"                                      "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_10_lumber_cost"                                    "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_11"                                                "攻击力无限大！ 11"
+		"DOTA_Tooltip_ability_item_dmg_11_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_11_bonus_damage"                                   "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_11_gold_cost"                                      "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_11_lumber_cost"                                    "花费木材: "
+
+		"DOTA_Tooltip_ability_item_dmg_12"                                                "攻击力无限大！ 12"
+		"DOTA_Tooltip_ability_item_dmg_12_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_12_bonus_damage"                                   "攻击力增加: "
+		"DOTA_Tooltip_ability_item_dmg_12_gold_cost"                                      "花费金钱: "
+		"DOTA_Tooltip_ability_item_dmg_12_lumber_cost"                                    "花费木材: "
+
+
+		"DOTA_Tooltip_ability_item_armor_1"                                               "护甲 1"
+		"DOTA_Tooltip_ability_item_armor_1_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_1_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_1_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_1_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_2"                                               "护甲 2"
+		"DOTA_Tooltip_ability_item_armor_2_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_2_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_2_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_2_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_3"                                               "护甲 3"
+		"DOTA_Tooltip_ability_item_armor_3_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_3_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_3_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_3_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_4"                                               "护甲 4"
+		"DOTA_Tooltip_ability_item_armor_4_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_4_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_4_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_4_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_5"                                               "护甲 5"
+		"DOTA_Tooltip_ability_item_armor_5_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_5_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_5_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_5_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_6"                                               "护甲 6"
+		"DOTA_Tooltip_ability_item_armor_6_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_6_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_6_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_6_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_7"                                               "护甲 7"
+		"DOTA_Tooltip_ability_item_armor_7_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_7_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_7_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_7_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_8"                                               "护甲 8"
+		"DOTA_Tooltip_ability_item_armor_8_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_8_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_8_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_8_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_9"                                               "护甲 9"
+		"DOTA_Tooltip_ability_item_armor_9_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_9_bonus_armor"                                   "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_9_gold_cost"                                     "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_9_lumber_cost"                                   "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_10"                                              "护甲 10"
+		"DOTA_Tooltip_ability_item_armor_10_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_10_bonus_armor"                                  "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_10_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_10_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_11"                                              "护甲 11"
+		"DOTA_Tooltip_ability_item_armor_11_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_11_bonus_armor"                                  "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_11_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_11_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_armor_12"                                              "护甲 12"
+		"DOTA_Tooltip_ability_item_armor_12_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_12_bonus_armor"                                  "护甲增加: "
+		"DOTA_Tooltip_ability_item_armor_12_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_armor_12_lumber_cost"                                  "花费木材: "
+
+
+		"DOTA_Tooltip_ability_item_hp_1"                                                  "血量增强 1"
+		"DOTA_Tooltip_ability_item_hp_1_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_1_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_1_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_1_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_2"                                                  "血量增强 2"
+		"DOTA_Tooltip_ability_item_hp_2_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_2_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_2_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_2_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_3"                                                  "血量增强 3"
+		"DOTA_Tooltip_ability_item_hp_3_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_3_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_3_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_3_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_4"                                                  "血量增强 4"
+		"DOTA_Tooltip_ability_item_hp_4_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_4_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_4_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_4_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_5"                                                  "血量增强 5"
+		"DOTA_Tooltip_ability_item_hp_5_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_5_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_5_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_5_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_6"                                                  "血量增强 6"
+		"DOTA_Tooltip_ability_item_hp_6_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_6_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_6_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_6_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_7"                                                  "血量增强 7"
+		"DOTA_Tooltip_ability_item_hp_7_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_7_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_7_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_7_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_8"                                                  "血量增强 8"
+		"DOTA_Tooltip_ability_item_hp_8_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_8_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_8_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_8_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_9"                                                  "血量增强 9"
+		"DOTA_Tooltip_ability_item_hp_9_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_9_bonus_hp"                                         "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_9_gold_cost"                                        "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_9_lumber_cost"                                      "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_10"                                                 "血量增强 10"
+		"DOTA_Tooltip_ability_item_hp_10_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_10_bonus_hp"                                        "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_10_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_10_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_11"                                                 "血量增强 11"
+		"DOTA_Tooltip_ability_item_hp_11_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_11_bonus_hp"                                        "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_11_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_11_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_12"                                                 "血量增强 12"
+		"DOTA_Tooltip_ability_item_hp_12_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_12_bonus_hp"                                        "生命值增加: "
+		"DOTA_Tooltip_ability_item_hp_12_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_12_lumber_cost"                                     "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_1"                                              "生命值回复 1"
+		"DOTA_Tooltip_ability_item_hp_reg_1_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_1_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_2"                                              "生命值回复 2"
+		"DOTA_Tooltip_ability_item_hp_reg_2_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_2_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_3"                                              "生命值回复 3"
+		"DOTA_Tooltip_ability_item_hp_reg_3_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_3_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_4"                                              "生命值回复 4"
+		"DOTA_Tooltip_ability_item_hp_reg_4_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_4_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_5"                                              "生命值回复 5"
+		"DOTA_Tooltip_ability_item_hp_reg_5_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_5_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_6"                                              "生命值回复 6"
+		"DOTA_Tooltip_ability_item_hp_reg_6_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_6_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_7"                                              "生命值回复 7"
+		"DOTA_Tooltip_ability_item_hp_reg_7_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_7_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_8"                                              "生命值回复 8"
+		"DOTA_Tooltip_ability_item_hp_reg_8_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_8_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_9"                                              "生命值回复 9"
+		"DOTA_Tooltip_ability_item_hp_reg_9_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_9_bonus_hp_regen"                               "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_gold_cost"                                    "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_lumber_cost"                                  "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_10"                                             "生命值回复 10"
+		"DOTA_Tooltip_ability_item_hp_reg_10_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_10_bonus_hp_regen"                              "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_11"                                             "生命值回复 11"
+		"DOTA_Tooltip_ability_item_hp_reg_11_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_11_bonus_hp_regen"                              "生命值回复速度增加: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_lumber_cost"                                 "花费木材: "
+
+
+		"DOTA_Tooltip_ability_item_atk_spd_1"                                             "你能跟上我的攻击速度么 1"
+		"DOTA_Tooltip_ability_item_atk_spd_1_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_1_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_2"                                             "你能跟上我的攻击速度么 2"
+		"DOTA_Tooltip_ability_item_atk_spd_2_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_2_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_3"                                             "你能跟上我的攻击速度么 3"
+		"DOTA_Tooltip_ability_item_atk_spd_3_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_3_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_4"                                             "你能跟上我的攻击速度么 4"
+		"DOTA_Tooltip_ability_item_atk_spd_4_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_4_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_5"                                             "你能跟上我的攻击速度么 5"
+		"DOTA_Tooltip_ability_item_atk_spd_5_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_5_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_lumber_cost"                                 "花费木材: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_6"                                             "你能跟上我的攻击速度么 6"
+		"DOTA_Tooltip_ability_item_atk_spd_6_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_6_bonus_atk_spd"                               "攻速提升: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_gold_cost"                                   "花费金钱: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_lumber_cost"                                 "花费木材: "
+		
+
+		"DOTA_Tooltip_ability_item_troll_boots"                                           "巨魔之靴"
+		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "对持有者提升移动速度。 "
+		
+		
+		"DOTA_Tooltip_ability_item_disable_repair"                                                "建筑毁灭者！ "
+		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "攻击建筑造成debuff，使目标无法修复并减少精灵使者治疗效果两次！持续5秒。 "
+		"DOTA_Tooltip_ability_item_disable_repair_bonus_damage"                                   "攻击力增加: "
+		"DOTA_Tooltip_ability_item_disable_repair_gold_cost"                                      "花费金钱: "
+		"DOTA_Tooltip_ability_item_disable_repair_lumber_cost"                                    "花费木材: "
+		
+		"topptext"                                      									"The best players in the overall ranking: "
+        "topwtext"                                      									"The best players for the Elf: "
+        "tophtext"                                      									"The best players for the Troll: "
+		"top"                                          										"Awarded for first place in the tops."
+		
+		"bonus_damage"																		"攻击力增加"
+		"bonus_armor"																		"护甲增加"
+		"bonus_hp"																			"血量增加"
+		"bonus_hp_regen"																	"生命回复速度增加"
+		"bonus_atk_spd"																		"攻击速度增加"
+		"bonus_ms"																			"移动速度增加"
+		"error_not_enough_gold"																"钱还不够！ "
+		"error_not_enough_lumber"															"木材不够！ "
+		"error_not_buy_wolf"																"精灵狼无法升级帐篷！ "
+		"error_castable_only_on_troll_hut"													"只能对巨魔帐篷施放！ "
+		"error_not_enough_food"																"人口过多！ "
+		"error_not_enough_wisp"																"超过精灵限制！ "
+		"error_full_inventory"																"Full inventory! "
+		"error_shop_out_of_range"															"商店不在范围内！ "
+		"error_not_enough_resources"														"你没有足够的资源! "
+		"error_type_only_digits"															"只能输入数字! "
+		"error_select_only_your_allies"														"选择你的队友! "
+		"error_enemy_nearby"																"敌人在附近! "
+		"error_invalid_build_position"														"无法在此放置! "
+		"error_only_troll_can_upgrade"														"只有巨魔能升级帐篷! "
+		"error_no_radar"																	"Sadly scans in custom games don't count towards the community challenge! "
+		"error_not_night"																	"只在黑夜有用！ "
+		"error_item_not_sellable"															"物品无法出售"
+
+		"team_choice_header"                                                                "你想当巨魔么?"
+		"team_choice_yes"                                                                   "是的"
+		"team_choice_no"                                                                    "不"
+		
+		"loading_text"																		"&lt;=点击此处获取攻略!<br>
+		                                                                                    请勿在开始游戏后更改热键设置
+		                                                                                    "
+		
+		"DOTA_Chat_PlayerKilled"                    ""
+        "DOTA_Chat_PlayerKilledNearby"              ""
+        "DOTA_Chat_PlayerKilledNearbySingle"        ""
+        "DOTA_Chat_PlayerKilledAssist"              ""
+        "DOTA_Chat_PlayerKilledAssistNearby"        ""
+		"DOTA_Chat_PlayerKilledAssistNearbySingle"  ""
+		
+		"elf_tips1"																		"<br><br><b>精灵小提示</b>
+		<br>·你可以在游戏开始时在巨魔家旁边造一个帐篷直到你找到想去的基地. 这样你开局就会变的更有钱一些, 记得不要造完，造一半就可以，否则巨魔在帐篷旁边的时候你就没法把它销毁掉了
+		<br>·在台阶中央造石头，巨魔的体积大，这样能让巨魔进不来但是你可以自由穿梭其中
+		"
+		"elf_tips2"																		"·可以月光守护自己
+					<br>·前期把塔升的高级一点这样你就能吓跑巨魔，然后无限发育造金矿了. 开局造两个塔就够了! 无脑升级吓跑巨魔然后发育! 
+					<br>·技能也很关键! 打巨魔的时候最好先用缠绕，缠绕的cd比月光守护要短。
+					<br>·利用月光守护不仅可以让你自己无敌，也可以让塔无敌，这样巨魔就没法刷到钱了。
+					<br>·合体！找个老哥在一个宽广的地方建房子. 你会变得和原来的两倍强壮。
+					<br>·右键点击自动修复就能自动修复离你最近的建筑! "
+		"elf_tips3"																	"·你可以分享你的资源给队友. I如果你有多余的钱，分给需要的队友! 想要巨魔不那么强大就要携手合作! "
+		
+		"troll_tips"																		"<b>巨魔/精灵狼小提示</b>
+                                                                                <br>·开局被杀不会变狼
+					<br>·准则1：千万别死，只要你死了游戏直接结束！
+					<br>·你获得的金钱根据你每一次攻击的伤害来定
+					<br>·多买装备来变强！
+					<br>·换装备时一定要想好，我换上的这个装备比原来那套要强么？
+					<br>·多用巨魔之眼，不要在找精灵上耽误时间！
+					<br>·找软柿子捏！塔多的不要去惹！
+					<br>·不要忘记升级你的巨魔小屋! 不仅可以帮你渡过艰难时期，也可以帮助你们的精灵狼。
+					<br>·你可以同时使用隐身和传送. 可以让你在传送时隐身。
+					<br>·狩猎愉快！
+					"
+		"angel_tips"																		"<br><br><b>精灵使者小提示</b>
+		<br/>·把钱给真正需要的人， 比如开局就被巨魔攻击的人。 
+		<br/>·别让巨魔杀了你，你很值钱！                           
+		<br/>·记住随时清空你的钱包，如果你被杀了钱就被他们偷走了！               
+        <br/>·你可以通过治疗防御塔或者晕住巨魔来帮助他们       
+        <br/>·当巨魔或者精灵狼来了，跑！
+		"
+	}
+}

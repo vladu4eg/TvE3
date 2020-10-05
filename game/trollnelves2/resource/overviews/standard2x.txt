@@ -1,0 +1,8 @@
+standard2x
+{
+	material materials/overviews/standard2x.vmat
+	pos_x -5504
+	pos_y 6016
+	scale 10.750
+}
+

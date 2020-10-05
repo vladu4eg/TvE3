@@ -1,0 +1,31 @@
+#LoadingTextContainer{
+	max-width:850px;
+	flow-children:down;
+	horizontal-align:right;
+	text-align:right;
+}
+#LoadingText{
+	text-align: left;
+    color: #FFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    font-family: Radiance;
+}
+.TipContainer{
+	flow-children:right;
+}
+#TrollTipsText{
+	width:400px;
+}
+#ElfTipsText{
+	width:420px;
+}
+#TrollImage{
+	width:300px;
+	height:384px;
+}
+#ElfImage{
+	margin-top:-20px;
+	width:300px;
+	height:294px;
+}

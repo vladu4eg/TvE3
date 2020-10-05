@@ -1,0 +1,27 @@
+# Cache crap that Valve autogenerates
+*.bin
+
+# Compiled formats
+*.vpcf_c
+*.vtex_c
+*.vsndevts_c
+*.vmat_c
+*.vjs_c
+*.vxml_c
+*.vcss_c
+*.vmdl_c
+*.vanim_c
+*.vmesh_c
+*.vagrp_c
+*.vsnd_c
+*.vseq_c
+
+# Panorama debugger
+*.cfg
+
+# Map overviews
+content/dota_addons/trollnelves2/materials/overviews/*
+game/dota_addons/trollnelves2/resource/overviews/*
+
+# Map files
+*.vpk

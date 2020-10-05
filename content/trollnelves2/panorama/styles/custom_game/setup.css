@@ -1,0 +1,13 @@
+.CustomTooltipStyle .SellPriceLabel {
+    opacity: 0;
+}
+
+.CustomTooltipStyle {
+    color: red;
+}
+
+.ForceCompile {
+	background-image: url("file://{images}/custom_game/gold_icon32.png");
+	background-image: url("file://{images}/custom_game/lumber_icon32.png");
+    background-image: url("file://{images}/custom_game/cheese_icon32.png");
+}

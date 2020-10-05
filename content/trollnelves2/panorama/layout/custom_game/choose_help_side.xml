@@ -1,0 +1,19 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/choose_help_side.css" />
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/play.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/choose_help_side.js" />
+	</scripts>
+    <Panel class = "ChooseHelpPanel" hittest="false">
+        <Panel id = "ChooseHelpContainer" class ="ChooseHelpContainer">
+            <Label text = "Choose your side:" class = "ChooseHelpLabel"/>
+            <Panel class ="ChooseHelpButtons">
+                <Button class ="ChooseButton ElfButton" onactivate="ChooseSide(2)"><Label text="Elf!" /></Button>
+                <Button class ="ChooseButton TrollButton" onactivate="ChooseSide(3)"><Label text="Troll!" /></Button>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

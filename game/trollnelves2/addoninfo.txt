@@ -1,0 +1,46 @@
+"AddonInfo"
+{
+  "TeamCount" "2"
+  "maps"      "autumn autumn2x spring spring2x winter winter2x arena_c arena_c2x standard standard2x"
+  "IsPlayable"  "1"
+  "autumn"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "autumn2x"
+  {
+    "MaxPlayers"                    "16"
+  }  
+  "spring"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "spring2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "winter"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "winter2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "arena_c"
+  {
+    "MaxPlayers"                    "11"
+  }
+  "arena_c2x"
+  {
+    "MaxPlayers"                    "11"
+  }
+  "standard"
+  {
+    "MaxPlayers"                    "11"
+  }
+  "standard2x"
+  {
+    "MaxPlayers"                    "11"
+  }
+}

@@ -1,0 +1,27 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/vote_hud.css" />
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/play.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/vote_hud.js" />
+	</scripts>
+	<Panel hittest="false" class="GameSetup">
+
+		<!-- Map name -->
+		<Panel id="MapInfo">
+			<Label id="MapInfoLabel" text="#LoadingScreenMapInfo"/>
+		</Panel>
+
+		<Panel id="TeamChoiceWrapper">
+			<Label id="TeamChoiceHeader" text="#team_choice_header"/>
+			<Panel id = "ChoiceButtonWrapper">
+				<RadioButton class="ChoiceButton" group="team" onactivate="ChooseTeam('troll')" text="#team_choice_yes"/>
+				<RadioButton class="ChoiceButton" group="team" onactivate="ChooseTeam('elf')" text="#team_choice_no"/>
+			</Panel>
+			<Label id="TeamChoiceTimer" text="#custom_game_team_select_timer" />
+		</Panel>
+		    
+	</Panel>
+</root>

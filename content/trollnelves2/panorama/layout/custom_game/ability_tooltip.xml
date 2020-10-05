@@ -1,0 +1,33 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/ability_tooltip.css" />
+		<include src="s2r://panorama/styles/tooltips/tooltip_ability.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/ability_tooltip.js" />
+	</scripts>
+	
+	<Panel class="AbilityTooltip AbilityContents" ontooltiploaded="setupTooltip()">
+		<Panel id="AbilityDetails">
+			<Panel id="Header">
+				<Panel id = "AbilityHeader">
+					<Label id = "AbilityName" text="testt"/>
+					<Label id = "costs" text = "test" html="true"/>
+				</Panel>
+			</Panel>
+			<Panel id="AbilityCoreDetails">
+				<Label id = "description" html = "true"/>
+				<Label id = "requirements" html = "true"/>
+				<Label id = "gold_gain" html = "true"/>
+				<Label id = "item_stats" html = "true"/>
+				<Label id = "item_gold" html = "true"/>
+				<Label id = "item_lumber" html = "true"/>
+				<Label id = "lumber_interval" html = "true"/>
+				<Label id = "lumber_amount" html = "true"/>
+				<Label id = "repair_speed" html = "true"/>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

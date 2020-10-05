@@ -1,0 +1,65 @@
+.ResourcePanel
+{
+	width: 200px;
+	flow-children:down;
+	vertical-align:bottom;
+	horizontal-align:right;
+}
+
+.ResourcePanels
+{
+    width: 100px;
+	vertical-align: center;
+}
+
+.Texts{
+    font-family: Radiance;
+  	font-weight: bold;
+    text-align: center;
+    /* text-shadow: 0px 0px 3px 3.0 #000000; */
+	font-family: Radiance;
+	margin-left:28px;
+}
+
+.GoldnLumber{
+	flow-children:right;
+}
+
+#LumberText{
+	color: green;
+}
+#LumberIcon {	
+	width:26px; 
+	height:20px;
+}
+
+#GoldText{
+	color: #d9ca00;
+}
+#GoldIcon {	
+	width:26px; 
+	height:26px; 
+	margin-top: -5px;
+}
+
+#CheeseLumberPricePanel{
+	margin-top:-2px;
+	flow-children:right;
+}
+#CheeseText{
+	color: #c1b400;
+}
+#CheeseIcon {	
+	margin-top:2px;
+	width:22px; 
+	height:18px; 
+}
+
+#LumberPriceIcon{
+	width:23px;
+	height:23px;
+}
+
+#LumberPriceText{
+	color:brown;
+}

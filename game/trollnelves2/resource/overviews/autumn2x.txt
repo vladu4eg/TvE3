@@ -1,0 +1,8 @@
+autumn2x
+{
+	material materials/overviews/autumn2x.vmat
+	pos_x -8256
+	pos_y 8544
+	scale 16.938
+}
+
