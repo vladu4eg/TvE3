@@ -374,8 +374,12 @@ function trollnelves2:PreStart()
 		end
 	end
 	Stats.RequestDataTop10("1",callback)
-	Stats.RequestDataTop10("2",callback)
-	Stats.RequestDataTop10("3",callback)
+	Timers:CreateTimer(5,function()
+				Stats.RequestDataTop10("2",callback)
+			end)
+	Timers:CreateTimer(10,function()
+				Stats.RequestDataTop10("3",callback)
+			end)
 	Donate:CreateList()
 end
 

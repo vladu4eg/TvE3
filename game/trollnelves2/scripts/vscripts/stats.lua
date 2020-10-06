@@ -22,9 +22,9 @@ function Stats.SubmitMatchData(winner,callback)
 				GameRules.Bonus[pID] = 0
 			end
 			if GameRules:GetGameTime() - GameRules.startTime <  600 then -- 10 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 0
-				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 2
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 60 min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 3
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
@@ -70,7 +70,7 @@ function Stats.SubmitMatchData(winner,callback)
 					if PlayerResource:GetTeam(pID) == winner then
 						if hero:IsTroll() then
 							data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-							if tonumber(data.Score) < 1  then
+							if tonumber(data.Score) < math.floor(10/koeff)  then
 								data.Score = tostring(math.floor(10/koeff))
 							end
 							elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 

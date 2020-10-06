@@ -185,7 +185,7 @@ function CDOTA_PlayerResource:GetScoreBonusGoldGained(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGainedImportance/10)+add)
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGainedImportance/10))
 	value = math.min(goldGainedImportance,value)
 	return (value*sign)
 	
@@ -220,7 +220,7 @@ function CDOTA_PlayerResource:GetScoreBonusLumberGained(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGainedImportance/10)+add)
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGainedImportance/10))
 	value = math.min(lumberGainedImportance,value)
 	if team == 3 then
 		return 0
