@@ -35,6 +35,16 @@ function ItemEffect(event)
 	Stats.GetVip(data, callback)
 end
 
+function ItemEvent(event)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "3"
+	data.Srok = "01/09/2020"
+	Stats.GetEvent(data, callback)
+end
+
 function GainGoldTeamThinker(event)
 	if event.caster then
 		local caster = event.caster
@@ -652,14 +662,14 @@ function StealGold(event)
 	local target = event.target
 	local playerID = target:GetPlayerOwnerID()
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	local sum = math.ceil(hero:GetNetworth()*0.005)+10
+	local sum = math.ceil(hero:GetNetworth()*0.003)+10
 	local maxSum = 50000
 	local units = Entities:FindAllByClassname("npc_dota_creature")
 	for _,unit in pairs(units) do
 		local unit_name = unit:GetUnitName();
 		if unit_name == "troll_hut_6" or unit_name == "troll_hut_7" then
 			maxSum = 1000000
-			sum = math.ceil(hero:GetNetworth()*0.01)+10
+			sum = math.ceil(hero:GetNetworth()*0.005)+10
 			caster:GiveMana(10)
 		end
 	end

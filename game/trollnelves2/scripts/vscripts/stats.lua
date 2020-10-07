@@ -73,13 +73,13 @@ function Stats.SubmitMatchData(winner,callback)
 							if tonumber(data.Score) < math.floor(10/koeff)  then
 								data.Score = tostring(math.floor(10/koeff))
 							end
-							elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
+						elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
 							data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 							if tonumber(data.Score) < 1  then
 								data.Score = tostring(1)
 							end
 						end
-						elseif PlayerResource:GetTeam(pID) ~= winner then
+					elseif PlayerResource:GetTeam(pID) ~= winner then
 						if hero:IsTroll() then
 							data.Score = tostring( math.floor(-10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 							elseif hero:IsElf() then 
