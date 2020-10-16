@@ -1,8 +1,24 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "autumn autumn2x spring spring2x winter winter2x arena_c arena_c2x standard standard2x"
+  "maps"      "desert desert2x china china2x autumn autumn2x spring spring2x winter winter2x standard standard2x arena_c arena_c2x"
   "IsPlayable"  "1"
+  "desert"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "desert2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "china"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "china2x"
+  {
+    "MaxPlayers"                    "16"
+  }
   "autumn"
   {
     "MaxPlayers"                    "16"
@@ -27,19 +43,19 @@
   {
     "MaxPlayers"                    "16"
   }
-  "arena_c"
-  {
-    "MaxPlayers"                    "11"
-  }
-  "arena_c2x"
-  {
-    "MaxPlayers"                    "11"
-  }
   "standard"
   {
     "MaxPlayers"                    "11"
   }
   "standard2x"
+  {
+    "MaxPlayers"                    "11"
+  }
+  "arena_c"
+  {
+    "MaxPlayers"                    "11"
+  }
+  "arena_c2x"
   {
     "MaxPlayers"                    "11"
   }

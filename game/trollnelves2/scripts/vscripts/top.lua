@@ -26,9 +26,9 @@ function top:OnLoadTop(list, idTop)
 			}
 			if idTop == "1" then
 				table.insert(PlaysTopList,kv)
-				elseif idTop == "2" then
+			elseif idTop == "2" then
 				table.insert(WinsTopList,kv)
-				elseif idTop == "3" then
+			elseif idTop == "3" then
 				table.insert(HardWinsTopList,kv)
 			end
 		end

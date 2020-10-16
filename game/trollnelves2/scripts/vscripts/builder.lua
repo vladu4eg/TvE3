@@ -3,60 +3,6 @@ require('trollnelves2')
 require('stats')
 require('wearables')
 
-local playersBase = {}
-
-function IsInsideBaseArea(unit) 
-	local hero = unit:IsRealHero() and unit or unit:GetOwner()
-	local playerID = hero:GetPlayerOwnerID()
-	local check = false
-	
-	for index, shopTrigger in ipairs(GameRules.base) do
-		if IsInsideBoxEntity(shopTrigger, unit) then
-			for _,base in ipairs(playersBase) do
-				local numBase, pID = unpack(base)
-				DebugPrint("numBase: ".. numBase)
-				DebugPrint("pID: ".. pID)
-				if pID == playerID and index == numBase and IdBaseArea(unit) == index then
-					return false
-                    else
-					check = true
-                end
-            end
-        end
-    end
-	if(check == true) then
-		return true
-    end
-	return false
-end
-
-function IdBaseArea(unit) 
-	for index, shopTrigger in ipairs(GameRules.base) do
-		if IsInsideBoxEntity(shopTrigger, unit) then
-			DebugPrint("index " .. index)
-			return index
-        end
-    end
-	return nil
-end
-
-function IsInsideBoxEntity(box, unit)
-    local boxOrigin = box:GetAbsOrigin()
-	local bounds = box:GetBounds()
-    local min = bounds.Mins
-	local max = bounds.Maxs
-	local unitOrigin = unit:GetAbsOrigin()
-    local X = unitOrigin.x
-    local Y = unitOrigin.y
-    local minX = min.x + boxOrigin.x
-    local minY = min.y + boxOrigin.y
-    local maxX = max.x + boxOrigin.x
-    local maxY = max.y + boxOrigin.y
-    local betweenX = X >= minX and X <= maxX
-    local betweenY = Y >= minY and Y <= maxY
-    
-    return betweenX and betweenY
-end
 
 -- A build ability is used (not yet confirmed)
 function Build( event )
@@ -90,15 +36,6 @@ function Build( event )
             SendErrorMessage(playerID, "#error_not_enough_lumber")
             return false
         end
-		--if not caster:IsRealHero() and not caster:HasAbility(ability_name) then
-        --    SendErrorMessage(playerID, "Are you serious?!!!")
-        --    return false
-        -- end
-        --	if IsInsideBaseArea(hero) == true then
-        --       SendErrorMessage(playerID, "#error_place_is_taken")
-        --       return false
-        --    end
-		
         return true
     end)
     
@@ -357,6 +294,10 @@ function UpgradeBuilding( event )
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newBuildingName)
     if not string.match(newBuilding:GetUnitName(),"troll_hut") then
         newBuilding.blockers = BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newBuildingName), position)
+    elseif newBuilding:GetUnitName() == "troll_hut_7" then
+        hero:AddAbility("lone_druid_spirit_bear_datadriven")
+        local abil = hero:FindAbilityByName("lone_druid_spirit_bear_datadriven")
+        abil:SetLevel(abil:GetMaxLevel())
     end
     
     if parts ~= nil then    

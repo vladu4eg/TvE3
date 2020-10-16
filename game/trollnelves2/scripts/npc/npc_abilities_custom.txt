@@ -4400,6 +4400,21 @@
 			}
 		}
 	}
+	"buy_buff"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"troll_warlord_battle_trance"
+		"MaxLevel"						"1"
+		
+		"OnSpellStart"{
+			"RunScript"{
+				"ScriptFile"			"custom_abilities.lua"
+				"Function"				"BuyBuffEffect"
+				"Target"				"CASTER"
+				"Amount"				"1"
+			}
+		}
+	}
 	"buy_lumber_200"{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -6770,6 +6785,42 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"					"1"
 		"ItemName"					"item_troll_boots"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_troll_boots_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_boots_2"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_troll_boots_2"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	"buy_item_troll_boots_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_boots_3"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_troll_boots_3"
 		
 		"BuyItem"					"1"
 				

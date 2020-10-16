@@ -1372,9 +1372,11 @@
 		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
 		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Повышает скорость передвижения. "
 		
-		"DOTA_Tooltip_ability_item_vip"                                           	"Event item"
+		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
 		"DOTA_Tooltip_ability_item_vip_Description"                               	"Активируйте предмет и получите эффект сезона в следующей игре. "
 		
+		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!"
 		
 		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Не дает рабочим чинить стену! Действует 5 секунд."

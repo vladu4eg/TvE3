@@ -35,6 +35,37 @@
 		}
 	}
 	
+	"item_event"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_vip"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/pumpkin_rune.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEvent"
+			}
+		}
+	}
 	
 	//=================================================================================================================
 	// Refresher
@@ -4081,6 +4112,92 @@
 			}
 		}
 	}
+	"item_troll_boots_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisplayCharges"			"0"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            "item_boots_2"
+		
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemQuality"                   "component"
+		"ItemStackable"                 "0"
+		"ItemSellable" 					"1"
+		"ItemPermanent"                 "1"
+		"ItemDroppable"					"1"
+		"ShouldBeSuggested"				"1"
+		"ShouldBeInitiallySuggested"	"1"		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_ms"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"32"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"libraries/modifiers/modifier_troll_boots_2"
+				"Function"				"troll_boots_2"
+			}
+		}
+	}
+	"item_troll_boots_3"
+	{
+		"BaseClass"					"item_datadriven"
+		"ScriptFile"				"libraries/modifiers/modifier_troll_boots_3"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisplayCharges"			"0"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"            "item_boots_3"
+		
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemQuality"                   "component"
+		"ItemStackable"                 "0"
+		"ItemSellable" 					"1"
+		"ItemPermanent"                 "1"
+		"ItemDroppable"					"1"
+		"ShouldBeSuggested"				"1"
+		"ShouldBeInitiallySuggested"	"1"		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_ms"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"1"
+			}
+		}
+	}
+	
 		//=================================================================================================================
 	// Observer Wards
 	//=================================================================================================================

@@ -270,7 +270,6 @@ function Precache( context )
     PrecacheResource("model", "models/items/windrunner/windrunner_arcana/wr_arcana_weapon.vmdl", context)
 	PrecacheResource("particle", "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_bow_ambient.vpcf", context) 
 	
-	PrecacheResource("particle", "particles/units/heroes/hero_viper/viper_base_attack.vpcf", context) 
 	PrecacheResource("particle", "particles/msg_fx/msg_damage.vpcf", context)
 	PrecacheResource("particle_folder", "particles/msg_fx", context)
 	
@@ -309,7 +308,7 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
+	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 4
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
 	GameRules.maxFood = STARTING_MAX_FOOD
 	GameRules.maxWisp = STARTING_MAX_WISP
@@ -336,6 +335,8 @@ function Activate()
 	GameRules.BonusTrollIDs = {}
 	GameRules.PartDefaults = {}
 	GameRules.Score = {}
+	GameRules.PlayersBase = {}
+	GameRules.PlayersFPS = {}
 	GameRules.test = false
 		
 	GameRules.trollnelves2 = trollnelves2()

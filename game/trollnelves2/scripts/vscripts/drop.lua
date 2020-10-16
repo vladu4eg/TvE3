@@ -2,7 +2,7 @@ if drop == nil then
 	DebugPrint( 'drop' )
 	_G.drop = class({})
 end
-
+require('settings')
 item_drop = {
 	--{items = {"item_branches"}, chance = 5, duration = 5, limit = 3, units = {} },
 	{items = {"item_vip"}, limit = 1, chance = 1, units = {"npc_dota_hero_crystal_maiden","npc_dota_hero_lycan","npc_dota_hero_treant"} },
@@ -29,7 +29,7 @@ function drop:RollItemDrop(unit)
 			count = count + 1
 		end
 	end
-	if count >= 12 then
+	if count >= MIN_RATING_PLAYER then
 		for _,drop in ipairs(item_drop) do
 			local items = drop.items or nil
 			local items_num = #items
@@ -61,7 +61,7 @@ function drop:RollItemDrop(unit)
 				local spawnPoint = unit:GetAbsOrigin()	
 				local newItem = CreateItem( item_name, nil, nil )
 				local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
-				local dropRadius = RandomFloat( 50, 100 )
+				local dropRadius = RandomFloat( 50, 300 )
 				
 				newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
 				if loot_duration then
@@ -69,6 +69,12 @@ function drop:RollItemDrop(unit)
 				end
 			end
 		end	
+	local randTime = RandomInt( 30, 240 )
+	Timers:CreateTimer(randTime, function()
+		if string.match(GetMapName(),"autumn") then
+			RandomDropLoot()
+		end
+	end);
 	end
 end
 
@@ -87,3 +93,15 @@ function KillLoot( item, drop )
 	UTIL_Remove( item )
 	UTIL_Remove( drop )
 end
+
+function RandomDropLoot()
+	local spawnPoint = Vector(-320,-320,256)
+	local newItem = CreateItem( "item_event", nil, nil )
+	local dropRadius = RandomFloat( 900, 7500 )
+	local randRadius = spawnPoint + RandomVector( dropRadius )
+	local drop = CreateItemOnPositionForLaunch( randRadius, newItem )
+	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, randRadius )
+
+end
+
+

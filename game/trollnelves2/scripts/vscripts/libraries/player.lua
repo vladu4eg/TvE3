@@ -2,11 +2,11 @@ Player = Player or {}
 
 require('libraries/team')
 
-local goldGainedImportance = 3
+local goldGainedImportance = 6
 local goldGivenImportance = 3
-local lumberGainedImportance = 3
+local lumberGainedImportance = 6
 local lumberGivenImportance = 3
-local rankImportance = 25
+local rankImportance = 20
 local rankPers = 5
 
 if GameRules.disconnectedHeroSelects == nil then
@@ -203,7 +203,7 @@ function CDOTA_PlayerResource:GetScoreBonusGoldGiven(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGivenImportance/1000000))
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGivenImportance/1000))
 	value = math.min(goldGivenImportance,value)
 	return (value*sign)
 end
@@ -241,7 +241,7 @@ function CDOTA_PlayerResource:GetScoreBonusLumberGiven(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGivenImportance/1000000))
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGivenImportance/1000))
 	value = math.min(lumberGivenImportance,value)
 	return (value*sign)
 end

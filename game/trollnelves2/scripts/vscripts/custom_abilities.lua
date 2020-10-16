@@ -33,6 +33,8 @@ function ItemEffect(event)
 	data.Num = "2"
 	data.Srok = "01/09/2020"
 	Stats.GetVip(data, callback)
+	local item = caster:FindItemInInventory("item_vip")
+	caster:RemoveItem(item)
 end
 
 function ItemEvent(event)
@@ -42,7 +44,9 @@ function ItemEvent(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "3"
 	data.Srok = "01/09/2020"
-	Stats.GetEvent(data, callback)
+	Stats.GetVip(data, callback)
+	local item = caster:FindItemInInventory("item_event")
+	caster:RemoveItem(item)
 end
 
 function GainGoldTeamThinker(event)
@@ -134,7 +138,7 @@ function shrapnel_fire( keys )
 		if GameRules.MapSpeed ~= 1  then
 			charge_replenish_time = 30
 		end
-		if caster:HasModifier("modifier_troll_warlord_presence") then
+		if caster:HasModifier("modifier_troll_warlord_presence") or caster:HasModifier("modifier_troll_boots_3") then
 			next_charge = caster.shrapnel_charges
 		else
 			next_charge = caster.shrapnel_charges - 1
@@ -578,6 +582,11 @@ function BuyItem(event)
 		SendErrorMessage(playerID, "#error_full_inventory")
         return		
 	end
+	if item_name == 'item_troll_boots_3' and (GameRules:GetGameTime() - GameRules.startTime) < (7200 / GameRules.MapSpeed) then
+		SendErrorMessage(playerID, "#error_no_time_boots")
+        return	
+	end
+	
     PlayerResource:ModifyLumber(hero,-lumber_cost)
     PlayerResource:ModifyGold(hero,-gold_cost)
 	local item = CreateItem(item_name, hero, hero)

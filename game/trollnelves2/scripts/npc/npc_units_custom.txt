@@ -8014,7 +8014,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"AbilityLayout"				"13"
+		"AbilityLayout"				"15"
 		"Ability1"					"buy_item_atk_spd_1"
 		"Ability2"					"buy_item_atk_spd_2"
 		"Ability3"					"buy_item_atk_spd_3"
@@ -8028,6 +8028,9 @@
 		"Ability11"					"buy_lumber_8"
 		"Ability12"					"sell_lumber_1"
 		"Ability13"					"sell_lumber_8"
+		
+		//"Ability10"					"buy_item_troll_boots_2"
+		//"Ability11"					"buy_item_troll_boots_3"
 
 
 

@@ -1,3 +1,4 @@
+require('settings')
 local votes = {}
 local countVote = {}
 local checkVote
@@ -59,14 +60,14 @@ function VoteKick(eventSourceIndex, event)
 		SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 		votes[ event.playerID1 ] = 0
 	end
-	--if PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 then
-	--	votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
-	--end
+	if PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 then
+		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 1
+	end
 	local text = "Vote: " .. votes[ event.playerID1 ] .. "; Count Player: " .. countVote[event.playerID1] .. "; Percent: " .. votes[ event.playerID1 ]/countVote[event.playerID1] .. "; Need perc.: 0.78; Min player: 8" 
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>" ..  text  .. "</font>", team, 0, 0)
 	if team == DOTA_TEAM_GOODGUYS then
 		Timers:CreateTimer(35.0, function() 
-			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= 0.78 and countVote[event.playerID1] >= 8
+			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER and countVote[event.playerID1] >= 8
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 then
 				hero:ForceKill(true)

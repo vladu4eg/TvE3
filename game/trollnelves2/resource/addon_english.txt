@@ -1480,9 +1480,11 @@
 		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
 		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Provides bonus movement speed to the carrier. "
 		
-		"DOTA_Tooltip_ability_item_vip"                                           	"Event item"
+		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
 		"DOTA_Tooltip_ability_item_vip_Description"                               	"Activate the item and get the season effect. "
 		
+		"DOTA_Tooltip_ability_item_event"                                           	"Event Event"
+		"DOTA_Tooltip_ability_item_event_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
 		
 		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable & lessens the effect of angel heal twice! Lasts for 5 seconds. "

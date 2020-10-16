@@ -65,6 +65,21 @@ function chatcommand:OnPlayerChat(event)
 				end
 			end
 		end
+		elseif event.text == "!event" and GameRules:GetGameTime() - GameRules.startTime > 60 and 
+		(lastCommandChat[event.playerid] == nil or lastCommandChat[event.playerid] + 120 < GameRules:GetGameTime() - GameRules.startTime) then
+			local steamID = tostring(PlayerResource:GetSteamID(event.playerid))
+			local pID = tonumber(event.playerid)
+			DebugPrint(pID)
+			Stats.RequestEvent(pID, steamID, callback)
+			lastCommandChat[event.playerid] = GameRules:GetGameTime() 
+		elseif event.text == "!test" then
+			if GameRules:IsCheatMode() then 
+				GameRules.test = true
+			end
+		elseif event.text == "!fps" then
+			GameRules.PlayersFPS[event.playerid] = true
+		elseif event.text == "!unfps" then
+			GameRules.PlayersFPS[event.playerid] = false
 		--elseif event.text  ==  "stats"  then
 		--local playerStatsScore = CustomNetTables:GetTableValue("scorestats",tostring(event.playerid)); 
 		--CustomNetTables:SetTableValue("scorestats", tostring(event.playerid), { playerScoreElf = tostring(GameRules.scores[event.playerid].elf), playerScoreTroll = tostring(GameRules.scores[event.playerid].troll) })
@@ -87,7 +102,7 @@ function chatcommand:OnPlayerChat(event)
 		--DebugPrint(stats)
 		--DebugPrintTable(stats)
 		--trollnelves2:OnLoadTop(stats.steamID, 1)
-		elseif event.text == "test" then
+		elseif event.text == "test_r" then
 		GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
 		Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
 		GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
