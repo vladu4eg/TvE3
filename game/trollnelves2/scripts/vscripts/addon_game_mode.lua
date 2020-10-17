@@ -308,7 +308,7 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 4
+	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
 	GameRules.maxFood = STARTING_MAX_FOOD
 	GameRules.maxWisp = STARTING_MAX_WISP

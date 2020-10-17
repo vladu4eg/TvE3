@@ -224,6 +224,7 @@ function InitializeBuilder(hero)
     PlayerResource:ModifyFood(hero, 0)
     PlayerResource:ModifyWisp(hero, 0)
     hero:SetStashEnabled(false)
+    hero:RemoveAbility("troll_warlord_battle_trance_datadriven")
     Timers:CreateTimer(BUFF_ENIGMA_TIME, function() 
         if hero:IsElf() then
             hero:AddAbility("troll_warlord_battle_trance_datadriven")
@@ -231,7 +232,6 @@ function InitializeBuilder(hero)
             abil:SetLevel(abil:GetMaxLevel())
         end
     end)   
-    hero:RemoveAbility("troll_warlord_battle_trance_datadriven")
 end
 
 function InitializeTroll(hero)

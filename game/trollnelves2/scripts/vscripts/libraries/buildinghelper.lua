@@ -1285,8 +1285,7 @@ end
 ]]
 function BuildingHelper:UpgradeBuilding(building, newName)
     local oldBuildingName = building:GetUnitName()
-    BuildingHelper:print("Upgrading Building: " .. oldBuildingName .. " -> " ..
-    newName)
+    BuildingHelper:print("Upgrading Building: " .. oldBuildingName .. " -> " .. newName)
     local playerID = building:GetPlayerOwnerID()
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local position = building:GetAbsOrigin()
@@ -1294,9 +1293,18 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local old_offset = GetUnitKV(oldBuildingName, "ModelOffset") or 0
     position.z = position.z + model_offset - old_offset
     local bPlayerCanControl = GetUnitKV(newName, "PlayerCanControl") or 0
+    local buildTime = GetUnitKV(newName, "BuildTime") or 3
+    local bScale = GetUnitKV(newName, "Scale") or 0
+    local fTimeBuildingCompleted = GameRules:GetGameTime() + buildTime
+    local fInitialModelScale = 0.1
+    local fCurrentScale = fInitialModelScale
+    local fMaxScale = GetUnitKV(newName, "ModelScale") or 1
+    local fserverFrameRate = 1 / 30
+    local fScaleInterval = (fMaxScale - fInitialModelScale) /(buildTime / fserverFrameRate)
+    -- Update visuals
+    local angles = GetUnitKV(newName, "ModelRotation") or -building:GetAngles().y 
     
-    local newBuilding = CreateUnitByName(newName, position, false, nil, nil,
-    building:GetTeamNumber())
+    local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber())
     newBuilding:AddNewModifier(newBuilding, nil, "modifier_phased", {})
     if bPlayerCanControl == 1 then
         newBuilding:SetOwner(hero)
@@ -1306,13 +1314,10 @@ function BuildingHelper:UpgradeBuilding(building, newName)
         newBuilding:AddNewModifier(nil, nil, "modifier_invulnerable", {})
     end
     if building:HasModifier("modifier_fountain_glyph") then
-        local glyphModifier = building:FindModifierByName(
-        "modifier_fountain_glyph")
+        local glyphModifier = building:FindModifierByName("modifier_fountain_glyph")
         if glyphModifier then
             local remainingTime = glyphModifier:GetRemainingTime()
-            newBuilding:AddNewModifier(newBuilding, nil,
-                "modifier_fountain_glyph",
-            {duration = remainingTime})
+            newBuilding:AddNewModifier(newBuilding, nil, "modifier_fountain_glyph",{duration = remainingTime})
         end
     end
     if building.minimapEntity then
@@ -1342,19 +1347,6 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     end
     newBuilding:AddNewModifier(nil, nil, "modifier_stunned", {})
     newBuilding.constructionCompleted = true
-    
-    local buildTime = GetUnitKV(newName, "BuildTime") or 2
-    local bScale = GetUnitKV(newName, "Scale") or 0
-    local fTimeBuildingCompleted = GameRules:GetGameTime() + buildTime
-    local fInitialModelScale = 0.1
-    local fCurrentScale = fInitialModelScale
-    local fMaxScale = GetUnitKV(newName, "ModelScale") or 1
-    local fserverFrameRate = 1 / 30
-    local fScaleInterval = (fMaxScale - fInitialModelScale) /
-    (buildTime / fserverFrameRate)
-    -- Update visuals
-    local angles = GetUnitKV(newName, "ModelRotation") or
-    -building:GetAngles().y
     newBuilding:SetAngles(0, -angles, 0)
     
     -- Disable turning. If DisableTurning unit KV setting is not defined, use the global setting

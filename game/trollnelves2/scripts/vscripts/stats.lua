@@ -308,8 +308,6 @@ function Stats.GetVip(data,callback)
 	end)
 end	
 
-
-
 function Stats.RequestVipDefaults(pID, steam, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. "vip/defaults/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)

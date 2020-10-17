@@ -213,6 +213,19 @@ function DestroyBuilding( keys )
     end
 end
 
+local function printTryError(...)
+	local stack = debug.traceback(...)
+	print(stack) 
+    GameRules:SendCustomMessage(stack, 1, 1)
+	return stack
+end
+
+local handleTryError = debug.traceback
+function Try(callback, ...)
+    print("BuildError")
+	return xpcall(callback, printTryError, ...)
+end
+
 function UpgradeBuilding( event )
     local building = event.caster
     local NewBuildingName = event.NewName
@@ -247,7 +260,10 @@ function UpgradeBuilding( event )
   --  end
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
-    local newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
+    local newBuilding
+    local status, nextCall = Try(function() 
+        newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
+    end)
     local newBuildingName = newBuilding:GetUnitName()
     newBuilding.state = "complete"
     

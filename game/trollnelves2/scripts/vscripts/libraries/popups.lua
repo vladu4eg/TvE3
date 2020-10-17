@@ -100,7 +100,6 @@ end
 
 -- Customizable version.
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
-    DebugPrint(target)
     if GameRules.PlayersFPS[target:GetPlayerOwnerID()] == true then
         return nil
     end
