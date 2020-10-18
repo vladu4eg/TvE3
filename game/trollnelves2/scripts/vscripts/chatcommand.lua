@@ -76,10 +76,44 @@ function chatcommand:OnPlayerChat(event)
 			if GameRules:IsCheatMode() then 
 				GameRules.test = true
 			end
-		elseif event.text == "!fps" then
-			GameRules.PlayersFPS[event.playerid] = true
-		elseif event.text == "!unfps" then
-			GameRules.PlayersFPS[event.playerid] = false
+		--elseif event.text == "!fps" then
+		--	GameRules.PlayersFPS[event.playerid] = true
+		--	if hero.units ~= nil then
+		--		for i=1,#hero.units do
+		--			if hero.units[i] and not hero.units[i]:IsNull() then
+		--				local unit = hero.units[i]
+		--				DebugPrint(unit:GetUnitName())
+		--				local dataTable = { entityIndex = unit:GetEntityIndex() }
+		--				local player = hero:GetPlayerOwner()
+		--				if player then
+		--					if string.match(hero.units[i]:GetUnitName(),"mine") then
+		--						CustomGameEventManager:Send_ServerToPlayer(player, "gold_gain_stop", dataTable)
+		--					elseif string.match(hero.units[i]:GetUnitName(),"wisp") then 
+		--						CustomGameEventManager:Send_ServerToPlayer(player, "tree_wisp_harvest_stop", dataTable)
+		--					end
+		--				end
+		--			end
+		--		end
+		--	end
+		--elseif event.text == "!unfps" then
+		--	GameRules.PlayersFPS[event.playerid] = false
+		--	if hero.units ~= nil then
+		--		for i=1,#hero.units do
+		--			if hero.units[i] and not hero.units[i]:IsNull() then
+		--				local unit = hero.units[i]
+		--				DebugPrint(unit:GetUnitName())
+		--				local dataTable = { entityIndex = unit:GetEntityIndex() }
+		--				local player = hero:GetPlayerOwner()
+		--				if player then
+		--					if string.match(hero.units[i]:GetUnitName(),"mine") then
+		--						CustomGameEventManager:Send_ServerToPlayer(player, "gold_gain_start", dataTable)
+		--					elseif string.match(hero.units[i]:GetUnitName(),"wisp") then
+		--						CustomGameEventManager:Send_ServerToPlayer(player, "tree_wisp_harvest_start", dataTable)
+		--					end
+		--				end
+		--			end
+		--		end
+		--	end
 		--elseif event.text  ==  "stats"  then
 		--local playerStatsScore = CustomNetTables:GetTableValue("scorestats",tostring(event.playerid)); 
 		--CustomNetTables:SetTableValue("scorestats", tostring(event.playerid), { playerScoreElf = tostring(GameRules.scores[event.playerid].elf), playerScoreTroll = tostring(GameRules.scores[event.playerid].troll) })
@@ -102,10 +136,10 @@ function chatcommand:OnPlayerChat(event)
 		--DebugPrint(stats)
 		--DebugPrintTable(stats)
 		--trollnelves2:OnLoadTop(stats.steamID, 1)
-		elseif event.text == "test_r" then
-		GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-		Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
-		GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
+		--elseif event.text == "test_r" then
+		--GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
+		--Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
+		--GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
 		--elseif event.text == "test" then
 		--local hero = PlayerResource:GetSelectedHeroEntity(event.playerid)
 		--hero:RemoveDesol2()

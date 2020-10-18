@@ -155,6 +155,26 @@
 		"MovementTurnRate"			"0.6"
 		"StatusHealth"				"1"
 	}
+	"npc_flag"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/props_teams/banner_guild_lvl0.vmdl"
+		"ModelScale"				"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackAcquisitionRange"	"0"	
+		"AttackRange"				"0"
+		"BountyXP"					"0"	
+		"BountyGoldMin"				"0"	
+		"BountyGoldMax"				"0"	
+		"RingRadius"				"50"
+		"HealthBarOffset"			"250"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"CanBeDominated"			"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"1"
+		"MovementTurnRate"			"0.6"
+		"StatusHealth"				"1"
+	}
 	//=================================================================================
 	// Building: Tent
 	//=================================================================================	
@@ -6027,8 +6047,8 @@
 		"StatusMana"        "0"                   // Base mana.
 		"StatusManaRegen"     "0"                 // Mana regeneration rate.
 		
-		"VisionDaytimeRange"    "600"                  // Range of vision at night time.
-		"VisionNighttimeRange"    "600"                  // Range of vision at night time.
+		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
+		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
 		
 				// Team
 		//----------------------------------------------------------------

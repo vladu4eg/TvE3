@@ -220,8 +220,7 @@ local function printTryError(...)
 	return stack
 end
 
-local handleTryError = debug.traceback
-function Try(callback, ...)
+function ErrorCheck(callback, ...)
     print("BuildError")
 	return xpcall(callback, printTryError, ...)
 end
@@ -261,7 +260,7 @@ function UpgradeBuilding( event )
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
-    local status, nextCall = Try(function() 
+    local status, nextCall = ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
     end)
     local newBuildingName = newBuilding:GetUnitName()

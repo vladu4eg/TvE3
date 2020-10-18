@@ -223,7 +223,7 @@ function Pets.DeletePet( keys )
 
  	if not Pets.playerPets[id] then
  		return
-	 	end
+	end
 
  	HidePet( Pets.playerPets[id].unit, 0 )
 

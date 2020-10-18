@@ -1293,10 +1293,11 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local old_offset = GetUnitKV(oldBuildingName, "ModelOffset") or 0
     position.z = position.z + model_offset - old_offset
     local bPlayerCanControl = GetUnitKV(newName, "PlayerCanControl") or 0
+   
     local buildTime = GetUnitKV(newName, "BuildTime") or 3
     local bScale = GetUnitKV(newName, "Scale") or 0
     local fTimeBuildingCompleted = GameRules:GetGameTime() + buildTime
-    local fInitialModelScale = 0.1
+    local fInitialModelScale = 0.2
     local fCurrentScale = fInitialModelScale
     local fMaxScale = GetUnitKV(newName, "ModelScale") or 1
     local fserverFrameRate = 1 / 30
@@ -2577,6 +2578,7 @@ function IsInsideBaseArea(unit, location)
                 GameRules.PlayersBase[playerID] = baseIndex
                 DebugPrint("Your Base " .. baseIndex)
                 DebugPrint("Your ID " .. playerID)
+                DebugPrintTable(GameRules.base)
                 return true
             else 
                 return true

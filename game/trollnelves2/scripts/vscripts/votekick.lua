@@ -67,7 +67,7 @@ function VoteKick(eventSourceIndex, event)
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>" ..  text  .. "</font>", team, 0, 0)
 	if team == DOTA_TEAM_GOODGUYS then
 		Timers:CreateTimer(35.0, function() 
-			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER and countVote[event.playerID1] >= 8
+			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 then
 				hero:ForceKill(true)

@@ -75,6 +75,7 @@ function wearables:RemoveWearables(hero)
 	for i = 1, #wearables do -- собственно цикл для удаления всего занесенного в массив на удаление
 		UTIL_Remove(wearables[i]) -- удаляем объект
 	end
+	wearables = nil
 end
 
 function UpdateModel(target, model, scale)
