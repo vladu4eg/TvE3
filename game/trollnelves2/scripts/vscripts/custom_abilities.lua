@@ -511,6 +511,7 @@ function GoldMineCreate(keys)
 	local maxGold = GetUnitKV(caster:GetUnitName(),"MaxGold") or 2000000
 	hero.goldPerSecond = hero.goldPerSecond + amountPerSecond
 	local secondsToLive = maxGold/amountPerSecond;
+	keys.ability:StartCooldown(secondsToLive)
 	caster.destroyTimer = Timers:CreateTimer(secondsToLive,
 		function()
 			caster:ForceKill(false)
@@ -677,9 +678,9 @@ function StealGold(event)
 	for _,unit in pairs(units) do
 		local unit_name = unit:GetUnitName();
 		if unit_name == "troll_hut_6" or unit_name == "troll_hut_7" then
-			maxSum = 1000000
+			maxSum = 500000
 			sum = math.ceil(hero:GetNetworth()*0.005)+10
-			caster:GiveMana(10)
+			caster:GiveMana(5)
 		end
 	end
 	if GameRules:GetGameTime() - GameRules.startTime >= WOLF_START_SPAWN_TIME then

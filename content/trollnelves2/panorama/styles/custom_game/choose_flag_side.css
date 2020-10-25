@@ -1,0 +1,69 @@
+.ChooseKickPanel{
+	width:100%;
+	height:100%;
+}
+
+.ChooseKickContainer{
+	flow-children:down;
+	vertical-align:middle;
+	horizontal-align:center;
+	margin-top:-25%;
+	width:500px;
+	visibility:collapse;
+}
+
+.ChooseKickLabel{
+    horizontal-align:center;
+    font-size:36px;
+    color:white;
+}
+
+.ChooseKickButtons{
+	flow-children:right;
+}
+
+.ChooseButton{
+	width:250px;
+	height:36px;
+	text-align:center;
+	horizontal-align:center;
+	vertical-align:middle;
+	background-color:gradient( linear, 0% 0%, 0% 100%, from( #111111FF ), to( #222222FF ) );
+	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+	border:1px solid #005C09;
+	border-radius:3px;
+}
+.ChooseButton Label{
+	text-align:center;
+    horizontal-align:center;
+    vertical-align:middle;
+	font-size:24px;
+}
+
+.ElfButton{
+	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+}
+
+.ElfButton Label {
+    color: green;
+}
+
+.ElfButton:hover{
+	background-color:gradient( linear, 0% 0%, 0% 100%, from( #098400 ), to( #0FD100 ) );
+}
+
+.ElfButton:hover Label {
+    color: white;
+}
+
+.TrollButton Label {
+    color: red;
+}
+
+.TrollButton:hover{
+	background-color:gradient( linear, 0% 0%, 0% 100%, from( #910000 ), to( #D10000 ) );
+}
+
+.TrollButton:hover Label {
+    color:white;
+}

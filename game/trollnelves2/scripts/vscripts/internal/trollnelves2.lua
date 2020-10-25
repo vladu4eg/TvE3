@@ -1,6 +1,6 @@
 
 mode = nil
-
+require('filter')
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
 function trollnelves2:_Inittrollnelves2()
@@ -27,9 +27,10 @@ function trollnelves2:_Inittrollnelves2()
   GameRules:SetUseBaseGoldBountyOnHeroes(false)
   GameRules:SetFirstBloodActive(false)
   GameRules:SetHideKillMessageHeaders(true)
+  GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 17)
+  GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 17)
   
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 17)
-    GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 17)
+  
   -- Setup game mode
   mode = GameRules:GetGameModeEntity()     
   mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )  
@@ -50,8 +51,6 @@ function trollnelves2:_Inittrollnelves2()
   
   mode:SetUseCustomHeroLevels ( true )
   mode:SetCameraDistanceOverride(1400)
-
-
 
   LinkLuaModifier("modifier_custom_armor", "libraries/modifiers/modifier_custom_armor.lua", LUA_MODIFIER_MOTION_NONE)
   LinkLuaModifier("modifier_generic_invisibility", "modifiers/modifier_generic_invisibility.lua", LUA_MODIFIER_MOTION_NONE)
@@ -74,13 +73,17 @@ function trollnelves2:_Inittrollnelves2()
   CustomGameEventManager:RegisterListener("player_team_choose", OnPlayerTeamChoose)
   CustomGameEventManager:RegisterListener("choose_kick_side", VoteKick)
   CustomGameEventManager:RegisterListener("votekick_start", VotekickStart)
-  CustomGameEventManager:RegisterListener( "donate_player_take", PlayerTake )
+  CustomGameEventManager:RegisterListener("flag_start", FlagStart)
+  CustomGameEventManager:RegisterListener("choose_flag_side", FlagGive)
+  CustomGameEventManager:RegisterListener("donate_player_take", PlayerTake )
   CustomGameEventManager:RegisterListener("SelectPart", Dynamic_Wrap(wearables, 'SelectPart'))
   CustomGameEventManager:RegisterListener("SetDefaultPart", Dynamic_Wrap(wearables, 'SetDefaultPart'))
   CustomGameEventManager:RegisterListener("UpdateTops", Dynamic_Wrap(top, 'UpdateTops'))
   
   CustomNetTables:SetTableValue("building_settings", "team_choice_time", { value = TEAM_CHOICE_TIME })
-
+  
+ -- mode:SetItemAddedToInventoryFilter(Dynamic_Wrap(trollnelves2, "ItemPickFilter"), self)
+  
   -- Debugging setup
   local spew = 0
   if TROLLNELVES2_DEBUG_SPEW then

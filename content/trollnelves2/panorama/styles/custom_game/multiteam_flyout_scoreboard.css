@@ -319,7 +319,7 @@
 	width:100px;
 }
 
-#GiveResourcesButton , #GiveAllResourcesButton, #VotekickButton {
+#GiveResourcesButton , #GiveAllResourcesButton, #VotekickButton, #FlagButton {
 	text-align:center;
 	horizontal-align:center;
 	vertical-align:middle;

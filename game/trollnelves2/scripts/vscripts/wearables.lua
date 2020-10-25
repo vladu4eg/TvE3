@@ -5,6 +5,9 @@ local dedicatedServerKey = GetDedicatedServerKeyV2("1")
 local isTesting = IsInToolsMode() and false
 Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/" --
 defaultpart = {}
+
+require('settings')
+
 function wearables:SelectPart(info)
     if info.offp == 0 then
         local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(info.PlayerID))
@@ -23,30 +26,9 @@ function wearables:SelectPart(info)
                 PlayerResource:GetSelectedHeroEntity(info.PlayerID):AddNewModifier(PlayerResource:GetSelectedHeroEntity(info.PlayerID), PlayerResource:GetSelectedHeroEntity(info.PlayerID), "part_mod", {part = info.part})
 			end
 			local npc = PlayerResource:GetSelectedHeroEntity(info.PlayerID)
-			if parts["11"] == "normal" then
-				if npc:IsAngel() then
-					--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_shoulder/dota_plus_crystal_maiden_shoulder.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_head/dota_plus_crystal_maiden_head.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_back/dota_plus_crystal_maiden_back.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_weapon/dota_plus_crystal_maiden_weapon.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_arms/dota_plus_crystal_maiden_arms.vmdl")
-					elseif npc:IsWolf() then
-					wearables:RemoveWearables(npc)
-					wearables:AttachWearable(npc, "models/items/lycan/ultimate/blood_moon_hunter_shapeshift_form/blood_moon_hunter_shapeshift_form.vmdl")
-					elseif npc:IsTroll() then
-					--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_weapon/lord_of_war_weapon.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_armor/lord_of_war_armor.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_head/lord_of_war_head.vmdl")
-					--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_shoulder/lord_of_war_shoulder.vmdl")
-					elseif npc:IsElf() then
-					wearables:RemoveWearables(npc)
-					wearables:AttachWearable(npc, "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega.vmdl")
-				end
-				--if npc.bear ~= nil  then
-				--	wearables:RemoveWearables(npc.bear)
-				--	wearables:AttachWearable(npc.bear, "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl")
-				--end
-			end
+			if parts["11"] == "normal" and not EVENT_START then
+				SetModelVip(npc)
+			end						
 		end
 		else
         PlayerResource:GetSelectedHeroEntity(info.PlayerID):RemoveModifierByName("part_mod")
@@ -103,34 +85,14 @@ function wearables:SetPart()
 				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PartDefaults[i]})
 				local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
 				local npc = PlayerResource:GetSelectedHeroEntity(i)
-				if parts["11"] == "normal" then
-					if npc:IsAngel() then
-						--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_shoulder/dota_plus_crystal_maiden_shoulder.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_head/dota_plus_crystal_maiden_head.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_back/dota_plus_crystal_maiden_back.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_weapon/dota_plus_crystal_maiden_weapon.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_arms/dota_plus_crystal_maiden_arms.vmdl")
-						elseif npc:IsWolf() then
-						wearables:RemoveWearables(npc)
-						wearables:AttachWearable(npc, "models/items/lycan/ultimate/blood_moon_hunter_shapeshift_form/blood_moon_hunter_shapeshift_form.vmdl")
-						elseif npc:IsTroll() then
-						--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_weapon/lord_of_war_weapon.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_armor/lord_of_war_armor.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_head/lord_of_war_head.vmdl")
-						--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_shoulder/lord_of_war_shoulder.vmdl")
-						elseif npc:IsElf() then
-						wearables:RemoveWearables(npc)
-						wearables:AttachWearable(npc, "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega.vmdl")
-					end
-					--if npc.bear ~= nil  then
-					--	wearables:RemoveWearables(npc.bear)
-					--	wearables:AttachWearable(npc.bear, "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl")
-					--end
+				if parts["11"] == "normal" and not EVENT_START then
+					SetModelVip(npc)
 				end
 			end
 		end
 	end
 end
+
 function wearables:SetDefaultPart(event)
     local player = PlayerResource:GetPlayer(event.PlayerID)
     if player.parttimerok == nil then player.parttimerok = true end
@@ -142,10 +104,35 @@ function wearables:SetDefaultPart(event)
 		end)
 		local data = {}
 		if event.part ~=  nil then
-		DebugPrint("no save")
-		data.SteamID = tostring(PlayerResource:GetSteamID(event.PlayerID))
-		data.Num = tostring(event.part)
-		Stats.GetVip(data, callback)
+			DebugPrint("no save")
+			data.SteamID = tostring(PlayerResource:GetSteamID(event.PlayerID))
+			data.Num = tostring(event.part)
+			Stats.GetVip(data, callback)
 		end
 	end
 end		
+
+function SetModelVip(npc)
+	if npc:IsAngel() then
+		--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_shoulder/dota_plus_crystal_maiden_shoulder.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_head/dota_plus_crystal_maiden_head.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_back/dota_plus_crystal_maiden_back.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_weapon/dota_plus_crystal_maiden_weapon.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/crystal_maiden/dota_plus_crystal_maiden_arms/dota_plus_crystal_maiden_arms.vmdl")
+		elseif npc:IsWolf() then
+		wearables:RemoveWearables(npc)
+		wearables:AttachWearable(npc, "models/items/lycan/ultimate/blood_moon_hunter_shapeshift_form/blood_moon_hunter_shapeshift_form.vmdl")
+		elseif npc:IsTroll() then
+		--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_weapon/lord_of_war_weapon.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_armor/lord_of_war_armor.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_head/lord_of_war_head.vmdl")
+		--	wearables:AttachWearable(npc, "models/items/troll_warlord/lord_of_war_shoulder/lord_of_war_shoulder.vmdl")
+		elseif npc:IsElf() then
+		wearables:RemoveWearables(npc)
+		wearables:AttachWearable(npc, "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega.vmdl")
+	end
+	--if npc.bear ~= nil  then
+	--	wearables:RemoveWearables(npc.bear)
+	--	wearables:AttachWearable(npc.bear, "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl")
+	--end
+end

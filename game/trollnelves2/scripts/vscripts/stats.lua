@@ -200,7 +200,7 @@ function Stats.RequestDataTop10(idTop, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		top:OnLoadTop(obj,idTop)
 		---CustomNetTables:SetTableValue("stats", tostring( pId ), { steamID = obj.steamID, score = obj.score })
@@ -222,7 +222,7 @@ function Stats.RequestVip(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		for id = 1, 31 do
 			parts[id] = "nill"
@@ -262,7 +262,7 @@ function Stats.RequestEvent(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		DebugPrint(pID)
 		local message = tostring(PlayerResource:GetPlayerName(pID)) .. " didn't get the event items.!"
@@ -320,7 +320,7 @@ function Stats.RequestVipDefaults(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("RequestVipDefaults ***********************************************")
 		if #obj > 0 then
 			if obj[1].num ~= nil then
@@ -344,7 +344,7 @@ function Stats.RequestBonus(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		if #obj > 0 then
 			if obj[1].srok ~= nil then
@@ -371,7 +371,7 @@ function Stats.RequestBonusTroll(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
+		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		if #obj > 0 then
 			if obj[1].chance ~= nil then
@@ -381,7 +381,7 @@ function Stats.RequestBonusTroll(pID, steam, callback)
 				GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " thank you for your support! Your chance is increased by " .. obj[1].chance .. "%.".. "</font>" ,  0, 0)
 				if roll_chance <= tonumber(obj[1].chance) and PlayerResource:GetConnectionState(pID) == 2 then
 					GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " you're in luck!" .. "</font>" ,  0, 0)
-					table.insert(GameRules.BonusTrollIDs, pID)
+					table.insert(GameRules.BonusTrollIDs, {pID, obj[1].chance})
 				end		
 			end
 		end						

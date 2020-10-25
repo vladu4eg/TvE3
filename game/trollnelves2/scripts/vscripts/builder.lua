@@ -3,7 +3,6 @@ require('trollnelves2')
 require('stats')
 require('wearables')
 
-
 -- A build ability is used (not yet confirmed)
 function Build( event )
     local caster = event.caster
@@ -91,7 +90,9 @@ function Build( event )
         AddUpgradeAbilities(unit)
         UpdateSpells(hero)
         local item = CreateItem("item_building_cancel", unit, unit)
-        unit:AddItem(item)
+        if newBuildingName ~= "flag"  then
+            unit:AddItem(item)
+        end
         
         for i=0, unit:GetAbilityCount()-1 do
             local ability = unit:GetAbilityByIndex(i)
@@ -213,7 +214,7 @@ function DestroyBuilding( keys )
     end
 end
 
-local function printTryError(...)
+function printTryError(...)
 	local stack = debug.traceback(...)
 	print(stack) 
     GameRules:SendCustomMessage(stack, 1, 1)

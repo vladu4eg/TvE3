@@ -40,6 +40,10 @@ function drop:RollItemDrop(unit)
 			local item_name = items[1] -- название предмета
 			local roll_chance = RandomFloat(0, 500)
 			
+			if string.match(GetMapName(),"halloween") then 
+				chance = 100
+			end
+			
 			if units then 
 				for _,current_name in pairs(units) do
 					if current_name == unit_name then
@@ -71,7 +75,10 @@ function drop:RollItemDrop(unit)
 		end	
 	local randTime = RandomInt( 30, 240 )
 	Timers:CreateTimer(randTime, function()
-		if string.match(GetMapName(),"autumn") then
+		if string.match(GetMapName(),"autumn")  then
+			RandomDropLoot()
+		elseif string.match(GetMapName(),"halloween") then 
+			RandomDropLoot()
 			RandomDropLoot()
 		end
 	end);

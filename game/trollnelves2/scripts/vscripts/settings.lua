@@ -7,10 +7,10 @@ ANGEL_HERO = "npc_dota_hero_crystal_maiden"
 WOLF_HERO = "npc_dota_hero_lycan"
 BEAR_HERO = "npc_dota_hero_bear"
 
-TEAM_CHOICE_TIME = 10
+TEAM_CHOICE_TIME = 30
 WOLF_START_SPAWN_TIME = 300 -- When the players will be able to choose wolf instead of auto chosen to angels. In seconds.
 TROLL_SPAWN_TIME = 30
-PRE_GAME_TIME = 20
+PRE_GAME_TIME = 40
 
 ANGEL_RESPAWN_TIME = 10
 WOLF_RESPAWN_TIME = 10
@@ -30,6 +30,8 @@ BUFF_ENIGMA_TIME = 7200
 MIN_RATING_PLAYER = 12
 PERC_KICK_PLAYER = 0.78
 MIN_PLAYER_KICK = 8
+
+EVENT_START = false
 
 PLAYER_COLORS = {
     {0, 102, 255}, -- синий

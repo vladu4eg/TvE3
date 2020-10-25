@@ -15,21 +15,23 @@ function top:UpdateTops()
 end
 
 function top:OnLoadTop(list, idTop)
-    if list[1] ~= nil then
-        for i=1,#list do
-            local id = ""
-            local col = ""
-            local kv =
-            {
-                id = list[i].steamID,
-                col = list[i].score
-			}
-			if idTop == "1" then
-				table.insert(PlaysTopList,kv)
-			elseif idTop == "2" then
-				table.insert(WinsTopList,kv)
-			elseif idTop == "3" then
-				table.insert(HardWinsTopList,kv)
+	if list ~= nil then
+		if list[1] ~= nil then
+			for i=1,#list do
+				local id = ""
+				local col = ""
+				local kv =
+				{
+					id = list[i].steamID,
+					col = list[i].score
+				}
+				if idTop == "1" then
+					table.insert(PlaysTopList,kv)
+					elseif idTop == "2" then
+					table.insert(WinsTopList,kv)
+					elseif idTop == "3" then
+					table.insert(HardWinsTopList,kv)
+				end
 			end
 		end
 	end

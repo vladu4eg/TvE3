@@ -302,6 +302,39 @@ function Precache( context )
     PrecacheResource("model", "models/items/sniper/witch_hunter_set_head/witch_hunter_set_head.vmdl", context)
     PrecacheResource("model", "models/items/sniper/witch_hunter_set_back/witch_hunter_set_back.vmdl", context)
 	
+	--Halloween
+	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)
+	PrecacheResource("model", "models/items/death_prophet/drowned_siren_head/drowned_siren_head.vmdl", context)
+    PrecacheResource("model", "models/items/death_prophet/drowned_siren_drowned_siren_skirt/drowned_siren_drowned_siren_skirt.vmdl", context)
+    PrecacheResource("model", "models/items/death_prophet/drowned_siren_armor/drowned_siren_armor.vmdl", context)
+    PrecacheResource("model", "models/items/death_prophet/exorcism/drowned_siren_drowned_siren_crowned_fish/drowned_siren_drowned_siren_crowned_fish.vmdl", context)
+    PrecacheResource("model", "models/items/death_prophet/drowned_siren_misc/drowned_siren_misc.vmdl", context)
+	
+	PrecacheResource("model", "models/heroes/life_stealer/life_stealer.vmdl", context)
+	PrecacheResource("model", "models/items/lifestealer/bloody_ripper_belt/bloody_ripper_belt.vmdl", context)
+    PrecacheResource("model", "models/items/lifestealer/promo_bloody_ripper_back/promo_bloody_ripper_back.vmdl", context)
+    PrecacheResource("model", "models/items/lifestealer/bloody_ripper_arms/bloody_ripper_arms.vmdl", context)       
+    PrecacheResource("model", "models/items/lifestealer/bloody_ripper_head/bloody_ripper_head.vmdl", context)  
+	
+    PrecacheResource("model", "models/heroes/wraith_king/wraith_king.vmdl", context)  
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_weapon.vmdl", context)
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_arms.vmdl", context)
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_shoulder.vmdl", context)
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_armor.vmdl", context)
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_back.vmdl", context)
+    PrecacheResource("model", "models/items/wraith_king/arcana/wraith_king_arcana_head.vmdl", context)	
+	
+	--PrecacheResource("model", "models/heroes/pudge/pudge.vmdl", context)
+	--PrecacheResource("model", "models/items/pudge/blackdeath_offhand/blackdeath_offhand.vmdl", context)
+   -- PrecacheResource("model", "models/items/pudge/blackdeath_belt/blackdeath_belt.vmdl", context)
+    --PrecacheResource("model", "models/items/pudge/blackdeath_head/blackdeath_head.vmdl", context)
+    --PrecacheResource("model", "models/items/pudge/blackdeath_back/blackdeath_back.vmdl", context)
+   -- PrecacheResource("model", "models/items/pudge/blackdeath_weapon/blackdeath_weapon.vmdl", context)
+   -- PrecacheResource("model", "models/items/pudge/blackdeath_shoulder/blackdeath_shoulder.vmdl", context)
+	--PrecacheResource("model", "models/items/pudge/blackdeath_arms/blackdeath_arms.vmdl", context)
+	
+	PrecacheResource("model", "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl", context)	
+	-- End Halloween
 	
 	GameRules.pc = context
 	trollnelves2().pc = context

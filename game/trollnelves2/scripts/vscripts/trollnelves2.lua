@@ -33,6 +33,8 @@ require('votekick')
 require('drop')
 require('wearables')
 require('pets')
+require('flag')
+require('filter')
 
 function trollnelves2:PostLoadPrecache()
     Pets:Init()
@@ -50,7 +52,7 @@ function trollnelves2:GameSetup()
         if PlayerResource:IsValidPlayerID(pID) then
             PlayerResource:SetCustomTeamAssignment(pID, DOTA_TEAM_GOODGUYS)
             PlayerResource:SetSelectedHero(pID, ELF_HERO)
-            GameRules.Score[pID] = "no"
+            GameRules.Score[pID] = 0
             GameRules.PlayersFPS[pID] = false
             local steam = tostring(PlayerResource:GetSteamID(pID))
             Stats.RequestBonusTroll(pID, steam, callback)
@@ -79,21 +81,47 @@ function SelectHeroes()
         end
     end
     local trollPlayerID = -1
-    
+    local sumChance = 0
     if #wannabeTrollIDs > 0 then
         if #GameRules.BonusTrollIDs > 0 then
-            for i = 1, #GameRules.BonusTrollIDs do
+            DebugPrint("Count Donate: " .. #GameRules.BonusTrollIDs)
+            for _, bonus in ipairs(GameRules.BonusTrollIDs) do
+                local playerID, chance = unpack(bonus)
                 for j = 1, #wannabeTrollIDs do
-                    if GameRules.BonusTrollIDs[i] == wannabeTrollIDs[j] then
-                        table.insert(donateTroll, GameRules.BonusTrollIDs[i])
-                        DebugPrint("Win  Troll: " .. trollPlayerID)
+                    if playerID == wannabeTrollIDs[j] then
+                        table.insert(donateTroll, {playerID, chance})
+                        sumChance = sumChance + tonumber(chance)
                     end
                 end
             end
-            trollPlayerID = donateTroll[math.random(#donateTroll)]
+            if #donateTroll > 1 then
+                sumChance = sumChance/100
+                local roll_chance = RandomFloat(0, 100)
+                local check_chance_max = 0
+                local check_chance_min = 0
+                for _, bonus in ipairs(GameRules.BonusTrollIDs) do
+                    local playerID, chance = unpack(bonus)
+                    check_chance_max = check_chance_max + (tonumber(chance)/sumChance)
+                    if check_chance_max > roll_chance and check_chance_min <= roll_chance then
+                        DebugPrint("Win troll: " .. playerID)
+                        DebugPrint("roll_chance: " .. roll_chance)
+                        DebugPrint("check_chance_max: " .. check_chance_max)
+                        DebugPrint("check_chance_min troll: " .. check_chance_min)
+                        DebugPrint("sumChance: " .. sumChance)
+                        trollPlayerID = playerID
+                        break
+                    else 
+                        check_chance_min = check_chance_max  
+                    end
+                end
+            else 
+                for _, donate in ipairs(donateTroll) do
+                    local playerID, chance = unpack(donate)
+                    trollPlayerID = playerID
+                end
+            end
         end
-        if #wannabeTrollIDs > 0 and
-            (trollPlayerID == -1 or trollPlayerID == nil) then
+        if #wannabeTrollIDs > 0 and (trollPlayerID == -1 or trollPlayerID == nil) then
             trollPlayerID = wannabeTrollIDs[math.random(#wannabeTrollIDs)]
             if PlayerResource:GetConnectionState(trollPlayerID) ~= 2 then
                 trollPlayerID = allPlayersIDs[math.random(#allPlayersIDs)]
@@ -580,9 +608,7 @@ function AddUpgradeAbilities(building)
         for a = 0, building:GetAbilityCount() - 1 do
             local tempAbility = building:GetAbilityByIndex(a)
             if tempAbility then
-                table.insert(abilities, {
-                    tempAbility:GetAbilityName(), tempAbility:GetLevel()
-                })
+                table.insert(abilities, {tempAbility:GetAbilityName(), tempAbility:GetLevel()})
                 building:RemoveAbility(tempAbility:GetAbilityName())
             end
         end

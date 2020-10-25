@@ -11,7 +11,7 @@ function trollnelves2:OnGameRulesStateChange()
     if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
         trollnelves2:GameSetup()
         trollnelves2:PostLoadPrecache()
-    elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+        elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
         self:PreStart()
     end
 end
@@ -20,7 +20,7 @@ end
 function trollnelves2:OnNPCSpawned(keys)
     DebugPrint("OnNPCSpawned:")
     local npc = EntIndexToHScript(keys.entindex)
-
+    
     if npc.GetPhysicalArmorValue then
         npc:AddNewModifier(npc, nil, "modifier_custom_armor", {})
     end
@@ -41,10 +41,13 @@ function trollnelves2:OnNPCSpawned(keys)
         local info = {}
         info.PlayerID = npc:GetPlayerID()
         info.hero = npc
-       -- local rand = RandomInt(1, 2)
-       -- if rand == 1 then
+        -- local rand = RandomInt(1, 2)
+        -- if rand == 1 then
         --	Pets.CreatePet( info )
 		-- end
+    end
+    if EVENT_START then
+        Halloween(npc)  
     end
 end
 
@@ -71,12 +74,12 @@ function trollnelves2:OnPlayerReconnect(event)
             if hero.dced == true then
                 hero.alive = true
                 hero.dced = false
-            else
+                else
                 local player = PlayerResource:GetPlayer(playerID)
                 if player then
                     CustomGameEventManager:Send_ServerToPlayer(player,
-                                                               "show_helper_options",
-                                                               {})
+                        "show_helper_options",
+                    {})
                 end
             end
         end
@@ -89,7 +92,7 @@ function trollnelves2:OnDisconnect(event)
     local team = hero:GetTeamNumber()
     local trollLoseTimer = 300
     local elfLoseTimer = 180
-
+    
     if team == DOTA_TEAM_GOODGUYS then
         hero:AddNewModifier(nil, nil, "modifier_disconnected", {})
         if hero.alive == true then
@@ -106,9 +109,7 @@ function trollnelves2:OnDisconnect(event)
             end
             if lastAlive then
                 Timers:CreateTimer(function()
-                    if elfLoseTimer > 0 and
-                        PlayerResource:GetConnectionState(
-                            hero:GetPlayerOwnerID()) ~= 2 then
+                    if elfLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 4 then
                         Notifications:ClearBottomFromAll()
                         Notifications:BottomToAll(
                             {
@@ -116,55 +117,47 @@ function trollnelves2:OnDisconnect(event)
                                 style = {color = '#E62020'},
                                 duration = 1
                             })
-                        elfLoseTimer = elfLoseTimer - 1
-                        return 1.0
-                    elseif elfLoseTimer > 0 and
-                        PlayerResource:GetConnectionState(
-                            hero:GetPlayerOwnerID()) == 2 then
-                        return nil
-                    else
-                        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-                        GameRules:SendCustomMessage(
-                            "Please do not leave the game.", 1, 1)
-                        Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
-                        GameRules:SendCustomMessage(
-                            "The game can be left, thanks!", 1, 1)
+                            elfLoseTimer = elfLoseTimer - 1
+                            return 1.0
+                            elseif elfLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 2 then
+                            return nil
+                            elseif elfLoseTimer <= 0 or PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 4 then
+                            GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+                            GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
+                            local status, nextCall = ErrorCheck(function() 
+                                Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
+                            end)
+                            GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
                     end
                 end)
             end
         end
-    elseif team == DOTA_TEAM_BADGUYS then
+        elseif team == DOTA_TEAM_BADGUYS then
         hero:MoveToPosition(Vector(0, 0, 0))
         if hero:IsWolf() then
             hero:AddNewModifier(nil, nil, "modifier_disconnected", {})
             Timers:CreateTimer(60, function()
                 if hero ~= nil then
-                    if PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~=
-                        2 then
+                    if PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2 then
                         local wolfNetworth = hero:GetNetworth()
                         local lumber = wolfNetworth / 64000 or 0
-                        local gold = math.floor(
-                                         (lumber - math.floor(lumber)) * 64000) or
-                                         0
+                        local gold = math.floor((lumber - math.floor(lumber)) * 64000) or 0
                         lumber = math.floor(lumber)
                         hero:ClearInventory()
                         hero:RemoveDesol2()
-                        PlayerResource:ModifyGold(GameRules.trollHero, gold,
-                                                  true)
-                        PlayerResource:ModifyLumber(GameRules.trollHero, lumber,
-                                                    true)
+                        PlayerResource:ModifyGold(GameRules.trollHero, gold, true)
+                        PlayerResource:ModifyLumber(GameRules.trollHero, lumber, true)
                         PlayerResource:SetGold(hero, 0, true)
                         PlayerResource:SetLumber(hero, 0, true)
                     end
                 end
             end)
-
+            
         end
     end
     if hero:IsTroll() then
         Timers:CreateTimer(function()
-            if trollLoseTimer > 0 and
-                PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2 then
+            if trollLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2  and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 4 then
                 Notifications:ClearBottomFromAll()
                 Notifications:BottomToAll(
                     {
@@ -172,18 +165,17 @@ function trollnelves2:OnDisconnect(event)
                         style = {color = '#E62020'},
                         duration = 1
                     })
-                trollLoseTimer = trollLoseTimer - 1
-                return 1.0
-            elseif trollLoseTimer > 0 and
-                PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 2 then
-                return nil
-            else
-                GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-                GameRules:SendCustomMessage("Please do not leave the game.", 1,
-                                            1)
-                Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
-                GameRules:SendCustomMessage("The game can be left, thanks!", 1,
-                                            1)
+                    trollLoseTimer = trollLoseTimer - 1
+                    return 1.0
+                    elseif trollLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 2 then
+                    return nil
+                    elseif trollLoseTimer <= 0 or PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 4 then
+                    GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+                    GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
+                    local status, nextCall = ErrorCheck(function() 
+                        Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
+                    end)
+                    GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
             end
         end)
     end
@@ -200,7 +192,7 @@ function trollnelves2:OnConnectFull(keys)
     local playerID = player:GetPlayerID()
     GameRules.userIds[userID] = playerID
     trollnelves2:_Capturetrollnelves2()
-
+    
 end
 
 function trollnelves2:OnItemPickedUp(keys)
@@ -210,7 +202,7 @@ function trollnelves2:OnItemPickedUp(keys)
     local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
     local player = PlayerResource:GetPlayer(keys.PlayerID)
     local itemname = keys.itemname
-
+    
     if hero:GetNumItemsInInventory() > 6 then
         local spawnPoint = hero:GetAbsOrigin() + RandomFloat(50, 100)
         local newItem = CreateItem(itemname, nil, nil)
@@ -218,7 +210,7 @@ function trollnelves2:OnItemPickedUp(keys)
         newItem:LaunchLootInitialHeight(false, 0, 150, 0.5, spawnPoint)
         hero:RemoveItem(itemEntity)
     end
-
+    
 end
 
 --[[
@@ -227,7 +219,19 @@ end
 ]]
 function trollnelves2:OnAllPlayersLoaded()
     DebugPrint("[TROLLNELVES2] All Players have loaded into the game")
+    
+end
 
+function printTryError(...)
+	local stack = debug.traceback(...)
+	print(stack) 
+    GameRules:SendCustomMessage(stack, 1, 1)
+	return stack
+end
+
+function ErrorCheck(callback, ...)
+    print("BuildError")
+	return xpcall(callback, printTryError, ...)
 end
 
 function trollnelves2:OnEntityKilled(keys)
@@ -247,46 +251,48 @@ function trollnelves2:OnEntityKilled(keys)
         if killed:IsElf() and killed.alive then
             bounty = ElfKilled(killed)
             GameRules.Bonus[attackerPlayerID] =
-                GameRules.Bonus[attackerPlayerID] + 1
+            GameRules.Bonus[attackerPlayerID] + 1
             if CheckTrollVictory() then
                 GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-                GameRules:SendCustomMessage("Please do not leave the game.", 1,
-                                            1)
-                Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
-                GameRules:SendCustomMessage("The game can be left, thanks!", 1,
-                                            1)
+                GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
+                local status, nextCall = ErrorCheck(function() 
+                    Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
+                end)
+                GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
                 return
             end
             drop:RollItemDrop(killed)
             -- Pets.DeletePet(keys)
-        elseif killed:IsTroll() then
+            elseif killed:IsTroll() then
             GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
             GameRules.Bonus[attackerPlayerID] =
-                GameRules.Bonus[attackerPlayerID] + 2
+            GameRules.Bonus[attackerPlayerID] + 2
             GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-            Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
+            local status, nextCall = ErrorCheck(function() 
+                Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
+            end)
             GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
-        elseif killed:IsWolf() then
+            elseif killed:IsWolf() then
             bounty = math.max(killed:GetNetworth() * 0.70,
-                              GameRules:GetGameTime())
+            GameRules:GetGameTime())
             killed:SetRespawnPosition(Vector(0, -640, 256))
             killed:SetTimeUntilRespawn(WOLF_RESPAWN_TIME * PlayerResource:GetDeaths(killedPlayerID))
             killed:RemoveDesol2()
             if PlayerResource:GetDeaths(killedPlayerID) == 2 then
                 GameRules.Bonus[attackerPlayerID] =
-                    GameRules.Bonus[attackerPlayerID] + 1
+                GameRules.Bonus[attackerPlayerID] + 1
             end
             drop:RollItemDrop(killed)
             -- Pets.DeletePet(keys)
-        elseif killed:IsAngel() then
+            elseif killed:IsAngel() then
             bounty = math.max(PlayerResource:GetGold(killedPlayerID),
-                              GameRules:GetGameTime()) / 4
+            GameRules:GetGameTime()) / 4
             PlayerResource:SetGold(killed, 0)
             killed:SetRespawnPosition(RandomAngelLocation())
             killed:SetTimeUntilRespawn(ANGEL_RESPAWN_TIME * PlayerResource:GetDeaths(killedPlayerID))
             Timers:CreateTimer(ANGEL_RESPAWN_TIME, function()
                 killed:AddNewModifier(killed, nil, "modifier_invulnerable",
-                                      {duration = 5})
+                {duration = 5})
             end)
             killed:ClearInventoryCM()
             drop:RollItemDrop(killed)
@@ -294,28 +300,28 @@ function trollnelves2:OnEntityKilled(keys)
         end
         if bounty >= 0 and attacker ~= killed then
             local killedName = PlayerResource:GetSelectedHeroEntity(
-                                   killedPlayerID) and
-                                   PlayerResource:GetSelectedHeroEntity(
-                                       killedPlayerID):GetUnitName() or
-                                   killed:GetUnitName()
+            killedPlayerID) and
+            PlayerResource:GetSelectedHeroEntity(
+            killedPlayerID):GetUnitName() or
+            killed:GetUnitName()
             local attackerName = PlayerResource:GetSelectedHeroEntity(
-                                     attackerPlayerID) and
-                                     PlayerResource:GetSelectedHeroEntity(
-                                         attackerPlayerID):GetUnitName() or
-                                     attacker:GetUnitName()
+            attackerPlayerID) and
+            PlayerResource:GetSelectedHeroEntity(
+            attackerPlayerID):GetUnitName() or
+            attacker:GetUnitName()
             bounty = math.floor(bounty)
             PlayerResource:ModifyGold(attacker, bounty)
             local message = "%s1 (" .. GetModifiedName(attackerName) ..
-                                ") killed " ..
-                                PlayerResource:GetPlayerName(killedPlayerID) ..
-                                " (" .. GetModifiedName(killedName) ..
-                                ") for <font color='#F0BA36'>" .. bounty ..
-                                "</font> gold!"
+            ") killed " ..
+            PlayerResource:GetPlayerName(killedPlayerID) ..
+            " (" .. GetModifiedName(killedName) ..
+            ") for <font color='#F0BA36'>" .. bounty ..
+            "</font> gold!"
             GameRules:SendCustomMessage(message, attackerPlayerID, 0)
         end
-    else
+        else
         local hero = PlayerResource:GetSelectedHeroEntity(killedPlayerID)
-
+        
         if hero and hero.units and hero.alive then -- hero.units can contain other units besides buildings
             for i = #hero.units, 1, -1 do
                 if not hero.units[i]:IsNull() then
@@ -326,30 +332,30 @@ function trollnelves2:OnEntityKilled(keys)
                 end
             end
         end
-
+        
         local unitTable = killed:GetKeyValue()
         local gridTable = unitTable and unitTable["Grid"]
         if IsCustomBuilding(killed) or gridTable then
             -- Building Helper grid cleanup
             BuildingHelper:RemoveBuilding(killed, false)
-
+            
             if gridTable then
                 for grid_type, v in pairs(gridTable) do
                     if tobool(v.RemoveOnDeath) then
                         local location = killed:GetAbsOrigin()
                         BuildingHelper:print(
-                            "Clearing special grid of " .. grid_type)
+                        "Clearing special grid of " .. grid_type)
                         if (v.Radius) then
                             BuildingHelper:RemoveGridType(v.Radius, location,
-                                                          grid_type, "radius")
-                        elseif (v.Square) then
+                            grid_type, "radius")
+                            elseif (v.Square) then
                             BuildingHelper:RemoveGridType(v.Square, location,
-                                                          grid_type)
+                            grid_type)
                         end
                     end
                 end
             end
-
+            
             if hero then -- Skip looping unnecessarily when elf dies
                 local name = killed:GetUnitName()
                 -- DebugPrint("name " .. name)
@@ -362,11 +368,11 @@ function trollnelves2:OnEntityKilled(keys)
                         if name ~= ancestorUnitName then
                             -- DebugPrint("ancestorUnitName " .. ancestorUnitName)
                             ModifyStartedConstructionBuildingCount(hero,
-                                                                   ancestorUnitName,
-                                                                   -1)
+                                ancestorUnitName,
+                            -1)
                             ModifyCompletedConstructionBuildingCount(hero,
-                                                                     ancestorUnitName,
-                                                                     -1)
+                                ancestorUnitName,
+                            -1)
                         end
                     end
                 end
@@ -375,10 +381,10 @@ function trollnelves2:OnEntityKilled(keys)
                 end
                 UpdateSpells(hero)
             end
-        elseif killed:GetKeyValue("FoodCost") then
+            elseif killed:GetKeyValue("FoodCost") then
             local foodCost = killed:GetKeyValue("FoodCost")
             PlayerResource:ModifyFood(hero, -foodCost)
-        elseif killed:GetKeyValue("WispCost") then
+            elseif killed:GetKeyValue("WispCost") then
             local wisp = killed:GetKeyValue("WispCost")
             PlayerResource:ModifyWisp(hero, -wisp)
         end
@@ -389,30 +395,30 @@ function ElfKilled(killed)
     local killedID = killed:GetPlayerOwnerID()
     killed.alive = false
     killed.legitChooser = true
-
+    
     local bounty = PlayerResource:GetGold(killedID)
     PlayerResource:SetGold(killed, 0)
     PlayerResource:SetLumber(killed, 0)
-
+    
     for i = 1, #killed.units do
         if killed.units[i] and not killed.units[i]:IsNull() then
             local unit = killed.units[i]
             unit:ForceKill(false)
         end
     end
-
+    
     PlayerResource:SetCameraTarget(killedID, GameRules.trollHero)
     Timers:CreateTimer(3, function()
         PlayerResource:SetCameraTarget(killedID, nil)
     end)
-
+    
     DebugPrint("Seconds elapsed: " .. GameRules:GetGameTime() -
-                   GameRules.startTime)
+    GameRules.startTime)
     if GameRules:GetGameTime() - GameRules.startTime >= WOLF_START_SPAWN_TIME then
         local orgPlayer = killed:GetPlayerOwner()
         if orgPlayer then
             CustomGameEventManager:Send_ServerToPlayer(orgPlayer,
-                                                       "show_helper_options", {})
+            "show_helper_options", {})
             Timers:CreateTimer(30, function()
                 if killed and killed.legitChooser then
                     local args = {}
@@ -421,23 +427,23 @@ function ElfKilled(killed)
                     ChooseHelpSide(killedID, args)
                 end
             end)
-        else
+            else
             GameRules.dcedChoosers[killedID] = true
         end
-    else
+        else
         local args = {}
         args.team = DOTA_TEAM_GOODGUYS
         args.playerID = killedID
         ChooseHelpSide(killedID, args)
     end
-
+    
     return bounty
 end
 
 function CheckTrollVictory()
     for i = 1, PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) do
         local playerID = PlayerResource:GetNthPlayerIDOnTeam(DOTA_TEAM_GOODGUYS,
-                                                             i)
+        i)
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
         if hero and hero.alive then return false end
     end
@@ -463,58 +469,58 @@ function GiveResources(eventSourceIndex, event)
                     return
                 end
                 if (lastSendTime[event.target] == nil or
-                    lastSendTime[event.target] + 120 < GameRules:GetGameTime()) or
-                    casterHero:IsAngel() then
-                    PlayerResource:ModifyGold(casterHero, -gold, true)
-                    PlayerResource:ModifyLumber(casterHero, -lumber, true)
-                    PlayerResource:ModifyGold(hero, gold, true)
-                    PlayerResource:ModifyLumber(hero, lumber, true)
-                    PlayerResource:ModifyGoldGiven(targetID, -gold)
-                    PlayerResource:ModifyLumberGiven(targetID, -lumber)
-                    PlayerResource:ModifyGoldGiven(casterID, gold)
-                    PlayerResource:ModifyLumberGiven(casterID, lumber)
-                    if gold > 0 or lumber > 0 then
-                        local text = PlayerResource:GetPlayerName(
-                                         casterHero:GetPlayerOwnerID()) .. "(" ..
-                                         GetModifiedName(
-                                             casterHero:GetUnitName()) ..
-                                         ") has sent "
-                        if gold > 0 then
-                            text = text .. "<font color='#F0BA36'>" .. gold ..
-                                       "</font> gold"
-                        end
-                        if gold > 0 and lumber > 0 then
-                            text = text .. " and "
-                        end
-                        if lumber > 0 then
-                            text = text .. "<font color='#009900'>" .. lumber ..
-                                       "</font> lumber"
-                        end
-                        text = text .. " to " ..
-                                   PlayerResource:GetPlayerName(
-                                       hero:GetPlayerOwnerID()) .. "(" ..
-                                   GetModifiedName(hero:GetUnitName()) .. ")!"
-                        GameRules:SendCustomMessageToTeam(text,
-                                                          casterHero:GetTeamNumber(),
-                                                          0, 0)
-                        if casterHero:IsAngel() == false then
-                            lastSendTime[event.target] = GameRules:GetGameTime()
-                        end
+                lastSendTime[event.target] + 120 < GameRules:GetGameTime()) or
+                casterHero:IsAngel() then
+                PlayerResource:ModifyGold(casterHero, -gold, true)
+                PlayerResource:ModifyLumber(casterHero, -lumber, true)
+                PlayerResource:ModifyGold(hero, gold, true)
+                PlayerResource:ModifyLumber(hero, lumber, true)
+                PlayerResource:ModifyGoldGiven(targetID, -gold)
+                PlayerResource:ModifyLumberGiven(targetID, -lumber)
+                PlayerResource:ModifyGoldGiven(casterID, gold)
+                PlayerResource:ModifyLumberGiven(casterID, lumber)
+                if gold > 0 or lumber > 0 then
+                    local text = PlayerResource:GetPlayerName(
+                    casterHero:GetPlayerOwnerID()) .. "(" ..
+                    GetModifiedName(
+                    casterHero:GetUnitName()) ..
+                    ") has sent "
+                    if gold > 0 then
+                        text = text .. "<font color='#F0BA36'>" .. gold ..
+                        "</font> gold"
                     end
-                else
-                    local timeLeft = math.ceil(
-                                         lastSendTime[event.target] + 120 -
-                                             GameRules:GetGameTime())
-                    SendErrorMessage(event.casterID, "You can send money in " ..
-                                         timeLeft .. " seconds!")
+                    if gold > 0 and lumber > 0 then
+                        text = text .. " and "
+                    end
+                    if lumber > 0 then
+                        text = text .. "<font color='#009900'>" .. lumber ..
+                        "</font> lumber"
+                    end
+                    text = text .. " to " ..
+                    PlayerResource:GetPlayerName(
+                    hero:GetPlayerOwnerID()) .. "(" ..
+                    GetModifiedName(hero:GetUnitName()) .. ")!"
+                    GameRules:SendCustomMessageToTeam(text,
+                        casterHero:GetTeamNumber(),
+                    0, 0)
+                    if casterHero:IsAngel() == false then
+                        lastSendTime[event.target] = GameRules:GetGameTime()
+                    end
                 end
-            else
+                else
+                local timeLeft = math.ceil(
+                    lastSendTime[event.target] + 120 -
+                GameRules:GetGameTime())
+                SendErrorMessage(event.casterID, "You can send money in " ..
+                timeLeft .. " seconds!")
+                end
+                else
                 SendErrorMessage(event.casterID, "#error_enter_only_digits")
             end
-        else
+            else
             SendErrorMessage(event.casterID, "#error_select_only_your_allies")
         end
-    else
+        else
         SendErrorMessage(event.casterID, "#error_type_only_digits")
     end
 end
@@ -525,7 +531,7 @@ function ChooseHelpSide(eventSourceIndex, event)
     local playerID = event.playerID
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     hero.legitChooser = false
-
+    
     local newHeroName
     local message
     local timer
@@ -533,14 +539,14 @@ function ChooseHelpSide(eventSourceIndex, event)
     if team == DOTA_TEAM_GOODGUYS then
         newHeroName = ANGEL_HERO
         message = "%s1 will keep helping elves and now is an " ..
-                      GetModifiedName(ANGEL_HERO)
+        GetModifiedName(ANGEL_HERO)
         timer = ANGEL_RESPAWN_TIME
         pos = RandomAngelLocation()
-    elseif team == DOTA_TEAM_BADGUYS then
+        elseif team == DOTA_TEAM_BADGUYS then
         newHeroName = WOLF_HERO
         message = "%s1 has joined the dark side and now will help " ..
-                      GetModifiedName(TROLL_HERO) .. ". %s1 is now a" ..
-                      GetModifiedName(WOLF_HERO)
+        GetModifiedName(TROLL_HERO) .. ". %s1 is now a" ..
+        GetModifiedName(WOLF_HERO)
         timer = WOLF_RESPAWN_TIME
         pos = Vector(0, -640, 256)
     end
@@ -548,7 +554,7 @@ function ChooseHelpSide(eventSourceIndex, event)
     Timers:CreateTimer(function()
         GameRules:SendCustomMessage(message, playerID, 0)
     end)
-
+    
     hero:SetTimeUntilRespawn(timer)
     Timers:CreateTimer(timer, function()
         PlayerResource:ReplaceHeroWith(playerID, newHeroName, 0, 0)
@@ -557,13 +563,52 @@ function ChooseHelpSide(eventSourceIndex, event)
         PlayerResource:SetCustomTeamAssignment(playerID, team) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
         FindClearSpaceForUnit(hero, pos, true)
     end)
-
+    
 end
 
 function RandomAngelLocation()
     return (GameRules.angel_spawn_points and #GameRules.angel_spawn_points and
-               #GameRules.angel_spawn_points > 0) and
-               GameRules.angel_spawn_points[RandomInt(1,
-                                                      #GameRules.angel_spawn_points)]:GetAbsOrigin() or
-               Vector(0, 0, 0)
+    #GameRules.angel_spawn_points > 0) and
+    GameRules.angel_spawn_points[RandomInt(1,
+    #GameRules.angel_spawn_points)]:GetAbsOrigin() or
+    Vector(0, 0, 0)
+end
+
+function Halloween(npc)
+    if string.match(GetMapName(),"halloween") then
+        wearables:RemoveWearables(npc)
+        if npc:IsAngel() then
+            UpdateModel(npc, "models/heroes/death_prophet/death_prophet.vmdl", 1)  
+            wearables:AttachWearable(npc, "models/items/death_prophet/drowned_siren_head/drowned_siren_head.vmdl")
+            wearables:AttachWearable(npc, "models/items/death_prophet/drowned_siren_drowned_siren_skirt/drowned_siren_drowned_siren_skirt.vmdl")
+            wearables:AttachWearable(npc, "models/items/death_prophet/drowned_siren_armor/drowned_siren_armor.vmdl")
+            wearables:AttachWearable(npc, "models/items/death_prophet/exorcism/drowned_siren_drowned_siren_crowned_fish/drowned_siren_drowned_siren_crowned_fish.vmdl")
+            wearables:AttachWearable(npc, "models/items/death_prophet/drowned_siren_misc/drowned_siren_misc.vmdl")
+            elseif npc:IsWolf() then
+            UpdateModel(npc, "models/heroes/life_stealer/life_stealer.vmdl", 1)  
+            wearables:AttachWearable(npc, "models/items/lifestealer/bloody_ripper_belt/bloody_ripper_belt.vmdl")
+            wearables:AttachWearable(npc, "models/items/lifestealer/promo_bloody_ripper_back/promo_bloody_ripper_back.vmdl")
+            wearables:AttachWearable(npc, "models/items/lifestealer/bloody_ripper_arms/bloody_ripper_arms.vmdl")       
+            wearables:AttachWearable(npc, "models/items/lifestealer/bloody_ripper_head/bloody_ripper_head.vmdl")   
+            elseif npc:IsTroll() then            
+            UpdateModel(npc, "models/heroes/wraith_king/wraith_king.vmdl", 1)  
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_weapon.vmdl")
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_arms.vmdl")
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_shoulder.vmdl")
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_armor.vmdl")
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_back.vmdl")
+            wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_head.vmdl")
+                    
+            --UpdateModel(npc, "models/heroes/pudge/pudge.vmdl", 1)  
+           -- wearables:AttachWearable(npc, "models/items/pudge/blackdeath_offhand/blackdeath_offhand.vmdl")
+            --wearables:AttachWearable(npc, "models/items/pudge/blackdeath_belt/blackdeath_belt.vmdl")
+          --  wearables:AttachWearable(npc, "models/items/pudge/blackdeath_head/blackdeath_head.vmdl")
+         --   wearables:AttachWearable(npc, "models/items/pudge/blackdeath_back/blackdeath_back.vmdl")
+          --  wearables:AttachWearable(npc, "models/items/pudge/blackdeath_weapon/blackdeath_weapon.vmdl")
+          --  wearables:AttachWearable(npc, "models/items/pudge/blackdeath_shoulder/blackdeath_shoulder.vmdl")
+         --   wearables:AttachWearable(npc, "models/items/pudge/blackdeath_arms/blackdeath_arms.vmdl")
+            elseif npc:IsElf() then
+            UpdateModel(npc, "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl", 0.5)  
+        end
+    end 
 end

@@ -155,26 +155,68 @@
 		"MovementTurnRate"			"0.6"
 		"StatusHealth"				"1"
 	}
-	"npc_flag"
+	
+	"flag"
 	{
-		"BaseClass"					"npc_dota_creature"
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/props_teams/banner_guild_lvl0.vmdl"
-		"ModelScale"				"1"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		"AttackAcquisitionRange"	"0"	
-		"AttackRange"				"0"
-		"BountyXP"					"0"	
-		"BountyGoldMin"				"0"	
-		"BountyGoldMax"				"0"	
-		"RingRadius"				"50"
-		"HealthBarOffset"			"250"
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"CanBeDominated"			"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-		"MovementSpeed"				"1"
-		"MovementTurnRate"			"0.6"
-		"StatusHealth"				"1"
+		"precache"{
+			"model"     "models/props_teams/banner_guild_lvl0.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		"Limit"						"1"
+	
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"	
+		"Requirements"{
+		}
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability10"					""
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "0"
+		"StatusHealth"              "100"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+		"CollisionSize"				"64"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
 	}
+	
 	//=================================================================================
 	// Building: Tent
 	//=================================================================================	

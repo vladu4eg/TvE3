@@ -1336,12 +1336,14 @@ function BuildingHelper:UpgradeBuilding(building, newName)
         for k, v in pairs(building.attackers) do
             if v and v == true then
                 local attacker = EntIndexToHScript(k)
-                if attacker.attackTarget and attacker.attackTarget ==
-                    building:GetEntityIndex() then
-                    attacker.attackTarget = newBuilding:GetEntityIndex()
-                    newBuilding.attackers = {}
-                    newBuilding.attackers[k] = true
-                    attacker:MoveToTargetToAttack(newBuilding)
+                DebugPrint("attacker " .. attacker:GetUnitName())
+                if attacker ~= nil then
+                    if attacker.attackTarget and attacker.attackTarget == building:GetEntityIndex() then
+                        attacker.attackTarget = newBuilding:GetEntityIndex()
+                        newBuilding.attackers = {}
+                        newBuilding.attackers[k] = true
+                        attacker:MoveToTargetToAttack(newBuilding)
+                    end
                 end
             end
         end
@@ -1497,6 +1499,12 @@ function BuildingHelper:StartBuilding(builder)
     callbacks.onConstructionCancelled(work)
     return
     end
+    
+    --if not IsInsideBaseArea(hero, location, unitName) then 
+    --    DebugPrint("NOT! IsInsideBaseArea")
+    --    SendErrorMessage(playerID, "#error_place_is_taken")
+    --    return false
+    --end
     
     BuildingHelper:print(
         "Initializing Building Entity: " .. unitName .. " at " ..
@@ -2443,10 +2451,8 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
             end
         end
     end
-    if BuildingHelper:EnemyIsInsideBuildingArea(hero:GetAbsOrigin(), location,
-    size) and buildingName ~= "tent" and
-    (GameRules:GetGameTime() - GameRules.startTime >
-    (1200 / GameRules.MapSpeed)) then -- остальное
+    if BuildingHelper:EnemyIsInsideBuildingArea(hero:GetAbsOrigin(), location,size) and buildingName ~= "tent" and
+    (GameRules:GetGameTime() - GameRules.startTime > (1200 / GameRules.MapSpeed)) then -- остальное
     if callbacks.onConstructionFailed then
         SendErrorMessage(hero:GetPlayerOwnerID(),
         "#error_construction_for_yourself")
@@ -2557,7 +2563,7 @@ function BuildingHelper:AreaMeetsCriteria(size, location, grid_type, option)
     end
 end
 
-function IsInsideBaseArea(unit, location)
+function IsInsideBaseArea(unit, location, nameBuilding)
     local hero = unit:IsRealHero() and unit or unit:GetOwner()
     local playerID = hero:GetPlayerOwnerID()
     local baseIndex = IdBaseArea(location)
@@ -2574,7 +2580,7 @@ function IsInsideBaseArea(unit, location)
                     end
                 end
             end
-            if GameRules.PlayersBase[playerID] == nil then
+            if GameRules.PlayersBase[playerID] == nil and nameBuilding == "flag" then
                 GameRules.PlayersBase[playerID] = baseIndex
                 DebugPrint("Your Base " .. baseIndex)
                 DebugPrint("Your ID " .. playerID)
@@ -2637,11 +2643,11 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     
-    --if not IsInsideBaseArea(hero, location) then
-    --    DebugPrint("NOT! IsInsideBaseArea")
-    --    SendErrorMessage(playerID, "#error_place_is_taken")
-    --    return false
-    -- end
+    if not IsInsideBaseArea(hero, location, "") then 
+        DebugPrint("NOT! IsInsideBaseArea")
+        SendErrorMessage(playerID, "#error_place_is_taken")
+        return false
+    end
     
     --[[if hero.disabledBuildings[buildingName] == true then
         return
