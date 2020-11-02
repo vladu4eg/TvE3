@@ -21,8 +21,8 @@
                         <Label hittest="false" id="topptext" text="#topptext" style="width:110px; margin-top:-42px; margin-left:0px;"/>
                         <Label hittest="false" id="topwtext" text="#topwtext" style="width:110px; margin-top:-42px; margin-left:180px;"/>
                         <Label hittest="false" id="tophtext" text="#tophtext" style="width:110px; margin-top:-42px; margin-left:370px;"/>
-                        <Image id="st" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:8910px;width:8px; margin-top:-55px; margin-left:150px;"/>
-                        <Image id="st2" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:8910px;width:8px; margin-top:-55px; margin-left:340px;"/>
+                        <Image id="st" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:810px;width:8px; margin-top:-55px; margin-left:150px;"/>
+                        <Image id="st2" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:810px;width:8px; margin-top:-55px; margin-left:340px;"/>
                         <Panel id="TopPlays" hittest="false" style="margin-top:40px; margin-left:0px;">
                             <DOTAAvatarImage id="top1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:0px;"/>
                             <DOTAAvatarImage id="top2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:0px;"/>
@@ -34,6 +34,7 @@
                             <DOTAAvatarImage id="top8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:0px;"/>
                             <DOTAAvatarImage id="top9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:0px;"/>
                             <DOTAAvatarImage id="top10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:0px;"/>
+                            <!--
                             <DOTAAvatarImage id = "top11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:0px;" />
                             <DOTAAvatarImage id = "top12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:0px;" />
                             <DOTAAvatarImage id = "top13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:0px;" />
@@ -124,6 +125,7 @@
                             <DOTAAvatarImage id = "top98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:0px;" />
                             <DOTAAvatarImage id = "top99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:0px;" />
                             <DOTAAvatarImage id = "top100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:0px;" />
+                            -->
                             <Label hittest="false" id="coltop1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left:100px;"/>
                             <Label hittest="false" id="coltop2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:100px;"/>
                             <Label hittest="false" id="coltop3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:100px;"/>
@@ -134,7 +136,8 @@
                             <Label hittest="false" id="coltop8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:100px;"/>
                             <Label hittest="false" id="coltop9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:100px;"/>
                             <Label hittest="false" id="coltop10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:100px;"/>
-							<Label hittest="false" id="coltop11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:100px; "/>
+							<!--
+                            <Label hittest="false" id="coltop11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:100px; "/>
                             <Label hittest="false" id="coltop12" text="-" style="height:80px; width:80px; margin-top:1020px; margin-left:100px; "/>
                             <Label hittest="false" id="coltop13" text="-" style="height:80px; width:80px; margin-top:1110px; margin-left:100px; "/>
                             <Label hittest="false" id="coltop14" text="-" style="height:80px; width:80px; margin-top:1200px; margin-left:100px; "/>
@@ -224,6 +227,7 @@
                             <Label hittest="false" id="coltop98" text="-" style="height:80px; width:80px; margin-top:8760px; margin-left:100px; "/>
                             <Label hittest="false" id="coltop99" text="-" style="height:80px; width:80px; margin-top:8850px; margin-left:100px; "/>
                             <Label hittest="false" id="coltop100" text="-" style="height:80px; width:80px; margin-top:8940px; margin-left:100px; "/>
+                            -->
                         </Panel>
                         <Panel id="TopWins" hittest="false" style="margin-top:40px; margin-left:-100px;">
                             <DOTAAvatarImage id="norm1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:280px;"/>
@@ -236,6 +240,7 @@
                             <DOTAAvatarImage id="norm8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:280px;"/>
                             <DOTAAvatarImage id="norm9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:280px;"/>
                             <DOTAAvatarImage id="norm10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:280px;"/>
+                            <!--
                             <DOTAAvatarImage id = "norm11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:280px;" />
                             <DOTAAvatarImage id = "norm12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:280px;" />
                             <DOTAAvatarImage id = "norm13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:280px;" />
@@ -326,6 +331,7 @@
                             <DOTAAvatarImage id = "norm98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:280px;" />
                             <DOTAAvatarImage id = "norm99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:280px;" />
                             <DOTAAvatarImage id = "norm100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:280px;" />
+                            -->
                             <Label hittest="false" id="colnorm1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left: 380px;"/>
                             <Label hittest="false" id="colnorm2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:380px;"/>
                             <Label hittest="false" id="colnorm3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:380px;"/>
@@ -336,7 +342,8 @@
                             <Label hittest="false" id="colnorm8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:380px;"/>
                             <Label hittest="false" id="colnorm9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:380px;"/>
                             <Label hittest="false" id="colnorm10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:380px;"/>
-							<Label hittest="false" id="colnorm11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
+							<!--
+                            <Label hittest="false" id="colnorm11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
                             <Label hittest="false" id="colnorm12" text="-" style="height:80px; width:80px; margin-top:1020px; margin-left:380px; "/>
                             <Label hittest="false" id="colnorm13" text="-" style="height:80px; width:80px; margin-top:1110px; margin-left:380px; "/>
                             <Label hittest="false" id="colnorm14" text="-" style="height:80px; width:80px; margin-top:1200px; margin-left:380px; "/>
@@ -426,6 +433,7 @@
                             <Label hittest="false" id="colnorm98" text="-" style="height:80px; width:80px; margin-top:8760px; margin-left:380px; "/>
                             <Label hittest="false" id="colnorm99" text="-" style="height:80px; width:80px; margin-top:8850px; margin-left:380px; "/>
                             <Label hittest="false" id="colnorm100" text="-" style="height:80px; width:80px; margin-top:8940px; margin-left:380px; "/>
+                            -->
                         </Panel>
                         <Panel id="TopHardWins" hittest="false" style="margin-top:40px; margin-left:90px;">
                             <DOTAAvatarImage id="hard1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:280px;"/>
@@ -438,6 +446,7 @@
                             <DOTAAvatarImage id="hard8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:280px;"/>
                             <DOTAAvatarImage id="hard9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:280px;"/>
                             <DOTAAvatarImage id="hard10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:280px;"/>
+                            <!--
                             <DOTAAvatarImage id = "hard11" steamid = "" style = "height:80px;width:80px; margin-top:900px; margin-left:280px;" />
                             <DOTAAvatarImage id = "hard12" steamid = "" style = "height:80px;width:80px; margin-top:990px; margin-left:280px;" />
                             <DOTAAvatarImage id = "hard13" steamid = "" style = "height:80px;width:80px; margin-top:1080px; margin-left:280px;" />
@@ -528,6 +537,7 @@
                             <DOTAAvatarImage id = "hard98" steamid = "" style = "height:80px;width:80px; margin-top:8730px; margin-left:280px;" />
                             <DOTAAvatarImage id = "hard99" steamid = "" style = "height:80px;width:80px; margin-top:8820px; margin-left:280px;" />
                             <DOTAAvatarImage id = "hard100" steamid = "" style = "height:80px;width:80px; margin-top:8910px; margin-left:280px;" />
+                            -->
                             <Label hittest="false" id="colhard1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left: 380px;"/>
                             <Label hittest="false" id="colhard2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:380px;"/>
                             <Label hittest="false" id="colhard3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:380px;"/>
@@ -538,7 +548,8 @@
                             <Label hittest="false" id="colhard8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:380px;"/>
                             <Label hittest="false" id="colhard9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:380px;"/>
                             <Label hittest="false" id="colhard10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:380px;"/>
-							<Label hittest="false" id="colhard11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
+							<!--
+                            <Label hittest="false" id="colhard11" text="-" style="height:80px; width:80px; margin-top:930px; margin-left:380px; "/>
                             <Label hittest="false" id="colhard12" text="-" style="height: 80px; width: 80px; margin-top:1020px; margin-left:380px; "/>
                             <Label hittest="false" id="colhard13" text="-" style="height: 80px; width: 80px; margin-top:1110px; margin-left:380px; "/>
                             <Label hittest="false" id="colhard14" text="-" style="height: 80px; width: 80px; margin-top:1200px; margin-left:380px; "/>
@@ -628,6 +639,7 @@
                             <Label hittest="false" id="colhard98" text="-" style="height: 80px; width: 80px; margin-top:8760px; margin-left:380px; "/>
                             <Label hittest="false" id="colhard99" text="-" style="height: 80px; width: 80px; margin-top:8850px; margin-left:380px; "/>
                             <Label hittest="false" id="colhard100" text="-" style="height: 80px; width: 80px; margin-top:8940px; margin-left:380px; "/>
+                            -->
                         </Panel>
                 </Panel>
 				<Panel id="GameInfoPanelPaddingBottom"/>

@@ -2,12 +2,12 @@ local msgs = {
 	['You can support the game on Patreon. Вы можете поддержать игру на Патрион.'] = {
 		StartTime = 100,
 		Interval = 300,
-		MaxCount = 12,
+		MaxCount = 18,
 	},
 	['DONATE: https://patreon.com/troll_vs_elves3'] = {
-		StartTime = 600,
-		Interval = 600,
-		MaxCount = 12
+		StartTime = 300,
+		Interval = 360,
+		MaxCount = 18
 	},
 	['Join our server Discord! Присоединяйтесь к нашему серверу Дискорд!'] = {
 		StartTime = 900,

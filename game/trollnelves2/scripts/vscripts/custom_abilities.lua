@@ -1,4 +1,5 @@
 require('libraries/util')
+require('libraries/entity')
 require('trollnelves2')
 require('wearables')
 --Ability for tents to give gold
@@ -11,7 +12,8 @@ function GainGoldCreate(event)
 	local level = caster:GetLevel()
 	local amountPerSecond = 2^(level-1) * GameRules.MapSpeed
 	hero.goldPerSecond = hero.goldPerSecond + amountPerSecond
-	local dataTable = { entityIndex = caster:GetEntityIndex(), amount = amountPerSecond, interval = 1 }
+	local playerID = caster:GetPlayerOwnerID()
+	local dataTable = { entityIndex = caster:GetEntityIndex(), amount = amountPerSecond, interval = 1, statusAnim = GameRules.PlayersFPS[playerID] }
 	CustomGameEventManager:Send_ServerToTeam(caster:GetTeamNumber(), "gold_gain_start", dataTable)
 end
 
@@ -333,7 +335,7 @@ function SpawnUnitOnChannelSucceeded(event)
 				elseif string.match(GetMapName(),"spring") then
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/items/courier/serpent_warbler/serpent_warbler_flying.vmdl", 1.1)    
-				elseif string.match(GetMapName(),"autumn") then 
+				elseif string.match(GetMapName(),"autumn") or string.match(GetMapName(),"halloween") then 
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/items/courier/little_fraid_the_courier_of_simons_retribution/little_fraid_the_courier_of_simons_retribution_flying.vmdl", 1.2)    
 				elseif string.match(GetMapName(),"desert") then 
@@ -455,7 +457,7 @@ function LumberGain( event )
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	ModifyLumberPerSecond(hero, lumberGain, lumberInterval)
 	local dataTable = { entityIndex = caster:GetEntityIndex(),
-	amount = lumberGain, interval = lumberInterval }
+	amount = lumberGain, interval = lumberInterval, statusAnim = GameRules.PlayersFPS[playerID] }
 	local player = hero:GetPlayerOwner()
 	if player then
 		CustomGameEventManager:Send_ServerToPlayer(player, "tree_wisp_harvest_start", dataTable)
@@ -503,10 +505,17 @@ function CancelGather(event)
 	end
 end
 
+function TrollBuff(keys)
+	local caster = keys.caster
+	if caster:GetUnitName() == 'tower_19' or caster:GetUnitName() == 'tower_19_1' or caster:GetUnitName() == 'tower_19_2' then
+		keys.ability:StartCooldown(180)
+	end
+end
 
 function GoldMineCreate(keys)
 	local caster = keys.caster
 	local hero = caster:GetOwner()
+	local playerID = caster:GetPlayerOwnerID()
 	local amountPerSecond = GetUnitKV(caster:GetUnitName()).GoldAmount * GameRules.MapSpeed
 	local maxGold = GetUnitKV(caster:GetUnitName(),"MaxGold") or 2000000
 	hero.goldPerSecond = hero.goldPerSecond + amountPerSecond
@@ -516,7 +525,7 @@ function GoldMineCreate(keys)
 		function()
 			caster:ForceKill(false)
 		end)
-		local dataTable = { entityIndex = caster:GetEntityIndex(), amount = amountPerSecond, interval = 1 }
+		local dataTable = { entityIndex = caster:GetEntityIndex(), amount = amountPerSecond, interval = 1, statusAnim = GameRules.PlayersFPS[playerID] }
 		local player = hero:GetPlayerOwner()
 		if player then
 			CustomGameEventManager:Send_ServerToPlayer(player, "gold_gain_start", dataTable)
@@ -539,7 +548,6 @@ end
 
 function HpRegenModifier(keys)
 	print ( '[vladu4eg] HpRegenModifier' )
-    DebugPrintTable(keys)
 	local caster = keys.caster
 	if caster and caster.hpReg then
 		caster.hpReg = caster.hpReg + keys.Amount
@@ -576,8 +584,9 @@ function BuyItem(event)
         return
 	end
 	if hero:GetNumItemsInInventory() >= 6 then
+		hero:DropStash()
 		SendErrorMessage(playerID, "#error_full_inventory")
-        return
+        return		
 	end
 	if hero:FindItemInInventory("item_disable_repair_2") ~= nil and item_name == 'item_disable_repair_2'  then
 		SendErrorMessage(playerID, "#error_full_inventory")

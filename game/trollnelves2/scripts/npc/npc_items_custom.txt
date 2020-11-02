@@ -40,7 +40,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"                     "item_datadriven"
-		"AbilityTextureName"            "item_vip"
+		"AbilityTextureName"            "item_pumpkin"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
 		"Model"                         "models/props_gameplay/pumpkin_rune.vmdl"
 		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
@@ -2130,7 +2130,8 @@
 		"ItemSellable" 					"1"
 		"ItemPermanent"                 "1"
 		"ItemDroppable"					"1"
-				
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
 		"AbilitySpecial"
 		{
 			"01"

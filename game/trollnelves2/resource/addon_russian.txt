@@ -414,7 +414,7 @@
 		"DOTA_Tooltip_modifier_poison_attack"												"Каждый стак снижает 5% регенерации."
 		
 		"DOTA_Tooltip_ability_tower_poison_2"													"Venom"
-		"DOTA_Tooltip_ability_tower_poison_2_Description"	    								"Каждый удар накладывает на врага дебафф, который снижает его регенерацию на 5%. Каждый стак длится 3 секунды, регенерация HP не может быть ниже 0."
+		"DOTA_Tooltip_ability_tower_poison_2_Description"	    								"Каждый удар накладывает на врага дебафф, который снижает его регенерацию на 5%. Каждый стак длится 6 секунды, регенерация HP не может быть ниже 0."
 
 
 		"DOTA_Tooltip_modifier_poison_target"                                             "nothing"
@@ -1448,7 +1448,7 @@
 		"error_not_buy_wolf"																"Волк не может улучшать Troll Hut! "
 		"error_castable_only_on_troll_hut"													"Можно использовать только на Troll Hut!"
 		"error_not_enough_food"																"Закончилась еда! "
-		"error_not_enough_wisp"																"Превышен лимит Wisp 1-5 или Gold Wisp! "
+		"error_not_enough_wisp"																"Превышен лимит Wisp 1-6 или Gold Wisp! "
 		"error_full_inventory"																"Полный инвентарь! "
 		"error_shop_out_of_range"															"Вы не в радиусе магазина! "
 		"error_not_enough_resources"														"Вам не хватает ресурсов! "

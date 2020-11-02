@@ -162,7 +162,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/props_teams/banner_guild_lvl0.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_teams/banner_guild_lvl0.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -226,7 +227,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/tent.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/tent.vmdl"
 		}
 	    "ModelScale"                "1.5"
@@ -299,7 +301,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tent_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tent_2.vmdl"
 	    }
 		"ModelScale"                "0.5"
@@ -369,7 +372,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/tent_3.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"                     "models/tent_3.vmdl"
 	    }
 		"ModelScale"                "0.4"
@@ -439,7 +443,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tent_4.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tent_4.vmdl"
 	    }
 		"ModelScale"                "0.4"
@@ -509,7 +514,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tent_5.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tent_5.vmdl"
 	    }
 		"ModelScale"                "0.85"
@@ -579,7 +585,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tent_6.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tent_6.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -649,7 +656,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tent_7.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tent_7.vmdl"
 	    }
 		"ModelScale"                "0.5"
@@ -719,7 +727,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/barracks_1.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/barracks_1.vmdl"
 		}
 	    "ModelScale"                "0.55"
@@ -789,7 +798,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/barracks_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/barracks_2.vmdl"
 	    }
 		"ModelScale"                "0.55"
@@ -860,7 +870,8 @@
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/barracks_3.vmdl"
 		
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/barracks_3.vmdl"
 		
 	    }
@@ -919,7 +930,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_1.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/rock_1.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -1008,7 +1020,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_2.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1078,7 +1091,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_3.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_3.vmdl"
 	    }
 		"ModelScale"                "3"
@@ -1148,7 +1162,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_4.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_4.vmdl"
 	    }
 		"ModelScale"                "5"
@@ -1218,7 +1233,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_5.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_5.vmdl"
 	    }
 		"ModelScale"                "5"
@@ -1288,7 +1304,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_1.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/rock_1.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -1377,7 +1394,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_2.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1447,7 +1465,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_3.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_3.vmdl"
 	    }
 		"ModelScale"                "3"
@@ -1517,7 +1536,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_4.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_4.vmdl"
 	    }
 		"ModelScale"                "5"
@@ -1587,7 +1607,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/rock_5.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/rock_5.vmdl"
 	    }
 		"ModelScale"                "5"
@@ -1657,7 +1678,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/ultra_wall_1.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/ultra_wall_1.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1727,7 +1749,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/ultra_wall_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/ultra_wall_2.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1797,7 +1820,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/ultra_wall_3.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/ultra_wall_3.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1867,7 +1891,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/ultra_wall_4.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/ultra_wall_4.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -1937,7 +1962,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/ultra_wall_5.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/ultra_wall_5.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -2007,7 +2033,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/demonic_wall_1.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/demonic_wall_1.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -2077,7 +2104,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/demonic_wall_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/demonic_wall_2.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -2147,7 +2175,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/demonic_wall_3.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/demonic_wall_3.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -2217,7 +2246,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/demonic_wall_4.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/demonic_wall_4.vmdl"
 	    }
 		"ModelScale"                "0.7"
@@ -2287,7 +2317,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/demonic_wall_5.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/demonic_wall_5.vmdl"
 	    }
 		"ModelScale"                "1.3"
@@ -2357,7 +2388,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/dragon_wall_1.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/dragon_wall_1.vmdl"
 	    }
 		"ModelScale"                "1.0"
@@ -2428,7 +2460,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/dragon_wall_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/dragon_wall_2.vmdl"
 	    }
 		"ModelScale"                "1.0"
@@ -2497,7 +2530,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/golden_dragon_wall.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/golden_dragon_wall.vmdl"
 	    }
 		"ModelScale"                "1.0"
@@ -2564,7 +2598,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/water_dragon_wall.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/water_dragon_wall.vmdl"
 	    }
 		"ModelScale"                "0.8"
@@ -2634,7 +2669,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/water_dragon_wall.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/water_dragon_wall.vmdl"
 	    }
 		"ModelScale"                "0.8"
@@ -2704,7 +2740,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/water_dragon_wall.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/water_dragon_wall.vmdl"
 	    }
 		"ModelScale"                "0.8"
@@ -2769,9 +2806,11 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_1.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     			"models/tower_1.vmdl"
 			"particle"     			"particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 		}
 	    "ModelScale"				"0.4"
 	    "ModelRotation"				"90"
@@ -2886,8 +2925,11 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_2.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tower_2.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_bad.vpcf"
+			"soundfile" 				"Tower.Fire"	
 	    }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "0"
@@ -2972,8 +3014,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_3.vmdl"
-	     "precache"{
+	     "precache"
+		{
 			"model"						"models/tower_3.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_bad.vpcf"
 	     }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3057,8 +3101,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_4.vmdl"
-	     "precache"{
+	     "precache"
+		{
 			"model"						"models/tower_4.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_bad.vpcf"
 	     }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3142,9 +3188,11 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_5.vmdl"
-	     "precache"{
+	     "precache"
+		{
 			"model"						"models/tower_5.vmdl"
-	     }
+			"particle"     				"particles/base_attacks/ranged_tower_good.vpcf"
+	    }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
 		"HealthBarOffset"			"150"
@@ -3227,8 +3275,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_6.vmdl"
-	     "precache"{
+	     "precache"
+		{
 			"model"						"models/tower_6.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_good.vpcf"
 	     }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3312,8 +3362,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_7.vmdl"
-	     "precache"{
+	     "precache"
+		{
 			"model"						"models/tower_7.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_good.vpcf"
 	     }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3397,8 +3449,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_8.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tower_8.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_good.vpcf"
 	    }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3482,8 +3536,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_9.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tower_9.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_good.vpcf"
 	    }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3567,8 +3623,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/tower_10.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/tower_10.vmdl"
+			"particle"     				"particles/base_attacks/ranged_tower_bad.vpcf"
 	    }
 		"ModelScale"                "0.6"
 	    "ModelRotation"             "90"
@@ -3654,8 +3712,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/sniper/sniper.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/sniper/sniper.vmdl"
+			"particle"     				"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -3740,8 +3800,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/venomancer/venomancer.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/venomancer/venomancer.vmdl"
+			"particle"     				"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	    }
 		"DisableTurning"			"0"
 		"ModelScale"                "0.7"
@@ -3838,8 +3900,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/viper/viper.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/viper/viper.vmdl"
+			"particle"     				"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 	    }
 		"DisableTurning"			"0"
 		"ModelScale"                "0.7"
@@ -3925,8 +3989,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/drow/drow_base.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/drow/drow_base.vmdl"
+			"particle"     				"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
 	    }
 		"DisableTurning"			"0"
 		"ModelScale"                "1"
@@ -4024,8 +4090,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/windrunner/windrunner.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/windrunner/windrunner.vmdl"
+			"particle"     				"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -4119,8 +4187,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/vengeful/vengeful.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/vengeful/vengeful.vmdl"
+			"particle"     				"particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -4214,8 +4284,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+			"particle"     				"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -4312,8 +4384,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+			"particle"     				"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -4396,8 +4470,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/lanaya/lanaya.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/lanaya/lanaya.vmdl"
+			"particle"     				"particles/units/heroes/hero_templar_assassin/templar_assassin_base_attack.vpcf"
 	    }
 		"ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -4488,8 +4564,10 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/luna/luna.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/luna/luna.vmdl"
+			"particle"     				"particles/units/heroes/hero_luna/luna_base_attack.vpcf"
 	    }
 		"ModelScale"                "0.8"
 	    "ModelRotation"             "90"
@@ -4583,7 +4661,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/medusa/medusa.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/medusa/medusa.vmdl"
 			"particle"     				"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
 	    }
@@ -4685,7 +4764,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/enigma/enigma.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/enigma/enigma.vmdl"
 	    }
 		"ModelScale"                "1"
@@ -4777,7 +4857,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/enigma/enigma.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/enigma/enigma.vmdl"
 	    }
 		"ModelScale"                "1"
@@ -4869,7 +4950,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/enigma/enigma.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/enigma/enigma.vmdl"
 	    }
 		"ModelScale"                "1"
@@ -4961,7 +5043,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/phoenix/phoenix_bird.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/phoenix/phoenix_bird.vmdl"
 	    }
 		"ModelScale"                "1"
@@ -5042,7 +5125,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/huskar/huskar.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/huskar/huskar.vmdl"
 			"particle"     				"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
 	    }
@@ -5140,7 +5224,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/clinkz/clinkz.vmdl"
-	    "Precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/clinkz/clinkz.vmdl"
 			"particle"     				"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
 	    }
@@ -5229,7 +5314,8 @@
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/true_sight_tower.vmdl"
 		
-	    "precache"{
+	    "precache"
+		{
 			"model"                     "models/true_sight_tower.vmdl"
 		
 	    }
@@ -5291,7 +5377,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/heroes/lone_druid/lone_druid.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/lone_druid/lone_druid.vmdl"
 		}
 	    "ModelScale"                "1.2"
@@ -5375,7 +5462,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/furion/furion.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/furion/furion.vmdl"
 		}
 	    "ModelScale"                "1.2"
@@ -5457,7 +5545,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/shredder/shredder.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/shredder/shredder.vmdl"
 		}
 	    "ModelScale"                "1.2"
@@ -5533,7 +5622,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/rattletrap/rattletrap.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/heroes/rattletrap/rattletrap.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -5610,7 +5700,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/enchantress/enchantress.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/enchantress/enchantress.vmdl"
 		}
 	    "ModelScale"                "1.2"
@@ -5693,7 +5784,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/tinker/tinker.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/tinker/tinker.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -5776,7 +5868,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/alchemist/alchemist.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/alchemist/alchemist.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -5863,7 +5956,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/arc_warden/arc_warden.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/arc_warden/arc_warden.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -5950,7 +6044,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/heroes/chen/chen.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/chen/chen.vmdl"
 		}
 	    "ModelScale"                "1"
@@ -6031,7 +6126,8 @@
 	{
 		"BaseClass"         "npc_dota_lone_druid_bear"
 		"Model"				"models/heroes/lone_druid/true_form.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/lone_druid/true_form.vmdl"
 		}
 		"SoundSet"			"Hero_LoneDruid"
@@ -6096,7 +6192,6 @@
 		//----------------------------------------------------------------
 		"TeamName"								"DOTA_TEAM_NEUTRALS"
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"						"кщсл"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"HasInventory"				"1"
 	}
@@ -6107,7 +6202,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/omniknight/omniknight.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/omniknight/omniknight.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6206,7 +6302,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/dragon_knight/dragon_knight.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/dragon_knight/dragon_knight.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6306,7 +6403,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/kunkka/kunkka.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/kunkka/kunkka.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6408,7 +6506,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/rattletrap/rattletrap.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/rattletrap/rattletrap.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6505,7 +6604,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/shredder/shredder.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/shredder/shredder.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6605,7 +6705,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/dazzle/dazzle.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/dazzle/dazzle.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -6703,6 +6804,10 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		"ModelScale"                            "0.9"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
@@ -6736,7 +6841,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -6774,7 +6879,10 @@
 		"ModelScale"                            "0.9"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
-
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -6804,7 +6912,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -6843,6 +6951,10 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -6872,7 +6984,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -6911,6 +7023,10 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -6940,7 +7056,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -6979,6 +7095,10 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -7008,7 +7128,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7047,6 +7167,10 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -7076,7 +7200,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7114,7 +7238,10 @@
 		"ModelScale"                            "0.9"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
-
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -7144,7 +7271,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7182,7 +7309,10 @@
 		"ModelScale"                            "0.9"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
-
+		"precache"
+		{
+			"model"                                 "models/items/courier/bucktooth_jerry/bucktooth_jerry_flying.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -7212,7 +7342,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "70"
+		"RingRadius"                            "90"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7251,6 +7381,10 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/heroes/wisp/wisp.vmdl"
+		}
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"                         "0"
@@ -7329,7 +7463,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_gameplay/gold_bag.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"                     "models/props_gameplay/gold_bag.vmdl"
 	    }
 		"ModelScale"                "2.5"
@@ -7399,6 +7534,10 @@
 		"BuilderInside"				"1"
 		"MaxGold"					"3840"
 		"Limit"						"5"
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7458,6 +7597,10 @@
 		"BuilderInside"				"1"
 		"MaxGold"					"15360"
 		"Limit"						"5"
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7517,6 +7660,10 @@
 		"BuilderInside"				"1"
 		"MaxGold"					"61440"
 		"Limit"						"5"
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7575,7 +7722,10 @@
 		"ConsumesBuilder"			"1"
 		"BuilderInside"				"1"
 		"MaxGold"					"245760"
-
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7635,6 +7785,10 @@
 		"BuilderInside"				"1"
 		"MaxGold"					"2000000"
 		"Limit"						"10"
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7693,7 +7847,10 @@
 		"ConsumesBuilder"			"1"
 		"BuilderInside"				"1"
 		"MaxGold"					"2000000"
-
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7752,7 +7909,10 @@
 		"ConsumesBuilder"			"1"
 		"BuilderInside"				"1"
 		"MaxGold"					"4000000"
-
+		"precache"
+		{
+			"model"                     "models/props_gameplay/gold_bag.vmdl"
+	    }
 	    // Stats
 	    //-----------------------------
 	    "Level"                     "1"
@@ -7806,7 +7966,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -7871,7 +8032,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -7936,7 +8098,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -7999,7 +8162,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -8062,7 +8226,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.vmdl"
 	    }
 		"ModelScale"                "1.2"
@@ -8129,7 +8294,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 		"Model"						"models/creeps/nian/nian_creep.vmdl"
-	    "precache"{
+	    "precache"
+		{
 			"model"						"models/creeps/nian/nian_creep.vmdl"
 	    }
 		"ModelScale"                "0.5"
@@ -8190,7 +8356,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8264,7 +8431,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8338,7 +8506,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8412,7 +8581,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8482,7 +8652,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8555,7 +8726,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8627,7 +8799,8 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_structures/bad_barracks001_melee.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/props_structures/bad_barracks001_melee.vmdl"
 		}
 	    "ModelScale"                "1.0"
@@ -8691,7 +8864,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/abaddon/abaddon.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/abaddon/abaddon.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -8797,7 +8971,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/axe/axe.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/axe/axe.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -8891,7 +9066,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/weaver/weaver.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/weaver/weaver.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -8986,7 +9162,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/puck/puck.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"                                 "models/heroes/puck/puck.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -9082,7 +9259,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/gyro/gyro.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/gyro/gyro.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -9190,7 +9368,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/lina/lina.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/lina/lina.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -9295,7 +9474,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/phantom_assassin/phantom_assassin.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/phantom_assassin/phantom_assassin.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -9400,7 +9580,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/bounty_hunter/bounty_hunter.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/bounty_hunter/bounty_hunter.vmdl"
 		}
 		"ModelScale"                            "0.6"
@@ -9506,7 +9687,8 @@
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
 		"Model"                                 "models/heroes/visage/visage.vmdl"
-		"precache"{
+		"precache"
+		{
 			"model"     "models/heroes/visage/visage.vmdl"
 		}
 		"ModelScale"                            "0.6"

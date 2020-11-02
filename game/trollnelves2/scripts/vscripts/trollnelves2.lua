@@ -36,6 +36,7 @@ require('pets')
 require('flag')
 require('filter')
 
+
 function trollnelves2:PostLoadPrecache()
     Pets:Init()
     DebugPrint("[BAREBONES] Performing Post-Load precache")
@@ -308,6 +309,9 @@ function InitializeTroll(hero)
         elseif GameRules.MapSpeed >= 4 then
         hero:AddNewModifier(hero, nil, "modifier_movespeed_cap", {})
     end
+    --if not string.match(GetMapName(),"halloween") then 
+    --    hero:RemoveAbility("skeleton_king_hellfire_blast_datadriven")
+    --end
     hero:RemoveAbility("lone_druid_spirit_bear_datadriven")
     local units = Entities:FindAllByClassname("npc_dota_creature")
     for _, unit in pairs(units) do
@@ -323,9 +327,7 @@ function InitializeTroll(hero)
                 ModifyStartedConstructionBuildingCount(hero, unit_name, 1)
                 ModifyCompletedConstructionBuildingCount(hero, unit_name, 1)
                 BuildingHelper:AddModifierBuilding(unit)
-                BuildingHelper:BlockGridSquares(
-                    GetUnitKV(unit_name, "ConstructionSize"), 0,
-                unit:GetAbsOrigin())
+                BuildingHelper:BlockGridSquares(GetUnitKV(unit_name, "ConstructionSize"), 0, unit:GetAbsOrigin())
             end
         end
     end
@@ -345,6 +347,9 @@ end
 function InitializeAngel(hero)
     DebugPrint("Initialize angel")
     hero:AddItemByName("item_blink_datadriven")
+    --if not string.match(GetMapName(),"halloween") then 
+    --    hero:RemoveAbility("silence_datadriven")
+    --end
 end
 
 function InitializeWolf(hero)
@@ -452,9 +457,9 @@ function trollnelves2:PreStart()
             Timers:CreateTimer(15, function() wearables:SetPart() end)            
         end
     end
-    Stats.RequestDataTop10("1", callback)
-    Timers:CreateTimer(5, function() Stats.RequestDataTop10("2", callback) end)
-    Timers:CreateTimer(10, function() Stats.RequestDataTop10("3", callback) end)
+    Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
+    Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
+    Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
     Donate:CreateList()
     
 end
@@ -622,8 +627,7 @@ function AddUpgradeAbilities(building)
             local upgradeAbility = building:AddAbility(abilityName)
             upgradeAbility.upgradedUnitName = upgradedUnitName
             
-            DisableAbilityIfMissingRequirements(playerID, hero, upgradeAbility,
-            upgradedUnitName)
+            DisableAbilityIfMissingRequirements(playerID, hero, upgradeAbility, upgradedUnitName)
         end
         for _, ability in ipairs(abilities) do
             local abilityName, abilityLevel = unpack(ability)

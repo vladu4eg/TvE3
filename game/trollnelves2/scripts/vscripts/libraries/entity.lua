@@ -38,3 +38,12 @@ function CDOTA_BaseNPC:ClearInventoryFull()
 		end
 	end
 end
+
+function CDOTA_BaseNPC:DropStash()
+	for i=6, 9 do
+		local item = self:GetItemInSlot(i)
+		if item ~= nil then
+        	self:RemoveItem(item)
+		end
+	end
+end

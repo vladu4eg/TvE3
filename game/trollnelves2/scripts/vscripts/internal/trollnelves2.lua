@@ -84,6 +84,7 @@ function trollnelves2:_Inittrollnelves2()
   
  -- mode:SetItemAddedToInventoryFilter(Dynamic_Wrap(trollnelves2, "ItemPickFilter"), self)
   
+  
   -- Debugging setup
   local spew = 0
   if TROLLNELVES2_DEBUG_SPEW then

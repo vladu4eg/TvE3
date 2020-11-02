@@ -12,7 +12,7 @@ function chatcommand:OnPlayerChat(event)
 		GameRules:SendCustomMessage("<font color='#00FF80'>" ..  message ..  "</font>", event.playerid, 0)		
 		lastCommandChat[event.playerid] = GameRules:GetGameTime() 
 	elseif event.text == "!bonus" and GameRules:GetGameTime() - GameRules.startTime > 60 and 
-		(lastCommandChat[event.playerid] == nil or lastCommandChat[event.playerid] + 120 < GameRules:GetGameTime() - GameRules.startTime) then
+	(lastCommandChat[event.playerid] == nil or lastCommandChat[event.playerid] + 120 < GameRules:GetGameTime() - GameRules.startTime) then
 		if GameRules.BonusPercent  > 0.77 then
 			GameRules.BonusPercent = 0.77
 		end
@@ -76,6 +76,10 @@ function chatcommand:OnPlayerChat(event)
 			if GameRules:IsCheatMode() then 
 				GameRules.test = true
 			end
+		elseif event.text == "!fps" then
+			GameRules.PlayersFPS[event.playerid] = true
+		elseif event.text == "!unfps" then
+			GameRules.PlayersFPS[event.playerid] = false
 		--elseif event.text == "!fps" then
 		--	GameRules.PlayersFPS[event.playerid] = true
 		--	if hero.units ~= nil then

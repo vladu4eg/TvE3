@@ -203,6 +203,11 @@ function trollnelves2:OnItemPickedUp(keys)
     local player = PlayerResource:GetPlayer(keys.PlayerID)
     local itemname = keys.itemname
     
+    if (hero:IsAngel() or hero:IsElf()) and (string.match(itemname,"hp") or string.match(itemname,"armor") or string.match(itemname,"dmg") or string.match(itemname,"spd")) then
+        hero:RemoveItem(itemEntity)
+        return
+    end  
+    
     if hero:GetNumItemsInInventory() > 6 then
         local spawnPoint = hero:GetAbsOrigin() + RandomFloat(50, 100)
         local newItem = CreateItem(itemname, nil, nil)
@@ -210,7 +215,6 @@ function trollnelves2:OnItemPickedUp(keys)
         newItem:LaunchLootInitialHeight(false, 0, 150, 0.5, spawnPoint)
         hero:RemoveItem(itemEntity)
     end
-    
 end
 
 --[[
@@ -591,7 +595,7 @@ function Halloween(npc)
             wearables:AttachWearable(npc, "models/items/lifestealer/bloody_ripper_arms/bloody_ripper_arms.vmdl")       
             wearables:AttachWearable(npc, "models/items/lifestealer/bloody_ripper_head/bloody_ripper_head.vmdl")   
             elseif npc:IsTroll() then            
-            UpdateModel(npc, "models/heroes/wraith_king/wraith_king.vmdl", 1)  
+            UpdateModel(npc, "models/items/wraith_king/arcana/wraith_king_arcana.vmdl", 1)  
             wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_weapon.vmdl")
             wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_arms.vmdl")
             wearables:AttachWearable(npc, "models/items/wraith_king/arcana/wraith_king_arcana_shoulder.vmdl")
@@ -608,7 +612,7 @@ function Halloween(npc)
           --  wearables:AttachWearable(npc, "models/items/pudge/blackdeath_shoulder/blackdeath_shoulder.vmdl")
          --   wearables:AttachWearable(npc, "models/items/pudge/blackdeath_arms/blackdeath_arms.vmdl")
             elseif npc:IsElf() then
-            UpdateModel(npc, "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl", 0.5)  
+            UpdateModel(npc, "models/items/wraith_king/wk_ti8_creep/wk_ti8_creep.vmdl", 1)  
         end
     end 
 end

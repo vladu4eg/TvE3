@@ -1,6 +1,5 @@
 require('top')
 
-
 Stats = Stats or {}
 local dedicatedServerKey = GetDedicatedServerKeyV2("1")
 local isTesting = IsInToolsMode() and false
@@ -8,15 +7,21 @@ Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/"
 local count = 0
 
 function Stats.SubmitMatchData(winner,callback)
-	if not isTesting then
-		if GameRules:IsCheatMode() then return end
-	end
+	--if not isTesting then
+	--	if GameRules:IsCheatMode() then return end
+	--end
 	local data = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
 	local maxGoldSum = 0
 	for pID=0,DOTA_MAX_TEAM_PLAYERS do
-		if PlayerResource:IsValidPlayerID(pID) then
+		if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) ~= 5 then
+			if GameRules.scores[pID] == nil then
+				GameRules.scores[pID] = {elf = 0, troll = 0}
+				GameRules.scores[pID].elf = 0
+				GameRules.scores[pID].troll = 0
+			end
+			DebugPrint("pID " .. pID )
 			count = count + 1
 			if GameRules.Bonus[pID] == nil then
 				GameRules.Bonus[pID] = 0
@@ -40,7 +45,7 @@ function Stats.SubmitMatchData(winner,callback)
 	end
 	if count >= MIN_RATING_PLAYER then
 		for pID=0,DOTA_MAX_TEAM_PLAYERS do
-			if PlayerResource:IsValidPlayerID(pID) then
+			if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) ~= 5 then
 				data.MatchID = tostring(GameRules:GetMatchID())
 				data.Team = tostring(PlayerResource:GetTeam(pID))
 				--data.duration = GameRules:GetGameTime() - GameRules.startTime
@@ -150,15 +155,17 @@ function Stats.RequestData(pId, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. tostring(PlayerResource:GetSteamID(pId)))
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
+	
+	GameRules.scores[pId] = {elf = 0, troll = 0}
+	GameRules.scores[pId].elf = 0
+	GameRules.scores[pId].troll = 0
+	
 	req:Send(function(res)
 		if res.StatusCode ~= 200 then
 			DebugPrint("Connection failed! Code: ".. res.StatusCode)
 			DebugPrint(res.Body)
 			return -1
 		end
-		GameRules.scores[pId] = {elf = 0, troll = 0}
-		GameRules.scores[pId].elf = 0
-		GameRules.scores[pId].troll = 0
 		local obj,pos,err = json.decode(res.Body)
 		DebugPrint(obj.steamID)
 		DebugPrint("***********************************************"  .. #obj)

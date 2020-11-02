@@ -80,7 +80,7 @@ var lumberPopupColor = [10, 200, 90];
 
 function TreeWispHarvestStarted(args) {
     $.Msg("Tree wisp harvest started: ", args);
-    PopupNumbersInterval(lumberPopupSchedules, args.entityIndex, args.amount, args.interval, lumberPopupColor, 0, null);
+    PopupNumbersInterval(lumberPopupSchedules, args.entityIndex, args.amount, args.interval, lumberPopupColor, 0, null, args.statusAnim);
 }
 
 function TreeWispHarvestStopped(args) {
@@ -93,7 +93,7 @@ var goldPopupColor = [255, 200, 33];
 
 function GoldGainStarted(args) {
     $.Msg("Gold gain started: ", args);
-    PopupNumbersInterval(goldPopupSchedules, args.entityIndex, args.amount, args.interval, goldPopupColor, 0, null);
+    PopupNumbersInterval(goldPopupSchedules, args.entityIndex, args.amount, args.interval, goldPopupColor, 0, null, args.statusAnim);
 }
 
 function GoldGainStopped(args) {
@@ -101,9 +101,12 @@ function GoldGainStopped(args) {
     StopNumberPopupInterval(goldPopupSchedules, args.entityIndex);
 }
 
-function PopupNumbersInterval(schedulesArray, entityIndex, amount, interval, color, presymbol, postsymbol) {
+function PopupNumbersInterval(schedulesArray, entityIndex, amount, interval, color, presymbol, postsymbol, statusAnim) {
     schedulesArray[entityIndex] = $.Schedule(interval, function PopupNumberInterval() {
-        PopupNumbers(entityIndex, "damage", color, 3, amount, presymbol, postsymbol);
+        if (statusAnim == 0 || statusAnim == null || statusAnim == "")
+        {
+            PopupNumbers(entityIndex, "damage", color, 3, amount, presymbol, postsymbol);
+        }      
         schedulesArray[entityIndex] = $.Schedule(interval, PopupNumberInterval);
     });
 }

@@ -475,6 +475,15 @@
 
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven"                  "Buff Troll"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven_Description"      "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."
+		
+		"DOTA_Tooltip_ability_skeleton_king_hellfire_blast_datadriven"                  "Wraithfire Blast"
+		"DOTA_Tooltip_ability_skeleton_king_hellfire_blast_datadriven_Description"      "Stun 1 sec. Reduce movespeed by -20 for 4 sec. Added to celebrate Halloween 2020."
+		
+		"DOTA_Tooltip_ability_life_stealer_rage_datadriven"                  "Rage"
+		"DOTA_Tooltip_ability_life_stealer_rage_datadriven_Description"      "Full resistance to magic damage for 3 seconds, and his attack speed increases by 40. Added to celebrate Halloween 2020."
+		
+		"DOTA_Tooltip_ability_silence_datadriven"                  "Silence"
+		"DOTA_Tooltip_ability_silence_datadriven_Description"      "Prevents enemies in the target area from casting abilities for 3 seconds. Added to celebrate Halloween 2020."
 
 		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven"                  "Buff Troll"
 		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven_Description"      "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."

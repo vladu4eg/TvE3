@@ -315,7 +315,7 @@ function UpgradeBuilding( event )
         local abil = hero:FindAbilityByName("lone_druid_spirit_bear_datadriven")
         abil:SetLevel(abil:GetMaxLevel())
     end
-    
+    local p
     if parts ~= nil then    
         if parts["3"] == "normal" then
             if newBuildingName == "tower_11" then
@@ -331,13 +331,15 @@ function UpgradeBuilding( event )
                 wearables:AttachWearable(newBuilding, "models/items/viper/king_viper_tail/viper_king_viper_tail.vmdl")
                 elseif newBuildingName == "tower_12" then
                 wearables:RemoveWearables(newBuilding)
-                wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_weapon/frostfeather_huntress_weapon.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_head/frostfeather_huntress_head.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/drow_ti9_immortal_weapon/drow_ti9_immortal_weapon.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/mask_of_madness/mask_of_madness.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_shoulder/frostfeather_huntress_shoulder.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_misc/frostfeather_huntress_misc.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_back/frostfeather_huntress_back.vmdl")        
+                wearables:AttachWearable(newBuilding, "models/items/drow/ti6_immortal_cape/mesh/drow_ti6_immortal_cape.vmdl")        
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_arms/frostfeather_huntress_arms.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_legs/frostfeather_huntress_legs.vmdl") 
+                p = ParticleManager:CreateParticle("particles/econ/items/drow/drow_ti6_gold/drow_ti6_ambient_gold.vpcf", 1, newBuilding)
+                ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 elseif newBuildingName == "tower_13" then
                 --wearables:RemoveWearables(newBuilding)
                -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl")
@@ -370,12 +372,15 @@ function UpgradeBuilding( event )
                 wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/fallenprincess_head/fallenprincess_head.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/fallenprincess_legs/fallenprincess_legs.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/fallenprincess_weapon/fallenprincess_weapon.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/fallenprincess_shoulders/fallenprincess_shoulders.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/vs_ti8_immortal_shoulder/vs_ti8_immortal_shoulder.vmdl")
+                
+                p = ParticleManager:CreateParticle("particles/econ/items/vengeful/vs_ti8_immortal_shoulder/vs_ti8_immortal_shoulder_crimson_ambient.vpcf", 1, newBuilding)
+                ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 elseif newBuildingName == "tower_15"  then
                 wearables:RemoveWearables(newBuilding)
-                wearables:AttachWearable(newBuilding, "models/items/nevermore/diabolical_fiend_arms/diabolical_fiend_arms.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/nevermore/diabolical_fiend_head/diabolical_fiend_head.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/nevermore/diabolical_fiend_shoulder/diabolical_fiend_shoulder.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/shadow_fiend/arms_deso/arms_deso.vmdl")
+                wearables:AttachWearable(newBuilding, "models/heroes/shadow_fiend/head_arcana.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/nevermore/sf_souls_tyrant_shoulder/sf_souls_tyrant_shoulder.vmdl")              
                 elseif newBuildingName == "tower_15_1"  then
                 wearables:RemoveWearables(newBuilding)
                 wearables:AttachWearable(newBuilding, "models/items/nevermore/ferrum_chiroptera_head/ferrum_chiroptera_head.vmdl")
@@ -402,8 +407,8 @@ function UpgradeBuilding( event )
                 elseif newBuildingName == "tower_18"  then
                 wearables:RemoveWearables(newBuilding)
                 wearables:AttachWearable(newBuilding, "models/items/medusa/dotaplus_medusa_weapon/dotaplus_medusa_weapon.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/medusa/dotaplus_medusa_body/dotaplus_medusa_body.vmdl")
-                wearables:AttachWearable(newBuilding, "models/items/medusa/dotaplus_medusa_tail/dotaplus_medusa_tail.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/medusa/daughters_of_hydrophiinae/daughters_of_hydrophiinae.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/medusa/medusa_ti10_immortal_tail/medusa_ti10_immortal_tail.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/medusa/dotaplas_medusa_head/dotaplas_medusa_head.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/medusa/dotaplus_medusa_arms/dotaplus_medusa_arms.vmdl")
                 elseif newBuildingName == "tower_19" or newBuildingName == "tower_19_1" or newBuildingName == "tower_19_2" then
@@ -427,7 +432,7 @@ function UpgradeBuilding( event )
 				elseif string.match(GetMapName(),"spring") and newBuildingName == "true_sight_tower" then
 					wearables:RemoveWearables(newBuilding)
 					UpdateModel(newBuilding, "models/items/wards/sylph_ward/sylph_ward.vmdl", 1)    
-				elseif string.match(GetMapName(),"autumn") and newBuildingName == "true_sight_tower" then 
+				elseif (string.match(GetMapName(),"autumn") or string.match(GetMapName(),"halloween")) and newBuildingName == "true_sight_tower" then 
 					wearables:RemoveWearables(newBuilding)
 					UpdateModel(newBuilding, "models/items/wards/watcher_below_ward/watcher_below_ward.vmdl", 1)
                 elseif string.match(GetMapName(),"desert") and newBuildingName == "true_sight_tower" then 

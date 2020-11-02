@@ -1,7 +1,6 @@
 modifier_poison = class({})
 
 function modifier_poison:OnCreated(event)
-    DeepPrintTable(keys)
     local hero = self:GetParent()
 
     if hero.hpReg == nil then

@@ -60,8 +60,10 @@ function VoteKick(eventSourceIndex, event)
 		SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 		votes[ event.playerID1 ] = 0
 	end
-	if PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 then
-		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 1
+	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
+	or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
+	or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
+		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 2
 	end
 	local text = "Vote: " .. votes[ event.playerID1 ] .. "; Count Player: " .. countVote[event.playerID1] .. "; Percent: " .. votes[ event.playerID1 ]/countVote[event.playerID1] .. "; Need perc.: 0.78; Min player: 8" 
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>" ..  text  .. "</font>", team, 0, 0)
@@ -69,7 +71,8 @@ function VoteKick(eventSourceIndex, event)
 		Timers:CreateTimer(35.0, function() 
 			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
-				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 then
+				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
+				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 then
 				hero:ForceKill(true)
 				if hero.units ~= nil then
 					for i=1,#hero.units do

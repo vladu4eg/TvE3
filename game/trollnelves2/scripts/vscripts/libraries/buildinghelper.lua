@@ -1335,8 +1335,7 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     if building.attackers then
         for k, v in pairs(building.attackers) do
             if v and v == true then
-                local attacker = EntIndexToHScript(k)
-                DebugPrint("attacker " .. attacker:GetUnitName())
+                local attacker = EntIndexToHScript(k)    
                 if attacker ~= nil then
                     if attacker.attackTarget and attacker.attackTarget == building:GetEntityIndex() then
                         attacker.attackTarget = newBuilding:GetEntityIndex()
@@ -2643,11 +2642,11 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     
-    if not IsInsideBaseArea(hero, location, "") then 
-        DebugPrint("NOT! IsInsideBaseArea")
-        SendErrorMessage(playerID, "#error_place_is_taken")
-        return false
-    end
+    --if not IsInsideBaseArea(hero, location, "") then 
+    --    DebugPrint("NOT! IsInsideBaseArea")
+    --    SendErrorMessage(playerID, "#error_place_is_taken")
+    --    return false
+    --end
     
     --[[if hero.disabledBuildings[buildingName] == true then
         return

@@ -153,8 +153,10 @@ function CDOTA_PlayerResource:GetScore(pID,team)
 	if PlayerResource:IsValidPlayerID(pID) then
 		if team == 2 then
 			return GameRules.scores[pID].elf
-		else 
+		elseif team == 3 then
 			return GameRules.scores[pID].troll	
+		else 
+			return 0
 		end
 	end
 end
