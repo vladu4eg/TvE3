@@ -65,25 +65,27 @@ TIMERS_VERSION = "1.03"
 TIMERS_THINK = 0.01
 
 if Timers == nil then
-  print ( '[Timers] creating Timers' )
+  print('[Timers] creating Timers')
   Timers = {}
   Timers.__index = Timers
 end
 
-function Timers:new( o )
+function Timers:new(o)
   o = o or {}
-  setmetatable( o, Timers )
+  setmetatable(o, Timers)
   return o
 end
 
 function Timers:_xpcall (f, ...)
   print(f)
-  print({...})
-  PrintTable({...})
-  local result = xpcall (function () return f(unpack(arg)) end,
-    function (msg)
+  print({ ... })
+  PrintTable({ ... })
+  local result = xpcall(function()
+    return f(unpack(arg))
+  end,
+    function(msg)
       -- build the error message
-      return msg..'\n'..debug.traceback()..'\n'
+      return msg .. '\n' .. debug.traceback() .. '\n'
     end)
 
   print(result)
@@ -92,14 +94,14 @@ function Timers:_xpcall (f, ...)
     -- throw an error
   end
   -- remove status code
-  table.remove (result, 1)
-  return unpack (result)
+  table.remove(result, 1)
+  return unpack(result)
 end
 
 function Timers:start()
   Timers = self
   self.timers = {}
-  
+
   local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
   ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
@@ -113,7 +115,7 @@ function Timers:Think()
   local now = GameRules:GetGameTime()
 
   -- Process timers
-  for k,v in pairs(Timers.timers) do
+  for k, v in pairs(Timers.timers) do
     local bUseGameTime = true
     if v.useGameTime ~= nil and v.useGameTime == false then
       bUseGameTime = false
@@ -135,17 +137,21 @@ function Timers:Think()
     if now >= v.endTime then
       -- Remove from timers list
       Timers.timers[k] = nil
-      
+
       -- Run the callback
       local status, nextCall
       if v.context then
-        status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
-                                  end)
+        status, nextCall = xpcall(function()
+          return v.callback(v.context, v)
+        end, function(msg)
+          return msg .. '\n' .. debug.traceback() .. '\n'
+        end)
       else
-        status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
-                                  end)
+        status, nextCall = xpcall(function()
+          return v.callback(v)
+        end, function(msg)
+          return msg .. '\n' .. debug.traceback() .. '\n'
+        end)
       end
 
       -- Make sure it worked
@@ -199,20 +205,19 @@ function Timers:CreateTimer(name, args, context)
     if args ~= nil then
       context = args
     end
-    args = {callback = name}
+    args = { callback = name }
     name = DoUniqueString("timer")
   elseif type(name) == "table" then
     args = name
     name = DoUniqueString("timer")
   elseif type(name) == "number" then
-    args = {endTime = name, callback = args}
+    args = { endTime = name, callback = args }
     name = DoUniqueString("timer")
   end
   if not args.callback then
-    print("Invalid timer created: "..name)
+    print("Invalid timer created: " .. name)
     return
   end
-
 
   local now = GameRules:GetGameTime()
   if args.useGameTime ~= nil and args.useGameTime == false then
@@ -227,7 +232,7 @@ function Timers:CreateTimer(name, args, context)
 
   args.context = context
 
-  Timers.timers[name] = args 
+  Timers.timers[name] = args
 
   return name
 end
@@ -240,7 +245,7 @@ function Timers:RemoveTimers(killAll)
   local timers = {}
 
   if not killAll then
-    for k,v in pairs(Timers.timers) do
+    for k, v in pairs(Timers.timers) do
       if v.persist then
         timers[k] = v
       end
@@ -250,4 +255,6 @@ function Timers:RemoveTimers(killAll)
   Timers.timers = timers
 end
 
-if not Timers.timers then Timers:start() end
+if not Timers.timers then
+  Timers:start()
+end

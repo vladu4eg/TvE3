@@ -40,7 +40,7 @@ if IsServer() then
     self.checkArmor = true
     local armor = self:GetParent():GetPhysicalArmorValue(false)
     self.checkArmor = false
-    local physicalResistance = 0.06*armor/(1+0.06*math.abs(armor))*100*-1 -- Calculate physical resistance with custom formula
+    local physicalResistance = 0.06 * armor / (1 + 0.06 * math.abs(armor)) * 100 * -1 -- Calculate physical resistance with custom formula
     return physicalResistance
   end
 end

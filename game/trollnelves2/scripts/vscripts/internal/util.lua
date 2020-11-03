@@ -22,7 +22,9 @@ end
 
 function PrintTable(t, indent, done)
   --print ( string.format ('PrintTable type %s', type(keys)) )
-  if type(t) ~= "table" then return end
+  if type(t) ~= "table" then
+    return
+  end
 
   done = done or {}
   done[t] = true
@@ -40,18 +42,18 @@ function PrintTable(t, indent, done)
       local value = t[v]
 
       if type(value) == "table" and not done[value] then
-        done [value] = true
-        print(string.rep ("\t", indent)..tostring(v)..":")
-        PrintTable (value, indent + 2, done)
+        done[value] = true
+        print(string.rep("\t", indent) .. tostring(v) .. ":")
+        PrintTable(value, indent + 2, done)
       elseif type(value) == "userdata" and not done[value] then
-        done [value] = true
-        print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
-        PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+        done[value] = true
+        print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
+        PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
       else
         if t.FDesc and t.FDesc[v] then
-          print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+          print(string.rep("\t", indent) .. tostring(t.FDesc[v]))
         else
-          print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+          print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
         end
       end
     end
@@ -82,25 +84,25 @@ COLOR_GOLD = '\x1D'
   Date: 09.08.2015.
   Hides all dem hats
 ]]
-function HideWearables( event )
+function HideWearables(event)
   local hero = event.caster
   local ability = event.ability
 
   hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
-    local model = hero:FirstMoveChild()
-    while model ~= nil do
-        if model:GetClassname() == "dota_item_wearable" then
-            model:AddEffects(EF_NODRAW) -- Set model hidden
-            table.insert(hero.hiddenWearables, model)
-        end
-        model = model:NextMovePeer()
+  local model = hero:FirstMoveChild()
+  while model ~= nil do
+    if model:GetClassname() == "dota_item_wearable" then
+      model:AddEffects(EF_NODRAW) -- Set model hidden
+      table.insert(hero.hiddenWearables, model)
     end
+    model = model:NextMovePeer()
+  end
 end
 
-function ShowWearables( event )
+function ShowWearables(event)
   local hero = event.caster
 
-  for i,v in pairs(hero.hiddenWearables) do
+  for i, v in pairs(hero.hiddenWearables) do
     v:RemoveEffects(EF_NODRAW)
   end
 end
