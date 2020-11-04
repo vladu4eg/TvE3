@@ -1,125 +1,182 @@
 <root>
     <styles>
- 		<include src="file://{resources}/styles/dotastyles.css" />
-		<include src="file://{resources}/styles/custom_game/shared_scoreboard_styles.css" />
-        <include src="file://{resources}/styles/custom_game/multiteam_flyout_scoreboard.css" />
+        <include src="file://{resources}/styles/dotastyles.css"/>
+        <include
+                src="file://{resources}/styles/custom_game/shared_scoreboard_styles.css"/>
+        <include
+                src="file://{resources}/styles/custom_game/multiteam_flyout_scoreboard.css"/>
     </styles>
-	<script>
-		var lastVoteTime = {};
-		function ToggleMute()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			if ( playerId !== -1 )
-			{
-				var newIsMuted = !Game.IsPlayerMuted( playerId );
-				Game.SetPlayerMuted( playerId, newIsMuted );
-				$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
-			}
-		}
-		
-		
-		function OnGiveResourcesButton(){
-			var playerPanel = $.GetContextPanel();
-			var casterID = Players.GetLocalPlayer();
-			var target = playerPanel.pID;
-			var gold = Number(playerPanel.FindChildInLayoutFile("GoldEntry").text) || 0;
-			var lumber = Number(playerPanel.FindChildInLayoutFile("LumberEntry").text) || 0;
-			playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
-			playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
-			GameEvents.SendCustomGameEventToServer( "give_resources", { gold:gold, lumber:lumber , target:target , casterID:casterID});	
-		}
-		
-		function OnVoteKickButton(){
-			var playerPanel = $.GetContextPanel();
-			var casterID = Players.GetLocalPlayer();
-			var target = playerPanel.pID;
-			GameEvents.SendCustomGameEventToServer( "votekick_start", {target:target , casterID:casterID});	
-		}
-		
-		function OnVoteFlagButton(){
-			var playerPanel = $.GetContextPanel();
-			var casterID = Players.GetLocalPlayer();
-			var target = playerPanel.pID;
-			GameEvents.SendCustomGameEventToServer( "flag_start", {target:target , casterID:casterID});	
-			$.Msg("Flag: ");
-		}
-		
-		var ui = GameUI.CustomUIConfig();
-		function OnGiveAllResourcesButton(){
-			var playerPanel = $.GetContextPanel();
-			var casterID = Players.GetLocalPlayer();
-			var target = playerPanel.pID;
-			var gold = ui.playerGold[casterID];
-			var lumber = ui.playerLumber[casterID];
-			playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
-			playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
-			GameEvents.SendCustomGameEventToServer( "give_resources", { gold:gold, lumber:lumber , target:target , casterID:casterID});	
-		}
+    <script>
+        var lastVoteTime = {};
+        function ToggleMute()
+        {
+        var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+        if ( playerId !== -1 )
+        {
+        var newIsMuted = !Game.IsPlayerMuted( playerId );
+        Game.SetPlayerMuted( playerId, newIsMuted );
+        $.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
+        }
+        }
 
-		(function()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			$.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted( playerId) );
-			//$( "#VotekickButton" ).visible = IsAllowedToKick(playerID);
-			//var color = Players.GetPlayerColor(playerId).toString(16).substring(2).split("").reverse().join("");
-			//$.GetContextPanel().FindChildInLayoutFile("HeroIcon").style.borderBottom = "3px solid #" + color;
-			//$.Msg("Color: " + color + " " + playerId);
-		})();
-	</script>
-	<Panel class="PlayerRow">
-		<Panel id="PlayerRowContainer">
-			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
-				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
-				<Panel id="PlayerColor"></Panel>
-			</Panel>
-			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
-				<Panel id="PlayerAndHeroName">
-					<Label id="PlayerName" text="AAAAA" />
-					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
-				</Panel>
-				<Panel id = "ResourcesAmount">
-					<Label id="PlayerGoldAmount" text="999" />
-					<Label id="PlayerLumberAmount" text="745" />
-				</Panel>
-				<Button id="MuteButton" onactivate="ToggleMute();" />
-			</Panel>
-			<Panel id="TeamScoreSpace" class="ScoreCol_TeamScore" />
-			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
-				<Label id="Kills" text="999" />
-			</Panel>
-			<Panel id="DeathsContainer" class="ScoreCol_Deaths ScoreboardPanel">
-				<Label id="Deaths" text="999" />
-			</Panel>
-			<Panel id="ElfScoreContainer" class="ScoreCol_ElfScore ScoreboardPanel">
-				<Label id="ElfScore" text="no" />
-			</Panel>
-			<Panel id="TrollScoreContainer" class="ScoreCol_TrollScore ScoreboardPanel">
-				<Label id="TrollScore" text="no" />
-			</Panel>
-			<Panel id="GiveResourcesTable" class="ScoreboardPanel">
-				<TextEntry id="GoldEntry" maxchars="7" placeholder="Gold.."/>
-				<TextEntry id="LumberEntry" maxchars="7" placeholder="Lumber.."/>
-				<Button id="GiveResourcesButton" onactivate="OnGiveResourcesButton()">
-					<Label id="Give1" text=" Give! " style ="text-align:center;horizontal-align:center;font-size:20px;" />
-				</Button>
-				<Button id="GiveAllResourcesButton" onactivate="OnGiveAllResourcesButton()">
-					<Label id="GiveAll1" text=" Give All! " style ="text-align:center;horizontal-align:center;font-size:20px;" />
-				</Button>
-				<Button id="nullButton" >
-					<Label text="    " style ="text-align:center;color:red;horizontal-align:center;font-size:20px;" />
-				</Button>
-				<Button id="VotekickButton" onactivate="OnVoteKickButton()">
-					<Label text=" Kick " style ="text-align:center;color:red;horizontal-align:center;font-size:20px;" />
-				</Button>
-				<!--
+
+        function OnGiveResourcesButton(){
+        var playerPanel = $.GetContextPanel();
+        var casterID = Players.GetLocalPlayer();
+        var target = playerPanel.pID;
+        var gold = Number(playerPanel.FindChildInLayoutFile("GoldEntry").text)
+        || 0;
+        var lumber =
+        Number(playerPanel.FindChildInLayoutFile("LumberEntry").text) || 0;
+        playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
+        playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
+        GameEvents.SendCustomGameEventToServer( "give_resources", { gold:gold,
+        lumber:lumber , target:target , casterID:casterID});
+        }
+
+        function OnVoteKickButton(){
+        var playerPanel = $.GetContextPanel();
+        var casterID = Players.GetLocalPlayer();
+        var target = playerPanel.pID;
+        GameEvents.SendCustomGameEventToServer( "votekick_start", {target:target
+        , casterID:casterID});
+        }
+
+        function OnVoteFlagButton(){
+			var playerPanel = $.GetContextPanel();
+			var casterID = Players.GetLocalPlayer();
+			var target = playerPanel.pID;
+			GameEvents.SendCustomGameEventToServer( "flag_start", {target:target , casterID:casterID});
+			$.Msg("Flag: ");
+		}var ui = GameUI.CustomUIConfig();
+        function OnGiveAllResourcesButton(){
+            var playerPanel = $.GetContextPanel();
+            var casterID = Players.GetLocalPlayer();
+            var target = playerPanel.pID;
+            var gold = ui.playerGold[casterID];
+            var lumber = ui.playerLumber[casterID];
+            playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
+            playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
+            GameEvents.SendCustomGameEventToServer( "give_resources", { gold:gold,
+            lumber:lumber , target:target , casterID:casterID});
+        }
+
+        function OnGiveAllGoldButton(){
+            var playerPanel = $.GetContextPanel();
+            var casterID = Players.GetLocalPlayer();
+            var target = playerPanel.pID;
+            var gold = ui.playerGold[casterID];
+            var lumber = ui.playerLumber[casterID];
+            playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
+            playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
+            GameEvents.SendCustomGameEventToServer( "give_resources", {
+                gold,
+                lumber: 0,
+                target,
+                casterID
+            });
+        }
+        function OnGiveAllLumberButton(){
+            var playerPanel = $.GetContextPanel();
+            var casterID = Players.GetLocalPlayer();
+            var target = playerPanel.pID;
+            var gold = ui.playerGold[casterID];
+            var lumber = ui.playerLumber[casterID];
+            playerPanel.FindChildInLayoutFile("GoldEntry").text = "";
+            playerPanel.FindChildInLayoutFile("LumberEntry").text = "";
+            GameEvents.SendCustomGameEventToServer( "give_resources", {
+                gold: 0,
+                lumber,
+                target,
+                casterID
+            });
+        }
+        (function()
+        {
+        var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+        $.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted(
+        playerId) );
+        //$( "#VotekickButton" ).visible = IsAllowedToKick(playerID);
+        //var color =
+        Players.GetPlayerColor(playerId).toString(16).substring(2).split("").reverse().join("");
+        //$.GetContextPanel().FindChildInLayoutFile("HeroIcon").style.borderBottom
+        = "3px solid #" + color;
+        //$.Msg("Color: " + color + " " + playerId);
+        })();
+    </script>
+    <Panel class="PlayerRow">
+        <Panel id="PlayerRowContainer">
+            <Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
+                <Image id="HeroIcon" heroimagestyle="landscape"
+                       scaling="stretch-to-fit-preserve-aspect"/>
+                <Panel id="PlayerColor"></Panel>
+            </Panel>
+            <Panel id="PlayerDetailsContainer"
+                   class="ScoreCol_PlayerDetails ScoreboardPanel">
+                <Panel id="PlayerAndHeroName">
+                    <Label id="PlayerName" text="AAAAA"/>
+                    <Label id="HeroNameAndDescription"
+                           text="#custom_scoreboard_hero_name_and_desc"/>
+                </Panel>
+                <Panel id="ResourcesAmount">
+                    <Label id="PlayerGoldAmount" text="999"/>
+                    <Label id="PlayerLumberAmount" text="745"/>
+                </Panel>
+                <Button id="MuteButton" onactivate="ToggleMute();"/>
+            </Panel>
+            <Panel id="TeamScoreSpace" class="ScoreCol_TeamScore"/>
+            <Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
+                <Label id="Kills" text="999"/>
+            </Panel>
+            <Panel id="DeathsContainer" class="ScoreCol_Deaths ScoreboardPanel">
+                <Label id="Deaths" text="999"/>
+            </Panel>
+            <Panel id="ElfScoreContainer"
+                   class="ScoreCol_ElfScore ScoreboardPanel">
+                <Label id="ElfScore" text="no"/>
+            </Panel>
+            <Panel id="TrollScoreContainer"
+                   class="ScoreCol_TrollScore ScoreboardPanel">
+                <Label id="TrollScore" text="no"/>
+            </Panel>
+            <Panel id="GiveResourcesTable" class="ScoreboardPanel">
+                <TextEntry id="GoldEntry" maxchars="7" placeholder="Gold.."/>
+                <TextEntry id="LumberEntry" maxchars="7"
+                           placeholder="Lumber.."/>
+                <Button id="GiveResourcesButton"
+                        onactivate="OnGiveResourcesButton()">
+                    <Label id="Give1" text=" Give! "
+                           style="text-align:center;horizontal-align:center;font-size:20px;"/>
+                </Button>
+                <Button id="GiveAllLumberButton"
+                        onactivate="OnGiveAllLumberButton()">
+                    <Label id="GiveAllLumber1" text=" All Gold! "
+                           style="text-align:center;horizontal-align:center;font-size:20px;"/>
+                </Button>
+                <Button id="GiveAllGoldButton"
+                        onactivate="OnGiveAllGoldButton()">
+                    <Label id="GiveAll1" text=" All Gold! "
+                           style="text-align:center;horizontal-align:center;font-size:20px;"/>
+                </Button>
+                <Button id="GiveAllResourcesButton"
+                        onactivate="OnGiveAllResourcesButton()">
+                    <Label id="GiveAll1" text=" Give All! "
+                           style="text-align:center;horizontal-align:center;font-size:20px;"/>
+                </Button>
+                <Button id="nullButton">
+                    <Label text="    "
+                           style="text-align:center;color:red;horizontal-align:center;font-size:20px;"/>
+                </Button>
+                <Button id="VotekickButton" onactivate="OnVoteKickButton()">
+                    <Label text=" Kick "
+                           style="text-align:center;color:red;horizontal-align:center;font-size:20px;"/>
+                </Button>
+            <!--
 				<Button id="FlagButton" onactivate="OnVoteFlagButton()">
 					<Label text=" Private " style ="text-align:center;horizontal-align:center;font-size:20px;" />
 				</Button>
 				-->
 			</Panel>
-		</Panel>
-	</Panel>
+        </Panel>
+    </Panel>
 </root>
-
-
-
