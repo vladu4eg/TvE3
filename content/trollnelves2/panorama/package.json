@@ -1,0 +1,24 @@
+{
+  "name": "TvE3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladu4eg/TvE3.git"
+  },
+  "keywords": [],
+  "author": "Taymuraz Kaytmazov <atassikay38@gmail.com> (https://github.com/atassis)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladu4eg/TvE3/issues"
+  },
+  "homepage": "https://github.com/vladu4eg/TvE3#readme",
+  "devDependencies": {
+    "panorama-types": "^1.5.2",
+    "typescript": "^4.0.5"
+  }
+}

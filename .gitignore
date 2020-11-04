@@ -29,3 +29,5 @@ game/dota_addons/trollnelves2/resource/overviews/*
 
 *.rar
 *.zip
+
+.idea/

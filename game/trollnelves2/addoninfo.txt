@@ -18,7 +18,7 @@
   "autumn2x"
   {
     "MaxPlayers"                    "16"
-  }  
+  }
   "spring"
   {
     "MaxPlayers"                    "16"
