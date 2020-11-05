@@ -1499,7 +1499,7 @@ function BuildingHelper:StartBuilding(builder)
     return
     end
     
-    if not IsInsideBaseArea(hero, location, unitName) then 
+    if not IsInsideBaseArea(playersHero, location, unitName) then 
         DebugPrint("NOT! IsInsideBaseArea")
         SendErrorMessage(playerID, "#error_place_is_taken")
         return false

@@ -165,8 +165,8 @@
                 <Button id="VotekickButton" onactivate="OnVoteKickButton()"> 
                     <Label text="Kick"/>
                 </Button>
-                <Button id="VotekickButton" onactivate="OnVoteFlagButton()"> 
-                    <Label text="Private"/>
+                <Button id="FlagButton" onactivate="OnVoteFlagButton()"> 
+                    <Label id="Flag" text="Private"/>
                 </Button>
 			</Panel>
         </Panel>
