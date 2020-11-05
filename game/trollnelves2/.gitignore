@@ -2,8 +2,6 @@
 *.bin
 
 # Compiled formats
-*.vpcf_c
-*.vtex_c
 *.vsndevts_c
 *.vmat_c
 *.vjs_c
