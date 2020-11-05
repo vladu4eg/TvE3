@@ -110,7 +110,7 @@
             const localPlayerTeamId = localPlayer ? localPlayer.player_team_id : -1;
             if ( localPlayer.player_team_id === localPlayerTeamId ) {
                 const targetHeroEntityId = Players.GetPlayerHeroEntityIndex(target);
-                GameUI.SetCameraTarget(targetHeroEntityId);
+                GameUI.MoveCameraToEntity(targetHeroEntityId);
             }
         }
     </script>
