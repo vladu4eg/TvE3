@@ -102,16 +102,25 @@
         const playerId = $.GetContextPanel().GetAttributeInt('player_id', -1);
         $.GetContextPanel().SetHasClass('player_muted', Game.IsPlayerMuted(playerId));
         })();
+
+        function showHero() {
+            const localPlayer = Game.GetLocalPlayerInfo();
+            const playerPanel = $.GetContextPanel();
+            const target = playerPanel.pID;
+            const localPlayerTeamId = localPlayer ? localPlayer.player_team_id : -1;
+            if ( localPlayer.player_team_id === localPlayerTeamId ) {
+                const targetHeroEntityId = Players.GetPlayerHeroEntityIndex(target);
+                GameUI.SetCameraTarget(targetHeroEntityId);
+            }
+        }
     </script>
     <Panel class="PlayerRow">
         <Panel id="PlayerRowContainer">
-            <Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
-                <Image id="HeroIcon" heroimagestyle="landscape"
-                       scaling="stretch-to-fit-preserve-aspect"/>
+            <Panel onactivate="showHero()" id="Hero" class="ScoreCol_Hero ScoreboardPanel">
+                <Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect"/>
                 <Panel id="PlayerColor"></Panel>
             </Panel>
-            <Panel id="PlayerDetailsContainer"
-                   class="ScoreCol_PlayerDetails ScoreboardPanel">
+            <Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
                 <Panel id="PlayerAndHeroName">
                     <Label id="PlayerName" text="AAAAA"/>
                     <Label id="HeroNameAndDescription"
@@ -141,22 +150,22 @@
             <Panel id="GiveResourcesTable" class="ScoreboardPanel">
                 <TextEntry id="GoldEntry" maxchars="7" placeholder="Gold.."/>
                 <TextEntry id="LumberEntry" maxchars="7" placeholder="Lumber.."/>
-                <Button id="GiveResourcesButton" onactivate="OnGiveResourcesButton()">
+                <Button class="flyout-button"  id="GiveResourcesButton" onactivate="OnGiveResourcesButton()">
                     <Label id="Give1" text="Give!" />
                 </Button>
-                <Button id="GiveAllLumberButton" onactivate="OnGiveAllLumberButton()">
-                    <Label id="GiveAllLumber1" text="All Lumber!" />
+                <Button class="flyout-button" id="GiveAllLumberButton" onactivate="OnGiveAllLumberButton()">
+                    <Image class="lumber" src="file://{images}/custom_game/lumber_icon.png" />
                 </Button>
-                <Button id="GiveAllGoldButton" onactivate="OnGiveAllGoldButton()">
-                    <Label id="GiveAll1" text="All Gold!" />
+                <Button class="flyout-button" id="GiveAllGoldButton" onactivate="OnGiveAllGoldButton()">
+                    <Image class="gold" src="s2r://panorama/images/hud/icon_gold.psd" />
                 </Button>
-                <Button id="GiveAllResourcesButton" onactivate="OnGiveAllResourcesButton()">
+                <Button class="flyout-button" id="GiveAllResourcesButton" onactivate="OnGiveAllResourcesButton()">
                     <Label id="GiveAll1" text="Give All!" />
                 </Button>
-                <Button id="VotekickButton" onactivate="OnVoteKickButton()">
+                <Button class="flyout-button" id="VotekickButton" onactivate="OnVoteKickButton()">
                     <Label text="Kick"/>
                 </Button>
-			</Panel>
+            </Panel>
         </Panel>
     </Panel>
 </root>
