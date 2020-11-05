@@ -162,10 +162,13 @@
                 <Button class="flyout-button" id="GiveAllResourcesButton" onactivate="OnGiveAllResourcesButton()">
                     <Label id="GiveAll1" text="Give All!" />
                 </Button>
-                <Button class="flyout-button" id="VotekickButton" onactivate="OnVoteKickButton()">
+                <Button id="VotekickButton" onactivate="OnVoteKickButton()"> 
                     <Label text="Kick"/>
                 </Button>
-            </Panel>
+                <Button id="VotekickButton" onactivate="OnVoteFlagButton()"> 
+                    <Label text="Private"/>
+                </Button>
+			</Panel>
         </Panel>
     </Panel>
 </root>
