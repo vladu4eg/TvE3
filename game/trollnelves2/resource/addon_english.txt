@@ -125,6 +125,8 @@
 		"troll_hut_6"                                                                     "Troll Hut 6"
 		"troll_hut_7"                                                                     "Troll Hut 7"
 		
+		"flag"                                                                            "Flag"
+		
 		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"

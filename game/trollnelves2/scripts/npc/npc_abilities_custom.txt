@@ -2244,10 +2244,10 @@
 	"build_flag"{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"	"build_tent"
+		"AbilityTextureName"	"build_flag"
 		"AbilityCastRange"		"400"
 		"Building"				"1"
-		"BuildTime"				"1"
+		"BuildTime"				"0.1"
 		"Scale"					"1"
 		"UnitName"				"flag"
 		"MaxLevel"				"1"

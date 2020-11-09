@@ -91,8 +91,11 @@ function Build( event )
             AddUpgradeAbilities(unit)
             UpdateSpells(hero)
             local item = CreateItem("item_building_cancel", unit, unit)
-            if newBuildingName ~= "flag"  then
+            if building_name ~= "flag"  then
                 unit:AddItem(item)
+            elseif building_name == "flag" then 
+                unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+                unit:AddNewModifier(unit, nil, "modifier_phased", {})
             end
             
             for i=0, unit:GetAbilityCount()-1 do
@@ -132,7 +135,12 @@ function Build( event )
         -- Give the unit their original attack capability
         unit:RemoveModifierByName("modifier_stunned")
         local itemBuildingDestroy = CreateItem("item_building_destroy", nil, nil)
-        unit:AddItem(itemBuildingDestroy)
+        if building_name ~= "flag"  then
+            unit:AddItem(itemBuildingDestroy)
+        elseif building_name == "flag" then 
+            unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+            unit:AddNewModifier(unit, nil, "modifier_phased", {})
+        end
         unit.attackers = {}
         
         for i=0, unit:GetAbilityCount()-1 do

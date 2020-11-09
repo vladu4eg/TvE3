@@ -252,7 +252,7 @@ function ExchangeLumber(event)
             SendErrorMessage(playerID, "#error_not_enough_gold")
             return false
 			else
-        	PlayerResource:ModifyGold(hero,-price)
+        	PlayerResource:ModifyGold(hero,-price,true)
         	PlayerResource:ModifyLumber(hero,amount)
         	ModifyLumberPrice(increasePrice)
         	PopupGoldGain(caster,math.floor(price),false)
@@ -267,7 +267,7 @@ function ExchangeLumber(event)
             SendErrorMessage(playerID, "#error_not_enough_lumber")
             return false
 			else
-			PlayerResource:ModifyGold(hero,price)
+			PlayerResource:ModifyGold(hero,price,true)
 			PlayerResource:ModifyLumber(hero,-amount)
         	ModifyLumberPrice(increasePrice)
         	PopupGoldGain(caster,math.floor(price),true)
