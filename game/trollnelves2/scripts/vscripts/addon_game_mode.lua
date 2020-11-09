@@ -214,6 +214,11 @@ function Precache( context )
 	PrecacheResource("particle", "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf", context)
 	PrecacheResource("particle", "particles/econ/items/axe/ti9_jungle_axe/ti9_jungle_axe_culling_blade_sprint_fire.vpcf", context)
 	
+	PrecacheResource("particle", "particles/econ/events/diretide_2020/emblem/fall20_emblem_v3_effect.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/diretide_2020/emblem/fall20_emblem_v2_effect.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/diretide_2020/emblem/fall20_emblem_v1_effect.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/diretide_2020/emblem/fall20_emblem_effect.vpcf", context)
+	
 	PrecacheResource("model", "models/items/venomancer/venomancer_hydra_switch_color_arms/venomancer_hydra_switch_color_arms.vmdl", context)
     PrecacheResource("model", "models/items/venomancer/venomancer_hydra_switch_color_shoulder/venomancer_hydra_switch_color_shoulder.vmdl", context)
     PrecacheResource("model", "models/items/venomancer/venomancer_hydra_switch_color_head/venomancer_hydra_switch_color_head.vmdl", context)
@@ -227,7 +232,6 @@ function Precache( context )
     PrecacheResource("model", "models/items/drow/frostfeather_huntress_arms/frostfeather_huntress_arms.vmdl", context)
     PrecacheResource("model", "models/items/drow/frostfeather_huntress_legs/frostfeather_huntress_legs.vmdl", context) 
     PrecacheResource("particle", "particles/econ/items/drow/drow_ti6_gold/drow_ti6_ambient_gold.vpcf", context)
-   
    
    --PrecacheResource("model", "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl", context)
    -- PrecacheResource("model", "models/items/windrunner/ti6_windranger_offhand/ti6_windranger_offhand.vmdl", context)

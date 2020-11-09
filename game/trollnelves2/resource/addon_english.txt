@@ -1532,6 +1532,7 @@
 		"patron8"                                          										"Level 8 Donation. Available to eighth level donater or higher."
 		"patron9"                                          										"Level 9 Donation. Available to ninth level donater or higher."
 		"patron10"                                          									"Level 10 Donation. Available to tenth level donater or higher."
+		"patron11"                                          									"Level 11 Donation. Available to tenth level donater or higher."
 		"coldfire"																				"Awarded along with a level 9 effect or in special events."
 		"winter2"																				"Awarded along with a level 9 effect or in special events."
 		"suprise"																				"Awarded along with a level 9 effect or in special events."

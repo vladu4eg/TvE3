@@ -33,6 +33,12 @@ function part_mod:GetEffectName()
     "particles/econ/events/ti10/emblem/ti10_emblem_effect.vpcf", --29
     "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf", --30
     "particles/econ/items/axe/ti9_jungle_axe/ti9_jungle_axe_culling_blade_sprint_fire.vpcf", --31
+    
+    "particles/econ/events/diretide_2020/emblem/fall20_emblem_v3_effect.vpcf", --32
+    "particles/econ/events/diretide_2020/emblem/fall20_emblem_v2_effect.vpcf", --33
+    "particles/econ/events/diretide_2020/emblem/fall20_emblem_v1_effect.vpcf", --34
+	"particles/econ/events/diretide_2020/emblem/fall20_emblem_effect.vpcf", --35
+    
     --"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_eztzhok.vpcf", --30
 
     --------------------------------------------------------------------------------------------------------------------------------   
