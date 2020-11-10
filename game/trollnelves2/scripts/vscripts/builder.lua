@@ -63,49 +63,56 @@ function Build( event )
         end
     end)
     
-    -- A building unit was created
-    event:OnConstructionStarted(function(unit)
-        BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
-        unit.gold_cost = gold_cost
-        unit.lumber_cost = lumber_cost
-        unit:AddNewModifier(unit,nil,"modifier_phased",{}) 
-        -- If it's an item-ability and has charges, remove a charge or remove the item if no charges left
-        if ability.GetCurrentCharges and not ability:IsPermanent() then
-            local charges = ability:GetCurrentCharges()
-            charges = charges-1
-            if charges == 0 then
-                ability:RemoveSelf()
-                else
-                ability:SetCurrentCharges(charges)
+    local status, nextCall = ErrorCheck(function() 
+        -- A building unit was created
+        event:OnConstructionStarted(function(unit)
+            BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
+            unit.gold_cost = gold_cost
+            unit.lumber_cost = lumber_cost
+            unit:AddNewModifier(unit,nil,"modifier_phased",{}) 
+            -- If it's an item-ability and has charges, remove a charge or remove the item if no charges left
+            if ability.GetCurrentCharges and not ability:IsPermanent() then
+                local charges = ability:GetCurrentCharges()
+                charges = charges-1
+                if charges == 0 then
+                    ability:RemoveSelf()
+                    else
+                    ability:SetCurrentCharges(charges)
+                end
             end
-        end
-        --unit:RemoveModifierByName("modifier_invulnerable")
-        unit:AddNewModifier(nil, nil, "modifier_stunned", {})
-        FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
-        caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
-        
-        local unitName = unit:GetUnitName()
-        ModifyStartedConstructionBuildingCount(hero, unitName, 1)
-        table.insert(hero.units, unit)
-        AddUpgradeAbilities(unit)
-        UpdateSpells(hero)
-        local item = CreateItem("item_building_cancel", unit, unit)
-        if newBuildingName ~= "flag"  then
-            unit:AddItem(item)
-        end
-        
-        for i=0, unit:GetAbilityCount()-1 do
-            local ability = unit:GetAbilityByIndex(i)
-            if ability then
-                local constructionStartModifiers = GetAbilityKV(ability:GetAbilityName(), "ConstructionStartModifiers")
-                if constructionStartModifiers then
-                    for k,modifier in pairs(constructionStartModifiers) do
-                        ability:ApplyDataDrivenModifier(unit, unit, modifier, {})
+            --unit:RemoveModifierByName("modifier_invulnerable")
+            unit:AddNewModifier(nil, nil, "modifier_stunned", {})
+            FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
+            caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
+            
+            local unitName = unit:GetUnitName()
+            ModifyStartedConstructionBuildingCount(hero, unitName, 1)
+            table.insert(hero.units, unit)
+            AddUpgradeAbilities(unit)
+            UpdateSpells(hero)
+            local item = CreateItem("item_building_cancel", unit, unit)
+            if building_name ~= "flag"  then
+                unit:AddItem(item)
+            elseif building_name == "flag" then 
+                unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+                unit:AddNewModifier(unit, nil, "modifier_phased", {})
+            end
+            
+            for i=0, unit:GetAbilityCount()-1 do
+                local ability = unit:GetAbilityByIndex(i)
+                if ability then
+                    local constructionStartModifiers = GetAbilityKV(ability:GetAbilityName(), "ConstructionStartModifiers")
+                    if constructionStartModifiers then
+                        for k,modifier in pairs(constructionStartModifiers) do
+                            ability:ApplyDataDrivenModifier(unit, unit, modifier, {})
+                        end
                     end
                 end
             end
-        end
+        end)
     end)
+    
+    
     
     -- A building finished construction
     event:OnConstructionCompleted(function(unit)
@@ -128,7 +135,12 @@ function Build( event )
         -- Give the unit their original attack capability
         unit:RemoveModifierByName("modifier_stunned")
         local itemBuildingDestroy = CreateItem("item_building_destroy", nil, nil)
-        unit:AddItem(itemBuildingDestroy)
+        if building_name ~= "flag"  then
+            unit:AddItem(itemBuildingDestroy)
+        elseif building_name == "flag" then 
+            unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+            unit:AddNewModifier(unit, nil, "modifier_phased", {})
+        end
         unit.attackers = {}
         
         for i=0, unit:GetAbilityCount()-1 do
@@ -254,10 +266,10 @@ function UpgradeBuilding( event )
         SendErrorMessage(playerID, "#error_not_enough_lumber")
         return false
     end
-   -- if GameRules.MapSpeed >= 4 and NewBuildingName == 'tower_19' then
+    -- if GameRules.MapSpeed >= 4 and NewBuildingName == 'tower_19' then
     --    SendErrorMessage(playerID, "#error_not_upgrade_tower19_x4")
-   --     return false
-  --  end
+    --     return false
+    --  end
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
@@ -310,7 +322,7 @@ function UpgradeBuilding( event )
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newBuildingName)
     if not string.match(newBuilding:GetUnitName(),"troll_hut") then
         newBuilding.blockers = BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newBuildingName), position)
-    elseif newBuilding:GetUnitName() == "troll_hut_7" then
+        elseif newBuilding:GetUnitName() == "troll_hut_7" then
         hero:AddAbility("lone_druid_spirit_bear_datadriven")
         local abil = hero:FindAbilityByName("lone_druid_spirit_bear_datadriven")
         abil:SetLevel(abil:GetMaxLevel())
@@ -342,15 +354,15 @@ function UpgradeBuilding( event )
                 ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 elseif newBuildingName == "tower_13" then
                 --wearables:RemoveWearables(newBuilding)
-               -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl")
+                -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl")
                 --wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_offhand/ti6_windranger_offhand.vmdl")
-               -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_head/ti6_windranger_head.vmdl")
+                -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_head/ti6_windranger_head.vmdl")
                 --wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_back/ti6_windranger_back.vmdl")
                 --wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_shoulder/ti6_windranger_shoulder.vmdl")
                 --local p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windrunner_battleranger/windrunner_battleranger_bowstring_ambient.vpcf", 0, newBuilding)
                 --ParticleManager:SetParticleControlEnt(p, 0, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
-               -- p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windrunner_battleranger/windrunner_battleranger_bow_ambient.vpcf", 1, newBuilding)
-               -- ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
+                -- p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windrunner_battleranger/windrunner_battleranger_bow_ambient.vpcf", 1, newBuilding)
+                -- ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 --p = ParticleManager:CreateParticle("particles/units/heroes/hero_windrunner/windrunner_bowstring.vpcf", 3, newBuilding)
                 --ParticleManager:SetParticleControlEnt(p, 3, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 
@@ -427,23 +439,23 @@ function UpgradeBuilding( event )
                 wearables:AttachWearable(newBuilding, "models/items/sniper/witch_hunter_set_head/witch_hunter_set_head.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/sniper/witch_hunter_set_back/witch_hunter_set_back.vmdl")
                 elseif string.match(GetMapName(),"winter") and newBuildingName == "true_sight_tower" then
-					wearables:RemoveWearables(newBuilding)
-					UpdateModel(newBuilding, "models/items/wards/frozen_formation/frozen_formation.vmdl", 1)    
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/frozen_formation/frozen_formation.vmdl", 1)    
 				elseif string.match(GetMapName(),"spring") and newBuildingName == "true_sight_tower" then
-					wearables:RemoveWearables(newBuilding)
-					UpdateModel(newBuilding, "models/items/wards/sylph_ward/sylph_ward.vmdl", 1)    
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/sylph_ward/sylph_ward.vmdl", 1)    
 				elseif (string.match(GetMapName(),"autumn") or string.match(GetMapName(),"halloween")) and newBuildingName == "true_sight_tower" then 
-					wearables:RemoveWearables(newBuilding)
-					UpdateModel(newBuilding, "models/items/wards/watcher_below_ward/watcher_below_ward.vmdl", 1)
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/watcher_below_ward/watcher_below_ward.vmdl", 1)
                 elseif string.match(GetMapName(),"desert") and newBuildingName == "true_sight_tower" then 
-					wearables:RemoveWearables(newBuilding)
-					UpdateModel(newBuilding, "models/items/wards/megagreevil_ward/megagreevil_ward.vmdl", 1)    
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/megagreevil_ward/megagreevil_ward.vmdl", 1)    
                 --elseif newBuildingName == "rock_18" then
                 --   wearables:RemoveWearables(newBuilding)
                 --   UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower.vmdl", 0.3)
                 --elseif newBuildingName == "rock_19" then
                 --   wearables:RemoveWearables(newBuilding)
-               -- UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower_model_editor.vmdl", 0.3)
+                -- UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower_model_editor.vmdl", 0.3)
                 --elseif newBuildingName == "mother_of_nature" and parts["3"] == "normal" then
                 --    wearables:RemoveWearables(newBuilding)
                 --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_belt_/dota_plus_enchantress_belt_.vmdl")

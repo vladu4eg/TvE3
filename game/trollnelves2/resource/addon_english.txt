@@ -125,6 +125,8 @@
 		"troll_hut_6"                                                                     "Troll Hut 6"
 		"troll_hut_7"                                                                     "Troll Hut 7"
 		
+		"flag"                                                                            "Flag"
+		
 		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
@@ -201,6 +203,9 @@
 
 		"DOTA_Tooltip_ability_dummy_tree"                                                 "Dummy Tree"
 		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
+
+		"DOTA_Tooltip_ability_build_flag"                                                 "Build Flag" 
+		"DOTA_Tooltip_ability_build_flag_Description"                                     "Allows you to block the base from other Elves.<br>You can only block 1 base.<br>You can allow other Elves to build on your base,<br>BUT they will lose the block on their base."
 
 		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
 		"DOTA_Tooltip_ability_build_tent_Description"                                     "Build tent to gain gold every second. Can build only one. "

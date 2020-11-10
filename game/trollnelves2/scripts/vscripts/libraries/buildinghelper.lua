@@ -1499,11 +1499,11 @@ function BuildingHelper:StartBuilding(builder)
     return
     end
     
-    --if not IsInsideBaseArea(hero, location, unitName) then 
-    --    DebugPrint("NOT! IsInsideBaseArea")
-    --    SendErrorMessage(playerID, "#error_place_is_taken")
-    --    return false
-    --end
+    if not IsInsideBaseArea(playersHero, location, unitName) then 
+        DebugPrint("NOT! IsInsideBaseArea")
+        SendErrorMessage(playerID, "#error_place_is_taken")
+        return false
+    end
     
     BuildingHelper:print(
         "Initializing Building Entity: " .. unitName .. " at " ..
@@ -2642,11 +2642,11 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     
-    --if not IsInsideBaseArea(hero, location, "") then 
-    --    DebugPrint("NOT! IsInsideBaseArea")
-    --    SendErrorMessage(playerID, "#error_place_is_taken")
-    --    return false
-    --end
+    if not IsInsideBaseArea(hero, location, "") then 
+        DebugPrint("NOT! IsInsideBaseArea")
+        SendErrorMessage(playerID, "#error_place_is_taken")
+        return false
+    end
     
     --[[if hero.disabledBuildings[buildingName] == true then
         return

@@ -187,7 +187,10 @@
 
 		"DOTA_Tooltip_ability_dummy_tree"                                                 "Dummy Tree"
 		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
-
+		
+		"DOTA_Tooltip_ability_build_flag"                                                 "Build Flag" 
+		"DOTA_Tooltip_ability_build_flag_Description"                                     "Позволяет заблокировать базу от других Эльфов.<br>Можно заблокировать только 1 базу.<br>Вы можете разрешить строить на вашей базе другим Эльфам,<br>НО они потеряют блокировку на своей базе."
+		
 		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
 		"DOTA_Tooltip_ability_build_tent_Description"                                     "Постройте Tent, чтобы получать золото каждую секунду. Можно построить только один Tent. "
 		"DOTA_Tooltip_ability_build_tent_gold_cost"                                       "GOLD COST: "

@@ -161,10 +161,11 @@
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/props_teams/banner_guild_lvl0.vmdl"
+		"Model"						"models/flag_1.vmdl"
 		"precache"
 		{
-			"model"     "models/props_teams/banner_guild_lvl0.vmdl"
+			"model"     "models/flag_1.vmdl"
+			"model"     "models/flag_2.vmdl"
 		}
 	    "ModelScale"                "1"
 	    "ModelRotation"             "90"
@@ -174,11 +175,13 @@
 		"RequiresRepair"			"1"
 		"StartingBuilding"          "1"
 		"Limit"						"1"
+		"MinimapIcon"				"minimap_tower"
+		"MinimapIconSize"			"320"
 	
 	    // Stats
 	    //----------------------------- 
 	    "Level"                     "1"
-	    "BuildTime"                 "1"	
+	    "BuildTime"                 "0.1"	
 		"Requirements"{
 		}
 		
@@ -2894,7 +2897,7 @@
 		
 		
 	    "ArmorPhysical"             "1"
-		"StatusHealth"              "30"
+		"StatusHealth"              "12"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -2983,7 +2986,7 @@
 		"AttackDamageMin"			"2"		// Damage range min.
 		"AttackDamageMax"			"2"		// Damage range max.
 	    "ArmorPhysical"             "2"
-		"StatusHealth"              "30"
+		"StatusHealth"              "14"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -3071,7 +3074,7 @@
 		"AttackDamageMin"			"4"		// Damage range min.
 		"AttackDamageMax"			"4"		// Damage range max.
 	    "ArmorPhysical"             "2"
-		"StatusHealth"              "30"
+		"StatusHealth"              "16"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -3158,7 +3161,7 @@
 		"AttackDamageMin"			"8"		// Damage range min.
 		"AttackDamageMax"			"8"		// Damage range max.
 	    "ArmorPhysical"             "4"
-		"StatusHealth"              "50"
+		"StatusHealth"              "30"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -6860,8 +6863,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -6931,8 +6934,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7003,8 +7006,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7075,8 +7078,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7147,8 +7150,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7219,8 +7222,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7290,8 +7293,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7361,8 +7364,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7443,8 +7446,8 @@
 
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"					"500"
-		"VisionNighttimeRange"					"300"
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
 
 		// Team
 		//----------------------------------------------------------------
@@ -7509,8 +7512,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7572,8 +7575,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7635,8 +7638,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "200"
-	    "VisionDaytimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7698,8 +7701,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7760,8 +7763,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7823,8 +7826,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7885,8 +7888,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -7947,8 +7950,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "100"
-	    "VisionNighttimeRange"        "100"
+	    "VisionDaytimeRange"        "50"
+	    "VisionNighttimeRange"        "25"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
