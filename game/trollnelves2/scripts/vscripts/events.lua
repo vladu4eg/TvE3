@@ -47,7 +47,7 @@ function trollnelves2:OnNPCSpawned(keys)
 		-- end
     end
     if EVENT_START then
-        Halloween(npc)  
+        --Halloween(npc)  
     end
 end
 
@@ -253,6 +253,7 @@ function trollnelves2:OnEntityKilled(keys)
         info.PlayerID = killed:GetPlayerID()
         info.hero = killed
         if killed:IsElf() and killed.alive then
+            GameRules.PlayersBase[attackerPlayerID] = nil
             bounty = ElfKilled(killed)
             GameRules.Bonus[attackerPlayerID] =
             GameRules.Bonus[attackerPlayerID] + 1
