@@ -46,7 +46,9 @@ end
 -- Modifier Effects
 
 function modifier_generic_invisibility:GetModifierMoveSpeedBonus_Percentage(params)
-	return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
+	if self:GetAbility() ~= nil then
+		return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
+	end
 end
 
 function modifier_generic_invisibility:GetModifierInvisibilityLevel()

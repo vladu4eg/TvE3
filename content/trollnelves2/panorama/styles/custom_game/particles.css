@@ -124,8 +124,8 @@ DOTACustomUITypeContainer
 
     vertical-align: top;
     horizontal-align: right;
-
-   background-image: url("s2r://panorama/images/custom_game/all/p_png.vtex");
+    
+   background-image: url("file://{images}/custom_game/all/p.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

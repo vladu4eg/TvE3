@@ -9,7 +9,7 @@
 	</scripts>
     <Panel class = "ChooseKickPanel" hittest="false">
         <Panel id = "ChooseKickContainer" class ="ChooseKickContainer">
-            <Label id = "idKickLabel" text = "Votekick: " class = "ChooseKickLabel"/>
+            <Label id = "idKickLabel" text = "Flag: " class = "ChooseKickLabel"/>
             <Panel class ="ChooseKickButtons">
                 <Button class ="ChooseButton ElfButton" onactivate="ChooseKickSide(1)"><Label text="Yes!" /></Button>
                 <Button class ="ChooseButton TrollButton" onactivate="ChooseKickSide(0)"><Label text="No!" /></Button>

@@ -35,7 +35,7 @@
 		}
 	}
 	
-	"item_event"
+	"item_autumn"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -63,6 +63,225 @@
 			{
 				"ScriptFile"            "custom_abilities.lua"
 				"Function"              "ItemEvent"
+			}
+		}
+	}
+
+	"item_winter_tree_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_winter_tree_1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEvent"
+			}
+		}
+	}
+	
+	"item_recipe_winter_tree_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_winter_tree_2"
+		"ItemRequirements"
+		{
+			"01"						"item_winter_tree_1;item_winter_tree_1"
+		}
+	}
+	
+	"item_winter_tree_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_winter_tree_2"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+	}
+
+	"item_winter_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_winter_1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEvent"
+			}
+		}
+	}
+	
+	"item_recipe_winter_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_winter_2"
+		"ItemRequirements"
+		{
+			"01"						"item_winter_1;item_winter_1"
+		}
+	}
+	
+	"item_winter_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_winter_2"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+	}
+	
+	"item_recipe_winter_end"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_winter_end"
+		"ItemRequirements"
+		{
+			"01"						"item_winter_2;item_winter_tree_2"
+		}
+	}
+	
+	"item_winter_end"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_winter_end"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+	}
+	
+	"item_event_desert"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_vip"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_winter/present.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEventDesert"
 			}
 		}
 	}
@@ -4147,15 +4366,21 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lumber_cost"			"32"
+				"lumber_cost"			"128"
 			}
 		}
-		"OnSpellStart"
+		"Modifiers"
 		{
-			"RunScript"
+			"modifier_item_ms_datadriven"
 			{
-				"ScriptFile"			"libraries/modifiers/modifier_troll_boots_2"
-				"Function"				"troll_boots_2"
+				"Passive"           "1"
+				"IsHidden"          "1"
+				"Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"        "%bonus_ms"
+				}
 			}
 		}
 	}

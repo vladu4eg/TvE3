@@ -1,15 +1,25 @@
+local lastFlagTime = {}
+local countFlag = {}
+
 
 function FlagStart(eventSourceIndex, event)
 	DebugPrint("FlagStart")
 	if event.target ~= nil then
 		local hero = PlayerResource:GetSelectedHeroEntity(event.target)
 		local casterHero = PlayerResource:GetSelectedHeroEntity(event.casterID)	
-		local playerName = PlayerResource:GetPlayerName(casterHero)
-		if casterHero:IsElf() and hero:IsElf() and PlayerResource:GetConnectionState(event.target) == 2 and GameRules:GetGameTime() - GameRules.startTime > 1 and GameRules.PlayersBase[event.casterID] ~= nil then	
+		local playerName = PlayerResource:GetPlayerName(event.casterID)
+		if casterHero:IsElf() and hero:IsElf() and PlayerResource:GetConnectionState(event.target) == 2 and GameRules.PlayersBase[event.casterID] ~= nil and countFlag[event.casterID] == nil
+			and (GameRules:GetGameTime() - GameRules.startTime < 120 
+			or  (lastFlagTime[event.target] == nil or lastFlagTime[event.target] + 240 < GameRules:GetGameTime()) ) then	
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event.target), "show_flag_options", {["name"] = playerName, ["id"] = event.target,["casterID"] = event.casterID} )
 			DebugPrint("FlagStart SEND")
-			elseif GameRules.PlayersBase[event.casterID] == nil then 
+			if GameRules:GetGameTime() - GameRules.startTime > 120 then
+				lastFlagTime[event.target] = GameRules:GetGameTime()
+			end
+		elseif GameRules.PlayersBase[event.casterID] == nil then 
 			SendErrorMessage(event.casterID, "You have no bases.")
+		elseif countFlag[event.casterID] ~= nil then
+			SendErrorMessage(event.casterID, "You can only invite 1 person.")
 		end
 	end	
 end
@@ -25,11 +35,13 @@ function FlagGive(eventSourceIndex, event)
 			for i=1,#hero.units do
 				if hero.units[i] and not hero.units[i]:IsNull() and hero.units[i]:GetUnitName() == "flag" then
 					local unit = hero.units[i]
-					unit:ForceKill(false)
+					unit:ForceKill(true)
 				end
 			end
 		end
 		hero:RemoveAbility("build_flag")
+		countFlag[event.playerID1] = GameRules.PlayersBase[event.casterID]
+		countFlag[event.casterID] = GameRules.PlayersBase[event.casterID]
 	else
 	text = PlayerResource:GetPlayerName(event.target) .. " canceled the request for a private base."
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , team, 0, 0)

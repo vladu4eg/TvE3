@@ -2,8 +2,11 @@
 -- Set this to true if you want to see a complete debug output of all events/processes done by trollnelves2
 -- You can also change the cvar 'trollnelves2_spew' at any time to 1 or 0 for output/no output
 TROLLNELVES2_DEBUG_SPEW = true
-LinkLuaModifier("modifier_movespeed_cap",
-    "libraries/modifiers/modifier_movespeed_cap.lua",
+LinkLuaModifier("modifier_movespeed_x4",
+    "libraries/modifiers/modifier_movespeed_x4.lua",
+LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_movespeed_x2",
+    "libraries/modifiers/modifier_movespeed_x2.lua",
 LUA_MODIFIER_MOTION_NONE)
 
 if trollnelves2 == nil then
@@ -32,6 +35,7 @@ require('chatcommand')
 require('votekick')
 require('drop')
 require('wearables')
+require('SelectPets')
 require('pets')
 require('flag')
 require('filter')
@@ -306,8 +310,9 @@ function InitializeTroll(hero)
         hero:RemoveAbility("special_bonus_cooldown_reduction_30")
         elseif GameRules.MapSpeed == 2 then
         hero:RemoveAbility("special_bonus_cooldown_reduction_30")
+        hero:AddNewModifier(hero, nil, "modifier_movespeed_x2", {})
         elseif GameRules.MapSpeed >= 4 then
-        hero:AddNewModifier(hero, nil, "modifier_movespeed_cap", {})
+        hero:AddNewModifier(hero, nil, "modifier_movespeed_x4", {})
     end
     --if not string.match(GetMapName(),"halloween") then 
     --    hero:RemoveAbility("skeleton_king_hellfire_blast_datadriven")
@@ -460,6 +465,7 @@ function trollnelves2:PreStart()
     Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
     Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
     Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
+    Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
     Donate:CreateList()
     
 end

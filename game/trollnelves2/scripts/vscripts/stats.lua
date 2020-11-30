@@ -218,7 +218,7 @@ end
 
 function Stats.RequestVip(pID, steam, callback)
 	local parts = {}
-	local req = CreateHTTPRequest("GET",Stats.server .. "vip/" .. steam)
+	local req = CreateHTTPRequest("GET",Stats.server .. "vip1/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -231,7 +231,7 @@ function Stats.RequestVip(pID, steam, callback)
 		local obj,pos,err = json.decode(res.Body)
 		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
-		for id = 1, 31 do
+		for id = 1, 35 do
 			parts[id] = "nill"
 		end
 		CustomNetTables:SetTableValue("Particles_Tabel",tostring(pID),parts)

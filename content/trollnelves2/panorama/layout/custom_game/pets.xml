@@ -1,0 +1,37 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/custom_game/pets.css" />
+	</styles>
+	<script>
+		function ToggleInfo()
+		{
+			$.GetContextPanel().ToggleClass('gameinfo_visible');
+		}
+	</script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/pets.js" />
+	</scripts>
+
+	<Panel hittest="false" class="CustomUIContainerGameInfo3">
+		<Panel id="GameInfoPanel">
+			<Panel id="GameInfoPanelScrollArea">
+				<Panel id="GameInfoPanelPaddingTop"/>
+                    <Panel id="CustomUIContainer" class="CustomGameTop" style="margin-top:0px;">
+                        <Label hittest="false" id="note" text="#partnote" style="width:360px; margin-top:-20px; margin-left:175px;"/>
+                        <Label hittest="false" id="name" text="#partname" style="width:150px; margin-top:-20px; margin-left:10px;"/>
+                    </Panel>
+				<Panel id="GameInfoPanelPaddingBottom"/>
+			</Panel>
+			<Panel hittest="false" id="GameInfoGradientOverlayTop"/>
+			<Panel hittest="false" id="GameInfoGradientOverlayBottom"/>
+			<Button id="DefaultButton" class="DefaultButtonact" onactivate='DefaultButton()' style="margin-top:325px;margin-left:200px;">
+                <Label hittest="false" id="defaultbuttontext" text="#seveasdefault"/>
+            </Button>
+		</Panel>
+		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Pets)' onmouseout='DOTAHideTextTooltip()'>
+			<Panel id="GameInfoIcon"/>
+			<Panel id="GameInfoOpenClose"/>
+		</Button>
+	</Panel>
+</root>

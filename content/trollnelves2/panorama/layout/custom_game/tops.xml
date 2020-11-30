@@ -21,8 +21,8 @@
                         <Label hittest="false" id="topptext" text="#topptext" style="width:110px; margin-top:-42px; margin-left:0px;"/>
                         <Label hittest="false" id="topwtext" text="#topwtext" style="width:110px; margin-top:-42px; margin-left:180px;"/>
                         <Label hittest="false" id="tophtext" text="#tophtext" style="width:110px; margin-top:-42px; margin-left:370px;"/>
-                        <Image id="st" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:810px;width:8px; margin-top:-55px; margin-left:150px;"/>
-                        <Image id="st2" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:810px;width:8px; margin-top:-55px; margin-left:340px;"/>
+                        <Image id="st" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:1010px;width:8px; margin-top:-55px; margin-left:150px;"/>
+                        <Image id="st2" src="s2r://panorama/images/custom_game/all/st_png.vtex" style="height:1010px;width:8px; margin-top:-55px; margin-left:340px;"/>
                         <Panel id="TopPlays" hittest="false" style="margin-top:40px; margin-left:0px;">
                             <DOTAAvatarImage id="top1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:0px;"/>
                             <DOTAAvatarImage id="top2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:0px;"/>
@@ -647,7 +647,7 @@
 			<Panel hittest="false" id="GameInfoGradientOverlayTop"/>
 			<Panel hittest="false" id="GameInfoGradientOverlayBottom"/>
 		</Panel>
-		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Tops)' onmouseout='DOTAHideTextTooltip()'>
+		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Leaderboard)' onmouseout='DOTAHideTextTooltip()'>
 			<Panel id="GameInfoIcon"/>
 			<Panel id="GameInfoOpenClose"/>
 		</Button>

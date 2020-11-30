@@ -7,11 +7,14 @@ PlaysTopList = {}
 WinsTopList = {}
 HardWinsTopList = {}
 
+PlaysTopListEvent = {}
+
 function top:UpdateTops()
     print("UpdateTops")
     CustomGameEventManager:Send_ServerToAllClients( "UpdateTopPlays", PlaysTopList)
     CustomGameEventManager:Send_ServerToAllClients( "UpdateTopWins", WinsTopList)
     CustomGameEventManager:Send_ServerToAllClients( "UpdateTopHardWins", HardWinsTopList)
+	CustomGameEventManager:Send_ServerToAllClients( "UpdateTopPlaysEvent", PlaysTopListEvent)
 end
 
 function top:OnLoadTop(list, idTop)
@@ -31,6 +34,8 @@ function top:OnLoadTop(list, idTop)
 					table.insert(WinsTopList,kv)
 					elseif idTop == "3" then
 					table.insert(HardWinsTopList,kv)
+				elseif idTop == "4" then
+					table.insert(PlaysTopListEvent,kv)
 				end
 			end
 		end

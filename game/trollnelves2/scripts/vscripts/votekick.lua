@@ -63,16 +63,21 @@ function VoteKick(eventSourceIndex, event)
 	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
 	or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
 	or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
-		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 2
+		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
 	end
-	local text = "Vote: " .. votes[ event.playerID1 ] .. "; Count Player: " .. countVote[event.playerID1] .. "; Percent: " .. votes[ event.playerID1 ]/countVote[event.playerID1] .. "; Need perc.: 0.78; Min player: 8" 
+	local disKick = 0
+		if tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll) <= -500 then
+			disKick = math.floor((tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll))/500) * 0.1
+		end
+	local text = "Vote: " .. votes[ event.playerID1 ] .. "; Count Player: " .. countVote[event.playerID1] .. "; Percent: " .. votes[ event.playerID1 ]/countVote[event.playerID1] .. "; Need perc.: " .. PERC_KICK_PLAYER + disKick .. "; Min player: 8" 
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>" ..  text  .. "</font>", team, 0, 0)
 	if team == DOTA_TEAM_GOODGUYS then
 		Timers:CreateTimer(35.0, function() 
-			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER and countVote[event.playerID1] >= MIN_PLAYER_KICK
+
+			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER + disKick and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
-				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 then
+				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 then
 				hero:ForceKill(true)
 				if hero.units ~= nil then
 					for i=1,#hero.units do

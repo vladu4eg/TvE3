@@ -1,0 +1,57 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/custom_game/event.css" />
+	</styles>
+	<script>
+		function ToggleInfo()
+		{
+			$.GetContextPanel().ToggleClass('gameinfo_visible');
+		}
+	</script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/event.js" />
+	</scripts>
+
+	<Panel hittest="false" class="CustomUIContainerGameInfo2">
+		<Panel id="GameInfoPanel">
+			<Panel id="GameInfoPanelScrollArea">
+				<Panel id="GameInfoPanelPaddingTop"/>
+                    <Panel id="CustomUIContainer" class="CustomGameTop" style="margin-top:0px;">
+                        <Label hittest="false" id="topetext" text="#topetext" style="width:110px; margin-top:-42px; margin-left:0px;"/>
+                        <Panel id="TopPlays" hittest="false" style="margin-top:40px; margin-left:0px;">
+                            <DOTAAvatarImage id="top1" steamid="" style="height:80px;width:80px; margin-top:0px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top2" steamid="" style="height:80px;width:80px; margin-top:90px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top3" steamid="" style="height:80px;width:80px; margin-top:180px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top4" steamid="" style="height:80px;width:80px; margin-top:270px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top5" steamid="" style="height:80px;width:80px; margin-top:360px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top6" steamid="" style="height:80px;width:80px; margin-top:450px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top7" steamid="" style="height:80px;width:80px; margin-top:540px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top8" steamid="" style="height:80px;width:80px; margin-top:630px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top9" steamid="" style="height:80px;width:80px; margin-top:720px; margin-left:0px;"/>
+                            <DOTAAvatarImage id="top10" steamid="" style="height:80px;width:80px; margin-top:810px; margin-left:0px;"/>
+
+                            <Label hittest="false" id="coltop1" text="-" style="height:80px;width:80px; margin-top:30px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop2" text="-" style="height:80px;width:80px; margin-top:120px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop3" text="-" style="height:80px;width:80px; margin-top:210px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop4" text="-" style="height:80px;width:80px; margin-top:300px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop5" text="-" style="height:80px;width:80px; margin-top:390px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop6" text="-" style="height:80px;width:80px; margin-top:480px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop7" text="-" style="height:80px;width:80px; margin-top:570px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop8" text="-" style="height:80px;width:80px; margin-top:660px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop9" text="-" style="height:80px;width:80px; margin-top:750px; margin-left:100px;"/>
+                            <Label hittest="false" id="coltop10" text="-" style="height:80px;width:80px; margin-top:840px; margin-left:100px;"/>
+                        </Panel>
+                       
+                </Panel>
+				<Panel id="GameInfoPanelPaddingBottom"/>
+			</Panel>
+			<Panel hittest="false" id="GameInfoGradientOverlayTop"/>
+			<Panel hittest="false" id="GameInfoGradientOverlayBottom"/>
+		</Panel>
+		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Event Leaderboard)' onmouseout='DOTAHideTextTooltip()'>
+			<Panel id="GameInfoIcon"/>
+			<Panel id="GameInfoOpenClose"/>
+		</Button>
+	</Panel>
+</root>

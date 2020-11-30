@@ -165,9 +165,11 @@
                 <Button class="flyout-button" id="VotekickButton" onactivate="OnVoteKickButton()"> 
                     <Label text="Kick"/>
                 </Button>
-                <Button class="flyout-button" d="FlagButton" onactivate="OnVoteFlagButton()"> 
-                    <Label id="Flag" text="Private"/>
+                
+                <Button class="flyout-button" id="FlagButton" onactivate="OnVoteFlagButton()"> 
+                    <Label id="Flag" text="Flag"/>
                 </Button>
+           
 			</Panel>
         </Panel>
     </Panel>

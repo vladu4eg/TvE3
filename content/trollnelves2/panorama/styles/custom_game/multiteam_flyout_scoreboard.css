@@ -85,7 +85,7 @@
   vertical-align: center;
   horizontal-align: center;
   color: #cccccc;
-  font-size: 42px;
+  font-size: 30px;
   text-shadow: 2px 2px 2px black;
   font-weight: bold;
   margin-top: -3px;
@@ -273,7 +273,7 @@
 
 #GoldEntry,
 #LumberEntry {
-  width: 100px;
+  width: 90px;
 }
 
 .flyout-button {

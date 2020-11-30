@@ -126,6 +126,12 @@
 		"troll_hut_7"                                                                     "Troll Hut 7"
 		
 		"flag"                                                                            "Flag"
+		"top1autumn"																	  "TOP1 AUTUMN"
+		"top2-3autumn"																	  "TOP2-3 AUTUMN"
+		"top10autumn"																	  "TOP10 AUTUMN"
+		"tester1"																		  "TESTER"
+		"moder"																		  	  "MODERATOR"
+		"dev"																		  	  "DEVELOPER"
 		
 		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
 		// ******************** ABILITY MODIFIERS ********************
@@ -205,7 +211,7 @@
 		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
 
 		"DOTA_Tooltip_ability_build_flag"                                                 "Build Flag" 
-		"DOTA_Tooltip_ability_build_flag_Description"                                     "Allows you to block the base from other Elves.<br>You can only block 1 base.<br>You can allow other Elves to build on your base,<br>BUT they will lose the block on their base."
+		"DOTA_Tooltip_ability_build_flag_Description"                                     "Allows you to block the base from other Elves.<br>You can only block 1 base.<br>You can allow other Elves to build on your base, BUT they will lose the block on their base."
 
 		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
 		"DOTA_Tooltip_ability_build_tent_Description"                                     "Build tent to gain gold every second. Can build only one. "
@@ -1084,6 +1090,8 @@
 		"DOTA_Tooltip_ability_buy_item_troll_boots"                                         "Buy Troll Boots"
 		"DOTA_Tooltip_ability_buy_item_troll_boots_Description"                             ""
 		
+		"DOTA_Tooltip_ability_buy_item_troll_boots_2"                                         "Buy Troll Boots LVL 2"
+		"DOTA_Tooltip_ability_buy_item_troll_boots_2_Description"                             ""
 		
 		"DOTA_Tooltip_ability_buy_item_disable_repair"                                                "Buy No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_buy_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable! Lasts for 5 seconds. "
@@ -1494,11 +1502,32 @@
 		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
 		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Provides bonus movement speed to the carrier. "
 		
+		"DOTA_Tooltip_ability_item_troll_boots_2"                                           "Boots of Troll LVL 2"
+		"DOTA_Tooltip_ability_item_troll_boots_2_Description"                               "Provides bonus movement speed to the carrier. "
+		
 		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
 		"DOTA_Tooltip_ability_item_vip_Description"                               	"Activate the item and get the season effect. "
 		
-		"DOTA_Tooltip_ability_item_event"                                           	"Event Event"
+		"DOTA_Tooltip_ability_item_event"                                           	"Event Item"
 		"DOTA_Tooltip_ability_item_event_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+		
+		"DOTA_Tooltip_ability_item_event_desert"                                           	"Desert Event Item"
+		"DOTA_Tooltip_ability_item_event_desert_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Dirt."
+		
+		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+		
+		"DOTA_Tooltip_ability_item_winter_tree_1"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+
+		"DOTA_Tooltip_ability_item_winter_2"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_2_Description"                               "You are one step closer to solving the quest!"
+		
+		"DOTA_Tooltip_ability_item_winter_tree_2"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_tree_2_Description"                               "You are one step closer to solving the quest!"
+		
+		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_end_Description"                               "You are already close to solving!"
 		
 		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable & lessens the effect of angel heal twice! Lasts for 5 seconds. "
@@ -1515,6 +1544,8 @@
         "topptext"                                      									"The best players in the overall ranking: "
         "topwtext"                                      									"The best players for the Elf: "
         "tophtext"                                      									"The best players for the Troll: "
+		
+		"topetext"																			"The best players: "
 		
 		"summer"                                          										"Awarded for participating in a Summer event."
 		"patron7"                                          										"Level 7 Donation. Available to seventh level donater or higher."
@@ -1590,6 +1621,7 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"error_item_not_sellable"															"Item not sellable"
 		"error_not_time"																	"You can steal gold after 5 minutes! "
 		"error_place_is_taken"																"Place taken by another Elf! "
+		"error_place_is_flag"																"You can't put a flag here!"
 		"team_choice_header"                                                                "Do you want to be the troll?"
 		"team_choice_yes"                                                                   "Yes"
 		"team_choice_no"                                                                    "No"

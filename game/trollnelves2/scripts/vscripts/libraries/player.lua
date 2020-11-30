@@ -2,9 +2,9 @@ Player = Player or {}
 
 require('libraries/team')
 
-local goldGainedImportance = 6
+local goldGainedImportance = 3
 local goldGivenImportance = 3
-local lumberGainedImportance = 6
+local lumberGainedImportance = 3
 local lumberGivenImportance = 3
 local rankImportance = 20
 local rankPers = 5
@@ -25,7 +25,7 @@ end
 function CDOTA_PlayerResource:SetGold(hero,gold)
     local playerID = hero:GetPlayerOwnerID()
 	if GameRules.MapSpeed >= 4 then
-		gold = math.min(gold, 4000000)
+		gold = math.min(gold, 2000000)
 	else
 		gold = math.min(gold, 1000000)
 	end
@@ -58,7 +58,7 @@ function CDOTA_PlayerResource:SetLumber(hero, lumber)
     local playerID = hero:GetPlayerOwnerID()
 	
 	if GameRules.MapSpeed >= 4 then
-		lumber = math.min(lumber, 4000000)
+		lumber = math.min(lumber, 2000000)
 	else
 		lumber = math.min(lumber, 1000000)
 	end
@@ -264,7 +264,7 @@ function CDOTA_PlayerResource:GetScoreBonusPersonal(pID)
 	local score = PlayerResource:GetScore(pID)
 	local allyTeamScore = Team.GetScore(allyTeam)
 	local add = score/allyTeamScore > 0 and 0 or 1
-	local value = math.floor((math.abs(allyTeamScore - score))*rankPers/500*add)
+	local value = math.floor((math.abs(allyTeamScore - score))*rankPers/1000*add)
 	value = math.min(rankImportance,value)
 	return (value)
 end

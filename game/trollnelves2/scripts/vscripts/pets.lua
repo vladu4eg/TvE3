@@ -146,13 +146,14 @@ function Pets:OnThink()
 	end
 end
 
-function Pets.CreatePet( keys )
+function Pets.CreatePet( keys, num )
 	local id = keys.PlayerID
 	-- local old_pet = Pets.playerPets[id]
 	-- local old_pet_pos
 	-- local old_pet_dir
 	local hero = keys.hero--PlayerResource:GetSelectedHeroEntity(id)--PlayerResource:GetPlayer( id ):GetAssignedHero()
-	local model = "models/courier/baby_rosh/babyroshan_elemental.vmdl"
+	local model = ""
+	local effect = ""
 
 	-- if old_pet then
 	-- 	old_pet_pos = old_pet.unit:GetAbsOrigin()
@@ -161,61 +162,61 @@ function Pets.CreatePet( keys )
 	-- 	old_pet.unit:Destroy()
 	-- end
 
-	local pet = CreateUnitByName( "npc_cosmetic_pet", hero:GetAbsOrigin() + RandomVector( RandomInt( 75, 150 ) ), true, hero, hero, hero:GetTeam() )
 
-	pet:SetForwardVector( hero:GetAbsOrigin() )
-	pet:AddNewModifier( pet, nil, "modifier_cosmetic_pet", {} )
 	-- UnhidePet( pet )
-	local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_monkey_king/monkey_king_disguise_smoke_top.vpcf", PATTACH_WORLDORIGIN, nil )
-	ParticleManager:SetParticleControl( particle, 0, pet:GetAbsOrigin() )
-	ParticleManager:ReleaseParticleIndex( particle )
+	--local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_monkey_king/monkey_king_disguise_smoke_top.vpcf", PATTACH_WORLDORIGIN, nil )
+	--ParticleManager:SetParticleControl( particle, 0, pet:GetAbsOrigin() )
+	--ParticleManager:ReleaseParticleIndex( particle )
 
-	if tostring(PlayerResource:GetSteamID(id)) == "76561198161348907" then
-		--model = "models/courier/baby_rosh/babyroshan_ti10.vmdl"
-		pet:SetModel( model )
-		pet:SetOriginalModel( model )
-		ParticleManager:CreateParticle("particles/my_new/courier_roshan_darkmoon.vpcf", PATTACH_POINT_FOLLOW, pet )
-	else
-		pet:SetModel( model )
-		pet:SetOriginalModel( model )
-
-	-- if pet_data.skin then
-		pet:SetMaterialGroup("1")--tostring( pet_data.skin ) )
-	-- end
-
-	-- local attach_types = {
-	-- 	customorigin = PATTACH_CUSTOMORIGIN,
-	-- 	point_follow = PATTACH_POINT_FOLLOW,
-	-- 	absorigin_follow = PATTACH_ABSORIGIN_FOLLOW
-	-- }
-
-	-- for _, p in pairs( pet_data.particles ) do
-	-- 	if type( p ) == "number" then
-	-- 		local particle_data =  Pets.petsData.particles[p]
-	-- 		local mat = attach_types[particle_data.attach_type] or PATTACH_POINT_FOLLOW
-
-	-- 		local particle = ParticleManager:CreateParticle( particle_data.particle, mat, pet )
-
-	-- 		for _, control in pairs( particle_data.control_points or {} ) do
-	-- 			local pat = attach_types[control.attach_type] or PATTACH_POINT_FOLLOW
-
-	-- 			ParticleManager:SetParticleControlEnt( particle, control.control_point_index, pet, pat, control.attachment, pet:GetAbsOrigin(), true )
-	-- 		end
-	-- 	else
-			
-			ParticleManager:CreateParticle( "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", PATTACH_POINT_FOLLOW, pet )
-	-- 	end
-	-- end
-
-	-- local e = Pets.playerPetEffects[id]
-	-- local c = Pets.playerPetColors[id]
-	
-	-- if e then
-	-- 	e.particle = CreateEffect( pet, Pets.heroEffects[e.index], c and c.color or nil )
-	-- end
+	if num == "32" then
+		model = "models/courier/doom_demihero_courier/doom_demihero_courier.vmdl" -- Golden Doomling
+		effect = "particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf"
+	elseif num == "33" then
+		model = "models/courier/huntling/huntling.vmdl" -- Golden Huntling
+		effect = "particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
+	elseif num == "28" then
+		model = "models/items/courier/krobeling_gold/krobeling_gold.vmdl" -- Golden Krobeling
+		effect = "particles/econ/courier/courier_krobeling_gold/courier_krobeling_gold_ambient.vpcf"
+	elseif num == "29" then
+		model = "models/courier/venoling/venoling.vmdl" -- Golden Venoling
+		effect = "particles/econ/courier/courier_venoling_gold/courier_venoling_ambient_gold.vpcf"
+	elseif num == "27" then
+		model = "models/courier/beetlejaws/mesh/beetlejaws.vmdl" -- Beetlejaws 
+		effect = "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf"
+	elseif num == "35" then
+		model = "models/courier/minipudge/minipudge.vmdl" -- Pudgling
+		effect = "particles/econ/courier/courier_minipudge/courier_minipudge_lvl2_ambient.vpcf"
+	--[[
+	elseif num == "7" then
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Lava Baby Roshan
+		effect = ""
+	elseif num == "8" then
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Ice Baby Roshan
+		effect = ""
+	elseif num == "9" then
+		model = "models/courier/baby_rosh/babyroshan.vmdl" --  Jade Baby Roshan SPRING 
+		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf"
+	]]
+	elseif num == "21" then
+		model = "models/courier/baby_rosh/babyroshan.vmdl" -- Baby Roshan
+		effect = "particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+	elseif num == "34" then
+		model = "models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl" -- Butch
+		effect = "particles/econ/courier/courier_butch/courier_butch_ambient.vpcf"
 	end
-
-	Pets.playerPets[id] = pet
+	
+	if model ~= "" then
+		local pet = CreateUnitByName( "npc_cosmetic_pet", hero:GetAbsOrigin() + RandomVector( RandomInt( 6000, 8000 ) ), true, hero, hero, hero:GetTeam() )
+		pet:SetForwardVector( hero:GetAbsOrigin() )
+		pet:AddNewModifier( pet, nil, "modifier_cosmetic_pet", {} )
+		
+		pet:SetModel( model )
+		pet:SetOriginalModel( model )
+		Pets.playerPets[id] = pet
+		if effect ~= "" then
+			ParticleManager:CreateParticle(effect, PATTACH_POINT_FOLLOW, pet )
+		end
+	end
 end
 
 function Pets.DeletePet( keys )
@@ -225,8 +226,7 @@ function Pets.DeletePet( keys )
  		return
 	end
 
- 	HidePet( Pets.playerPets[id].unit, 0 )
-
- 	Pets.playerPets[id].unit:Destroy()
- 	Pets.playerPets[id] = nil
+ 	--HidePet( Pets.playerPets[id].unit, 0 )
+	UTIL_Remove(Pets.playerPets[id])
+	Pets.playerPets[id] = nil
 end

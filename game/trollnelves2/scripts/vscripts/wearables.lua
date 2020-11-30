@@ -28,7 +28,20 @@ function wearables:SelectPart(info)
 			local npc = PlayerResource:GetSelectedHeroEntity(info.PlayerID)
 			if parts["11"] == "normal" and not EVENT_START then
 				SetModelVip(npc)
-			end						
+			end		
+			if info.part == "21" then
+				npc:SetCustomHealthLabel("#top1autumn",  250, 179, 0)
+			elseif info.part == "25" then
+				npc:SetCustomHealthLabel("#top2-3autumn",  250, 179, 0)
+			elseif info.part == "5" then
+				npc:SetCustomHealthLabel("#top10autumn",  250, 179, 0)
+			elseif info.part == "4" then
+				npc:SetCustomHealthLabel("#tester1",  0, 217, 7)
+			elseif info.part == "8" then
+				npc:SetCustomHealthLabel("#moder",  250, 0, 0)
+			elseif info.part == "7" then
+				npc:SetCustomHealthLabel("#dev",  200, 0, 250)
+			end
 		end
 		else
         PlayerResource:GetSelectedHeroEntity(info.PlayerID):RemoveModifierByName("part_mod")

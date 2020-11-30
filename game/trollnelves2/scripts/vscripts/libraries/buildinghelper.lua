@@ -1499,7 +1499,7 @@ function BuildingHelper:StartBuilding(builder)
     return
     end
     
-    if not IsInsideBaseArea(playersHero, location, unitName) then 
+    if not IsInsideBaseArea(playersHero, location, unitName, true) then 
         DebugPrint("NOT! IsInsideBaseArea")
         SendErrorMessage(playerID, "#error_place_is_taken")
         return false
@@ -2409,6 +2409,8 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
     local requires = buildingTable and buildingTable["Requires"]
     local prevents = buildingTable and buildingTable["Prevents"]
     local hero = unit:IsRealHero() and unit or unit:GetOwner()
+    local playerID = hero:GetPlayerOwnerID()
+    
     if requires then
         bBlocked = not BuildingHelper:AreaMeetsCriteria(size, location,
         requires, "all")
@@ -2452,12 +2454,17 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
     end
     if BuildingHelper:EnemyIsInsideBuildingArea(hero:GetAbsOrigin(), location,size) and buildingName ~= "tent" and
     (GameRules:GetGameTime() - GameRules.startTime > (1200 / GameRules.MapSpeed)) then -- остальное
-    if callbacks.onConstructionFailed then
-        SendErrorMessage(hero:GetPlayerOwnerID(),
-        "#error_construction_for_yourself")
-        callbacks.onConstructionFailed()
-        return false
-    end
+        local baseIndex = IdBaseArea(location)
+        if baseIndex ~= nil and GameRules.PlayersBase[playerID] ~= nil then
+            if baseIndex == GameRules.PlayersBase[playerID] then
+                return true
+            end        
+        end
+        if callbacks.onConstructionFailed then
+            SendErrorMessage(hero:GetPlayerOwnerID(), "#error_construction_for_yourself")
+            callbacks.onConstructionFailed()
+            return false
+        end
     end
     return true
 end
@@ -2562,7 +2569,7 @@ function BuildingHelper:AreaMeetsCriteria(size, location, grid_type, option)
     end
 end
 
-function IsInsideBaseArea(unit, location, nameBuilding)
+function IsInsideBaseArea(unit, location, nameBuilding, build)
     local hero = unit:IsRealHero() and unit or unit:GetOwner()
     local playerID = hero:GetPlayerOwnerID()
     local baseIndex = IdBaseArea(location)
@@ -2575,11 +2582,12 @@ function IsInsideBaseArea(unit, location, nameBuilding)
                     if GameRules.PlayersBase[pID] == baseIndex then
                         DebugPrint("GameRules.PlayersBase[pID] " .. GameRules.PlayersBase[pID])
                         DebugPrint("baseIndex " .. baseIndex)
+                        SendErrorMessage(playerID, "#error_place_is_taken")
                         return false
                     end
                 end
             end
-            if GameRules.PlayersBase[playerID] == nil and nameBuilding == "flag" then
+            if GameRules.PlayersBase[playerID] == nil and nameBuilding == "flag" and build then
                 GameRules.PlayersBase[playerID] = baseIndex
                 DebugPrint("Your Base " .. baseIndex)
                 DebugPrint("Your ID " .. playerID)
@@ -2591,6 +2599,9 @@ function IsInsideBaseArea(unit, location, nameBuilding)
         else
             return true  
         end
+    elseif nameBuilding == "flag" then
+        SendErrorMessage(playerID, "#error_place_is_flag")
+        return false
     else 
         return true
     end
@@ -2614,12 +2625,14 @@ function IsInsideBoxEntity(box, location)
     local unitOrigin = location
     local X = unitOrigin.x
     local Y = unitOrigin.y
-    local minX = min.x + boxOrigin.x
-    local minY = min.y + boxOrigin.y
-    local maxX = max.x + boxOrigin.x
-    local maxY = max.y + boxOrigin.y
+    local minX = boxOrigin.x
+    local minY = boxOrigin.y
+    local maxX = boxOrigin.x
+    local maxY = boxOrigin.y
     local betweenX = X >= minX and X <= maxX
     local betweenY = Y >= minY and Y <= maxY
+    DebugPrint("123131231231")
+    print(boxOrigin)
     
     return betweenX and betweenY
 end
@@ -2642,9 +2655,8 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     
-    if not IsInsideBaseArea(hero, location, "") then 
+    if not IsInsideBaseArea(hero, location, buildingName, false) then 
         DebugPrint("NOT! IsInsideBaseArea")
-        SendErrorMessage(playerID, "#error_place_is_taken")
         return false
     end
     

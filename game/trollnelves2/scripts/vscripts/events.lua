@@ -43,8 +43,9 @@ function trollnelves2:OnNPCSpawned(keys)
         info.hero = npc
         -- local rand = RandomInt(1, 2)
         -- if rand == 1 then
-        --	Pets.CreatePet( info )
+        	Pets.CreatePet( info )
 		-- end
+        --npc:SetCustomHealthLabel("#top1autumn",  123, 11, 78)
     end
     if EVENT_START then
         --Halloween(npc)  
@@ -203,7 +204,7 @@ function trollnelves2:OnItemPickedUp(keys)
     local player = PlayerResource:GetPlayer(keys.PlayerID)
     local itemname = keys.itemname
     
-    if (hero:IsAngel() or hero:IsElf()) and (string.match(itemname,"hp") or string.match(itemname,"armor") or string.match(itemname,"dmg") or string.match(itemname,"spd")) then
+    if (hero:IsAngel() or hero:IsElf()) and (string.match(itemname,"hp") or string.match(itemname,"armor") or string.match(itemname,"dmg") or string.match(itemname,"spd") or string.match(itemname,"boots")  or string.match(itemname,"repair")) then 
         hero:RemoveItem(itemEntity)
         return
     end  
@@ -246,12 +247,14 @@ function trollnelves2:OnEntityKilled(keys)
     if GameRules.Bonus[attackerPlayerID] == nil then
         GameRules.Bonus[attackerPlayerID] = 0
     end
+    
+    local info = {}
+    info.PlayerID = killedPlayerID
+    info.hero = killed
+    
     if IsBuilder(killed) then BuildingHelper:ClearQueue(killed) end
     if killed:IsRealHero() then
         local bounty = -1
-        local info = {}
-        info.PlayerID = killed:GetPlayerID()
-        info.hero = killed
         if killed:IsElf() and killed.alive then
             GameRules.PlayersBase[attackerPlayerID] = nil
             bounty = ElfKilled(killed)
@@ -267,7 +270,7 @@ function trollnelves2:OnEntityKilled(keys)
                 return
             end
             drop:RollItemDrop(killed)
-            -- Pets.DeletePet(keys)
+            Pets.DeletePet(info)
             elseif killed:IsTroll() then
             GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
             GameRules.Bonus[attackerPlayerID] =
@@ -288,7 +291,7 @@ function trollnelves2:OnEntityKilled(keys)
                 GameRules.Bonus[attackerPlayerID] + 1
             end
             drop:RollItemDrop(killed)
-            -- Pets.DeletePet(keys)
+           Pets.DeletePet(info)
             elseif killed:IsAngel() then
             bounty = math.max(PlayerResource:GetGold(killedPlayerID),
             GameRules:GetGameTime()) / 4
@@ -301,7 +304,7 @@ function trollnelves2:OnEntityKilled(keys)
             end)
             killed:ClearInventoryCM()
             drop:RollItemDrop(killed)
-            -- Pets.DeletePet(keys)
+            Pets.DeletePet(info)
         end
         if bounty >= 0 and attacker ~= killed then
             local killedName = PlayerResource:GetSelectedHeroEntity(
@@ -424,7 +427,7 @@ function ElfKilled(killed)
         if orgPlayer then
             CustomGameEventManager:Send_ServerToPlayer(orgPlayer,
             "show_helper_options", {})
-            Timers:CreateTimer(30, function()
+            Timers:CreateTimer(40, function()
                 if killed and killed.legitChooser then
                     local args = {}
                     args.team = DOTA_TEAM_GOODGUYS

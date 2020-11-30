@@ -80,6 +80,8 @@ function trollnelves2:_Inittrollnelves2()
   CustomGameEventManager:RegisterListener("SetDefaultPart", Dynamic_Wrap(wearables, 'SetDefaultPart'))
   CustomGameEventManager:RegisterListener("UpdateTops", Dynamic_Wrap(top, 'UpdateTops'))
   
+  CustomGameEventManager:RegisterListener("SelectPets", Dynamic_Wrap(SelectPets, 'SelectPets'))
+  
   CustomNetTables:SetTableValue("building_settings", "team_choice_time", { value = TEAM_CHOICE_TIME })
   
  -- mode:SetItemAddedToInventoryFilter(Dynamic_Wrap(trollnelves2, "ItemPickFilter"), self)

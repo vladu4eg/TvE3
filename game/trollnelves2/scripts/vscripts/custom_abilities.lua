@@ -47,7 +47,19 @@ function ItemEvent(event)
 	data.Num = "3"
 	data.Srok = "01/09/2020"
 	Stats.GetVip(data, callback)
-	local item = caster:FindItemInInventory("item_event")
+	local item = caster:FindItemInInventory("item_winter_1")
+	caster:RemoveItem(item)
+end
+
+function ItemEventDesert(event)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "24"
+	data.Srok = "01/09/2020"
+	Stats.GetVip(data, callback)
+	local item = caster:FindItemInInventory("item_event_desert")
 	caster:RemoveItem(item)
 end
 
@@ -253,7 +265,8 @@ function ExchangeLumber(event)
             return false
 			else
         	PlayerResource:ModifyGold(hero,-price,true)
-        	PlayerResource:ModifyLumber(hero,amount)
+        	PlayerResource:ModifyLumber(hero,amount,true)
+			
         	ModifyLumberPrice(increasePrice)
         	PopupGoldGain(caster,math.floor(price),false)
         	PopupLumber(caster,math.floor(amount),true)
@@ -268,7 +281,7 @@ function ExchangeLumber(event)
             return false
 			else
 			PlayerResource:ModifyGold(hero,price,true)
-			PlayerResource:ModifyLumber(hero,-amount)
+			PlayerResource:ModifyLumber(hero,-amount,true)
         	ModifyLumberPrice(increasePrice)
         	PopupGoldGain(caster,math.floor(price),true)
         	PopupLumber(caster,math.floor(amount),false)
@@ -824,9 +837,17 @@ end
 
 function CheckNightInvis(keys)
 	local caster = keys.caster
+	local id = caster:GetPlayerID()
 	if GameRules:IsDaytime() then
 		if caster:HasModifier("modifier_stand_invis") then
 			caster:RemoveModifierByName("modifier_stand_invis")
+			if Pets.playerPets[id] then
+				Pets.playerPets[id]:RemoveModifierByName("modifier_invisible") 
+			end
+		end
+	else
+		if Pets.playerPets[id] then
+ 			Pets.playerPets[id]:AddNewModifier(Pets.playerPets[id], self, "modifier_invisible", {})
 		end
 	end
 end

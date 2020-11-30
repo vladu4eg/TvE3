@@ -358,7 +358,7 @@ function StartBuildingHelper( params ) {
           }
         }
 
-        if (rangeOverlay !== undefined)
+        if (rangeOverlay !== undefined && rangeOverlay != null)
           Particles.SetParticleControl(rangeOverlay, 0, modelPos)
 
         // Update the model particle

@@ -154,6 +154,8 @@
 		"MovementSpeed"				"420"
 		"MovementTurnRate"			"0.6"
 		"StatusHealth"				"1"
+		"AbilityLayout"				"4"
+		"Ability1"					"troll_invis"
 	}
 	
 	"flag"
@@ -2896,7 +2898,7 @@
 		
 		
 		
-	    "ArmorPhysical"             "1"
+	    "ArmorPhysical"             "0"
 		"StatusHealth"              "12"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -2985,7 +2987,7 @@
 	
 		"AttackDamageMin"			"2"		// Damage range min.
 		"AttackDamageMax"			"2"		// Damage range max.
-	    "ArmorPhysical"             "2"
+	    "ArmorPhysical"             "0"
 		"StatusHealth"              "14"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -3073,7 +3075,7 @@
 	
 		"AttackDamageMin"			"4"		// Damage range min.
 		"AttackDamageMax"			"4"		// Damage range max.
-	    "ArmorPhysical"             "2"
+	    "ArmorPhysical"             "0"
 		"StatusHealth"              "16"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -3160,8 +3162,8 @@
 	
 		"AttackDamageMin"			"8"		// Damage range min.
 		"AttackDamageMax"			"8"		// Damage range max.
-	    "ArmorPhysical"             "4"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "0"
+		"StatusHealth"              "18"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -3247,8 +3249,8 @@
 	
 		"AttackDamageMin"			"16"		// Damage range min.
 		"AttackDamageMax"			"16"		// Damage range max.
-	    "ArmorPhysical"             "4"
-		"StatusHealth"              "80"
+	    "ArmorPhysical"             "0"
+		"StatusHealth"              "20"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -3996,6 +3998,14 @@
 		{
 			"model"						"models/heroes/drow/drow_base.vmdl"
 			"particle"     				"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
+			
+			//"model"						"models/items/drow/death_shadow_bracers/death_shadow_bracers.vmdl"
+			//"model"						"models/items/drow/death_shadow_cape/death_shadow_cape.vmdl"
+			//"model"						"models/items/drow/death_shadow_cowl/death_shadow_cowl.vmdl"
+			//"model"						"models/items/drow/death_shadow_boots/death_shadow_boots.vmdl"
+			//"model"						"models/items/drow/death_shadow_quiver/death_shadow_quiver.vmdl"
+			//"model"						"models/items/drow/death_shadow_mantle/death_shadow_mantle.vmdl"
+			//"model"						"models/items/drow/death_shadow_bow/death_shadow_bow.vmdl"
 	    }
 		"DisableTurning"			"0"
 		"ModelScale"                "1"
@@ -8254,10 +8264,11 @@
 		"Ability7"					"buy_item_disable_repair"
 		"Ability8"					"buy_item_disable_repair_2"
 		"Ability9"					"buy_item_troll_boots"
-		"Ability10"					"buy_lumber_1"
-		"Ability11"					"buy_lumber_8"
-		"Ability12"					"sell_lumber_1"
-		"Ability13"					"sell_lumber_8"
+		"Ability10"					"buy_item_troll_boots_2"
+		"Ability11"					"buy_lumber_1"
+		"Ability12"					"buy_lumber_8"
+		"Ability13"					"sell_lumber_1"
+		"Ability14"					"sell_lumber_8"
 		
 		//"Ability10"					"buy_item_troll_boots_2"
 		//"Ability11"					"buy_item_troll_boots_3"
@@ -8750,7 +8761,7 @@
 	        "1"{
 				"unit_name"			"troll_hut_7"
 				"gold_cost"			"0"
-				"lumber_cost"		"512"
+				"lumber_cost"		"256"
 			}
 	    }
 		"Requirements"{
