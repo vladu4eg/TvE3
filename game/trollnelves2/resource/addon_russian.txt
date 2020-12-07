@@ -539,7 +539,11 @@
 		
 		"DOTA_Tooltip_ability_treant_debuff"											"Treant Protector."
 		"DOTA_Tooltip_ability_treant_debuff_Description"  								"Ты должен был бороться со злом, а не примкнуть к нему!!! Вас проклял могущий Treant Protector и вы не можете восстанавливать свое здоровье. "
-		
+
+		"DOTA_Tooltip_ability_block_buff"											"Хладнокровность"
+		"DOTA_Tooltip_ability_block_buff_Description"  								"Ваша броня крепчает при виде стаи Эльфов.<br>Если радиусе 900 находятся 3 и более Эльфов, то вы получаете 16 блока урона с шансом в 50%."
+
+
 		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven"						"Teddy bear"
 		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven_Description"			"Создает ручного медведя, который сражается на вашей стороне. Если медведь умер, то вы потеряете 99,9% HP и сможете оживить медведя через 6 минут, а сам медведь потеряет все свои предметы. Умение становится активным после покупки Troll Hut 7 уровня и если в команде нет Волков."
 		

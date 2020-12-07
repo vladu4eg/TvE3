@@ -19,7 +19,7 @@
 		"ItemDroppable"					"0"
 		"ItemPurchasable" 				"0"
 		"ItemInitialCharges"			"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemDisplayCharges"			"0"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
@@ -51,9 +51,9 @@
 		"AbilityCastPoint"              "0.0"
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -85,7 +85,7 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -134,7 +134,7 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -156,9 +156,9 @@
 		"AbilityCastPoint"              "0.0"
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -205,9 +205,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -237,9 +237,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_winter_end"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityBehavior"                           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"                           
+        "AbilityUnitTargetTeam"                           "DOTA_UNIT_TARGET_TEAM_ENEMY"                           
+        "AbilityUnitTargetType"                           "DOTA_UNIT_TARGET_CREEP"  
 		"Model"                         "models/props_gameplay/rune_doubledamage01.vmdl"
 		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
 		// Stats        
@@ -248,10 +251,18 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
+		"OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"                           "items/item_winter_end.lua"                           
+                "Function"                             "Feed"
+            }
+        }
 	}
 	
 	"item_event_desert"
@@ -562,7 +573,7 @@
 			"ApplyModifier"{
 				"Target"				"TARGET"
 				"ModifierName"			"modifier_silence"
-				"Duration"				"5"
+				"Duration"				"1"
 			}
 		}
 	}

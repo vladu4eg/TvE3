@@ -10,7 +10,7 @@ require('settings')
 
 function SelectPets:SelectPets(info)
     if info.offp == 0 then
-        local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(info.PlayerID))
+        local parts = CustomNetTables:GetTableValue("Pets_Tabel",tostring(info.PlayerID))
         if parts ~= nil then
             if parts[info.part] ~= "nill" and parts[info.part] ~= nil then
 				
@@ -21,7 +21,7 @@ function SelectPets:SelectPets(info)
                     PlayerResource:GetSelectedHeroName(info.PlayerID)
 				}
 				
-                CustomGameEventManager:Send_ServerToAllClients( "UpdateParticlesUI", arr)
+                CustomGameEventManager:Send_ServerToAllClients( "UpdatePetsUI", arr)
 
 				info.hero = PlayerResource:GetSelectedHeroEntity(info.PlayerID)
 				
@@ -40,7 +40,7 @@ function SelectPets:SetPart()
 	for i=0,pplc-1 do
 		if GameRules.PartDefaults[i] ~= nil and GameRules.PartDefaults[i] ~= "" and PlayerResource:GetConnectionState(i) == 2 then
 			if PlayerResource:GetSelectedHeroEntity(i):FindModifierByName("part_mod") == nil then
-				local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
+				local parts = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
 				--Say(nil,"text here", false)
 				--GameRules:SendCustomMessage("<font color='#58ACFA'> использовал эффект </font>"..info.name.."#partnote".." test", 0, 0)
 				local arr = {
@@ -50,10 +50,10 @@ function SelectPets:SetPart()
 					PlayerResource:GetSelectedHeroName(i)
 				}
 				
-				CustomGameEventManager:Send_ServerToAllClients( "UpdateParticlesUI", arr)
-				CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "SetSelectedParticles", arr)
+				CustomGameEventManager:Send_ServerToAllClients( "UpdatePetsUI", arr)
+				CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "SetSelectedPets", arr)
 				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PartDefaults[i]})
-				local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
+				local parts = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
 				local npc = PlayerResource:GetSelectedHeroEntity(i)
 				if parts["11"] == "normal" and not EVENT_START then
 					SetModelVip(npc)

@@ -566,12 +566,16 @@
 		"DOTA_Tooltip_ability_attack_gold"                                                "Attack Gold"
 		"DOTA_Tooltip_ability_attack_gold_Description"                                    "Gives gold every time you deal damage to an enemy"
 		
-		"DOTA_Tooltip_ability_monkey_king"											"True strike."
+		"DOTA_Tooltip_ability_monkey_king"											"True strike"
 		"DOTA_Tooltip_ability_monkey_king_Description"  							"Ignores Angel Evasion."
 		
-		"DOTA_Tooltip_ability_treant_debuff"											"Treant Protector."
+		"DOTA_Tooltip_ability_treant_debuff"											"Treant Protector"
 		"DOTA_Tooltip_ability_treant_debuff_Description"  								"You were supposed to fight the evil, not become one of them!!! You were cursed by the mighty Treant Protector and your health regeneration does not work."
-		
+
+		"DOTA_Tooltip_ability_block_buff"											"Composure"
+		"DOTA_Tooltip_ability_block_buff_Description"  								"Your armor grows stronger at the sight of a flight of Elves.<br>If there are 3 or more Elves in the 900 radius, then you receive 16 damage blocks with a 50% chance."
+
+
 		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven"						"Teddy bear"
 		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven_Description"			"Creates a tame bear that fights by your side. If the bear died, then you will lose 99.9% HP and will be able to revive the bear in 6 minutes, and the bear itself will lose all its items. The skill becomes active after purchasing a level 7 Troll hut and if there are no wolves in the team."
 		

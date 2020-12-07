@@ -2,7 +2,6 @@ modifier_poison = class({})
 
 function modifier_poison:OnCreated(event)
     local hero = self:GetParent()
-
     if hero.hpReg == nil then
         hero.hpReg = 0
     end
@@ -11,8 +10,10 @@ function modifier_poison:OnCreated(event)
     if hero.hpRegDebuff  == nil  then
         hero.hpRegDebuff = 0
     end
-    hero.hpRegDebuff = hero.hpRegDebuff + value
-    CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=math.max(hero.hpReg-hero.hpRegDebuff, 0),unit=hero:GetEntityIndex() })
+    if hero and hero.hpReg then
+        hero.hpRegDebuff = hero.hpRegDebuff + value
+        CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=math.max(hero.hpReg-hero.hpRegDebuff, 0),unit=hero:GetEntityIndex() })
+    end
 end
 
 function modifier_poison:OnDestroy(event)

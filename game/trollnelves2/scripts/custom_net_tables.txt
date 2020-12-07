@@ -10,9 +10,8 @@
 		"abilities",
 		"resources",
 		"donate",
-		"stats",
-		"top10",
 		"Particles_Tabel",
-		"scorestats"
+		"scorestats",
+		"Pets_Tabel"
     ]
 } 

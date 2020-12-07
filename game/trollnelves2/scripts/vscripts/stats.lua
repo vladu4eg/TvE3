@@ -7,9 +7,9 @@ Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/"
 local count = 0
 
 function Stats.SubmitMatchData(winner,callback)
-	--if not isTesting then
-	--	if GameRules:IsCheatMode() then return end
-	--end
+	if not isTesting then
+		if GameRules:IsCheatMode() then return end
+	end
 	local data = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
@@ -26,14 +26,16 @@ function Stats.SubmitMatchData(winner,callback)
 			if GameRules.Bonus[pID] == nil then
 				GameRules.Bonus[pID] = 0
 			end
-			if GameRules:GetGameTime() - GameRules.startTime <  600 then -- 10 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
+				if GameRules:GetGameTime() - GameRules.startTime < 300 then
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 5
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 300 and GameRules:GetGameTime() - GameRules.startTime <  600 then -- 5-10 min
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 2
-				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 60 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 3
-				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 40-60 min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 5
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 7
 			end
 			if PlayerResource:GetDeaths(pID) >= 10 then 
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
@@ -218,7 +220,7 @@ end
 
 function Stats.RequestVip(pID, steam, callback)
 	local parts = {}
-	local req = CreateHTTPRequest("GET",Stats.server .. "vip1/" .. steam)
+	local req = CreateHTTPRequest("GET",Stats.server .. "vip/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -239,7 +241,7 @@ function Stats.RequestVip(pID, steam, callback)
 		for id=1,#obj do
 			parts[obj[id].num] = "normal"
 			CustomNetTables:SetTableValue("Particles_Tabel",tostring(pID),parts)
-			if tonumber(obj[id].num) == 3 or tonumber(obj[id].num) == 29 or tonumber(obj[id].num) == 28 or tonumber(obj[id].num) == 27   then
+			if tonumber(obj[id].num) == 3 or tonumber(obj[id].num) == 29 or tonumber(obj[id].num) == 28 or tonumber(obj[id].num) == 27 or tonumber(obj[id].num) == 32 then
 				GameRules.BonusPercent = GameRules.BonusPercent  + 0.02
 			end
 			if tonumber(obj[id].num) == 8 then
@@ -392,5 +394,35 @@ function Stats.RequestBonusTroll(pID, steam, callback)
 				end		
 			end
 		end						
+	end)
+end
+
+
+function Stats.RequestPets(pID, steam, callback)
+	local parts = {}
+	local req = CreateHTTPRequest("GET",Stats.server .. "pets/" .. steam)
+	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
+	DebugPrint("***********************************************")
+	req:Send(function(res)
+		if res.StatusCode ~= 200 then
+			DebugPrint("Connection failed! Code: ".. res.StatusCode)
+			DebugPrint(res.Body)
+			return -1
+		end
+		
+		local obj,pos,err = json.decode(res.Body)
+		--DeepPrintTable(obj)
+		DebugPrint("***********************************************")
+		for id = 1, 5 do
+			parts[id] = "nill"
+		end
+		CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
+		--DebugPrint("dateos " ..  GetSystemDate())
+		for id=1,#obj do
+			parts[obj[id].num] = "normal"
+			CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
+		end
+		return obj
+		
 	end)
 end

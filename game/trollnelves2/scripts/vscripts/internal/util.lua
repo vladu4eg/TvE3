@@ -104,3 +104,15 @@ function ShowWearables( event )
     v:RemoveEffects(EF_NODRAW)
   end
 end
+
+function CDOTA_Item:Use()
+    local caster = self:GetOwner()
+    if caster ~= nil and (caster:IsHero() or caster:HasInventory()) then
+        local newCharges = self:GetCurrentCharges() - 1
+        if newCharges > 0 then
+            self:SetCurrentCharges(newCharges)
+        else
+            caster:RemoveItem(self)
+        end
+    end
+end

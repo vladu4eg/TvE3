@@ -1,7 +1,7 @@
-var names = new Array( "AUTUMN TOP1", "DONATOR LVL 8", "DONATOR LVL 9", "DONATOR LVL 10", "DONATOR LVL 11", "DONATOR LVL 11", "DONATOR LVL 11", "DONATOR LVL 11");
-					//     21                27               28                 31           32                   33                 34               
-var needs = new Array( "#top1",  "#patron8", "#patron9", "#patron10",  "#patron11", "#patron11", "#patron11", "#patron11");
-var poriadok = new Array( 21,  27, 28, 31, 32, 33, 34, 35);//"#birthday2"
+var names = new Array("TOP1 AUTUMN", "TOP1 WINTER ", "TOP1 SPRING", "TOP1 SUMMER", "DONATOR LVL 1", "DONATOR LVL 2", "DONATOR LVL 3", "DONATOR LVL 4", "DONATOR LVL 5", "DONATOR LVL 6", "DONATOR LVL 7", "DONATOR LVL 2", "DONATOR LVL 3", "DONATOR LVL 4", "DONATOR LVL 5", "DONATOR LVL 6", "COLD FIRE", "WINTER 2", "WINTER 3", "SUPRISE", "AUTUMN TOP1", "SPRING 2", "BIRTHDAY", "DIRT", "AUTUMN TOP2-3", "STORM", "DONATOR LVL 8", "DONATOR LVL 9", "DONATOR LVL 10", "AUTUMN 2", "SUMMER 2", "DONATOR LVL 11", "DONATOR LVL 11", "DONATOR LVL 11", "DONATOR LVL 11", "36", "37", "38", "39", "40");
+					//     1              2         3          4            5           6         7           8             9          10            11              12               13             14              15          16                     17       18           19           20         21             22          23        24       25              26         27               28                29              30             31           32         33                 34                35                 36
+var needs = new Array("#ptop1autumn", "#ptop1winter", "#ptop1spring", "#ptop1autumn", "#ppatron1", "#ppatron2", "#ppatron3", "#ppatron4", "#ppatron5", "#ppatron6", "#ppatron7", "#patron2", "#patron3", "#patron4", "#patron5", "#patron6", "#coldfire", "#winter2", "#winter3", "#suprise", "#top1", "#spring2", "#birthday", "#dirt", "#top2-3", "#storm", "#patron8", "#patron9", "#patron10", "#autumn2", "#summer2", "#patron11", "#patron11", "#patron11", "#patron11", false, false, false, false, false);
+var poriadok = new Array( 1,  2, 3, 4, 5, 6, 7, 8,9,10,11);//"#birthday2"
 					
 function UpdateParticles( table_name, key, data )
 {
@@ -196,6 +196,6 @@ function SetSelectedParticles(data)
         $("#NAPartButt"+x).BCreateChildren("<Label id='napartnote"+x+"' text='Описание/причина выдачи/примечание' style='margin-top:5px; margin-left:180px;'/>");
         $("#NAPartButt"+x).visible = false;
     }
-    CustomNetTables.SubscribeNetTableListener( "Particles_Tabel", UpdateParticles );
-    UpdateParticles( "Particles_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Particles_Tabel", Players.GetLocalPlayer() ) );
+    CustomNetTables.SubscribeNetTableListener( "Pets_Tabel", UpdateParticles );
+    UpdateParticles( "Pets_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Pets_Tabel", Players.GetLocalPlayer() ) );
 })();

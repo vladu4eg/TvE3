@@ -77,7 +77,7 @@ function drop:RollItemDrop(unit)
 	local randTime = RandomInt( 30, 240 )
 	Timers:CreateTimer(randTime, function()
 		if string.match(GetMapName(),"winter")  then
-			RandomDropLoot()
+		--	RandomDropLoot()
 		--elseif string.match(GetMapName(),"halloween") then 
 		--	RandomDropLoot()
 		--	RandomDropLoot()

@@ -1,3 +1,5 @@
+require('trollnelves2')
+
 function SpiritBearSpawn( event )
 	local caster = event.caster
 	local player = caster:GetPlayerID()
@@ -62,8 +64,8 @@ function SpiritBearSpawn( event )
 				if synergyAbility ~= nil then
 					synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
 				end
-					--caster.bear.hpReg = 0
-					--caster.bear.hpRegDebuff = 0
+					InitializeBadHero(caster.bear)
+
 					for i=0, caster.bear:GetAbilityCount()-1 do
 						local ability = caster.bear:GetAbilityByIndex(i)
 						if ability then ability:SetLevel(ability:GetMaxLevel()) end

@@ -168,42 +168,45 @@ function Pets.CreatePet( keys, num )
 	--ParticleManager:SetParticleControl( particle, 0, pet:GetAbsOrigin() )
 	--ParticleManager:ReleaseParticleIndex( particle )
 
-	if num == "32" then
-		model = "models/courier/doom_demihero_courier/doom_demihero_courier.vmdl" -- Golden Doomling
-		effect = "particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf"
-	elseif num == "33" then
-		model = "models/courier/huntling/huntling.vmdl" -- Golden Huntling
-		effect = "particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
-	elseif num == "28" then
-		model = "models/items/courier/krobeling_gold/krobeling_gold.vmdl" -- Golden Krobeling
-		effect = "particles/econ/courier/courier_krobeling_gold/courier_krobeling_gold_ambient.vpcf"
-	elseif num == "29" then
-		model = "models/courier/venoling/venoling.vmdl" -- Golden Venoling
-		effect = "particles/econ/courier/courier_venoling_gold/courier_venoling_ambient_gold.vpcf"
-	elseif num == "27" then
-		model = "models/courier/beetlejaws/mesh/beetlejaws.vmdl" -- Beetlejaws 
-		effect = "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf"
-	elseif num == "35" then
-		model = "models/courier/minipudge/minipudge.vmdl" -- Pudgling
-		effect = "particles/econ/courier/courier_minipudge/courier_minipudge_lvl2_ambient.vpcf"
+
 	--[[
-	elseif num == "7" then
-		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Lava Baby Roshan
-		effect = ""
-	elseif num == "8" then
-		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Ice Baby Roshan
-		effect = ""
-	elseif num == "9" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" --  Jade Baby Roshan SPRING 
-		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf"
+
 	]]
-	elseif num == "21" then
+	if num == "1" then
 		model = "models/courier/baby_rosh/babyroshan.vmdl" -- Baby Roshan
 		effect = "particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
-	elseif num == "34" then
+	elseif num == "2" then
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Lava Baby Roshan
+		effect = ""
+	elseif num == "3" then
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Ice Baby Roshan
+		effect = ""
+	elseif num == "4" then
+		model = "models/courier/baby_rosh/babyroshan.vmdl" --  Jade Baby Roshan SPRING 
+		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf"
+	elseif num == "5" then
 		model = "models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl" -- Butch
 		effect = "particles/econ/courier/courier_butch/courier_butch_ambient.vpcf"
+	elseif num == "6" then
+		model = "models/courier/doom_demihero_courier/doom_demihero_courier.vmdl" -- Golden Doomling
+		effect = "particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf"
+	elseif num == "7" then
+		model = "models/courier/huntling/huntling.vmdl" -- Golden Huntling
+		effect = "particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
+	elseif num == "8" then
+		model = "models/items/courier/krobeling_gold/krobeling_gold.vmdl" -- Golden Krobeling
+		effect = "particles/econ/courier/courier_krobeling_gold/courier_krobeling_gold_ambient.vpcf"
+	elseif num == "9" then
+		model = "models/courier/venoling/venoling.vmdl" -- Golden Venoling
+		effect = "particles/econ/courier/courier_venoling_gold/courier_venoling_ambient_gold.vpcf"
+	elseif num == "10" then
+		model = "models/courier/beetlejaws/mesh/beetlejaws.vmdl" -- Beetlejaws 
+		effect = "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf"
+	elseif num == "11" then
+		model = "models/courier/minipudge/minipudge.vmdl" -- Pudgling
+		effect = "particles/econ/courier/courier_minipudge/courier_minipudge_lvl2_ambient.vpcf"
 	end
+	
 	
 	if model ~= "" then
 		local pet = CreateUnitByName( "npc_cosmetic_pet", hero:GetAbsOrigin() + RandomVector( RandomInt( 6000, 8000 ) ), true, hero, hero, hero:GetTeam() )

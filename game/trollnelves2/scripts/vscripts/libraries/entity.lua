@@ -47,3 +47,4 @@ function CDOTA_BaseNPC:DropStash()
 		end
 	end
 end
+

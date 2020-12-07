@@ -2618,21 +2618,18 @@ function IdBaseArea(location)
 end
 
 function IsInsideBoxEntity(box, location)
-    local boxOrigin = box:GetAbsOrigin()
+    local origin = box:GetAbsOrigin()
     local bounds = box:GetBounds()
     local min = bounds.Mins
     local max = bounds.Maxs
-    local unitOrigin = location
-    local X = unitOrigin.x
-    local Y = unitOrigin.y
-    local minX = boxOrigin.x
-    local minY = boxOrigin.y
-    local maxX = boxOrigin.x
-    local maxY = boxOrigin.y
+    local X = location.x
+    local Y = location.y
+    local minX = min.x + origin.x
+    local minY = min.y + origin.y
+    local maxX = max.x + origin.x
+    local maxY = max.y + origin.y
     local betweenX = X >= minX and X <= maxX
     local betweenY = Y >= minY and Y <= maxY
-    DebugPrint("123131231231")
-    print(boxOrigin)
     
     return betweenX and betweenY
 end

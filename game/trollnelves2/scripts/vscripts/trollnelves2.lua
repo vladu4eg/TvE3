@@ -9,6 +9,10 @@ LinkLuaModifier("modifier_movespeed_x2",
     "libraries/modifiers/modifier_movespeed_x2.lua",
 LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_antiblock",
+    "libraries/modifiers/modifier_antiblock.lua",
+LUA_MODIFIER_MOTION_NONE)
+
 if trollnelves2 == nil then
     DebugPrint('[TROLLNELVES2] creating trollnelves2 game mode')
     _G.trollnelves2 = class({})
@@ -188,6 +192,8 @@ function InitializeHero(hero)
     end
     hero:SetAbilityPoints(0)
     hero:SetStashEnabled(false)
+    
+    hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
 end
 
 function InitializeBadHero(hero)
@@ -212,12 +218,12 @@ function InitializeBadHero(hero)
     Timers:CreateTimer(function()
         if not hero or hero:IsNull() then return end
         if hero:IsAlive() then
-            AddFOWViewer(hero:GetTeamNumber(), hero:GetAbsOrigin(), 350, 0.1,
+            AddFOWViewer(hero:GetTeamNumber(), hero:GetAbsOrigin(), 370, 0.1,
             false)
         end
         return 0.1
     end)
-    hero:SetStashEnabled(false)
+    --hero:SetStashEnabled(false)
 end
 
 function InitializeBuilder(hero)
@@ -347,6 +353,33 @@ function InitializeTroll(hero)
         hero:AddItemByName("item_disable_repair")
     end
     hero:SetStashEnabled(false)
+    
+    -- check count elf 
+Timers:CreateTimer(function()
+	local countElf = 0
+	if not hero or hero:IsNull() then return end
+	if hero:IsAlive() then
+		local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 900 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+		for _,unit in pairs(units) do
+			if unit ~= nil then
+				if unit:IsElf() then
+					countElf = countElf + 1
+				end
+			end
+		end
+		if countElf > 2 then			
+			if hero:HasModifier("modifier_antiblock") then
+                hero:RemoveModifierByName("modifier_antiblock")
+			end
+		else
+			if not hero:HasModifier("modifier_antiblock") then
+                hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
+			end
+		end
+	end
+	return 0.1
+end)
+    
 end
 
 function InitializeAngel(hero)
@@ -458,7 +491,7 @@ function trollnelves2:PreStart()
             Stats.RequestBonus(pID, steam, callback)
             Stats.RequestData(pID)
             Stats.RequestVipDefaults(pID, steam, callback)
-            
+            Stats.RequestPets(pID, steam, callback)
             Timers:CreateTimer(15, function() wearables:SetPart() end)            
         end
     end

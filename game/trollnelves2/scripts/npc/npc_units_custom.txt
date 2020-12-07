@@ -1,6 +1,97 @@
 "DOTAUnits"
 {
 
+	"event_boss"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"                             "npc_dota_creature"
+		"Model"                                 "models/items/tiny/frozen_stonehenge/frozen_stonehenge_lvl_04.vmdl"
+		"precache"
+		{
+			"model"                                 "models/items/tiny/frozen_stonehenge/frozen_stonehenge_lvl_04.vmdl"
+		}
+		"ModelScale"                            "1.1"
+		"Level"                                 "1"
+		"HealthBarOffset"                       "140"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"                         "1"
+		"MagicalResistance"                     "0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"            		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"                       "1"
+		"AttackDamageMax"                       "1"
+		"AttackRate"                            "1.00"
+		"AttackAnimationPoint"					"0.5"
+		"AttackAcquisitionRange"				"500"
+		"AttackRange"							"180"
+
+		"AbilityLayout"				"4"
+		"Ability1" 					""
+		"Ability2" 					""
+		"Ability3" 					""
+		"Ability4" 					""
+		"Ability5"					""
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"                         "0.0"
+		"BountyGoldMax"                         "0.0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"                        "DOTA_HULL_SIZE_SMALL"
+		"RingRadius"                            "70"
+		"CollisionSize"                         "8"
+		"FormationRank"                         "0"
+
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"                         "270"
+		"MovementTurnRate"                      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"                          "1"
+		"StatusHealthRegen"                     "0"
+		"StatusMana"                            "300"
+		"StatusManaRegen"                       "0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"					"900"
+		"VisionNighttimeRange"					"600"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+
+	        }
+	    }
+	}
+
 	"minimap_entity"{
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.vmdl"	// Model.
@@ -6148,8 +6239,8 @@
 		"Level"                                 "1"
 		"HealthBarOffset"                       "200"
 		"AbilityLayout"     "4"
-		"Ability1" 			"treant_debuff"
-		"Ability2" 			"antiblock"
+		"Ability1" 			"antiblock" //treant_debuff
+		"Ability2" 			""
 		"Ability3" 			""
 		"Ability4" 			""
 		"Ability5"    	    ""
@@ -6807,6 +6898,106 @@
 		"Wearable2" {"ItemDef" "5881"}//legs("Bonedress of the Yuwipi")
 		"Wearable3" {"ItemDef" "5880"}//back("Headdress Of The Yuwipi")
 		"Wearable4" {"ItemDef" "5882"}//("Staff of the Yuwipi")
+	        }
+	    }
+	}
+
+	"worker_7"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"                             "npc_dota_creature"
+		"Model"                                 "models/heroes/witchdoctor/witchdoctor.vmdl"
+		"precache"
+		{
+			"model"                                 "models/heroes/witchdoctor/witchdoctor.vmdl"
+		}
+		"ModelScale"                            "0.6"
+		"Level"                                 "2"
+		"HealthBarOffset"                       "140"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"                         "2"
+		"MagicalResistance"                     "0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"            		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"                       "5"
+		"AttackDamageMax"                       "5"
+		"AttackRate"                            "1.00"
+		"AttackAnimationPoint"					"0.5"
+		"AttackAcquisitionRange"				"500"
+		"AttackRange"							"180"
+
+		"AbilityLayout"				"4"
+		"Ability1" 					"repair"
+		"Ability2" 					"paralyzing_cask_datadriven"
+		"Ability3" 					""
+		"Ability4" 					"commit_suicide"
+		"Ability5"					""
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"RepairAbility"				"repair"
+		"FixedRepair"				"0"
+		"RepairSpeed"				"12"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"                         "0.0"
+		"BountyGoldMax"                         "0.0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"                        "DOTA_HULL_SIZE_SMALL"
+		"RingRadius"                            "70"
+		"CollisionSize"                         "8"
+		"FormationRank"                         "0"
+
+		// Building Cost Stats
+		//----------------------------------------------------------------
+		"FoodCost"                              "20"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"                         "270"
+		"MovementTurnRate"                      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"                          "10"
+		"StatusHealthRegen"                     "0.25"
+		"StatusMana"                            "300"
+		"StatusManaRegen"                       "1"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"					"900"
+		"VisionNighttimeRange"					"600"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "7356"}//back("Darkclaw Emissary Cowl")
+		"Wearable2" {"ItemDef" "7357"}//misc("Darkclaw Emissary Cloak")
+		"Wearable3" {"ItemDef" "7358"}//legs("Darkclaw Emissary Dress")
+		"Wearable4" {"ItemDef" "7359"}//arms("Darkclaw Emissary Arms")
+		"Wearable5" {"ItemDef" "7361"}//("Darkclaw Emissary Staff")
 	        }
 	    }
 	}

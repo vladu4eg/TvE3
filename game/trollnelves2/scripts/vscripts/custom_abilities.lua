@@ -373,8 +373,8 @@ function SpawnUnitOnChannelInterrupted(event)
 	local lumber_cost = ability:GetSpecialValueFor("lumber_cost")
 	local food = ability:GetSpecialValueFor("food_cost")
 	local wisp = ability:GetSpecialValueFor("wisp_cost")
-	PlayerResource:ModifyGold(hero,gold_cost)
-	PlayerResource:ModifyLumber(hero,lumber_cost)
+	PlayerResource:ModifyGold(hero,gold_cost,true)
+	PlayerResource:ModifyLumber(hero,lumber_cost,true)
 	PlayerResource:ModifyFood(hero,-food)
 	PlayerResource:ModifyWisp(hero,-wisp)
 end
@@ -562,6 +562,15 @@ end
 function HpRegenModifier(keys)
 	print ( '[vladu4eg] HpRegenModifier' )
 	local caster = keys.caster
+	
+	if caster.hpReg == nil then
+		caster.hpReg = 0
+	end
+	
+	if caster.hpRegDebuff== nil then
+		caster.hpRegDebuff = 0
+	end
+	
 	if caster and caster.hpReg then
 		caster.hpReg = caster.hpReg + keys.Amount
 		CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=(caster.hpReg-caster.hpRegDebuff),unit=caster:GetEntityIndex() })
