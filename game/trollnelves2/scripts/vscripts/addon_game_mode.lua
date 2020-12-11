@@ -388,7 +388,8 @@ function Activate()
 	GameRules.PlayersBase = {}
 	GameRules.PlayersFPS = {}
 	GameRules.test = false
-		
+	GameRules.PlayersCount = 0
+	
 	GameRules.trollnelves2 = trollnelves2()
 	GameRules.trollnelves2:Inittrollnelves2()
 end

@@ -112,6 +112,10 @@
 		"troll_hut_5"                                                                     "Troll Hut 5"
 		"troll_hut_6"                                                                     "Troll Hut 6"
 		"troll_hut_7"                                                                     "Troll Hut 7"
+		
+		"event_boss"																		"Guardian of Crystals"
+		"event_line_boss"																	"Festive stresS_"
+		
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
 		"DOTA_Tooltip_modifier_gain_gold_Description"                                     ""
@@ -1391,14 +1395,8 @@
 		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!"
 		
-		"DOTA_Tooltip_ability_item_winter_tree_1"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
 		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!"
-
-		"DOTA_Tooltip_ability_item_winter_2"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_2_Description"                               "Вы стали на шаг ближе к решению квеста!"
-		
-		"DOTA_Tooltip_ability_item_winter_tree_2"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_tree_2_Description"                               "Вы стали на шаг ближе к решению квеста!"
 		
 		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_end_Description"                               "Вы уже близки к разгадке!"

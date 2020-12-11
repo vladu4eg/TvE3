@@ -4,7 +4,6 @@ Stats = Stats or {}
 local dedicatedServerKey = GetDedicatedServerKeyV2("1")
 local isTesting = IsInToolsMode() and false
 Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/" --
-local count = 0
 
 function Stats.SubmitMatchData(winner,callback)
 	if not isTesting then
@@ -22,7 +21,6 @@ function Stats.SubmitMatchData(winner,callback)
 				GameRules.scores[pID].troll = 0
 			end
 			DebugPrint("pID " .. pID )
-			count = count + 1
 			if GameRules.Bonus[pID] == nil then
 				GameRules.Bonus[pID] = 0
 			end
@@ -45,7 +43,7 @@ function Stats.SubmitMatchData(winner,callback)
 	if GameRules.BonusPercent  >  0.77 then
 		GameRules.BonusPercent = 0.77
 	end
-	if count >= MIN_RATING_PLAYER then
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		for pID=0,DOTA_MAX_TEAM_PLAYERS do
 			if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) ~= 5 then
 				data.MatchID = tostring(GameRules:GetMatchID())
@@ -111,6 +109,7 @@ function Stats.SubmitMatchData(winner,callback)
 				else
 					data.Type = "Elf"
 					data.Score = tostring(-25)
+					data.Team = tostring(2)
 				end
 				data.Key = dedicatedServerKey
 				data.BonusPercent = tostring(GameRules.BonusPercent)

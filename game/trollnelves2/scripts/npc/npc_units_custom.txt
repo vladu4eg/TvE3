@@ -92,6 +92,100 @@
 	    }
 	}
 
+	"event_line_boss"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"                             "npc_dota_creature"
+		"Model"                                 "models/heroes/techies/techies.vmdl"
+		"precache"
+		{
+			"model"                                 "models/heroes/techies/techies.vmdl"
+		}
+		"ModelScale"                            "1"
+		"Level"                                 "1"
+		"HealthBarOffset"                       "140"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"                         "1"
+		"MagicalResistance"                     "0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"            		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"                       "1"
+		"AttackDamageMax"                       "1"
+		"AttackRate"                            "1.00"
+		"AttackAnimationPoint"					"0.5"
+		"AttackAcquisitionRange"				"500"
+		"AttackRange"							"180"
+
+		"AbilityLayout"				"4"
+		"Ability1" 					"drop_gift"
+		"Ability2" 					""
+		"Ability3" 					""
+		"Ability4" 					""
+		"Ability5"					""
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"                         "0.0"
+		"BountyGoldMax"                         "0.0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"                        "DOTA_HULL_SIZE_SMALL"
+		"RingRadius"                            "10"
+		"CollisionSize"                         "0"
+		"FormationRank"                         "0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"                         "130"
+		"MovementTurnRate"                      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"                          "1"
+		"StatusHealthRegen"                     "0"
+		"StatusMana"                            "300"
+		"StatusManaRegen"                       "0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"					"600"
+		"VisionNighttimeRange"					"600"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "12836"}//mount("Powdersled Rookery Sled")
+		"Wearable2" {"ItemDef" "12834"}//("Powdersled Rookery Cannon")
+		"Wearable3" {"ItemDef" "12835"}//arms("Powdersled Rookery Bomb")
+		"Wearable4" {"ItemDef" "12837"}//belt("Powdersled Rookerya Sign")
+		"Wearable5" {"ItemDef" "12833"}//head("Powdersled Rookery Spleen")
+		"Wearable6" {"ItemDef" "12839"}//shoulder("Powdersled Rookery Squee")
+		"Wearable7" {"ItemDef" "12840"}//back("Powdersled Rookery Spoon")
+	        }
+	    }
+	}
+
 	"minimap_entity"{
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.vmdl"	// Model.

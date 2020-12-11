@@ -133,6 +133,11 @@
 		"moder"																		  	  "MODERATOR"
 		"dev"																		  	  "DEVELOPER"
 		
+		"SPEECH_TEST1"																				"хуй<br>thingsd fsd fsd  get<br>a reward from me"
+		
+		"event_boss"																		"Guardian of Crystals"
+		"event_line_boss"																	"Festive stresS_"
+		
 		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
@@ -1521,14 +1526,8 @@
 		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
 		
-		"DOTA_Tooltip_ability_item_winter_tree_1"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
-
-		"DOTA_Tooltip_ability_item_winter_2"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_2_Description"                               "You are one step closer to solving the quest!"
-		
-		"DOTA_Tooltip_ability_item_winter_tree_2"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_tree_2_Description"                               "You are one step closer to solving the quest!"
+		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
+		"DOTA_Tooltip_ability_item_winter_stress_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
 		
 		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_end_Description"                               "You are already close to solving!"

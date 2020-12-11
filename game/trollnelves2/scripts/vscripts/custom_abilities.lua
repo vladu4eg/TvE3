@@ -34,9 +34,11 @@ function ItemEffect(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "2"
 	data.Srok = "01/09/2020"
-	Stats.GetVip(data, callback)
-	local item = caster:FindItemInInventory("item_vip")
-	caster:RemoveItem(item)
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_vip")
+		caster:RemoveItem(item)
+	end
 end
 
 function ItemEvent(event)
@@ -46,9 +48,25 @@ function ItemEvent(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "3"
 	data.Srok = "01/09/2020"
-	Stats.GetVip(data, callback)
-	local item = caster:FindItemInInventory("item_winter_1")
-	caster:RemoveItem(item)
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_winter_1")
+		caster:RemoveItem(item)
+	end
+end
+
+function ItemEventStresS(event)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "3"
+	data.Srok = "01/09/2020"
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_winter_stress")
+		caster:RemoveItem(item)
+	end
 end
 
 function ItemEventDesert(event)
@@ -58,9 +76,28 @@ function ItemEventDesert(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "24"
 	data.Srok = "01/09/2020"
-	Stats.GetVip(data, callback)
-	local item = caster:FindItemInInventory("item_event_desert")
-	caster:RemoveItem(item)
+
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_event_desert")
+		caster:RemoveItem(item)
+	end
+end
+
+function ItemEventWinter(event)
+	DebugPrintTable(event.ability)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "18"
+	data.Srok = "01/09/2020"
+
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_event_winter")
+		caster:RemoveItem(item)
+	end
 end
 
 function GainGoldTeamThinker(event)

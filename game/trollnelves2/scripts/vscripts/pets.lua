@@ -40,7 +40,7 @@ function Pets:Init()
 
 		return  0.1
 	end, 0.4 )
-end
+	end
 
 -- local function HidePet( pet, time )
 -- 	pet:AddNoDraw()

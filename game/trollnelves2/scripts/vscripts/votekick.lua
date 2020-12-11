@@ -87,6 +87,7 @@ function VoteKick(eventSourceIndex, event)
 						end
 					end
 				end
+				PlayerResource:SetCustomTeamAssignment(event.playerID1, DOTA_TEAM_NOTEAM)
 				UTIL_Remove(hero)
 				SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 			end

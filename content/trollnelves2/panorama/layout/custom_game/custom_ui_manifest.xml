@@ -3,6 +3,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/setup.js" />
 		<include src="file://{resources}/scripts/custom_game/physical_resistance.js" />
+		<include src="file://{resources}/scripts/playertables/playertables_base.js" />
 	</scripts>
 	<styles>
 		<include src="file://{resources}/styles/custom_game/setup.css" />
@@ -27,6 +28,7 @@
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/event.xml" />  
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
 	<!--<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/pets.xml" /> -->
+	<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
   </Panel>
 
 </root>

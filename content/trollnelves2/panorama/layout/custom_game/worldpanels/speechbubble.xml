@@ -1,0 +1,15 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="s2r://panorama/styles/worldpanels/speechbubble.vcss_c" />
+    </styles>
+    <scripts>
+        <include src="s2r://panorama/scripts/worldpanels/speechbubble.vjs_c" />
+    </scripts>
+    <Panel hittest="false" class="Root" >
+        <Panel class="bubble" hittest="false">
+            <Label id="Text" hittest="false" html="true" text="" />
+            <Panel id="Arrow" hittest="false" />
+        </Panel>
+    </Panel>
+</root>

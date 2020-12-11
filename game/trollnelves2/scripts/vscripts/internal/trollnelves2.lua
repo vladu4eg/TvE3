@@ -108,3 +108,13 @@ function trollnelves2:_Capturetrollnelves2()
     self:OnFirstPlayerLoaded()
   end 
 end
+
+function trollnelves2:LoadStaticContent(contentFile)
+    return trollnelves2:prequire(contentFile)
+end
+
+function trollnelves2:prequire(...)
+    local status, lib = pcall(require, ...)
+    if (status) then return lib end
+    return nil
+end

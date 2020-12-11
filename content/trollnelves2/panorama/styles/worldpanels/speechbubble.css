@@ -1,0 +1,61 @@
+.showed{
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+
+.hidden{
+    animation-name: fadeout;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+.SpeechBubble{
+    padding-bottom: 25px;
+}
+
+@keyframes 'fadein'
+{
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes 'fadeout'
+{
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#Text{
+    width: 300px;
+    min-width: 100px;
+    max-width: 300px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #e6e2ce ), to( #a09787 ) );
+    border-radius: 5px;
+    padding: 10px 12px;
+    color: black;
+    box-shadow: #000 0px 0px 6px;
+    border: 1px solid #000;
+    font-size: 19px;
+    line-height: 18px;
+}
+
+#Arrow{
+    width: 25px;
+    height: 25px;
+    wash-color: #a79e8e;
+    background-image: url("s2r://panorama/images/worldpanels/speechbubble_arrow_png.vtex");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateX(30%) translateY(-4px);
+}
+
+.bubble{
+    flow-children: down;
+    padding: 10px;
+}

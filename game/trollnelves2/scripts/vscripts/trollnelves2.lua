@@ -43,7 +43,8 @@ require('SelectPets')
 require('pets')
 require('flag')
 require('filter')
-
+require('speech_bubble/speech_bubble_class')
+require('libraries/worldpanels')
 
 function trollnelves2:PostLoadPrecache()
     Pets:Init()
@@ -67,7 +68,7 @@ function trollnelves2:GameSetup()
             Stats.RequestBonusTroll(pID, steam, callback)
         end
     end
-    
+    DebugPrint("count player " .. GameRules.PlayersCount)
     Timers:CreateTimer(TEAM_CHOICE_TIME, function()
         SelectHeroes()
         GameRules:FinishCustomGameSetup()
@@ -87,6 +88,7 @@ function SelectHeroes()
                 table.insert(wannabeTrollIDs, pID)
             end
             PlayerResource:SetCustomTeamAssignment(pID, DOTA_TEAM_GOODGUYS)
+            GameRules.PlayersCount = GameRules.PlayersCount + 1
         end
     end
     local trollPlayerID = -1

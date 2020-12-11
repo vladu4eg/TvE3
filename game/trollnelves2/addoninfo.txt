@@ -1,7 +1,7 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "winter winter2x desert desert2x autumn autumn2x spring spring2x standard standard2x arena_c arena_c2x"
+  "maps"      "winter winter2x desert desert2x autumn autumn2x spring spring2x standard standard2x arena_c arena_c2x china"
   "IsPlayable"  "1"
   "winter"
   {
@@ -50,5 +50,9 @@
   "arena_c2x"
   {
     "MaxPlayers"                    "11"
+  }
+  "china"
+  {
+    "MaxPlayers"                    "20"
   }
 }

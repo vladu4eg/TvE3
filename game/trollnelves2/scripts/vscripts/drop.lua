@@ -23,13 +23,7 @@ item_drop = {
 
 function drop:RollItemDrop(unit)
 	local unit_name = unit:GetUnitName()
-	local count = 0
-	for pID=0,DOTA_MAX_TEAM_PLAYERS do
-		if PlayerResource:IsValidPlayerID(pID) then
-			count = count + 1
-		end
-	end
-	if count >= MIN_RATING_PLAYER then
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		for _,drop in ipairs(item_drop) do
 			local items = drop.items or nil
 			local items_num = #items
@@ -74,15 +68,15 @@ function drop:RollItemDrop(unit)
 			end
 		end	
 		
-	local randTime = RandomInt( 30, 240 )
-	Timers:CreateTimer(randTime, function()
-		if string.match(GetMapName(),"winter")  then
-		--	RandomDropLoot()
-		--elseif string.match(GetMapName(),"halloween") then 
-		--	RandomDropLoot()
-		--	RandomDropLoot()
-		end
-	end);
+		local randTime = RandomInt( 30, 240 )
+		Timers:CreateTimer(randTime, function()
+			if string.match(GetMapName(),"winter")  then
+				--	RandomDropLoot()
+				--elseif string.match(GetMapName(),"halloween") then 
+				--	RandomDropLoot()
+				--	RandomDropLoot()
+			end
+		end);
 		
 	end
 end
@@ -110,7 +104,19 @@ function RandomDropLoot()
 	local randRadius = spawnPoint + RandomVector( dropRadius )
 	local drop = CreateItemOnPositionForLaunch( randRadius, newItem )
 	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, randRadius )
-
 end
 
+function TimerRandomDrop()
+	local countGift = 0
+	local maxGift = RandomInt( 25, 200 )
+	Timers:CreateTimer(function()
+		local randTime = RandomInt( 1, 10 )
+		RandomDropLoot()
+		countGift = countGift + 1
+		if countGift >= maxGift then
+			return 0
+		end
+		return randTime
+	end)
+end
 

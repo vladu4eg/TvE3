@@ -29,6 +29,22 @@
 			}
 		}		
 	}
+	
+	"drop_gift"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_vip"
+		"MaxLevel"						"1"
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "drop.lua"
+				"Function"      "TimerRandomDrop"
+			}
+		}
+	}
+	
 	"anti_deniable"
 	{
 		"BaseClass"             		"ability_datadriven"
