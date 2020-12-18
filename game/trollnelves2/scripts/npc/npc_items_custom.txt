@@ -54,7 +54,7 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -86,7 +86,7 @@
 		"ItemSellable"					"0"
 		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -148,9 +148,9 @@
 		"AbilityCastPoint"              "0.0"
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"0"
+		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE "
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -181,9 +181,9 @@
 		"AbilityCastPoint"              "0.0"
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"0"
+		"ItemDroppable"					"1"
 		"ItemPurchasable" 				"0"
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE "
 		"ItemPermanent"					"0"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"Event item"
@@ -234,7 +234,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"               "0"
 		"ItemSellable"					"0"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 		"ItemPurchasable" 				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemPermanent"					"0"
@@ -4344,7 +4344,7 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"        "%bonus_ms"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"        "%bonus_ms"
 				}
 			}
 		}

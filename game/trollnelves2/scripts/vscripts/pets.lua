@@ -173,17 +173,17 @@ function Pets.CreatePet( keys, num )
 
 	]]
 	if num == "1" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" -- Baby Roshan
-		effect = "particles/econ/items/nightstalker/nightstalker_black_nihility/nightstalker_black_nihility_void_swarm.vpcf"
+		model = "models/courier/baby_rosh/babyroshan.vmdl" -- Baby Roshan  autumn
+		effect = "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf"
 	elseif num == "2" then
-		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Lava Baby Roshan
-		effect = ""
+		model = "models/courier/baby_rosh/babyroshan.vmdl" -- winter Roshan 
+		effect = "particles/my_new/ambientfx_effigy_wm16_radiant_lvl3.vpcf"
 	elseif num == "3" then
-		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- Ice Baby Roshan
-		effect = ""
+		model = "models/courier/baby_rosh/babyroshan.vmdl" -- spring Roshan
+		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8_flying.vpcf"
 	elseif num == "4" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" --  Jade Baby Roshan SPRING 
-		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8.vpcf"
+		model = "models/courier/baby_rosh/babyroshan.vmdl" --  summer
+		effect = "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
 	elseif num == "5" then
 		model = "models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl" -- Butch
 		effect = "particles/econ/courier/courier_butch/courier_butch_ambient.vpcf"
@@ -203,8 +203,8 @@ function Pets.CreatePet( keys, num )
 		model = "models/courier/beetlejaws/mesh/beetlejaws.vmdl" -- Beetlejaws 
 		effect = "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf"
 	elseif num == "11" then
-		model = "models/courier/minipudge/minipudge.vmdl" -- Pudgling
-		effect = "particles/econ/courier/courier_minipudge/courier_minipudge_lvl2_ambient.vpcf"
+		model = "models/items/courier/courier_ti9/courier_ti9_lvl7/courier_ti9_lvl7.vmdl" -- Desert Winner
+		effect = "particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient.vpcf"
 	end
 	
 	

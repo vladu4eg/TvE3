@@ -71,7 +71,7 @@ function drop:RollItemDrop(unit)
 		local randTime = RandomInt( 30, 240 )
 		Timers:CreateTimer(randTime, function()
 			if string.match(GetMapName(),"winter")  then
-				--	RandomDropLoot()
+				RandomDropLoot()
 				--elseif string.match(GetMapName(),"halloween") then 
 				--	RandomDropLoot()
 				--	RandomDropLoot()
@@ -106,17 +106,22 @@ function RandomDropLoot()
 	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, randRadius )
 end
 
-function TimerRandomDrop()
+function TimerRandomDrop(event)
+	local unit = event.caster
 	local countGift = 0
 	local maxGift = RandomInt( 25, 200 )
 	Timers:CreateTimer(function()
-		local randTime = RandomInt( 1, 10 )
-		RandomDropLoot()
-		countGift = countGift + 1
-		if countGift >= maxGift then
-			return 0
-		end
-		return randTime
+		if countGift < maxGift then
+			local randTime = RandomInt( 20, 120 )
+			local spawnPoint = unit:GetAbsOrigin()	
+			local newItem = CreateItem( "item_winter_1", nil, nil )
+			local dropRadius = RandomFloat( 10, 360 )
+			local randRadius = spawnPoint + RandomVector( dropRadius )
+			local drop = CreateItemOnPositionForLaunch( randRadius, newItem )
+			newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, randRadius )
+			countGift = countGift + 1
+			return randTime
+		end	
 	end)
 end
 

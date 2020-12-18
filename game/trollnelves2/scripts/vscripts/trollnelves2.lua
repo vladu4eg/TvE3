@@ -266,7 +266,7 @@ function InitializeBuilder(hero)
     PlayerResource:ModifyWisp(hero, 0)
     hero:SetStashEnabled(false)
     hero:RemoveAbility("troll_warlord_battle_trance_datadriven")
-    Timers:CreateTimer(BUFF_ENIGMA_TIME, function() 
+    Timers:CreateTimer(BUFF_ENIGMA_TIME/GameRules.MapSpeed, function() 
         if hero:IsElf() then
             hero:AddAbility("troll_warlord_battle_trance_datadriven")
             local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")

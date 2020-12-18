@@ -31,7 +31,7 @@ function SelectPets:SelectPets(info)
 			end					
 		end
 		else
-        PlayerResource:GetSelectedHeroEntity(info.PlayerID):RemoveModifierByName("part_mod")
+        Pets.DeletePet( info )
 	end
 end
 

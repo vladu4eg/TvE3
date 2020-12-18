@@ -18,8 +18,8 @@
 			<Panel id="GameInfoPanelScrollArea">
 				<Panel id="GameInfoPanelPaddingTop"/>
                     <Panel id="CustomUIContainer" class="CustomGameTop" style="margin-top:0px;">
-                        <Label hittest="false" id="note" text="#partnote" style="width:360px; margin-top:-20px; margin-left:175px;"/>
-                        <Label hittest="false" id="name" text="#partname" style="width:150px; margin-top:-20px; margin-left:10px;"/>
+                        <Label hittest="false" id="note" text="#petsnote" style="width:360px; margin-top:-20px; margin-left:175px;"/>
+                        <Label hittest="false" id="name" text="#petsname" style="width:150px; margin-top:-20px; margin-left:10px;"/>
                     </Panel>
 				<Panel id="GameInfoPanelPaddingBottom"/>
 			</Panel>

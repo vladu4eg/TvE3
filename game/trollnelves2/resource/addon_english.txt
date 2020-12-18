@@ -1515,23 +1515,29 @@
 		"DOTA_Tooltip_ability_item_troll_boots_2_Description"                               "Provides bonus movement speed to the carrier. "
 		
 		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
-		"DOTA_Tooltip_ability_item_vip_Description"                               	"Activate the item and get the season effect. "
+		"DOTA_Tooltip_ability_item_vip_Description"                               	"Activate the item and get the season effect.<br>You can only activate from 12 people."
 		
 		"DOTA_Tooltip_ability_item_event"                                           	"Event Item"
-		"DOTA_Tooltip_ability_item_event_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+		"DOTA_Tooltip_ability_item_event_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
 		
 		"DOTA_Tooltip_ability_item_event_desert"                                           	"Desert Event Item"
-		"DOTA_Tooltip_ability_item_event_desert_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Dirt."
+		"DOTA_Tooltip_ability_item_event_desert_Description"                               	"Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Dirt.<br>You can only activate from 12 people."
 		
 		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
 		
 		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
-		"DOTA_Tooltip_ability_item_winter_stress_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!"
+		"DOTA_Tooltip_ability_item_winter_stress_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
 		
 		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_end_Description"                               "You are already close to solving!"
 		
+		"DOTA_Tooltip_ability_item_event_winter"                                           "Winter Event Item"
+		"DOTA_Tooltip_ability_item_event_winter_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Winter 2.<br>You can only activate from 12 people."
+
+		"DOTA_Tooltip_ability_drop_gift"                                           "Happy New Year!"
+		"DOTA_Tooltip_ability_drop_gift_Description"                               "Thanks for completing the quest!<br>Festive stresS_ will give you 25 to 200 event items at a random time.<br>Quest developed in collaboration with stresS_"
+
 		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable & lessens the effect of angel heal twice! Lasts for 5 seconds. "
 		"DOTA_Tooltip_ability_item_disable_repair_bonus_damage"                                   "BONUS DAMAGE: "
@@ -1584,6 +1590,23 @@
 		
 		"partnote"                                          									"Effect description"
 		"partname"                                          									"Effect name"
+		
+		"petsnote"                                          									"Pets description"
+		"petsname"                                          									"Pets name"
+		
+		"ptop1autumn"																			""									
+		"ptop1winter"																			""																				
+		"ptop1spring"																			""																				
+		"ptop1summer"																			""																				
+		"ppatron1"																				"Available to first level donater or higher."
+		"ppatron2"																				"Available to second level donater or higher."
+		"ppatron3"																				"Available to third level donater or higher."
+		"ppatron4"																				"Available to fourth level donater or higher."
+		"ppatron5"																				"Available to fifth level donater or higher."
+		"ppatron6"																				""
+		"peventdesert"																			""
+		
+		
 		
 		"seveasdefault"																			"Save effect as default"
 		

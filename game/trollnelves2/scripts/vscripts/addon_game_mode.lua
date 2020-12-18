@@ -315,6 +315,21 @@ function Precache( context )
     PrecacheResource("model", "models/items/sniper/witch_hunter_set_arms/witch_hunter_set_arms.vmdl", context)
     PrecacheResource("model", "models/items/sniper/witch_hunter_set_head/witch_hunter_set_head.vmdl", context)
     PrecacheResource("model", "models/items/sniper/witch_hunter_set_back/witch_hunter_set_back.vmdl", context)
+	--pets
+	PrecacheResource("model", "models/courier/baby_rosh/babyroshan.vmdl", context)
+    PrecacheResource("model", "models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl", context)
+    PrecacheResource("model", "models/courier/doom_demihero_courier/doom_demihero_courier.vmdl", context)
+    PrecacheResource("model", "models/courier/huntling/huntling.vmdl", context)
+    PrecacheResource("model", "models/items/courier/krobeling_gold/krobeling_gold.vmdl", context)
+	PrecacheResource("model", "models/courier/venoling/venoling.vmdl", context)
+    PrecacheResource("model", "models/courier/beetlejaws/mesh/beetlejaws.vmdl", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_butch/courier_butch_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_golden_doomling/courier_golden_doomling_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_krobeling_gold/courier_krobeling_gold_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_venoling_gold/courier_venoling_ambient_gold.vpcf", context)
+	PrecacheResource("particle", "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf", context)
+
 	
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)
@@ -358,7 +373,7 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
+	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 4
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
 	GameRules.maxFood = STARTING_MAX_FOOD
 	GameRules.maxWisp = STARTING_MAX_WISP
@@ -389,6 +404,7 @@ function Activate()
 	GameRules.PlayersFPS = {}
 	GameRules.test = false
 	GameRules.PlayersCount = 0
+	GameRules.KickList = {}
 	
 	GameRules.trollnelves2 = trollnelves2()
 	GameRules.trollnelves2:Inittrollnelves2()

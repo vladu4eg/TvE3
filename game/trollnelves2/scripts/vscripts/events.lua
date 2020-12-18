@@ -85,6 +85,9 @@ function trollnelves2:OnPlayerReconnect(event)
             end
         end
     end
+    if GameRules.KickList[playerID] == 1 then 
+        SendToServerConsole("kick " .. PlayerResource:GetPlayerName(playerID))
+    end
 end
 
 function trollnelves2:OnDisconnect(event)
@@ -256,7 +259,7 @@ function trollnelves2:OnEntityKilled(keys)
     if killed:IsRealHero() then
         local bounty = -1
         if killed:IsElf() and killed.alive then
-            GameRules.PlayersBase[attackerPlayerID] = nil
+            GameRules.PlayersBase[killedPlayerID] = nil
             bounty = ElfKilled(killed)
             GameRules.Bonus[attackerPlayerID] =
             GameRules.Bonus[attackerPlayerID] + 1
@@ -273,8 +276,7 @@ function trollnelves2:OnEntityKilled(keys)
             Pets.DeletePet(info)
             elseif killed:IsTroll() then
             GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-            GameRules.Bonus[attackerPlayerID] =
-            GameRules.Bonus[attackerPlayerID] + 2
+            GameRules.Bonus[attackerPlayerID] = GameRules.Bonus[attackerPlayerID] + 2
             GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
             local status, nextCall = ErrorCheck(function() 
                 Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
