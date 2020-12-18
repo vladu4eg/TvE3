@@ -95,10 +95,10 @@ function VoteKick(eventSourceIndex, event)
 					end
 				end
 				GameRules.PlayersBase[event.playerID1] = nil
+				GameRules.KickList[event.playerID1] = 1
 				--PlayerResource:SetCustomTeamAssignment(event.playerID1, DOTA_TEAM_NOTEAM)
 				UTIL_Remove(hero)
 				SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
-				GameRules.KickList[event.playerID1] = 1
 			end
 			votes[ event.playerID1 ] = 0
 			countVote[event.playerID1] = 0
