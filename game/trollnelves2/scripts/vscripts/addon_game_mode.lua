@@ -69,6 +69,9 @@ function Precache( context )
 	PrecacheUnitByNameSync("rock_17", context)
 	PrecacheUnitByNameSync("rock_18", context)
 	PrecacheUnitByNameSync("rock_19", context)
+	PrecacheUnitByNameSync("rock_20", context)
+	PrecacheUnitByNameSync("rock_21", context)
+	PrecacheUnitByNameSync("rock_22", context)
 	PrecacheUnitByNameSync("tower_1", context)
 	PrecacheUnitByNameSync("tower_2", context)
 	PrecacheUnitByNameSync("tower_3", context)
@@ -94,6 +97,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("tower_19_1", context)
 	PrecacheUnitByNameSync("tower_19_2", context)
 	PrecacheUnitByNameSync("tower_20", context)
+	PrecacheUnitByNameSync("tower_21", context)
 	PrecacheUnitByNameSync("true_sight_tower", context)
 	PrecacheUnitByNameSync("trader_1", context)
 	PrecacheUnitByNameSync("trader_2", context)
@@ -103,7 +107,12 @@ function Precache( context )
 	PrecacheUnitByNameSync("research_lab", context)
 	PrecacheUnitByNameSync("research_lab_2", context)
 	PrecacheUnitByNameSync("research_lab_3", context)
-	PrecacheUnitByNameSync("research_lab_4", context)
+	PrecacheUnitByNameSync("research_lab_4_1", context)
+	PrecacheUnitByNameSync("research_lab_4_2", context)
+	PrecacheUnitByNameSync("research_lab_4_3", context)
+	PrecacheUnitByNameSync("research_lab_4_4", context)
+	PrecacheUnitByNameSync("research_lab_4_5", context)
+	PrecacheUnitByNameSync("research_lab_5_!", context)
 	PrecacheUnitByNameSync("worker_1", context)
 	PrecacheUnitByNameSync("worker_2", context)
 	PrecacheUnitByNameSync("worker_3", context)
@@ -373,7 +382,7 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 4
+	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
 	GameRules.maxFood = STARTING_MAX_FOOD
 	GameRules.maxWisp = STARTING_MAX_WISP

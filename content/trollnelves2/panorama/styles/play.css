@@ -2755,7 +2755,7 @@ DOTAPlay.SectionVisible_Mutation #MutationSection
 {
 	/*font-family: titleFont;*/
 	font-size: 22px;
-	
+	font-family: Radiance;
 	/*padding-right: 8px;*/
 	letter-spacing: 2px;
 	text-overflow: shrink;
@@ -3954,6 +3954,7 @@ DOTAPlay.SectionVisible_CoachesChallenge #CoachesChallengeSectionContent
 	vertical-align: center;
 	font-size: 14px;
     //font-family: monoSpaceNumbersFont;
+	font-family: Radiance;
 	letter-spacing: 2px;
 	color: dotaPlusLightGold;
 }

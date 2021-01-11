@@ -76,7 +76,7 @@ function ItemEventDesert(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "24"
 	data.Srok = "01/09/2020"
-
+	
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		Stats.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_desert")
@@ -92,7 +92,7 @@ function ItemEventWinter(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "18"
 	data.Srok = "01/09/2020"
-
+	
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		Stats.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_winter")
@@ -120,7 +120,7 @@ end
 function shrapnel_start_charge( keys )
 	-- Only start charging at level 1
 	if keys.ability:GetLevel() ~= 1 then return end
-
+	
 	-- Variables
 	local caster = keys.caster
 	local ability = keys.ability
@@ -141,32 +141,32 @@ function shrapnel_start_charge( keys )
 	
 	-- create timer to restore stack
 	Timers:CreateTimer( function()
-			-- Restore charge
-			if caster.start_charge and caster.shrapnel_charges < maximum_charges then
-				-- Calculate stacks
-				local next_charge = caster.shrapnel_charges + 1
-				caster:RemoveModifierByName( modifierName )
-				if next_charge ~= maximum_charges then
-					ability:ApplyDataDrivenModifier( caster, caster, modifierName, { Duration = charge_replenish_time } )
-					shrapnel_start_cooldown( caster, charge_replenish_time )
+		-- Restore charge
+		if caster.start_charge and caster.shrapnel_charges < maximum_charges then
+			-- Calculate stacks
+			local next_charge = caster.shrapnel_charges + 1
+			caster:RemoveModifierByName( modifierName )
+			if next_charge ~= maximum_charges then
+				ability:ApplyDataDrivenModifier( caster, caster, modifierName, { Duration = charge_replenish_time } )
+				shrapnel_start_cooldown( caster, charge_replenish_time )
 				else
-					ability:ApplyDataDrivenModifier( caster, caster, modifierName, {} )
-					caster.start_charge = false
-				end
-				caster:SetModifierStackCount( modifierName, caster, next_charge )
-				
-				-- Update stack
-				caster.shrapnel_charges = next_charge
+				ability:ApplyDataDrivenModifier( caster, caster, modifierName, {} )
+				caster.start_charge = false
 			end
+			caster:SetModifierStackCount( modifierName, caster, next_charge )
 			
-			-- Check if max is reached then check every 0.5 seconds if the charge is used
-			if caster.shrapnel_charges ~= maximum_charges then
-				caster.start_charge = true
-				return charge_replenish_time
-			else
-				return 0.5
-			end
+			-- Update stack
+			caster.shrapnel_charges = next_charge
 		end
+		
+		-- Check if max is reached then check every 0.5 seconds if the charge is used
+		if caster.shrapnel_charges ~= maximum_charges then
+			caster.start_charge = true
+			return charge_replenish_time
+			else
+			return 0.5
+		end
+	end
 	)
 end
 function shrapnel_fire( keys )
@@ -186,12 +186,14 @@ function shrapnel_fire( keys )
 		local damage_delay = ability:GetLevelSpecialValueFor( "damage_delay", ( ability:GetLevel() - 1 ) ) + 0.1
 		local next_charge = 0
 		-- Deplete charge
-		if GameRules.MapSpeed ~= 1  then
+		if GameRules.MapSpeed == 2  then
 			charge_replenish_time = 30
+			elseif GameRules.MapSpeed == 4 then
+			charge_replenish_time = 15
 		end
 		if caster:HasModifier("modifier_troll_warlord_presence") or caster:HasModifier("modifier_troll_boots_3") then
 			next_charge = caster.shrapnel_charges
-		else
+			else
 			next_charge = caster.shrapnel_charges - 1
 		end
 		if caster.shrapnel_charges == maximum_charges then
@@ -206,7 +208,7 @@ function shrapnel_fire( keys )
 		if caster.shrapnel_charges == 0 then
 			-- Start Cooldown from caster.shrapnel_cooldown
 			ability:StartCooldown( caster.shrapnel_cooldown )
-		else
+			else
 			ability:EndCooldown()
 		end
 		-- Deal damage
@@ -216,15 +218,21 @@ end
 function shrapnel_start_cooldown( caster, charge_replenish_time )
 	caster.shrapnel_cooldown = charge_replenish_time
 	Timers:CreateTimer( function()
-			local current_cooldown = caster.shrapnel_cooldown - 0.1
-			if current_cooldown > 0.1 then
-				caster.shrapnel_cooldown = current_cooldown
-				return 0.1
+		local current_cooldown = caster.shrapnel_cooldown - 0.1
+		if current_cooldown > 0.1 then
+			caster.shrapnel_cooldown = current_cooldown
+			return 0.1
 			else
-				return nil
-			end
+			return nil
 		end
+	end
 	)
+end
+
+function RevealAreaItem( event )
+	RevealArea(event)
+	local item = event.ability
+	item:Use()
 end
 
 function RevealArea( event )
@@ -272,6 +280,15 @@ function GoldOnAttack (event)
 	caster.attackTarget = target:GetEntityIndex()
 	target.attackers = target.attackers or {}
 	target.attackers[caster:GetEntityIndex()] = true
+	
+	if caster:HasModifier("modifier_convert_gold") and PlayerResource:GetGold(caster:GetPlayerID()) >= 64000 then
+		local gold = PlayerResource:GetGold(caster:GetPlayerID())
+		local lumber = gold/64000 or 0
+		gold = math.floor((lumber - math.floor(lumber)) * 64000) or 0
+		lumber = math.floor(lumber)
+		PlayerResource:SetGold(caster, gold, true)
+		PlayerResource:ModifyLumber(caster, lumber, true)
+	end
 	
 end
 
@@ -350,7 +367,7 @@ function SpawnUnitOnSpellStart(event)
         SendErrorMessage(playerID, "#error_not_enough_lumber")
         caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
         return false
-		end
+	end
     if hero.food > GameRules.maxFood and food ~= 0 then
         SendErrorMessage(playerID, "#error_not_enough_food")
         caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
@@ -382,19 +399,19 @@ function SpawnUnitOnChannelSucceeded(event)
 				if string.match(GetMapName(),"winter") then
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/courier/baby_winter_wyvern/baby_winter_wyvern_flying.vmdl", 1.2)    
-				elseif string.match(GetMapName(),"spring") then
+					elseif string.match(GetMapName(),"spring") then
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/items/courier/serpent_warbler/serpent_warbler_flying.vmdl", 1.1)    
-				elseif string.match(GetMapName(),"autumn") or string.match(GetMapName(),"halloween") then 
+					elseif string.match(GetMapName(),"autumn") or string.match(GetMapName(),"halloween") then 
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/items/courier/little_fraid_the_courier_of_simons_retribution/little_fraid_the_courier_of_simons_retribution_flying.vmdl", 1.2)    
-				elseif string.match(GetMapName(),"desert") then 
+					elseif string.match(GetMapName(),"desert") then 
 					wearables:RemoveWearables(unit)
 					UpdateModel(unit, "models/items/courier/ig_dragon/ig_dragon_flying.vmdl", 1.2)    
 				end
-			--elseif parts["3"] == "normal" and unit_name == "gold_wisp" then
-			--		wearables:RemoveWearables(unit)
-			--		UpdateModel(unit, "models/gold_wisp.vmdl", 1)     
+				--elseif parts["3"] == "normal" and unit_name == "gold_wisp" then
+				--		wearables:RemoveWearables(unit)
+				--		UpdateModel(unit, "models/gold_wisp.vmdl", 1)     
 			end
 		end
 	end
@@ -452,55 +469,55 @@ function GatherLumber(event)
 	local caster = event.caster
     local target = event.target
     local ability = event.ability
-    local target_class = target:GetClassname()
-    local pID = caster:GetPlayerOwnerID()
-    caster:Interrupt()
-    if target_class ~= "ent_dota_tree" then
-    	caster:Interrupt()
-    	return
-	end
-    
-    local tree = target
-	
-	
-    -- Check for empty tree for Wisps
-    if tree.builder ~= nil and tree.builder ~= caster then
-        SendErrorMessage(pID,"The tree is occupied!")
-        caster:Interrupt()
-        return
+	local target_class = target:GetClassname()
+	local pID = caster:GetPlayerOwnerID()
+	caster:Interrupt()
+	if target_class ~= "ent_dota_tree" then
+		caster:Interrupt()
+		return
 	end
 	
-    local tree_pos = tree:GetAbsOrigin()
-    local particleName = "particles/ui_mouseactions/ping_circle_static.vpcf"
-    local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, caster, caster:GetPlayerOwner())
-    ParticleManager:SetParticleControl(particle, 0, Vector(tree_pos.x, tree_pos.y, tree_pos.z+20))
-    ParticleManager:SetParticleControl(particle, 1, Vector(0,255,0))
-    Timers:CreateTimer(3, function() 
-        ParticleManager:DestroyParticle(particle, true)
+	local tree = target
+	
+	
+	-- Check for empty tree for Wisps
+	if tree.builder ~= nil and tree.builder ~= caster then
+		SendErrorMessage(pID,"The tree is occupied!")
+		caster:Interrupt()
+		return
+	end
+	
+	local tree_pos = tree:GetAbsOrigin()
+	local particleName = "particles/ui_mouseactions/ping_circle_static.vpcf"
+	local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, caster, caster:GetPlayerOwner())
+	ParticleManager:SetParticleControl(particle, 0, Vector(tree_pos.x, tree_pos.y, tree_pos.z+20))
+	ParticleManager:SetParticleControl(particle, 1, Vector(0,255,0))
+	Timers:CreateTimer(3, function() 
+		ParticleManager:DestroyParticle(particle, true)
 	end)
 	
-    caster.target_tree = tree
-    ability.cancelled = false
+	caster.target_tree = tree
+	ability.cancelled = false
 	
-    tree.builder = caster
+	tree.builder = caster
 	
-    -- Fake toggle the ability, cancel if any other order is given
-    if not ability:GetToggleState() then
-    	ability:ToggleAbility()
+	-- Fake toggle the ability, cancel if any other order is given
+	if not ability:GetToggleState() then
+		ability:ToggleAbility()
 	end
 	
-    -- Recieving another order will cancel this
-    -- ability:ApplyDataDrivenModifier(caster, caster, "modifier_on_order_cancel_lumber", {})
-    tree_pos.z = tree_pos.z - 28
-    caster:SetAbsOrigin(tree_pos)
-    tree.wisp_gathering = true
-    ability:ApplyDataDrivenModifier(caster, caster, "modifier_gathering_lumber", {})
+	-- Recieving another order will cancel this
+	-- ability:ApplyDataDrivenModifier(caster, caster, "modifier_on_order_cancel_lumber", {})
+	tree_pos.z = tree_pos.z - 28
+	caster:SetAbsOrigin(tree_pos)
+	tree.wisp_gathering = true
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_gathering_lumber", {})
 	
 end
 
 function LumberGain( event )
-    local ability = event.ability
-    local caster = event.caster
+	local ability = event.ability
+	local caster = event.caster
 	local lumberGain = GetUnitKV(caster:GetUnitName(), "LumberAmount") * GameRules.MapSpeed
 	local lumberInterval = GetUnitKV(caster:GetUnitName(), "LumberInterval")
 	local playerID = caster:GetPlayerOwnerID()
@@ -521,31 +538,31 @@ end
 function CancelGather(event)
 	
 	DebugPrint("Cancel gather---------------------------------------------------------------------")
-  	local caster = event.caster
-    local ability = event.ability
+	local caster = event.caster
+	local ability = event.ability
 	
-    caster:RemoveModifierByName("modifier_gathering_lumber")
+	caster:RemoveModifierByName("modifier_gathering_lumber")
 	
-    ability.cancelled = true
-    caster.state = "idle"
+	ability.cancelled = true
+	caster.state = "idle"
 	
-    local tree = caster.target_tree
-    if tree then
-        caster.target_tree = nil
-        tree.builder = nil
+	local tree = caster.target_tree
+	if tree then
+		caster.target_tree = nil
+		tree.builder = nil
 	end
-    if ability:GetToggleState() then
-    	ability:ToggleAbility()
+	if ability:GetToggleState() then
+		ability:ToggleAbility()
 	end
-    -- Give 1 extra second of fly movement
-    caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
-    Timers:CreateTimer(0.03,function() 
-        caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
-        caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
+	-- Give 1 extra second of fly movement
+	caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
+	Timers:CreateTimer(0.03,function() 
+		caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
+		caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
 	end)
 	local lumberGain = GetUnitKV(caster:GetUnitName(), "LumberAmount") * GameRules.MapSpeed
 	local lumberInterval = GetUnitKV(caster:GetUnitName(), "LumberInterval")
-    local playerID = caster:GetPlayerOwnerID()
+	local playerID = caster:GetPlayerOwnerID()
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	ModifyLumberPerSecond(hero, -lumberGain, lumberInterval)
 	local dataTable = { entityIndex = caster:GetEntityIndex() }
@@ -635,29 +652,29 @@ function BuyItem(event)
 		return
 	end
 	if gold_cost > PlayerResource:GetGold(playerID) then
-        SendErrorMessage(playerID, "#error_not_enough_gold")
-        return
+		SendErrorMessage(playerID, "#error_not_enough_gold")
+		return
 	end
 	if lumber_cost > PlayerResource:GetLumber(playerID) then
-        SendErrorMessage(playerID, "#error_not_enough_lumber")
-        return
+		SendErrorMessage(playerID, "#error_not_enough_lumber")
+		return
 	end
 	if hero:GetNumItemsInInventory() >= 6 then
 		hero:DropStash()
 		SendErrorMessage(playerID, "#error_full_inventory")
-        return		
+		return		
 	end
 	if hero:FindItemInInventory("item_disable_repair_2") ~= nil and item_name == 'item_disable_repair_2'  then
 		SendErrorMessage(playerID, "#error_full_inventory")
-        return		
+		return		
 	end
 	if item_name == 'item_troll_boots_3' and (GameRules:GetGameTime() - GameRules.startTime) < (7200 / GameRules.MapSpeed) then
 		SendErrorMessage(playerID, "#error_no_time_boots")
-        return	
+		return	
 	end
 	
-    PlayerResource:ModifyLumber(hero,-lumber_cost)
-    PlayerResource:ModifyGold(hero,-gold_cost)
+	PlayerResource:ModifyLumber(hero,-lumber_cost)
+	PlayerResource:ModifyGold(hero,-gold_cost)
 	local item = CreateItem(item_name, hero, hero)
 	hero:AddItem(item)
 end
@@ -672,14 +689,14 @@ function IsInsideShopArea(unit)
 end
 
 function IsInsideBoxEntity(box, unit)
-    local boxOrigin = box:GetAbsOrigin()
+	local boxOrigin = box:GetAbsOrigin()
 	local bounds = box:GetBounds()
-    local min = bounds.Mins
+	local min = bounds.Mins
 	local max = bounds.Maxs
 	local unitOrigin = unit:GetAbsOrigin()
-    local X = unitOrigin.x
-    local Y = unitOrigin.y
-    local minX = min.x + boxOrigin.x
+	local X = unitOrigin.x
+	local Y = unitOrigin.y
+	local minX = min.x + boxOrigin.x
 	local minY = min.y + boxOrigin.y
 	local maxX = max.x + boxOrigin.x
 	local maxY = max.y + boxOrigin.y
@@ -718,7 +735,7 @@ function BuyLumberTroll(event)
 		SendErrorMessage(playerID, "#error_shop_out_of_range")
 		return false
 	end	
-
+	
 	if amount > 0 then
 		if price > PlayerResource:GetGold(playerID) then
 			SendErrorMessage(playerID, "#error_not_enough_gold")
@@ -755,10 +772,24 @@ function StealGold(event)
 		if sum > maxSum then
 			sum = maxSum
 		end
-	else
+		else
 		SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_time")
 		sum = 0
 	end
+	--[[ 
+	if sum > 0 then
+	local countAngel = 0
+	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 1800 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+		for _,unit in pairs(units) do
+			if unit ~= nil then
+				if unit:IsAngel() then
+					countAngel = countAngel + 1
+				end
+			end
+		end
+		sum = sum/countAngel or sum
+	end
+	--]]
 	PlayerResource:ModifyGold(caster,sum)
 end
 
@@ -775,217 +806,217 @@ end
 
 function CommitSuicide(event)
 	local caster = event.caster
-	local units = FindUnitsInRadius(caster:GetTeamNumber() , caster:GetAbsOrigin() , nil , 1500 , DOTA_UNIT_TARGET_TEAM_ENEMY ,  DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
-	local playerID = caster:GetMainControllingPlayer()
-	if #units > 0 then
-		SendErrorMessage(playerID, "#error_enemy_nearby")
-		else
-		caster:ForceKill(true) --This will call RemoveBuilding
-		Timers:CreateTimer(10,function()
-			UTIL_Remove(caster)
-		end)
-	end
+local units = FindUnitsInRadius(caster:GetTeamNumber() , caster:GetAbsOrigin() , nil , 1500 , DOTA_UNIT_TARGET_TEAM_ENEMY ,  DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
+local playerID = caster:GetMainControllingPlayer()
+if #units > 0 then
+SendErrorMessage(playerID, "#error_enemy_nearby")
+else
+caster:ForceKill(true) --This will call RemoveBuilding
+Timers:CreateTimer(10,function()
+UTIL_Remove(caster)
+end)
+end
 end
 
 function ItemBlink(keys)
-	ProjectileManager:ProjectileDodge(keys.caster)  --Disjoints disjointable incoming projectiles.
-	
-	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_start.vpcf", PATTACH_ABSORIGIN, keys.caster)
-	keys.caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
-	
-	local origin_point = keys.caster:GetAbsOrigin()
-	local target_point = keys.target_points[1]
-	local difference_vector = target_point - origin_point
-	
-	if difference_vector:Length2D() > keys.MaxBlinkRange then  --Clamp the target point to the MaxBlinkRange range in the same direction.
-		target_point = origin_point + (target_point - origin_point):Normalized() * keys.MaxBlinkRange
-	end
-	
-	keys.caster:SetAbsOrigin(target_point)
-	FindClearSpaceForUnit(keys.caster, target_point, false)
-	
-	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, keys.caster)
+ProjectileManager:ProjectileDodge(keys.caster)  --Disjoints disjointable incoming projectiles.
+
+ParticleManager:CreateParticle("particles/items_fx/blink_dagger_start.vpcf", PATTACH_ABSORIGIN, keys.caster)
+keys.caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
+
+local origin_point = keys.caster:GetAbsOrigin()
+local target_point = keys.target_points[1]
+local difference_vector = target_point - origin_point
+
+if difference_vector:Length2D() > keys.MaxBlinkRange then  --Clamp the target point to the MaxBlinkRange range in the same direction.
+target_point = origin_point + (target_point - origin_point):Normalized() * keys.MaxBlinkRange
+end
+
+keys.caster:SetAbsOrigin(target_point)
+FindClearSpaceForUnit(keys.caster, target_point, false)
+
+ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, keys.caster)
 end
 
 function TowerAttackSpeed( keys )
-	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
-	local ability_level = ability:GetLevel() - 1
-	local modifier = keys.modifier
-	local max_stacks = ability:GetLevelSpecialValueFor("max_stacks", ability_level)
-	
-	-- Check if we have an old target
-	if caster.fervor_target then
-		-- Check if that old target is the same as the attacked target
-		if caster.fervor_target == target then
-			-- Check if the caster has the attack speed modifier
-			if caster:HasModifier(modifier) and target:HasModifier("modifier_fervor_target") then
-				-- Get the current stacks
-				local stack_count = caster:GetModifierStackCount(modifier, ability)
-				
-				-- Check if the current stacks are lower than the maximum allowed
-				if stack_count < max_stacks then
-					-- Increase the count if they are
-					caster:SetModifierStackCount(modifier, ability, stack_count + 1)
-				end
-				else
-				-- Apply the attack speed modifier and set the starting stack number
-				ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
-				caster:SetModifierStackCount(modifier, ability, 1)
-			end
-			else
-			-- If its not the same target then set it as the new target and remove the modifier
-			caster:RemoveModifierByName(modifier)
-			caster.fervor_target = target
-		end
-		else
-		caster.fervor_target = target
-	end
+local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local ability_level = ability:GetLevel() - 1
+local modifier = keys.modifier
+local max_stacks = ability:GetLevelSpecialValueFor("max_stacks", ability_level)
+
+-- Check if we have an old target
+if caster.fervor_target then
+-- Check if that old target is the same as the attacked target
+if caster.fervor_target == target then
+-- Check if the caster has the attack speed modifier
+if caster:HasModifier(modifier) and target:HasModifier("modifier_fervor_target") then
+-- Get the current stacks
+local stack_count = caster:GetModifierStackCount(modifier, ability)
+
+-- Check if the current stacks are lower than the maximum allowed
+if stack_count < max_stacks then
+-- Increase the count if they are
+caster:SetModifierStackCount(modifier, ability, stack_count + 1)
+end
+else
+-- Apply the attack speed modifier and set the starting stack number
+ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
+caster:SetModifierStackCount(modifier, ability, 1)
+end
+else
+-- If its not the same target then set it as the new target and remove the modifier
+caster:RemoveModifierByName(modifier)
+caster.fervor_target = target
+end
+else
+caster.fervor_target = target
+end
 end
 
 function NightAbility( keys )
-	local ability = keys.ability
-	local duration = ability:GetSpecialValueFor("duration")
-	--local currentTime = GameRules:GetTimeOfDay()
-	
-	-- Time variables
-	local time_flow = 0.0020833333
-	local time_elapsed = 0
-	-- Calculating what time of the day will it be after Darkness ends
-	local start_time_of_day = GameRules:GetTimeOfDay()
-	local end_time_of_day = start_time_of_day + duration * time_flow
-	
-	if end_time_of_day >= 1 then end_time_of_day = end_time_of_day - 1 end
-	
-	-- Setting it to the middle of the night
-	GameRules:SetTimeOfDay(0)
-	
-	-- Using a timer to keep the time as middle of the night and once Darkness is over, normal day resumes
-	Timers:CreateTimer(1, function()
-		if time_elapsed < duration then
-			GameRules:SetTimeOfDay(0)
-			time_elapsed = time_elapsed + 1
-			return 1
-			else
-			GameRules:SetTimeOfDay(end_time_of_day)
-		end
-	end)
+local ability = keys.ability
+local duration = ability:GetSpecialValueFor("duration")
+--local currentTime = GameRules:GetTimeOfDay()
+
+-- Time variables
+local time_flow = 0.0020833333
+local time_elapsed = 0
+-- Calculating what time of the day will it be after Darkness ends
+local start_time_of_day = GameRules:GetTimeOfDay()
+local end_time_of_day = start_time_of_day + duration * time_flow
+
+if end_time_of_day >= 1 then end_time_of_day = end_time_of_day - 1 end
+
+-- Setting it to the middle of the night
+GameRules:SetTimeOfDay(0)
+
+-- Using a timer to keep the time as middle of the night and once Darkness is over, normal day resumes
+Timers:CreateTimer(1, function()
+if time_elapsed < duration then
+GameRules:SetTimeOfDay(0)
+time_elapsed = time_elapsed + 1
+return 1
+else
+GameRules:SetTimeOfDay(end_time_of_day)
+end
+end)
 end
 
 function CheckNight(keys)
-	local caster = keys.caster
-	if GameRules:IsDaytime() then
-		caster:Interrupt()
-		SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_night")
-	end
+local caster = keys.caster
+if GameRules:IsDaytime() then
+caster:Interrupt()
+SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_night")
+end
 end
 
 function CheckNightInvis(keys)
-	local caster = keys.caster
-	local id = caster:GetPlayerID()
-	if GameRules:IsDaytime() then
-		if caster:HasModifier("modifier_stand_invis") then
-			caster:RemoveModifierByName("modifier_stand_invis")
-			if Pets.playerPets[id] then
-				Pets.playerPets[id]:RemoveModifierByName("modifier_invisible") 
-			end
-		end
-	else
-		if Pets.playerPets[id] then
- 			Pets.playerPets[id]:AddNewModifier(Pets.playerPets[id], self, "modifier_invisible", {})
-		end
-	end
+local caster = keys.caster
+local id = caster:GetPlayerID()
+if GameRules:IsDaytime() then
+if caster:HasModifier("modifier_stand_invis") then
+caster:RemoveModifierByName("modifier_stand_invis")
+if Pets.playerPets[id] then
+Pets.playerPets[id]:RemoveModifierByName("modifier_invisible") 
+end
+end
+else
+if Pets.playerPets[id] then
+Pets.playerPets[id]:AddNewModifier(Pets.playerPets[id], self, "modifier_invisible", {})
+end
+end
 end
 
 function HealBuilding(event)
-	local caster = event.caster
-	local target = event.target
-	local ability = event.ability
-	local heal = math.max(event.FixedHeal,(event.PercentageHeal*target:GetMaxHealth()/100))
-	if target.state == "complete" then 
-		if target.healed then
-			heal = heal/3
-		end
-		if target:HasModifier("modifier_disable_repair") then
-			heal = heal/2
-		end
-		if (target:GetHealth() + heal) > target:GetMaxHealth() then
-			target:SetHealth(target:GetMaxHealth())
-			else
-			target:SetHealth(target:GetHealth() + heal)
-		end
-		target.healed = true
-		Timers:CreateTimer(ability:GetCooldownTime(),function()
-			target.healed = false
-		end)
-	end 
+local caster = event.caster
+local target = event.target
+local ability = event.ability
+local heal = math.max(event.FixedHeal,(event.PercentageHeal*target:GetMaxHealth()/100))
+if target.state == "complete" then 
+if target.healed then
+heal = heal/3
+end
+if target:HasModifier("modifier_disable_repair") then
+heal = heal/2
+end
+if (target:GetHealth() + heal) > target:GetMaxHealth() then
+target:SetHealth(target:GetMaxHealth())
+else
+target:SetHealth(target:GetHealth() + heal)
+end
+target.healed = true
+Timers:CreateTimer(ability:GetCooldownTime(),function()
+target.healed = false
+end)
+end 
 end
 
 function StackModifierCreated(keys)
-	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
-	local modifier = keys.Modifier
-	
-	local stack_count = 0
-	if target:HasModifier(modifier) then
-		stack_count = target:GetModifierStackCount(modifier, ability)
-		else 
-		ability:ApplyDataDrivenModifier(caster, target, modifier, {})
-	end
-	target:SetModifierStackCount(modifier, ability, stack_count + 1)
+local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local modifier = keys.Modifier
+
+local stack_count = 0
+if target:HasModifier(modifier) then
+stack_count = target:GetModifierStackCount(modifier, ability)
+else 
+ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+end
+target:SetModifierStackCount(modifier, ability, stack_count + 1)
 end
 
 function StackModifierCreated2(keys)
-	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
-	local modifier = keys.Modifier
-	
-	local stack_count = 0
-	if target:HasModifier("modifier_buff_counter") then
-		stack_count = target:GetModifierStackCount(modifier, ability)
-		else 
-		ability:ApplyDataDrivenModifier(caster, target, modifier, {})
-	end
-	target:SetModifierStackCount(modifier, ability, stack_count + 1)
-	
-	local tar = target:FindModifierByName( "modifier_rooted" )
-	local tar2 = target:FindModifierByName( "modifier_disarmed" )
-	local tar3 = target:FindModifierByName( "invis_disabled" )
-	
-	if target:HasModifier("modifier_buff_counter") and stack_count+1 == 2 then
-		tar:SetDuration(3,true)
-		tar2:SetDuration(3,true)
-		tar3:SetDuration(3,true)
-		elseif target:HasModifier("modifier_buff_counter") and stack_count+1 == 3 then
-		tar:SetDuration(1.5,true)
-		tar2:SetDuration(1.5,true)
-		tar3:SetDuration(1.5,true)
-		elseif target:HasModifier("modifier_buff_counter") and stack_count+1 > 3 then
-		tar:SetDuration(1,true)
-		tar2:SetDuration(1,true)
-		tar3:SetDuration(1,true)
-	end
+local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local modifier = keys.Modifier
+
+local stack_count = 0
+if target:HasModifier("modifier_buff_counter") then
+stack_count = target:GetModifierStackCount(modifier, ability)
+else 
+ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+end
+target:SetModifierStackCount(modifier, ability, stack_count + 1)
+
+local tar = target:FindModifierByName( "modifier_rooted" )
+local tar2 = target:FindModifierByName( "modifier_disarmed" )
+local tar3 = target:FindModifierByName( "invis_disabled" )
+
+if target:HasModifier("modifier_buff_counter") and stack_count+1 == 2 then
+tar:SetDuration(3,true)
+tar2:SetDuration(3,true)
+tar3:SetDuration(3,true)
+elseif target:HasModifier("modifier_buff_counter") and stack_count+1 == 3 then
+tar:SetDuration(1.5,true)
+tar2:SetDuration(1.5,true)
+tar3:SetDuration(1.5,true)
+elseif target:HasModifier("modifier_buff_counter") and stack_count+1 > 3 then
+tar:SetDuration(1,true)
+tar2:SetDuration(1,true)
+tar3:SetDuration(1,true)
+end
 end
 
 
 function StackModifierExpired(keys)
-	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
-	local modifier = keys.Modifier
-	
-	local stackCount = target:GetModifierStackCount(modifier, ability)
-	if stackCount <= 1 then
-		target:RemoveModifierByName(modifier)
-		else
-		target:SetModifierStackCount(modifier, ability, stackCount-1)
-	end
+local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local modifier = keys.Modifier
+
+local stackCount = target:GetModifierStackCount(modifier, ability)
+if stackCount <= 1 then
+target:RemoveModifierByName(modifier)
+else
+target:SetModifierStackCount(modifier, ability, stackCount-1)
+end
 end	
 
 function troll_buff(keys)
-    local unit = keys:GetCaster()
-    EmitSoundOn("Hero_TrollWarlord.BattleTrance.Cast", unit)
-end
+local unit = keys:GetCaster()
+EmitSoundOn("Hero_TrollWarlord.BattleTrance.Cast", unit)
+end		

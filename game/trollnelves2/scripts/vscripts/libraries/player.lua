@@ -2,9 +2,9 @@ Player = Player or {}
 
 require('libraries/team')
 
-local goldGainedImportance = 3
+local goldGainedImportance = 10
 local goldGivenImportance = 3
-local lumberGainedImportance = 3
+local lumberGainedImportance = 10
 local lumberGivenImportance = 3
 local rankImportance = 20
 local rankPers = 5

@@ -211,9 +211,7 @@ for requirementName, requirementCount in pairs(requirements) do
     local requirementLevel = GetUnitKV(requirementName).Level
     local currentRequirementClassData =
     allBuildingRequirementClasses[unitName][requirementClass]
-    local currentRequirementClassLevel =
-    currentRequirementClassData and currentRequirementClassData.level or
-    0
+    local currentRequirementClassLevel = currentRequirementClassData and currentRequirementClassData.level or 0
     if requirementLevel > currentRequirementClassLevel then
         allBuildingRequirementClasses[unitName][requirementClass] =
         {level = requirementLevel, unitName = requirementName}
@@ -229,8 +227,7 @@ end
 
 local allRequirements = {}
 
-ParseRequirements(name, previousRequirements, allRequirements,
-allBuildingRequirementClasses)
+ParseRequirements(name, previousRequirements, allRequirements, allBuildingRequirementClasses)
 
 local requirements = info["Requirements"]
 if requirements then

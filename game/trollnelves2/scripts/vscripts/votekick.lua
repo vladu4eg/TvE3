@@ -84,7 +84,11 @@ function VoteKick(eventSourceIndex, event)
 			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER + disKick and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
-				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 then
+				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
+			then
+				GameRules.PlayersBase[event.playerID1] = nil
+				GameRules.KickList[event.playerID1] = 1
+				hero = PlayerResource:GetSelectedHeroEntity(event.playerID1)
 				hero:ForceKill(true)
 				if hero.units ~= nil then
 					for i=1,#hero.units do
@@ -94,8 +98,6 @@ function VoteKick(eventSourceIndex, event)
 						end
 					end
 				end
-				GameRules.PlayersBase[event.playerID1] = nil
-				GameRules.KickList[event.playerID1] = 1
 				--PlayerResource:SetCustomTeamAssignment(event.playerID1, DOTA_TEAM_NOTEAM)
 				UTIL_Remove(hero)
 				SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))

@@ -484,8 +484,9 @@ function trollnelves2:PreStart()
             end
         end
     end)
-    
-    for pID = 0, DOTA_MAX_TEAM_PLAYERS do
+
+    if IsServer() then
+        for pID = 0, DOTA_MAX_TEAM_PLAYERS do
         if PlayerResource:IsValidPlayerID(pID) then
             local hero = PlayerResource:GetSelectedHeroEntity(pID)
             local steam = tostring(PlayerResource:GetSteamID(pID))
@@ -502,7 +503,8 @@ function trollnelves2:PreStart()
     Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
     Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
     Donate:CreateList()
-    
+    end
+ 
 end
 
 function StartCreatingMinimapBuildings()

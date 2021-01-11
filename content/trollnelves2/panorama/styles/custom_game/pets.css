@@ -18,7 +18,7 @@
 .CustomUIState_HeroSelection #GameInfoButton,
 .CustomUIState_HUD #GameInfoButton
 {
-    transform: translateY( 670px );
+    transform: translateY( 630px );
 }
 
 .gameinfo_visible #GameInfoButton
@@ -125,7 +125,7 @@ DOTACustomUITypeContainer
     vertical-align: top;
     horizontal-align: right;
     
-   background-image: url("file://{images}/custom_game/all/p.png");
+   background-image: url("file://{images}/custom_game/all/pe.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

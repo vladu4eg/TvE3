@@ -2803,18 +2803,18 @@
 	    "Level"                     "19"
 	    "BuildTime"                 "2"
 		//"Upgrades"
-	 //   {
+	  //  {
 	  //      "Count"     "1"
 	  //      "1"{
-		//		"unit_name"			"rock_20"
-		//		"gold_cost"			"50000000"
-		//		"lumber_cost"		"50000000"
-		//	}
-	  //  }
+	//			"unit_name"			"rock_20"
+	//			"gold_cost"			"999999"
+	//			"lumber_cost"		"999999"
+	//		}
+	 //   }
 		"Requirements"{
-			"research_lab_4"		"1"
+			"research_lab_4_1"		"1"
 			"barracks_3"			"1"
-			"tower_18"				"1"
+			"tower_21"				"1"
 		}
 		
 		// Abilities
@@ -2852,16 +2852,16 @@
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"             "0"
 	}	
-
+	
 	"rock_20"
 	{
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/water_dragon_wall.vmdl"
+		"Model"						"models/fire_dragon_wall.vmdl"
 	    "precache"
 		{
-			"model"						"models/water_dragon_wall.vmdl"
+			"model"						"models/fire_dragon_wall.vmdl"
 	    }
 		"ModelScale"                "0.8"
 	    "ModelRotation"             "90"
@@ -2878,14 +2878,14 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"rock_21"
-				"gold_cost"			"99999999"
-				"lumber_cost"		"99999999"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
 			}
 	    }
 		"Requirements"{
-			"research_lab_3"		"1"
+			"research_lab_5_1"		"1"
 			"barracks_3"			"1"
-			"tower_18"				"1"
+			"tower_21"				"1"
 		}
 		
 		// Abilities
@@ -2900,7 +2900,78 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "256"
+	    "ArmorPhysical"             "230"
+		"StatusHealth"              "999999"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "2"
+	    "BlockPathingSize"          "2"
+		"CollisionSize"				"64"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+	"rock_21"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/crystal_golem_wall.vmdl"
+	    "precache"
+		{
+			"model"						"models/crystal_golem_wall.vmdl"
+	    }
+		"ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "19"
+	    "BuildTime"                 "2"
+		"Upgrades"
+	    {
+	        "Count"     "1"
+	        "1"{
+				"unit_name"			"rock_22"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+	    }
+		"Requirements"{
+			"research_lab_6_1"		"1"
+			"barracks_3"			"1"
+			"tower_21"				"1"
+		}
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability10"					""
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "262"
 		"StatusHealth"              "999999"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -2923,18 +2994,18 @@
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"             "0"
 	}	
-
-	"rock_21"
+	
+	"rock_22"
 	{
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/water_dragon_wall.vmdl"
+		"Model"						"models/dark_golem_wall.vmdl"
 	    "precache"
 		{
-			"model"						"models/water_dragon_wall.vmdl"
+			"model"						"models/dark_golem_wall.vmdl"
 	    }
-		"ModelScale"                "0.8"
+		"ModelScale"                "1"
 	    "ModelRotation"             "90"
 		"HealthBarOffset"			"150"
 		"PlayerCanControl"			"1"
@@ -2944,11 +3015,10 @@
 	    //----------------------------- 
 	    "Level"                     "19"
 	    "BuildTime"                 "2"
-
 		"Requirements"{
-			"research_lab_4"		"1"
+			"research_lab_7"		"1"
 			"barracks_3"			"1"
-			"tower_18"				"1"
+			"tower_21"				"1"
 		}
 		
 		// Abilities
@@ -2963,7 +3033,7 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "512"
+	    "ArmorPhysical"             "294"
 		"StatusHealth"              "999999"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -4119,7 +4189,7 @@
 		
 		
 		"Requirements"{
-				"tower_18"		"1"
+				"tower_21"		"1"
 		}
 		
 		// Abilities
@@ -4247,7 +4317,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.00"			// Speed of attack.
-		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"1.0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"600"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"		// Particle system model for projectile.
@@ -4611,7 +4681,7 @@
 	    }
 		
 		"Requirements"{
-		"tower_18"		"1"
+		"tower_21"		"1"
 		}
 		
 		// Abilities
@@ -4810,7 +4880,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"tower_atk_spd"
 		"Ability2"					"phantom_assassin_coup_de_grace_datadriven"
-		"Ability3"					"" //luna_moon_glaive2_datadriven
+		"Ability3"					"luna_lunar_blessing_datadriven" //luna_moon_glaive2_datadriven
 		"Ability4"					""
 		"Ability10"					""
 	    
@@ -4889,30 +4959,29 @@
 	    }
 		
 		"Requirements"{
-			
 		}
 		
 	    "Upgrades"
 	    {
-	        "Count"     "1"
+	        "Count"     "2"
 	        "1"{
+				"unit_name"			"tower_21"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+			"2"{
 				"unit_name"			"tower_19"
 				"gold_cost"			"999999"
 				"lumber_cost"		"999999"
 			}
-	       // "2"{
-			//	"unit_name"			"tower_21"
-			//	"gold_cost"			"10000000"
-			//	"lumber_cost"		"10000000"
-			//}
 	    }
 		
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"tower_atk_spd"
-		"Ability2"					"ursa_fury_swipes2_datadriven"
+		"Ability1"					"phantom_assassin_coup_de_grace_datadriven"
+		"Ability2"					"medusa_split_shot_lua"
 		"Ability3"					""
 		"Ability4"					""
 		"Ability10"					""
@@ -4923,7 +4992,7 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.00"			// Speed of attack.
+		"AttackRate"				"0.27"			// Speed of attack.
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"600"		// Range within a target can be attacked.
@@ -4956,6 +5025,97 @@
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"             "0"
 	}
+	
+	"tower_21"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/hoodwink/hoodwink.vmdl"
+	    "precache"
+		{
+			"model"						"models/heroes/hoodwink/hoodwink.vmdl"
+			"particle"     				"particles/units/heroes/hero_hoodwink/hoodwink_base_attack.vpcf"
+	    }
+		"ModelScale"                "1.3"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"DisableTurning"			"0"
+
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "18"
+	    "BuildTime"                 "3"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+	            "1" { "ItemDef" "745" }
+	            "2" { "ItemDef" "749" }
+	            "3" { "ItemDef" "750" }
+	            "4" { "ItemDef" "751" }
+	            "5" { "ItemDef" "752" }
+	        }
+	    }
+		
+		"Requirements"{
+			"research_lab_3" "1"
+		}
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					"tower_atk_spd"
+		"Ability2"					"ursa_fury_swipes2_datadriven"
+		"Ability3"					""
+		"Ability4"					""
+		"Ability10"					""
+	    
+	    // General
+	    //-----------------------------
+	    
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.00"			// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_hoodwink/hoodwink_base_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"1250"		// Speed of projectile.
+		"SoundSet"					"Hero_Hoodwink"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_hoodwink.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_hoodwink.vsndevts"
+		
+	
+		"AttackDamageMin"			"999999"		// Damage range min.
+		"AttackDamageMax"			"999999"		// Damage range max.
+	    "ArmorPhysical"             "128"
+		"StatusHealth"              "45000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "2"
+	    "BlockPathingSize"          "2"
+		"CollisionSize"				"64"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"        "900"  
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+	
 	"tower_19"
 	{
 	    // Visual
@@ -4994,6 +5154,8 @@
 		"barracks_3"				"1"
 		"rock_19"					"1"
 		"trader_3"					"1"
+		"research_lab_5_1"			"1"
+		"tower_21"					"1"
 		}
 		"Upgrades"
 	    {
@@ -5087,6 +5249,8 @@
 		"barracks_3"				"1"
 		"rock_19"		"1"
 		"trader_3"					"1"
+		"research_lab_5_1"			"1"
+		"tower_21"					"1"
 		}
 		"Upgrades"
 	    {
@@ -5180,6 +5344,8 @@
 			"barracks_3"				"1"
 			"rock_19"					"1"
 			"trader_3"					"1"
+			"research_lab_5_1"			"1"
+			"tower_21"					"1"
 		}
 		"Upgrades"
 	    {
@@ -5269,6 +5435,8 @@
 			"barracks_3"				"1"
 			"rock_19"					"1"
 			"trader_3"					"1"
+			"research_lab_5_1"			"1"
+			"tower_21"					"1"
 		}
 		
 		// Abilities
@@ -5317,7 +5485,7 @@
 	    "MovementSpeed"             "0"
 	}
 	
-	"tower_21"
+	"tower_21_1"
 	{
 	    // Visual
 	    //-----------------------------
@@ -5452,7 +5620,7 @@
 	    }
 		
 		"Requirements"{
-			"research_lab_4" "1"
+			"research_lab_4_1" "1"
 		}
 		
 		
@@ -5998,11 +6166,11 @@
 	    {
 	        "AttachWearables" // Dark wood set
 	        {
-	            "1" { "ItemDef" "463" } // Shoulders
-	            "2" { "ItemDef" "464" } // Head
-	            "3" { "ItemDef" "465" } // Weapon
-	            "4" { "ItemDef" "466" } // Back
-				"5"	{ "ItemDef" "467" }
+		"Wearable1" {"ItemDef" "7968"}//offhand_weapon("Ballista of the Fortified Fabricator")
+		"Wearable2" {"ItemDef" "7970"}//("Cannon of the Fortified Fabricator")
+		"Wearable3" {"ItemDef" "7969"}//shoulder("Shoulders of the Fortified Fabricator")
+		"Wearable4" {"ItemDef" "7967"}//head("Helmet of the Fortified Fabricator")
+		"Wearable5" {"ItemDef" "7972"}//back("Controls of the Fortified Fabricator")
 	        }
 	    }
 
@@ -6180,7 +6348,7 @@
 	    {
 	        "Count"     "1"
 	        "1"{
-				"unit_name"			"research_lab_4"
+				"unit_name"			"research_lab_4_1"
 				"gold_cost"			"999999"
 				"lumber_cost"		"999999"
 			}
@@ -6236,7 +6404,7 @@
 		
 	}
 
-	"research_lab_4"
+	"research_lab_4_1"
 	{
 	    // Visual
 	    //-----------------------------
@@ -6265,6 +6433,15 @@
 		"Wearable5" {"ItemDef" "9159"}//mount("Wings of Obelis Mount")
 	        }
 	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	       	"1"{
+				"unit_name"			"research_lab_4_2"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
 		"Requirements"{
 
 		}
@@ -6282,17 +6459,1235 @@
 		"Ability3"					""
 		"Ability4"					""
 		
-		//"Ability1"					"train_attacker_2"
-		//"Ability2"					"train_attacker_4"
-		//"Ability3"					"train_attacker_6"
-		//"Ability4"					"train_attacker_11"
-		//"Ability5"					"train_attacker_3"
-		//"Ability6"					"train_attacker_5"
-		//"Ability7"					"train_attacker_9"
-		//"Ability8"					"train_attacker_10"
-		//"Ability9"					"train_attacker_12"
-		
+	    // General
+	    //-----------------------------
 	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+	"research_lab_4_2"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/chen/chen.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/chen/chen.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "9954"}//arms("Bracers of the Rat King")
+		"Wearable2" {"ItemDef" "9953"}//shoulder("Vest of the Rat King")
+		"Wearable3" {"ItemDef" "9952"}//mount("Royal Mount of the Rat King ")
+		"Wearable4" {"ItemDef" "9951"}//("Scepter of the Rat King")
+		"Wearable5" {"ItemDef" "9950"}//head("Crown of the Rat King")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_4_3"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+	"research_lab_4_3"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/chen/chen.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/chen/chen.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "9156"}//arms("Sleeves of the Progenitor's Gaze")
+		"Wearable2" {"ItemDef" "9155"}//head("Crown of the Progenitor's Gaze")
+		"Wearable3" {"ItemDef" "9154"}//misc("Drape of the Progenitor's Gaze")
+		"Wearable4" {"ItemDef" "9153"}//shoulder("Armor of the Progenitor's Gaze")
+		"Wearable5" {"ItemDef" "9152"}//("Eye of the Progenitor's Gaze")
+		"Wearable6" {"ItemDef" "9151"}//mount("Pilgrim")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_4_4"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+	"research_lab_4_4"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/chen/chen.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/chen/chen.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "13252"}//mount("Mount of the Proudsilver Clan")
+		"Wearable2" {"ItemDef" "13251"}//arms("Bracer of the Proudsilver Clan")
+		"Wearable3" {"ItemDef" "13250"}//head("Crown of the Proudsilver Clan")
+		"Wearable4" {"ItemDef" "13249"}//shoulder("Cape of the Proudsilver Clan")
+		"Wearable5" {"ItemDef" "13248"}//("Staff of the Proudsilver Clan")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_4_5"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+
+	"research_lab_4_5"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/chen/chen.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/chen/chen.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "9465"}//mount("Mount of the Barren Survivor")
+		"Wearable2" {"ItemDef" "9466"}//arms("Arms of the Barren Survivor")
+		"Wearable3" {"ItemDef" "9470"}//head("Head of the Barren Survivor")
+		"Wearable4" {"ItemDef" "9469"}//("Weapon of the Barren Survivor")
+		"Wearable5" {"ItemDef" "9467"}//shoulder("Shoulder of the Barren Survivor")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_5_1"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+	"research_lab_5_1"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "6759"}//head("Mentor of the High Plains Ceremonial Banner")
+		"Wearable2" {"ItemDef" "6760"}//belt("Mentor of the High Plains Great Cuirass")
+		"Wearable3" {"ItemDef" "6761"}//arms("Mentor of the High Plains Guard")
+		"Wearable4" {"ItemDef" "6762"}//shoulder("Mentor of the High Plains Decorated Pauldrons")
+		"Wearable5" {"ItemDef" "6763"}//("Mentor of the High Plains Right Tiger Hook")
+		"Wearable6" {"ItemDef" "6764"}//offhand_weapon("Mentor of the High Plains Left Tiger Hook")
+	        }
+	    }		
+		//"Upgrades"
+	   // {
+		//	"Count"     "1"
+	   //    "1"{
+		//		"unit_name"			"research_lab_5_2"
+		//		"gold_cost"			"999999"
+		//		"lumber_cost"		"999999"
+		//	}
+		//}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+
+	"research_lab_5_2"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "6013"}//arms("Arm Guards of Prosperity")
+		"Wearable2" {"ItemDef" "6014"}//belt("Crimson Guard of Prosperity")
+		"Wearable3" {"ItemDef" "6015"}//head("Phoenix Helm of Prosperity")
+		"Wearable4" {"ItemDef" "6016"}//("Jin - Blade of Prosperity")
+		"Wearable5" {"ItemDef" "6017"}//offhand_weapon("Huo - Blade of Prosperity")
+		"Wearable6" {"ItemDef" "6018"}//shoulder("Ember Pauldrons of Prosperity")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_5_3"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_5_3"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "7001"}//arms("Orbs of Blaze Armor")
+		"Wearable2" {"ItemDef" "7002"}//belt("Robes of Blaze Armor")
+		"Wearable3" {"ItemDef" "7003"}//shoulder("Pauldrons of Blaze Armor")
+		"Wearable4" {"ItemDef" "7004"}//head("Flaming Hair of Blaze Armor")
+		"Wearable5" {"ItemDef" "7006"}//offhand_weapon("Zhuo -  Blade of Blaze Armor")
+		"Wearable6" {"ItemDef" "7007"}//("Xin - Blade of Blaze Armor")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_5_4"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_5_4"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+			"Wearable1" {"ItemDef" "13361"}//belt("Master of the Searing Path Belt")
+			"Wearable2" {"ItemDef" "13302"}//offhand_weapon("Master of the Searing Path Off-Hand")
+			"Wearable3" {"ItemDef" "13301"}//shoulder("Master of the Searing Path Shoulder")
+			"Wearable4" {"ItemDef" "13300"}//("Master of the Searing Path Weapon")
+			"Wearable5" {"ItemDef" "13299"}//head("Master of the Searing Path Head")
+			"Wearable6" {"ItemDef" "13290"}//arms("Master of the Searing Path Arms")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_5_5"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_5_5"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "13442"}//arms("Cinder Sensei Bracer")
+		"Wearable2" {"ItemDef" "13441"}//belt("Cinder Sensei Belt")
+		"Wearable3" {"ItemDef" "13381"}//head("Cinder Sensei Style")
+		"Wearable4" {"ItemDef" "13440"}//offhand_weapon("Cinder Sensei Off-Hand Weapon")
+		"Wearable5" {"ItemDef" "13383"}//shoulder("Cinder Sensei Shoulders")
+		"Wearable6" {"ItemDef" "13382"}//("Cinder Sensei Weapon")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_6_1"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_6_1"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/earth_spirit/earth_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "6008"}//ability4("Warriors of the Demon Stone")
+		"Wearable2" {"ItemDef" "6006"}//("Staff of the Demon Stone")
+		"Wearable3" {"ItemDef" "6005"}//neck("Necklace of the Demon Stone")
+		"Wearable4" {"ItemDef" "6004"}//head("Mane of the Demon Stone")
+		"Wearable5" {"ItemDef" "6002"}//arms("Plated Bracers of the Demon Stone")
+		"Wearable6" {"ItemDef" "6003"}//belt("Plackart of the Demon Stone")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_6_2"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_6_2"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/earth_spirit/earth_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "7183"}//belt("Haidate of Bedrock Serenity")
+		"Wearable2" {"ItemDef" "7184"}//("Bo of Bedrock Serenity")
+		"Wearable3" {"ItemDef" "7185"}//head("Kabuto of Bedrock Serenity")
+		"Wearable4" {"ItemDef" "7186"}//neck("Kataginu of Bedrock Serenity")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_6_3"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_6_3"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/earth_spirit/earth_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "8906"}//("Staff of the Jade General")
+		"Wearable2" {"ItemDef" "8905"}//neck("Armor of the Jade General")
+		"Wearable3" {"ItemDef" "8904"}//head("Style of the Jade General")
+		"Wearable4" {"ItemDef" "8903"}//belt("Belt of the Jade General")
+		"Wearable5" {"ItemDef" "8712"}//arms("Arms of the Jade General")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_6_4"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_6_4"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/earth_spirit/earth_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "13393"}//("Staff of the Jade Emissary")
+		"Wearable2" {"ItemDef" "13392"}//arms("Arms of the Jade Emissary")
+		"Wearable3" {"ItemDef" "13391"}//belt("Belt of the Jade Emissary")
+		"Wearable4" {"ItemDef" "13390"}//neck("Serpent of the Jade Emissary")
+		"Wearable5" {"ItemDef" "13389"}//head("Helm of the Jade Emissary")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_6_5"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_6_5"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/earth_spirit/earth_spirit.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "6433"}//belt("Vanquishing Demons Earthcore Belt")
+		"Wearable2" {"ItemDef" "6434"}//head("Vanquishing Demons Ritual Headgear")
+		"Wearable3" {"ItemDef" "6432"}//arms("Vanquishing Demons Geomagnetic Arm Guard")
+		"Wearable4" {"ItemDef" "6436"}//("Vanquishing Demons Earthforce")
+		"Wearable5" {"ItemDef" "6435"}//neck("Vanquishing Demons Ornaments of Annihilation")
+		"Wearable6" {"ItemDef" "6526"}//ability4("Stone Monkey Spirits")
+	        }
+	    }		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"research_lab_7"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+		}
+		"Requirements"{
+
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"		
+	}
+	
+	"research_lab_7"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/chaos_knight/chaos_knight.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/chaos_knight/chaos_knight.vmdl"
+		}
+	    "ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "7789"}//("Flail of the Burning Nightmare")
+		"Wearable2" {"ItemDef" "7790"}//shoulder("Pauldrons of the Burning Nightmare")
+		"Wearable3" {"ItemDef" "7791"}//offhand_weapon("Shield of the Burning Nightmare")
+		"Wearable4" {"ItemDef" "7792"}//mount("Mount of the Burning Nightmare")
+		"Wearable5" {"ItemDef" "7793"}//head("Helm of the Burning Nightmare")
+	        }
+	    }		
+		
+		"Requirements"{
+		}
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "3"
+	    "BuildTime"                 "10"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		    
 	    // General
 	    //-----------------------------
 	    
@@ -7139,7 +8534,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7210,7 +8605,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7282,7 +8677,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7354,7 +8749,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7426,7 +8821,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7498,7 +8893,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7569,7 +8964,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -7640,7 +9035,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
-		"RingRadius"                            "90"
+		"RingRadius"                            "70"
 		"CollisionSize"                         "8"
 		"FormationRank"                         "0"
 
@@ -8279,7 +9674,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"AbilityLayout"				"13"
+		"AbilityLayout"				"17"
 		"Ability1"					"buy_item_dmg_1"
 		"Ability2"					"buy_item_dmg_2"
 		"Ability3"					"buy_item_dmg_3"
@@ -8293,6 +9688,10 @@
 		"Ability11"					"buy_item_dmg_11"
 		"Ability12"					"buy_item_dmg_12"
 		"Ability13"					"buy_item_dmg_13"
+		"Ability14"					"buy_item_dmg_14"
+		//"Ability15"					"buy_item_dmg_15"
+		//"Ability16"					"buy_item_dmg_16"
+		//"Ability17"					"buy_item_dmg_17"
 
 	    // General
 	    //-----------------------------
@@ -8411,7 +9810,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"AbilityLayout"				"12"
+		"AbilityLayout"				"13"
 		"Ability1"					"buy_item_hp_1"
 		"Ability2"					"buy_item_hp_2"
 		"Ability3"					"buy_item_hp_3"
@@ -8475,7 +9874,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"AbilityLayout"				"11"
+		"AbilityLayout"				"13"
 		"Ability1"					"buy_item_hp_reg_1"
 		"Ability2"					"buy_item_hp_reg_2"
 		"Ability3"					"buy_item_hp_reg_3"
@@ -8550,10 +9949,11 @@
 		"Ability8"					"buy_item_disable_repair_2"
 		"Ability9"					"buy_item_troll_boots"
 		"Ability10"					"buy_item_troll_boots_2"
-		"Ability11"					"buy_lumber_1"
-		"Ability12"					"buy_lumber_8"
-		"Ability13"					"sell_lumber_1"
-		"Ability14"					"sell_lumber_8"
+		"Ability11"					"buy_item_reveal"
+		"Ability12"					"buy_lumber_1"
+		"Ability13"					"buy_lumber_8"
+		"Ability14"					"sell_lumber_1"
+		"Ability15"					"sell_lumber_8"
 		
 		//"Ability10"					"buy_item_troll_boots_2"
 		//"Ability11"					"buy_item_troll_boots_3"
@@ -9127,6 +10527,7 @@
 		"Ability5"					"sell_lumber_1"
 		"Ability6"					"sell_lumber_8"
 		"Ability7"					"troll_warlord_attack_speed"
+		"Ability8"					"troll_warlord_convert_gold"
 
 		"TeamGainGold"				"true"
 

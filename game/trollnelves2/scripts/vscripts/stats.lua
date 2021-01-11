@@ -98,8 +98,8 @@ function Stats.SubmitMatchData(winner,callback)
 						elseif hero:IsElf() and PlayerResource:GetDeaths(pID) > 0 then 
 						data.Score = tostring(math.floor(-2 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 					end
-					elseif PlayerResource:GetConnectionState(pID) ~= 2 then
-					data.Score = tostring(math.floor(-20 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+				elseif PlayerResource:GetConnectionState(pID) ~= 2 then
+					data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
 				end
 				if tonumber(data.Score) >=  0 then
 					data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
@@ -108,7 +108,7 @@ function Stats.SubmitMatchData(winner,callback)
 				end
 				else
 					data.Type = "Elf"
-					data.Score = tostring(-25)
+					data.Score = tostring(-45)
 					data.Team = tostring(2)
 				end
 				data.Key = dedicatedServerKey

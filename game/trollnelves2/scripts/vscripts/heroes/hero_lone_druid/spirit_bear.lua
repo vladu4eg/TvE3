@@ -2,26 +2,26 @@ require('trollnelves2')
 
 function SpiritBearSpawn( event )
 	local caster = event.caster
-	local player = caster:GetPlayerID()
+	local player = caster:GetPlayerOwnerID()
 	local ability = event.ability
 	local level = ability:GetLevel()
 	local origin = Vector(-320,-320,256) + RandomVector(200)
-	--local checkWolf  =  false
+	local checkWolf  =  false
 	local checkHut = false
 	-- Set the unit name, concatenated with the level number
 	local unit_name = "npc_dota_hero_bear" 
-	
---	for pID=0,DOTA_MAX_TEAM_PLAYERS do
-	--	if PlayerResource:IsValidPlayerID(pID) then
-	--		local wolf = PlayerResource:GetSelectedHeroEntity(pID)
-	--		if wolf ~= nil then
-	--			if wolf:IsWolf() then
-	--				checkWolf = true
-	--			end
-	--		end
-	--	end
-	--end
-	
+	--[[
+	for pID=0,DOTA_MAX_TEAM_PLAYERS do
+		if PlayerResource:IsValidPlayerID(pID) then
+			local wolf = PlayerResource:GetSelectedHeroEntity(pID)
+			if wolf ~= nil then
+				if wolf:IsWolf() and PlayerResource:GetConnectionState(wolf:GetPlayerOwnerID()) ~= 4 then
+					checkWolf = true
+				end
+			end
+		end
+	end
+	--]]
 	local units = Entities:FindAllByClassname("npc_dota_creature")
 	for _,unit in pairs(units) do
 		local unit_name_hut = unit:GetUnitName();
@@ -53,7 +53,7 @@ function SpiritBearSpawn( event )
 				else
 				-- Create the unit and make it controllable
 				caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
-				caster.bear:SetControllableByPlayer(player, true)
+				
 				
 				-- Apply the backslash on death modifier
 				if ability ~= nil then
@@ -72,6 +72,8 @@ function SpiritBearSpawn( event )
 					end
 					ability:StartCooldown(999999)
 				-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
+				caster.bear:SetOwner(caster)
+				caster.bear:SetControllableByPlayer(player, true)
 			end
 			
 	else 
@@ -87,7 +89,7 @@ end
 ]]
 function SpiritBearLevel( event )
 	local caster = event.caster
-	local player = caster:GetPlayerID()
+	local player = caster:GetPlayerOwnerID()
 	local ability = event.ability
 	local level = ability:GetLevel()
 	local unit_name = "npc_dota_hero_bear"
@@ -107,8 +109,8 @@ function SpiritBearLevel( event )
 		
 		-- Create the unit and make it controllable
 		caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
+		caster.bear:SetOwner(caster)
 		caster.bear:SetControllableByPlayer(player, true)
-		
 		-- Apply the backslash on death modifier
 		ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
 		

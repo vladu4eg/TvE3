@@ -63,7 +63,7 @@ function Build( event )
         end
     end)
     
-    local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = ErrorCheck(function() 
         -- A building unit was created
         event:OnConstructionStarted(function(unit)
             BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
@@ -110,7 +110,7 @@ function Build( event )
                 end
             end
         end)
-    end)
+    --end)
     
     
     
@@ -273,9 +273,9 @@ function UpgradeBuilding( event )
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
-    local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
-    end)
+   -- end)
     local newBuildingName = newBuilding:GetUnitName()
     newBuilding.state = "complete"
     

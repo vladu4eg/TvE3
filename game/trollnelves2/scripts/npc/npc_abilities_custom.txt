@@ -1605,6 +1605,55 @@
 	}
 }
 	
+"troll_warlord_convert_gold"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"OnCastbar"						"0"
+	"AbilityTextureName"			"gold"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"999999"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"presence_radius"				"999999"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_troll_warlord_convert_gold"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+	
+			"Aura"          	"modifier_convert_gold"
+			"Aura_Radius"   	"%presence_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_ALL" //mechanic?
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
+		}
+		"modifier_convert_gold"
+		{
+			"IsHidden"			"0" //hidden?
+			"IsBuff"			"1"
+		}
+	}
+}	
+	
+	
 	"nevermore_dark_lord_datadriven"
 	{
 	// General
@@ -3136,7 +3185,7 @@
 	"upgrade_to_rock_20"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_water_dragon_wall"
+		"AbilityTextureName"			"build_fire_dragon_wall"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3166,14 +3215,14 @@
 			{
 				"ScriptFile"	"builder.lua"
 				"Function"		"UpgradeBuilding"
-				"NewName"		"rock_19"
+				"NewName"		"rock_20"
 			}
 		}
 	}
 	"upgrade_to_rock_21"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_water_dragon_wall"
+		"AbilityTextureName"			"build_crystal_golem_wall"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3203,10 +3252,49 @@
 			{
 				"ScriptFile"	"builder.lua"
 				"Function"		"UpgradeBuilding"
-				"NewName"		"rock_19"
+				"NewName"		"rock_21"
 			}
 		}
 	}
+	
+	"upgrade_to_rock_22"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_dark_golem_wall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"				"2.0"
+		"SkipRequirements"{
+			"1"							"rock_2"
+			"2"							"rock_3"
+			"3"							"rock_4"
+			"4"							"rock_5"
+			"5"							"rock_6"
+			"6"							"rock_7"
+			"7"							"rock_8"
+			"8"							"rock_9"
+			"9"							"rock_10"
+			"10"						"rock_11"
+			"11"						"rock_12"
+			"12"						"rock_13"
+			"13"						"rock_14"
+			"14"						"rock_15"
+			"15"						"rock_16"
+			"16"						"rock_17"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"rock_22"
+			}
+		}
+	}
+	
 	"build_tower_1"{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3414,7 +3502,7 @@
 	"upgrade_to_tower_10_1"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_10_1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3433,7 +3521,7 @@
 	"upgrade_to_tower_11"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_11"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3452,7 +3540,7 @@
 	"upgrade_to_tower_11_1"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_11_1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3471,7 +3559,7 @@
 	"upgrade_to_tower_12"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_12"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3490,7 +3578,7 @@
 	"upgrade_to_tower_13"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_13"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3509,7 +3597,7 @@
 	"upgrade_to_tower_14"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_14"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3528,7 +3616,7 @@
 	"upgrade_to_tower_15"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_15"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3547,7 +3635,7 @@
 	"upgrade_to_tower_15_1"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_15"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3566,7 +3654,7 @@
 	"upgrade_to_tower_16"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_16"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3585,7 +3673,7 @@
 	"upgrade_to_tower_17"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_17"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3604,7 +3692,7 @@
 	"upgrade_to_tower_18"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_18"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3623,7 +3711,7 @@
 	"upgrade_to_tower_19"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_19"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3642,7 +3730,7 @@
 	"upgrade_to_tower_19_1"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_19"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3661,7 +3749,7 @@
 	"upgrade_to_tower_19_2"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_19"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3680,7 +3768,7 @@
 	"upgrade_to_tower_20"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_20"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3699,7 +3787,7 @@
 	"upgrade_to_tower_21"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_21"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -3718,7 +3806,7 @@
 	"upgrade_to_tower_22"
 	{
 		"BaseClass"             		"ability_datadriven"
-		"AbilityTextureName"			"build_tower"
+		"AbilityTextureName"			"build_tower_22"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityCastPoint"				"0"
 		"MaxLevel"						"1"
@@ -4082,7 +4170,7 @@
 			}
 		}
 	}
-	"upgrade_to_research_lab_4"{
+	"upgrade_to_research_lab_4_1"{
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"	"upgrade_to_research_lab_4"
@@ -4096,11 +4184,287 @@
 			{
 				"ScriptFile"	"builder.lua"
 				"Function"		"UpgradeBuilding"
-				"NewName"		"research_lab_4"
+				"NewName"		"research_lab_4_1"
 			}
 		}
 	}
 	
+	"upgrade_to_research_lab_4_2"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_4"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_4_2"
+			}
+		}
+	}
+	"upgrade_to_research_lab_4_3"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_4"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_4_3"
+			}
+		}
+	}
+	"upgrade_to_research_lab_4_4"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_4"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_4_4"
+			}
+		}
+	}
+	"upgrade_to_research_lab_4_5"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_4"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_4_5"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_5_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_5"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_5_1"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_5_2"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_5"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_5_2"
+			}
+		}
+	}
+	"upgrade_to_research_lab_5_3"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_5"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_5_3"
+			}
+		}
+	}
+	"upgrade_to_research_lab_5_4"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_5"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_5_4"
+			}
+		}
+	}
+	"upgrade_to_research_lab_5_5"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_5"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_5_5"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_6_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_6"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_6_1"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_6_2"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_6"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_6_2"
+			}
+		}
+	}
+	"upgrade_to_research_lab_6_3"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_6"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_6_3"
+			}
+		}
+	}
+	"upgrade_to_research_lab_6_4"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_6"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_6_4"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_6_5"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_6"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_6_5"
+			}
+		}
+	}
+	
+	"upgrade_to_research_lab_7"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"upgrade_to_research_lab_7"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"research_lab_7"
+			}
+		}
+	}
 	
 	"build_gold_mine_1"{
 		"BaseClass"				"ability_datadriven"
@@ -6024,6 +6388,63 @@
 		}
 	}
 	
+	"buy_item_dmg_16"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_16"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_16"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_dmg_17"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_17"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_17"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_dmg_18"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_dmg_18"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_dmg_18"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
 	"buy_item_armor_1"
 	{
 		"BaseClass"					"ability_datadriven"
@@ -6248,6 +6669,25 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"					"1"
 		"ItemName"					"item_armor_13"
+		
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
+	"buy_item_armor_14"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_armor_14"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_armor_14"
 		
 		"BuyItem"					"1"
 				
@@ -6890,6 +7330,27 @@
 			}
 		}
 	}
+	
+	"buy_item_reveal"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"item_reveal"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_reveal"
+		
+		"BuyItem"					"1"
+		"AbilityCooldown"               "600"
+		
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuyItem"
+			}
+		}
+	}
+	
 	"fountain_ability"{
 		"BaseClass"					"ability_datadriven"
 		"AbilityTextureName"		"fountain_regen"
@@ -9482,5 +9943,137 @@
 	}
 }
 
+//=================================================================================================================
+	// Medusa: Split Shot (Lua version)
+	//=================================================================================================================
+	"medusa_split_shot_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/medusa_split_shot_lua/medusa_split_shot_lua"
+		"AbilityTextureName"			"medusa_split_shot"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"30"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"3"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_shot_bonus_range"		"150"
+			}
+		}
+	}
+
+"luna_lunar_blessing_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"luna_lunar_blessing"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_luna/luna_ambient_lunar_blessing.vpcf"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"600"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"150000"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_night_vision"		"600"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_lunar_blessing_aura"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+
+			"EffectName"		"particles/units/heroes/hero_luna/luna_ambient_lunar_blessing.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Aura" 				"modifier_lunar_blessing_damage_effect"
+			"Aura_Radius" 		"%radius"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%bonus_night_vision"
+			}
+		}
+
+		"modifier_lunar_blessing_damage_effect"
+		{
+			"IsDebuff"			"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+			}
+		}
+	}
+}
 
 }

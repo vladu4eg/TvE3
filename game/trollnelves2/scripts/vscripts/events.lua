@@ -20,7 +20,6 @@ end
 function trollnelves2:OnNPCSpawned(keys)
     DebugPrint("OnNPCSpawned:")
     local npc = EntIndexToHScript(keys.entindex)
-    
     if npc.GetPhysicalArmorValue then
         npc:AddNewModifier(npc, nil, "modifier_custom_armor", {})
     end
@@ -54,6 +53,9 @@ end
 
 function trollnelves2:OnPlayerReconnect(event)
     local playerID = event.PlayerID
+    if GameRules.KickList[playerID] == 1 then 
+        SendToServerConsole("kick " .. PlayerResource:GetPlayerName(playerID))
+    end
     local notSelectedHero = GameRules.disconnectedHeroSelects[playerID]
     if notSelectedHero then
         PlayerResource:SetSelectedHero(playerID, notSelectedHero)

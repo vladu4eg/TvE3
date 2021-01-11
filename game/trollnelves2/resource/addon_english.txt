@@ -42,6 +42,9 @@
 		"rock_17"                                                                   "Dragon Wall 2"
 		"rock_18"                                                              	"Golden Dragon Wall"
 		"rock_19"                                                              	"Water Dragon Wall"
+		"rock_20"                                                              	"Fire Dragon Wall"
+		"rock_21"                                                              	"Crystal Golem Wall"
+		"rock_22"                                                              	"Dark Golem Wall"
 		"tower_1"                                                                         "Tower 1"
 		"tower_2"                                                                         "Tower 2"
 		"tower_3"                                                                         "Tower 3"
@@ -67,6 +70,7 @@
 		"tower_19_1"                                                                      "Tower 19 lvl 2(3 min!) NO DAMAGE!!!"
 		"tower_19_2"                                                                      "Tower 19 lvl 3(3 min!) NO DAMAGE!!!"
 		"tower_20"                                                                        "End Game"
+		"tower_21"                                                                        "Tower 21"
 		"true_sight_tower"                                                                "True Sight Tower"
 		"trader_1"                                                                        "Trader 1"
 		"trader_2"                                                                        "Trader 2"
@@ -76,7 +80,27 @@
 		"research_lab"                                                                    "Research Lab 1"
 		"research_lab_2"                                                                  "Research Lab 2"
 		"research_lab_3"                                                                  "Research Lab 3"
-		"research_lab_4"                                                                  "Research Lab 4"
+		
+		"research_lab_4_1"                                                                "Research Lab 4 LVL 1"
+		"research_lab_4_2"                                                                "Research Lab 4 LVL 2"
+		"research_lab_4_3"                                                                "Research Lab 4 LVL 3"
+		"research_lab_4_4"                                                                "Research Lab 4 LVL 4"
+		"research_lab_4_5"                                                                "Research Lab 4 LVL 5"
+		
+		"research_lab_5_1"                                                                "Research Lab 5 LVL 1"
+		"research_lab_5_2"                                                                "Research Lab 5 LVL 2"
+		"research_lab_5_3"                                                                "Research Lab 5 LVL 3"
+		"research_lab_5_4"                                                                "Research Lab 5 LVL 4"
+		"research_lab_5_5"                                                                "Research Lab 5 LVL 5"
+		
+		"research_lab_6_1"                                                                "Research Lab 6 LVL 1"
+		"research_lab_6_2"                                                                "Research Lab 6 LVL 2"
+		"research_lab_6_3"                                                                "Research Lab 6 LVL 3"
+		"research_lab_6_4"                                                                "Research Lab 6 LVL 4"
+		"research_lab_6_5"                                                                "Research Lab 6 LVL 5"
+		
+		"research_lab_7_1"                                                                "Research Lab 7"
+
 		"worker_1"                                                                        "Worker 1"
 		"worker_2"                                                                        "Worker 2"
 		"worker_3"                                                                        "Worker 3"
@@ -389,6 +413,8 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_20"                                        "Upgrade To End Game Tower "
 		"DOTA_Tooltip_ability_upgrade_to_tower_20_Description"                            "Upgrade your tower to win the game! "
 
+		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_21_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 999999<br>Skill: Fury Swipes"
 
 		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "Upgrade To True Sight Tower"
 		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower_Description"                    "Upgrade your tower to true sight tower, which reveals invisible units around itself.. "
@@ -425,8 +451,53 @@
 		"DOTA_Tooltip_ability_upgrade_to_research_lab_3"                                         "Upgrade Research Lab 3"
 		"DOTA_Tooltip_ability_upgrade_to_research_lab_3_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
 
-		"DOTA_Tooltip_ability_upgrade_to_research_lab_4"                                         "Upgrade Research Lab 4"
-		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_1"                                         "Upgrade Research Lab 4 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_1_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_2"                                         "Upgrade Research Lab 4 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_2_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_3"                                         "Upgrade Research Lab 4 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_3_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_4"                                         "Upgrade Research Lab 4 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_4_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_5"                                         "Upgrade Research Lab 4 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_5_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_1"                                         "Upgrade Research Lab 5 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_1_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_2"                                         "Upgrade Research Lab 5 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_2_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_3"                                         "Upgrade Research Lab 5 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_3_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_4"                                         "Upgrade Research Lab 5 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_4_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_5"                                         "Upgrade Research Lab 5 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_5_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_1"                                         "Upgrade Research Lab 6 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_1_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_2"                                         "Upgrade Research Lab 6 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_2_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_3"                                         "Upgrade Research Lab 6 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_3_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_4"                                         "Upgrade Research Lab 6 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_4_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_5"                                         "Upgrade Research Lab 6 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_5_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_7_1"                                         "Upgrade Research Lab 7"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_7_1_Description"                             "Upgrade research laboratory. It is necessary to improve your towers to a better level! "
 		
 		"DOTA_Tooltip_ability_true_sight_ability"                                         "True Sight Ability"
 		"DOTA_Tooltip_ability_true_sight_ability_Description"                             "Gives true sight around. Ability radius 1100."
@@ -484,10 +555,28 @@
 		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven_Description"					"Psi Blades. Deals 5000 pure damage to a second target."
 		
 		"DOTA_Tooltip_modifier_fury_swipes2_caster_datadriven"                             "Ursa"
-		"DOTA_Tooltip_modifier_fury_swipes2_caster_datadriven_Description"                 "20 pure damage per hit. 6 seconds work"
+		"DOTA_Tooltip_modifier_fury_swipes2_caster_datadriven_Description"                 "20 magic damage per hit. 6 seconds work."
 		
 		"DOTA_Tooltip_ability_ursa_fury_swipes2_datadriven"                             "Ursa"
-		"DOTA_Tooltip_ability_ursa_fury_swipes2_datadriven_Description"                 "20 pure damage per hit. 6 seconds work"
+		"DOTA_Tooltip_ability_ursa_fury_swipes2_datadriven_Description"                 "20 magic damage per hit. 6 seconds work."
+		
+		"DOTA_Tooltip_ability_luna_lunar_blessing_datadriven"                             "Lunar Blessing"
+		"DOTA_Tooltip_ability_luna_lunar_blessing_datadriven_Description"                 "Gives 150,000 damage and 400 range of vision at night in a radius of 600."
+		
+		"DOTA_Tooltip_modifier_lunar_blessing_datadriven"                             "Lunar Blessing"
+		"DOTA_Tooltip_modifier_lunar_blessing_datadriven_Description"                 "Gives 150,000 damage and 400 range of vision at night in a radius of 600."
+		
+		"DOTA_Tooltip_modifier_lunar_blessing_damage_effect"                             "Lunar Blessing"
+		"DOTA_Tooltip_modifier_lunar_blessing_damage_effect_Description"                 "Gives 150,000 damage and 400 range of vision at night in a radius of 600."
+		
+		"DOTA_Tooltip_ability_medusa_split_shot_lua"                             "Split Shot"
+		"DOTA_Tooltip_ability_medusa_split_shot_lua_Description"                 ""
+		
+		"DOTA_Tooltip_ability_convert_gold"						"Exchange of gold for lumber"
+		"DOTA_Tooltip_ability_convert_gold_Description"			"Automatic exchange of gold for wood when attacking."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_convert_gold"						"Exchange of gold for lumber"
+		"DOTA_Tooltip_modifier_troll_warlord_convert_gold_Description"			"Automatic exchange of gold for wood when attacking."
 
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven"                  "Buff Troll"
 		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven_Description"      "Buff Troll: Max attack speed. +6131 armor. No cooldown skill. +1000 Regenaration."
@@ -966,6 +1055,18 @@
 
 		"DOTA_Tooltip_ability_buy_item_dmg_13"                                            "Buy Sword Lv 13"
 		"DOTA_Tooltip_ability_buy_item_dmg_13_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_14"                                            "Buy Sword Lv 14"
+		"DOTA_Tooltip_ability_buy_item_dmg_14_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_15"                                            "Buy Sword Lv 15"
+		"DOTA_Tooltip_ability_buy_item_dmg_15_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_16"                                            "Buy Sword Lv 16"
+		"DOTA_Tooltip_ability_buy_item_dmg_16_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_17"                                            "Buy Sword Lv 17"
+		"DOTA_Tooltip_ability_buy_item_dmg_17_Description"                                ""
 
 		"DOTA_Tooltip_ability_buy_item_armor_1"                                           "Buy Armor Lv 1"
 		"DOTA_Tooltip_ability_buy_item_armor_1_Description"                               ""
@@ -1249,6 +1350,30 @@
 		"DOTA_Tooltip_ability_item_dmg_13_bonus_damage"                                   "BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_item_dmg_13_gold_cost"                                      "GOLD COST: "
 		"DOTA_Tooltip_ability_item_dmg_13_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_14"                                                "Dmg 14"
+		"DOTA_Tooltip_ability_item_dmg_14_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_14_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_14_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_14_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_15"                                                "Dmg 15"
+		"DOTA_Tooltip_ability_item_dmg_15_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_15_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_15_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_15_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_16"                                                "Dmg 16"
+		"DOTA_Tooltip_ability_item_dmg_16_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_16_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_16_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_16_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_17"                                                "Dmg 17"
+		"DOTA_Tooltip_ability_item_dmg_17_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_17_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_17_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_17_lumber_cost"                                    "LUMBER COST: "
 
 		"DOTA_Tooltip_ability_item_armor_1"                                               "Armor 1"
 		"DOTA_Tooltip_ability_item_armor_1_Description"                                   ""
@@ -1507,6 +1632,11 @@
 		"DOTA_Tooltip_ability_item_atk_spd_6_gold_cost"                                   "GOLD COST: "
 		"DOTA_Tooltip_ability_item_atk_spd_6_lumber_cost"                                 "LUMBER COST: "
 		
+		"DOTA_Tooltip_ability_item_reveal"                                          	 "Telescope"
+		"DOTA_Tooltip_ability_item_reveal_Description"                              	 "Expands visibility in the area of ​​your choice, BUT disappears upon activation."
+		
+		"DOTA_Tooltip_ability_buy_item_reveal"                                          	 "Telescope"
+		"DOTA_Tooltip_ability_buy_item_reveal_Description"                              	 "Expands visibility in the area of ​​your choice, BUT disappears upon activation."
 
 		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
 		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Provides bonus movement speed to the carrier. "
@@ -1594,17 +1724,17 @@
 		"petsnote"                                          									"Pets description"
 		"petsname"                                          									"Pets name"
 		
-		"ptop1autumn"																			""									
-		"ptop1winter"																			""																				
-		"ptop1spring"																			""																				
-		"ptop1summer"																			""																				
-		"ppatron1"																				"Available to first level donater or higher."
-		"ppatron2"																				"Available to second level donater or higher."
-		"ppatron3"																				"Available to third level donater or higher."
-		"ppatron4"																				"Available to fourth level donater or higher."
-		"ppatron5"																				"Available to fifth level donater or higher."
-		"ppatron6"																				""
-		"peventdesert"																			""
+		"ptop1autumn"																			"Players are rewarded for getting the TOP 1 of the season."									
+		"ptop1winter"																			"Players are rewarded for getting the TOP 1 of the season."																				
+		"ptop1spring"																			"Players are rewarded for getting the TOP 1 of the season."																				
+		"ptop1summer"																			"Players are rewarded for getting the TOP 1 of the season."																				
+		"ppatron1"																				"Available to first level donater or higher. Pets are not included in the donation effect."
+		"ppatron2"																				"Available to second level donater or higher. Pets are not included in the donation effect."
+		"ppatron3"																				"Available to third level donater or higher. Pets are not included in the donation effect."
+		"ppatron4"																				"Available to fourth level donater or higher. Pets are not included in the donation effect."
+		"ppatron5"																				"Available to fifth level donater or higher. Pets are not included in the donation effect."
+		"ppatron6"																				"Available to sixth level donater or higher. Pets are not included in the donation effect."
+		"peventdesert"																			"Awarded for participating in a Desert event. Pets are not included in the donation effect."
 		
 		
 		
