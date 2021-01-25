@@ -11,11 +11,11 @@ function modifier_movespeed_x4:DeclareFunctions()
 end
 
 function modifier_movespeed_x4:GetModifierMoveSpeed_Max( params )
-    return 700
+    return 800
 end
 
 function modifier_movespeed_x4:GetModifierMoveSpeed_Limit( params )
-    return 700
+    return 800
 end
 
 function modifier_movespeed_x4:GetModifierIgnoreMovespeedLimit()

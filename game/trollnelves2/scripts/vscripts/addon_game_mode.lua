@@ -392,6 +392,7 @@ function Activate()
 	GameRules.angel_spawn_points = Entities:FindAllByName("angel_spawn_point")
 	GameRules.shops = Entities:FindAllByClassname("trigger_shop")
 	GameRules.base = Entities:FindAllByName("trigger_base")
+	GameRules.baseBlock = Entities:FindAllByName("trigger_antibild")
 	GameRules.startTime = nil
 	GameRules.colorCounter = 1
 	GameRules.gold = {}
@@ -408,6 +409,7 @@ function Activate()
 	GameRules.BonusPercent = 0
 	GameRules.BonusTrollIDs = {}
 	GameRules.PartDefaults = {}
+	GameRules.PetsDefaults = {}
 	GameRules.Score = {}
 	GameRules.PlayersBase = {}
 	GameRules.PlayersFPS = {}

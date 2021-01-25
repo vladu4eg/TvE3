@@ -389,7 +389,7 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_20"                                        "Upgrade To End Game Tower "
 		"DOTA_Tooltip_ability_upgrade_to_tower_20_Description"                            "GG! Закончить игру!"
 
-		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 21"
 		"DOTA_Tooltip_ability_upgrade_to_tower_21_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 999999<br>Умение: Fury Swipes"
 
 		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "Upgrade To True Sight Tower"
@@ -1607,7 +1607,7 @@
 		"ppatron6"																				"Доступно донатеру шестого уровня и выше. Питомцы не входят в донат эффектов."
 		"peventdesert"																			"Выдается за участие в Desert event."
 		
-		"seveasdefault"																			"Сохранить эффект по умолчанию"
+		"seveasdefault"																			"Сохранить по умолчанию"
 		
 		"patreonbuttontext"																	"Donate Patreon"
 		"patreonbuttontext1"																"Donate PayPal Page"

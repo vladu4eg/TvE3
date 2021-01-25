@@ -1496,6 +1496,11 @@ function BuildingHelper:StartBuilding(builder)
     return
     end
     
+    if IdBaseAreaBlock(location) ~= nil then 
+        DebugPrint("NOT! IsInsideBaseArea")
+        return false
+    end
+    
     if not IsInsideBaseArea(playersHero, location, unitName, true) then 
         DebugPrint("NOT! IsInsideBaseArea")
         SendErrorMessage(playerID, "#error_place_is_taken")
@@ -2614,6 +2619,16 @@ function IdBaseArea(location)
     return nil
 end
 
+function IdBaseAreaBlock(location)
+    for index, shopTrigger in ipairs(GameRules.baseBlock) do
+        if IsInsideBoxEntity(shopTrigger, location) then
+            DebugPrint("IdBaseArea index " .. index)
+            return index
+        end
+    end
+    return nil
+end
+
 function IsInsideBoxEntity(box, location)
     local origin = box:GetAbsOrigin()
     local bounds = box:GetBounds()
@@ -2648,6 +2663,11 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local pathing_size = buildingTable:GetVal("BlockGridNavSize", "number")
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+    if IdBaseAreaBlock(location) ~= nil then 
+        DebugPrint("NOT! IsInsideBaseArea")
+        return false
+    end
     
     if not IsInsideBaseArea(hero, location, buildingName, false) then 
         DebugPrint("NOT! IsInsideBaseArea")

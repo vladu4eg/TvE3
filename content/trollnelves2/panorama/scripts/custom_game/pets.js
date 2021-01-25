@@ -174,7 +174,7 @@ function SetSelectedParticles(data)
 
 (function()
 {
-    GameEvents.Subscribe( "DefaultButtonReady", DefaultButtonReady);
+    GameEvents.Subscribe( "DefaultButtonReadyPets", DefaultButtonReady);
     GameEvents.Subscribe( "SetSelectedParticles", SetSelectedParticles);
     for (var x = 1; x < names.length+1; x = x + 1)
     {

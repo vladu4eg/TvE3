@@ -413,7 +413,7 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_20"                                        "Upgrade To End Game Tower "
 		"DOTA_Tooltip_ability_upgrade_to_tower_20_Description"                            "Upgrade your tower to win the game! "
 
-		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 21"
 		"DOTA_Tooltip_ability_upgrade_to_tower_21_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 999999<br>Skill: Fury Swipes"
 
 		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "Upgrade To True Sight Tower"
@@ -1738,7 +1738,7 @@
 		
 		
 		
-		"seveasdefault"																			"Save effect as default"
+		"seveasdefault"																			"Save as default"
 		
 		
 		"patreonbuttontext"																	"Donate Patreon"

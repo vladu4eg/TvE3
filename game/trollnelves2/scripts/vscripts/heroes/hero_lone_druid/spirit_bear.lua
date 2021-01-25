@@ -30,53 +30,51 @@ function SpiritBearSpawn( event )
 		end
 	end
 	if checkHut then
-			-- Synergy Level. Checks both the default and the datadriven Synergy
-			local synergyAbility = caster:FindAbilityByName("lone_druid_synergy_datadriven")
-			if synergyAbility == nil then
-				synergyAbility = caster:FindAbilityByName("lone_druid_synergy")
+		-- Synergy Level. Checks both the default and the datadriven Synergy
+		local synergyAbility = caster:FindAbilityByName("lone_druid_synergy_datadriven")
+		if synergyAbility == nil then
+			synergyAbility = caster:FindAbilityByName("lone_druid_synergy")
+		end
+		
+		-- Check if the bear is alive, heals and spawns them near the caster if it is
+		if caster.bear and IsValidEntity(caster.bear) and caster.bear:IsAlive() then
+			FindClearSpaceForUnit(caster.bear, origin, true)
+			caster.bear:SetHealth(caster.bear:GetMaxHealth())
+			
+			-- Spawn particle
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster.bear)	
+			
+			-- Re-Apply the synergy buff if we found one
+			if caster.bear:HasModifier("modifier_bear_synergy") then
+				caster.bear:RemoveModifierByName("modifier_bear_synergy")
+				synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
 			end
 			
-			-- Check if the bear is alive, heals and spawns them near the caster if it is
-			if caster.bear and IsValidEntity(caster.bear) and caster.bear:IsAlive() then
-				FindClearSpaceForUnit(caster.bear, origin, true)
-				caster.bear:SetHealth(caster.bear:GetMaxHealth())
-				
-				-- Spawn particle
-				local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster.bear)	
-				
-				-- Re-Apply the synergy buff if we found one
-				if caster.bear:HasModifier("modifier_bear_synergy") then
-					caster.bear:RemoveModifierByName("modifier_bear_synergy")
-					synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
-				end
-				
-				else
-				-- Create the unit and make it controllable
-				caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
-				
-				
-				-- Apply the backslash on death modifier
-				if ability ~= nil then
-					ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
-				end
-				
-				-- Apply the synergy buff if the ability exists
-				if synergyAbility ~= nil then
-					synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
-				end
-					InitializeBadHero(caster.bear)
-
-					for i=0, caster.bear:GetAbilityCount()-1 do
-						local ability = caster.bear:GetAbilityByIndex(i)
-						if ability then ability:SetLevel(ability:GetMaxLevel()) end
-					end
-					ability:StartCooldown(999999)
-				-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
-				caster.bear:SetOwner(caster)
-				caster.bear:SetControllableByPlayer(player, true)
+			else
+			-- Create the unit and make it controllable
+			caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
+			caster.bear:SetControllableByPlayer(player, true)
+			
+			-- Apply the backslash on death modifier
+			if ability ~= nil then
+				ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
 			end
 			
-	else 
+			-- Apply the synergy buff if the ability exists
+			if synergyAbility ~= nil then
+				synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
+			end
+			InitializeBadHero(caster.bear)
+			
+			for i=0, caster.bear:GetAbilityCount()-1 do
+				local ability = caster.bear:GetAbilityByIndex(i)
+				if ability then ability:SetLevel(ability:GetMaxLevel()) end
+			end
+			ability:StartCooldown(999999)
+			-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
+		end
+		
+		else 
 		ability:EndCooldown()
 		SendErrorMessage(player, "#error_need_buy_hut_7")
 	end
@@ -109,8 +107,8 @@ function SpiritBearLevel( event )
 		
 		-- Create the unit and make it controllable
 		caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
-		caster.bear:SetOwner(caster)
 		caster.bear:SetControllableByPlayer(player, true)
+		
 		-- Apply the backslash on death modifier
 		ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
 		

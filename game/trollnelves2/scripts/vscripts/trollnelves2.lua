@@ -402,11 +402,13 @@ function InitializeWolf(hero)
     lumber = math.floor(lumber)
     PlayerResource:SetGold(hero, gold)
     PlayerResource:SetLumber(hero, lumber)
-    PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2,
-    true)
+    PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
     local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")
     if abil ~= nil then
         abil:RemoveAbility("troll_warlord_battle_trance_datadriven")
+    end
+    if GameRules.trollHero.bear ~= nil then
+        hero:SetControllableByPlayer(playerID, false)
     end
 end
 
@@ -494,8 +496,10 @@ function trollnelves2:PreStart()
             Stats.RequestBonus(pID, steam, callback)
             Stats.RequestData(pID)
             Stats.RequestVipDefaults(pID, steam, callback)
+            Stats.RequestPetsDefaults(pID, steam, callback)
             Stats.RequestPets(pID, steam, callback)
-            Timers:CreateTimer(15, function() wearables:SetPart() end)            
+            Timers:CreateTimer(15, function() wearables:SetPart() end)     
+            Timers:CreateTimer(30, function() SelectPets:SetPets() end)    
         end
     end
     Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)

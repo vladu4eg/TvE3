@@ -2,11 +2,11 @@ Player = Player or {}
 
 require('libraries/team')
 
-local goldGainedImportance = 10
+local goldGainedImportance = 8
 local goldGivenImportance = 3
-local lumberGainedImportance = 10
+local lumberGainedImportance = 8
 local lumberGivenImportance = 3
-local rankImportance = 20
+local rankImportance = 25
 local rankPers = 5
 
 if GameRules.disconnectedHeroSelects == nil then
@@ -254,7 +254,7 @@ function CDOTA_PlayerResource:GetScoreBonusRank(pID)
 	local allyTeamScore = Team.GetAverageScore(allyTeam)
 	local enemyTeamScore = Team.GetAverageScore(enemyTeam)
 	local sign = allyTeamScore > enemyTeamScore and -1 or 1
-	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/10000)
+	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/8000)
 	value = math.min(rankImportance,value)
 	return (value*sign)
 end

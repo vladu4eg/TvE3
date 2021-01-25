@@ -1,0 +1,8 @@
+nulevka10000
+{
+	material materials/overviews/nulevka10000.vmat
+	pos_x -8173
+	pos_y 8496
+	scale 16.856
+}
+

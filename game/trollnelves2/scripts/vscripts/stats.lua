@@ -29,11 +29,11 @@ function Stats.SubmitMatchData(winner,callback)
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 300 and GameRules:GetGameTime() - GameRules.startTime <  600 then -- 5-10 min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 2
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 40-60 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 5
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 2
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 7
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 3
 			end
 			if PlayerResource:GetDeaths(pID) >= 10 then 
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
@@ -46,7 +46,7 @@ function Stats.SubmitMatchData(winner,callback)
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		for pID=0,DOTA_MAX_TEAM_PLAYERS do
 			if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) ~= 5 then
-				data.MatchID = tostring(GameRules:GetMatchID())
+				data.MatchID = tostring(GameRules:Script_GetMatchID() or 0)
 				data.Team = tostring(PlayerResource:GetTeam(pID))
 				--data.duration = GameRules:GetGameTime() - GameRules.startTime
 				data.Map = GetMapName()
@@ -221,7 +221,7 @@ function Stats.RequestVip(pID, steam, callback)
 	local parts = {}
 	local req = CreateHTTPRequest("GET",Stats.server .. "vip/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
-	DebugPrint("***********************************************")
+	DebugPrint("RequestVip ***********************************************" .. Stats.server )
 	req:Send(function(res)
 		if res.StatusCode ~= 200 then
 			DebugPrint("Connection failed! Code: ".. res.StatusCode)
@@ -230,7 +230,7 @@ function Stats.RequestVip(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		--DeepPrintTable(obj)
+		DeepPrintTable(obj)
 		DebugPrint("***********************************************")
 		for id = 1, 35 do
 			parts[id] = "nill"
@@ -286,9 +286,9 @@ function Stats.RequestEvent(pID, steam, callback)
 end
 
 function Stats.GetVip(data,callback)
-	if not isTesting then
-		if GameRules:IsCheatMode() then return end
-	end
+	--if not isTesting then
+	--	if GameRules:IsCheatMode() then return end
+	--end
 	local req = CreateHTTPRequest("POST",Stats.server)
 	local encData = json.encode(data)
 	DebugPrint("***********************************************")
@@ -328,11 +328,35 @@ function Stats.RequestVipDefaults(pID, steam, callback)
 		end
 		
 		local obj,pos,err = json.decode(res.Body)
-		--DeepPrintTable(obj)
+		DeepPrintTable(obj)
 		DebugPrint("RequestVipDefaults ***********************************************")
 		if #obj > 0 then
 			if obj[1].num ~= nil then
 				GameRules.PartDefaults[pID] = obj[1].num
+			end
+		end
+		return obj
+		
+	end)
+end
+
+function Stats.RequestPetsDefaults(pID, steam, callback)
+	local req = CreateHTTPRequest("GET",Stats.server .. "pets/defaults/" .. steam)
+	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
+	DebugPrint("***********************************************")
+	req:Send(function(res)
+		if res.StatusCode ~= 200 then
+			DebugPrint("Connection failed! Code: ".. res.StatusCode)
+			DebugPrint(res.Body)
+			return -1
+		end
+		
+		local obj,pos,err = json.decode(res.Body)
+		DeepPrintTable(obj)
+		DebugPrint("RequestPetsDefaults ***********************************************")
+		if #obj > 0 then
+			if obj[1].num ~= nil then
+				GameRules.PetsDefaults[pID] = obj[1].num
 			end
 		end
 		return obj

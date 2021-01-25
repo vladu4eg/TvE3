@@ -33,7 +33,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lumber_cost"			"16"
+				"lumber_cost"			"8"
 			}
 		}
 		"OnSpellStart"
@@ -44,7 +44,7 @@
 				"Function"              "RevealAreaItem"
 				"Target"				"POINT"
 				"Duration"				"5"
-				"Radius"				"2600"
+				"Radius"				"5200"
 			}
 		}
 	}
@@ -1487,7 +1487,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lumber_cost"			"192"
+				"lumber_cost"			"256"
 			}
 		}
 		

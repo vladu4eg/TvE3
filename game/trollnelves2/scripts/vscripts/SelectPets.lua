@@ -1,9 +1,6 @@
 if SelectPets == nil then
     _G.SelectPets = class({})
 end
-local dedicatedServerKey = GetDedicatedServerKeyV2("1")
-local isTesting = IsInToolsMode() and false
-Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/" --
 defaultpart = {}
 
 require('settings')
@@ -35,48 +32,52 @@ function SelectPets:SelectPets(info)
 	end
 end
 
-function SelectPets:SetPart()
+function SelectPets:SetPets()
 	local pplc = PlayerResource:GetPlayerCount()
 	for i=0,pplc-1 do
-		if GameRules.PartDefaults[i] ~= nil and GameRules.PartDefaults[i] ~= "" and PlayerResource:GetConnectionState(i) == 2 then
-			if PlayerResource:GetSelectedHeroEntity(i):FindModifierByName("part_mod") == nil then
-				local parts = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
+		if GameRules.PetsDefaults[i] ~= nil and GameRules.PetsDefaults[i] ~= "" and PlayerResource:GetConnectionState(i) == 2 then
+				local pets = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
 				--Say(nil,"text here", false)
 				--GameRules:SendCustomMessage("<font color='#58ACFA'> использовал эффект </font>"..info.name.."#partnote".." test", 0, 0)
 				local arr = {
 					i,
 					PlayerResource:GetPlayerName(i),
-					GameRules.PartDefaults[i],
+					GameRules.PetsDefaults[i],
 					PlayerResource:GetSelectedHeroName(i)
 				}
-				
+				local info = {}
+				info.PlayerID = i
+				info.hero = PlayerResource:GetSelectedHeroEntity(info.PlayerID)
+				info.part = GameRules.PetsDefaults[i]
 				CustomGameEventManager:Send_ServerToAllClients( "UpdatePetsUI", arr)
 				CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "SetSelectedPets", arr)
-				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PartDefaults[i]})
-				local parts = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
-				local npc = PlayerResource:GetSelectedHeroEntity(i)
-				if parts["11"] == "normal" and not EVENT_START then
-					SetModelVip(npc)
-				end
-			end
+				Pets.DeletePet( info )
+				Pets.CreatePet( info,  info.part)
+				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PetsDefaults[i]})
+				--local pets = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
+				--local npc = PlayerResource:GetSelectedHeroEntity(i)
+				--if pets["11"] == "normal" and not EVENT_START then
+				--	SetModelVip(npc)
+				--end
 		end
 	end
 end
 
-function SelectPets:SetDefaultPart(event)
+function SelectPets:SetDefaultPets(event)
     local player = PlayerResource:GetPlayer(event.PlayerID)
     if player.parttimerok == nil then player.parttimerok = true end
     if player.parttimerok == true then
         player.parttimerok = false
         Timers:CreateTimer(120, function()
             player.parttimerok = true
-            CustomGameEventManager:Send_ServerToPlayer( player, "DefaultButtonReady", {})
+            CustomGameEventManager:Send_ServerToPlayer( player, "DefaultButtonReadyPets", {})
 		end)
 		local data = {}
 		if event.part ~=  nil then
 			DebugPrint("no save")
 			data.SteamID = tostring(PlayerResource:GetSteamID(event.PlayerID))
 			data.Num = tostring(event.part)
+			data.TypeDonate = "2"
 			Stats.GetVip(data, callback)
 		end
 	end

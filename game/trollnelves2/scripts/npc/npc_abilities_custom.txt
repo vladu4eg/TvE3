@@ -1642,7 +1642,7 @@
 			"Aura"          	"modifier_convert_gold"
 			"Aura_Radius"   	"%presence_radius"
 			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			"Aura_Types"    	"DOTA_UNIT_TARGET_ALL" //mechanic?
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO" //mechanic?
 			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE" //immune?
 		}
 		"modifier_convert_gold"
@@ -5112,7 +5112,7 @@
 			"RunScript"{
 				"ScriptFile"			"custom_abilities.lua"
 				"Function"				"RepairAutocast"
-				"Radius"				"500"
+				"Radius"				"600"
 			}
 		}
 		"OnAbilityPhaseStart"
@@ -5136,7 +5136,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCastRange"				"150"
+		"AbilityCastRange"				"210"
 		
 		"OnSpellStart"
 		{
@@ -7340,7 +7340,7 @@
 		"ItemName"					"item_reveal"
 		
 		"BuyItem"					"1"
-		"AbilityCooldown"               "600"
+		"AbilityCooldown"           "120"
 		
 		"OnSpellStart"{
 			"RunScript"

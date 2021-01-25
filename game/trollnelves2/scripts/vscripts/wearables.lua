@@ -3,7 +3,6 @@ if wearables == nil then
 end
 local dedicatedServerKey = GetDedicatedServerKeyV2("1")
 local isTesting = IsInToolsMode() and false
-Stats.server = "https://troll-elves.xyz/test/" -- "https://localhost:5001/test/" --
 defaultpart = {}
 
 require('settings')
@@ -98,8 +97,10 @@ function wearables:SetPart()
 				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PartDefaults[i]})
 				local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
 				local npc = PlayerResource:GetSelectedHeroEntity(i)
+				if parts ~= nil then
 				if parts["11"] == "normal" and not EVENT_START then
 					SetModelVip(npc)
+				end
 				end
 			end
 		end
@@ -117,9 +118,9 @@ function wearables:SetDefaultPart(event)
 		end)
 		local data = {}
 		if event.part ~=  nil then
-			DebugPrint("no save")
 			data.SteamID = tostring(PlayerResource:GetSteamID(event.PlayerID))
 			data.Num = tostring(event.part)
+			data.TypeDonate = tostring(1)
 			Stats.GetVip(data, callback)
 		end
 	end

@@ -57,7 +57,7 @@
 .ListName {
 	color: gradient( linear, 0% 0%, 0% 100%, from( white  ), to( #5A3D6F) );  
 	font-size: 34px;
-	font-family: Radiance;
+	/* font-family: Radiance; */
 	text-shadow: 2px 2px 0px 1.0 #00000090;
 	horizontal-align:center;
 }

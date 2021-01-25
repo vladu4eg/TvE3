@@ -2802,15 +2802,15 @@
 	    //----------------------------- 
 	    "Level"                     "19"
 	    "BuildTime"                 "2"
-		//"Upgrades"
-	  //  {
-	  //      "Count"     "1"
-	  //      "1"{
-	//			"unit_name"			"rock_20"
-	//			"gold_cost"			"999999"
-	//			"lumber_cost"		"999999"
-	//		}
-	 //   }
+		"Upgrades"
+	    {
+	       "Count"     "1"
+	        "1"{
+				"unit_name"			"rock_20"
+				"gold_cost"			"999999"
+				"lumber_cost"		"999999"
+			}
+	    }
 		"Requirements"{
 			"research_lab_4_1"		"1"
 			"barracks_3"			"1"
@@ -2863,7 +2863,7 @@
 		{
 			"model"						"models/fire_dragon_wall.vmdl"
 	    }
-		"ModelScale"                "0.8"
+		"ModelScale"                "0.75"
 	    "ModelRotation"             "90"
 		"HealthBarOffset"			"150"
 		"PlayerCanControl"			"1"
@@ -2873,15 +2873,15 @@
 	    //----------------------------- 
 	    "Level"                     "19"
 	    "BuildTime"                 "2"
-		"Upgrades"
-	    {
-	        "Count"     "1"
-	        "1"{
-				"unit_name"			"rock_21"
-				"gold_cost"			"999999"
-				"lumber_cost"		"999999"
-			}
-	    }
+		//"Upgrades"
+	   // {
+	   //     "Count"     "1"
+	   //     "1"{
+		//		"unit_name"			"rock_21"
+		//		"gold_cost"			"999999"
+		//		"lumber_cost"		"999999"
+		//	}
+	  //  }
 		"Requirements"{
 			"research_lab_5_1"		"1"
 			"barracks_3"			"1"
@@ -2900,7 +2900,7 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "230"
+	    "ArmorPhysical"             "256"
 		"StatusHealth"              "999999"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
@@ -6448,7 +6448,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "4"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6530,7 +6530,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "5"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6613,7 +6613,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "6"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6695,7 +6695,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "7"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6778,7 +6778,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "8"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6826,7 +6826,7 @@
 		{
 			"model"     "models/heroes/ember_spirit/ember_spirit.vmdl"
 		}
-	    "ModelScale"                "1"
+	    "ModelScale"                "1.2"
 	    "ModelRotation"             "90"
 		"HealthBarOffset"			"150"
 		"PlayerCanControl"			"1"
@@ -6861,7 +6861,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "9"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -6944,7 +6944,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "10"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7027,7 +7027,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "11"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7110,7 +7110,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "12"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7193,7 +7193,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "13"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7276,7 +7276,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "14"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7357,7 +7357,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "15"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7439,7 +7439,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "16"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7521,7 +7521,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "17"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7604,7 +7604,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "18"
 	    "BuildTime"                 "10"
 		
 		// Abilities
@@ -7677,7 +7677,7 @@
 		
 	    // Stats
 	    //----------------------------- 
-	    "Level"                     "3"
+	    "Level"                     "19"
 	    "BuildTime"                 "10"
 		
 		// Abilities

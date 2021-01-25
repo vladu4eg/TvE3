@@ -230,6 +230,7 @@ function shrapnel_start_cooldown( caster, charge_replenish_time )
 end
 
 function RevealAreaItem( event )
+	event.Radius = event.Radius/GameRules.MapSpeed
 	RevealArea(event)
 	local item = event.ability
 	item:Use()
@@ -649,27 +650,33 @@ function BuyItem(event)
 	
 	if not IsInsideShopArea(hero) and item_name ~=  "item_book_of_agility" and item_name ~=  "item_book_of_strength" and item_name ~=  "item_book_of_intelligence" then
 		SendErrorMessage(playerID, "#error_shop_out_of_range")
+		ability:EndCooldown()
 		return
 	end
 	if gold_cost > PlayerResource:GetGold(playerID) then
 		SendErrorMessage(playerID, "#error_not_enough_gold")
+		ability:EndCooldown()
 		return
 	end
 	if lumber_cost > PlayerResource:GetLumber(playerID) then
 		SendErrorMessage(playerID, "#error_not_enough_lumber")
+		ability:EndCooldown()
 		return
 	end
 	if hero:GetNumItemsInInventory() >= 6 then
 		hero:DropStash()
 		SendErrorMessage(playerID, "#error_full_inventory")
+		ability:EndCooldown()
 		return		
 	end
 	if hero:FindItemInInventory("item_disable_repair_2") ~= nil and item_name == 'item_disable_repair_2'  then
 		SendErrorMessage(playerID, "#error_full_inventory")
+		ability:EndCooldown()
 		return		
 	end
 	if item_name == 'item_troll_boots_3' and (GameRules:GetGameTime() - GameRules.startTime) < (7200 / GameRules.MapSpeed) then
 		SendErrorMessage(playerID, "#error_no_time_boots")
+		ability:EndCooldown()
 		return	
 	end
 	

@@ -25,11 +25,9 @@
 			</Panel>
 			<Panel hittest="false" id="GameInfoGradientOverlayTop"/>
 			<Panel hittest="false" id="GameInfoGradientOverlayBottom"/>
-			<!--
 			<Button id="DefaultButton" class="DefaultButtonact" onactivate='DefaultButton()' style="margin-top:325px;margin-left:200px;">
                 <Label hittest="false" id="defaultbuttontext" text="#seveasdefault"/>
             </Button>
-			-->
 		</Panel>
 		<Button id="GameInfoButton" onactivate="ToggleInfo();" onmouseover='DOTAShowTextTooltip(Pets)' onmouseout='DOTAHideTextTooltip()'>
 			<Panel id="GameInfoIcon"/>
