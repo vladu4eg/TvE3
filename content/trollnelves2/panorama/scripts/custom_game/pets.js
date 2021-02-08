@@ -1,7 +1,7 @@
-var names = new Array("TOP1 AUTUMN", "TOP1 WINTER ", "TOP1 SPRING", "TOP1 SUMMER", "PET LVL 1", "PET LVL 2", "PET LVL 3", "PET LVL 4", "PET LVL 5", "PET LVL 6", "DESERT EVENT");
+var names = new Array("TOP1 AUTUMN", "TOP1 WINTER ", "TOP1 SPRING", "TOP1 SUMMER", "PET LVL 1", "PET LVL 2", "PET LVL 3", "PET LVL 4", "PET LVL 5", "PET LVL 6", "DESERT EVENT", "WINTER EVENT");
 					//        1              2                  3          4            5           6         7           8             9          10            11              12               13             14              15          16                     17       18           19           20         21             22          23        24       25              26         27               28                29              30             31           32         33                 34                35                 36
-var needs = new Array("#ptop1autumn", "#ptop1winter", "#ptop1spring", "#ptop1summer", "#ppatron1", "#ppatron2", "#ppatron3", "#ppatron4", "#ppatron5", "#ppatron6", "#peventdesert");
-var poriadok = new Array( 0,1,  2, 3, 4, 5, 6, 7, 8,9,10);//"#birthday2"
+var needs = new Array("#ptop1autumn", "#ptop1winter", "#ptop1spring", "#ptop1summer", "#ppatron1", "#ppatron2", "#ppatron3", "#ppatron4", "#ppatron5", "#ppatron6", "#peventdesert", "#peventwinter");
+var poriadok = new Array( 0,1,  2, 3, 4, 5, 6, 7, 8,9,10,11);//"#birthday2"
 					
 function UpdateParticles( table_name, key, data )
 {
@@ -175,7 +175,7 @@ function SetSelectedParticles(data)
 (function()
 {
     GameEvents.Subscribe( "DefaultButtonReadyPets", DefaultButtonReady);
-    GameEvents.Subscribe( "SetSelectedParticles", SetSelectedParticles);
+    GameEvents.Subscribe( "SetSelectedPets", SetSelectedParticles);
     for (var x = 1; x < names.length+1; x = x + 1)
     {
         var stl = (100*(x-1)) + 20

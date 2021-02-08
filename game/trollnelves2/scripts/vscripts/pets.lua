@@ -154,6 +154,7 @@ function Pets.CreatePet( keys, num )
 	local hero = keys.hero--PlayerResource:GetSelectedHeroEntity(id)--PlayerResource:GetPlayer( id ):GetAssignedHero()
 	local model = ""
 	local effect = ""
+	local matGrp = "0"
 
 	-- if old_pet then
 	-- 	old_pet_pos = old_pet.unit:GetAbsOrigin()
@@ -173,17 +174,20 @@ function Pets.CreatePet( keys, num )
 
 	]]
 	if num == "1" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" -- Baby Roshan  autumn
+		model = "models/courier/baby_rosh/babyroshan_ti10_dire.vmdl" -- Baby Roshan  autumn
 		effect = "particles/econ/courier/courier_trail_hw_2013/courier_trail_hw_2013.vpcf"
 	elseif num == "2" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" -- winter Roshan 
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" -- winter Roshan 
 		effect = "particles/my_new/ambientfx_effigy_wm16_radiant_lvl3.vpcf"
+		matGrp = "2"
 	elseif num == "3" then
 		model = "models/courier/baby_rosh/babyroshan.vmdl" -- spring Roshan
 		effect = "particles/econ/courier/courier_roshan_ti8/courier_roshan_ti8_flying.vpcf"
+		matGrp = "5"
 	elseif num == "4" then
-		model = "models/courier/baby_rosh/babyroshan.vmdl" --  summer
+		model = "models/courier/baby_rosh/babyroshan_elemental.vmdl" --  summer
 		effect = "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
+		matGrp = "1"
 	elseif num == "5" then
 		model = "models/items/courier/butch_pudge_dog/butch_pudge_dog.vmdl" -- Butch
 		effect = "particles/econ/courier/courier_butch/courier_butch_ambient.vpcf"
@@ -205,6 +209,9 @@ function Pets.CreatePet( keys, num )
 	elseif num == "11" then
 		model = "models/items/courier/courier_ti9/courier_ti9_lvl7/courier_ti9_lvl7.vmdl" -- Desert Winner
 		effect = "particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient.vpcf"
+	elseif num == "12" then
+		model = "models/items/courier/duskie/duskie.vmdl" -- Winter Winner
+		effect = "particles/econ/courier/courier_wyvern_hatchling/courier_wyvern_hatchling_ice.vpcf"
 	end
 	
 	
@@ -215,7 +222,9 @@ function Pets.CreatePet( keys, num )
 		
 		pet:SetModel( model )
 		pet:SetOriginalModel( model )
+		pet:SetModelScale(1.1)
 		Pets.playerPets[id] = pet
+		pet:SetMaterialGroup(matGrp)--tostring( pet_data.skin ) )
 		if effect ~= "" then
 			ParticleManager:CreateParticle(effect, PATTACH_POINT_FOLLOW, pet )
 		end

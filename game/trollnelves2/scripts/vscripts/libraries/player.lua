@@ -254,7 +254,7 @@ function CDOTA_PlayerResource:GetScoreBonusRank(pID)
 	local allyTeamScore = Team.GetAverageScore(allyTeam)
 	local enemyTeamScore = Team.GetAverageScore(enemyTeam)
 	local sign = allyTeamScore > enemyTeamScore and -1 or 1
-	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/8000)
+	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/7000)
 	value = math.min(rankImportance,value)
 	return (value*sign)
 end
@@ -263,8 +263,7 @@ function CDOTA_PlayerResource:GetScoreBonusPersonal(pID)
 	local allyTeam = PlayerResource:GetTeam(pID)
 	local score = PlayerResource:GetScore(pID)
 	local allyTeamScore = Team.GetScore(allyTeam)
-	local add = score/allyTeamScore > 0 and 0 or 1
-	local value = math.floor((math.abs(allyTeamScore - score))*rankPers/1000*add)
+	local value = math.floor((math.abs(allyTeamScore - score))*rankPers/1000)
 	value = math.min(rankImportance,value)
 	return (value)
 end

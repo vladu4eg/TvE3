@@ -1513,16 +1513,16 @@
 		"DOTA_Tooltip_ability_item_vip_Description"                               	"Активируйте предмет и получите эффект сезона в следующей игре.<br>Можно активаровать только от 12 человек."
 		
 		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
 		
 		"DOTA_Tooltip_ability_item_autumn"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_autumnt_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_autumnt_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
 		
 		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
 		
 		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
-		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
 		
 		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_end_Description"                               "Вы уже близки к разгадке!"
@@ -1535,7 +1535,7 @@
 
 
 		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
-		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
 		
 		"DOTA_Tooltip_ability_item_event_desert"                                           	"Desert Event Item"
 		"DOTA_Tooltip_ability_item_event_desert_Description"                               	"Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Disert.<br>Можно активаровать только от 12 человек."
@@ -1606,6 +1606,7 @@
 		"ppatron5"																				"Доступно донатеру пятого уровня и выше. Питомцы не входят в донат эффектов."
 		"ppatron6"																				"Доступно донатеру шестого уровня и выше. Питомцы не входят в донат эффектов."
 		"peventdesert"																			"Выдается за участие в Desert event."
+		"peventwinter"																			"Выдается за участие в Winter event."
 		
 		"seveasdefault"																			"Сохранить по умолчанию"
 		
@@ -1652,6 +1653,7 @@
 		"error_construction_for_yourself"													"Вы не можете строить сверху Эльфа после 10 (x2) и 20 (x1) минут!"
 		"error_need_buy_hut_7"																"Вам нужно улучшить  Troll Hut до 7 уровня!"	
 		"error_not_upgrade_tower19_x4"														"Вы не можете построить Enigma в х4."
+		"error_not_destroy_building"														"Владелец не покинул игру. Дождитесь полного выхода из игры. "
 		"loading_text"																		"&lt;=Щелкните здесь, чтобы получить советы!<br>
 		                                                                                    Не меняйте горячие клавиши после запуска игры.
 		                                                                                    "

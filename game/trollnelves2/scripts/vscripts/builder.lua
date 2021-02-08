@@ -218,10 +218,13 @@ end
 function DestroyBuilding( keys )
     local building = keys.unit
     local units = FindUnitsInRadius(building:GetTeamNumber() , building:GetAbsOrigin() , nil , 1500 , DOTA_UNIT_TARGET_TEAM_ENEMY ,  DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
+    local ownerID = building:GetPlayerOwnerID()
     local playerID = building:GetMainControllingPlayer()
     if #units > 0 then
         SendErrorMessage(playerID, "#error_enemy_nearby")
-        else
+    elseif PlayerResource:GetConnectionState(ownerID) == 3 then
+        SendErrorMessage(playerID, "#error_not_destroy_building")
+    else
         building:ForceKill(false)
     end
 end

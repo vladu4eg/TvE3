@@ -19,12 +19,11 @@ function SelectPets:SelectPets(info)
 				}
 				
                 CustomGameEventManager:Send_ServerToAllClients( "UpdatePetsUI", arr)
-
+				
 				info.hero = PlayerResource:GetSelectedHeroEntity(info.PlayerID)
 				
                 Pets.DeletePet( info )
 				Pets.CreatePet( info,  info.part)
-                PlayerResource:GetSelectedHeroEntity(info.PlayerID):AddNewModifier(PlayerResource:GetSelectedHeroEntity(info.PlayerID), PlayerResource:GetSelectedHeroEntity(info.PlayerID), "part_mod", {part = info.part})
 			end					
 		end
 		else
@@ -53,7 +52,6 @@ function SelectPets:SetPets()
 				CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "SetSelectedPets", arr)
 				Pets.DeletePet( info )
 				Pets.CreatePet( info,  info.part)
-				PlayerResource:GetSelectedHeroEntity(i):AddNewModifier(PlayerResource:GetSelectedHeroEntity(i), PlayerResource:GetSelectedHeroEntity(i), "part_mod", {part = GameRules.PetsDefaults[i]})
 				--local pets = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
 				--local npc = PlayerResource:GetSelectedHeroEntity(i)
 				--if pets["11"] == "normal" and not EVENT_START then

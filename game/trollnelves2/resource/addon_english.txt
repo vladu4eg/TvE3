@@ -152,7 +152,11 @@
 		"flag"                                                                            "Flag"
 		"top1autumn"																	  "TOP1 AUTUMN"
 		"top2-3autumn"																	  "TOP2-3 AUTUMN"
-		"top10autumn"																	  "TOP10 AUTUMN"
+		"top10autumn"																	  "TOP10"
+		
+		"top1winter"																	  "TOP1 WINTER"
+		"top2-3winter"																	  "TOP2-3 WINTER"
+		
 		"tester1"																		  "TESTER"
 		"moder"																		  	  "MODERATOR"
 		"dev"																		  	  "DEVELOPER"
@@ -1692,6 +1696,7 @@
 		"top"                                          											"Players are rewarded for getting the TOP 1-10 of the season."
 		"top1"                                          											"Players are rewarded for getting the TOP 1 of the season."
 		"top2-3"                                          											"Players are rewarded for getting the TOP 2-3 of the season."
+		
 		"spring"                                          										"Awarded for participating in a Spring event."
 		"developer2"                                          									"Developer Effect"
 		"moderator"                                          									"Moderator Effect"
@@ -1735,6 +1740,7 @@
 		"ppatron5"																				"Available to fifth level donater or higher. Pets are not included in the donation effect."
 		"ppatron6"																				"Available to sixth level donater or higher. Pets are not included in the donation effect."
 		"peventdesert"																			"Awarded for participating in a Desert event. Pets are not included in the donation effect."
+		"peventwinter"																			"Awarded for participating in a Winter event. Pets are not included in the donation effect."
 		
 		
 		
@@ -1785,6 +1791,7 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"error_construction_for_yourself"													"You cannot build on yourself after 10 (x2) and 20 (x1) minutes!"
 		"error_need_buy_hut_7"																"You need to buy a level 7 hut!"		
 		"error_not_upgrade_tower19_x4"														"You cannot build Enigma in x4."
+		"error_not_destroy_building"														"The owner has not left the game. Wait until the game is completely exited."
 		"loading_text"																		"&lt;=Click this for tips!<br>
 		                                                                                    Don't change your hotkeys after starting the game.
 		                                                                                    "

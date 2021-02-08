@@ -26,7 +26,9 @@ function trollnelves2:OnNPCSpawned(keys)
     if npc:IsRealHero() and npc.bFirstSpawned == nil then
         THINK_INTERVAL = 2
         npc.bFirstSpawned = true
-        trollnelves2:OnHeroInGame(npc)
+        if IsServer() then
+            trollnelves2:OnHeroInGame(npc)
+        end
     end
     if npc:IsAngel() and
         PlayerResource:GetConnectionState(npc:GetPlayerOwnerID()) ~= 2 then

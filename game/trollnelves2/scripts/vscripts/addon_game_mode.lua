@@ -339,6 +339,12 @@ function Precache( context )
 	PrecacheResource("particle", "particles/econ/courier/courier_venoling_gold/courier_venoling_ambient_gold.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_beetlejaw_gold/courier_beetlejaw_gold_ambient.vpcf", context)
 
+	PrecacheResource("particle", "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf", context)
+	PrecacheResource("model", "models/courier/baby_rosh/babyroshan_ti10_dire.vmdl", context)
+    PrecacheResource("model", "models/courier/baby_rosh/babyroshan_elemental.vmdl", context)
+	PrecacheResource("model", "models/items/courier/duskie/duskie.vmdl", context)
+	
 	
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)

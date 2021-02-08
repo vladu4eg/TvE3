@@ -70,8 +70,10 @@ function trollnelves2:GameSetup()
     end
     DebugPrint("count player " .. GameRules.PlayersCount)
     Timers:CreateTimer(TEAM_CHOICE_TIME, function()
-        SelectHeroes()
-        GameRules:FinishCustomGameSetup()
+        if IsServer() then
+            SelectHeroes()
+            GameRules:FinishCustomGameSetup()
+        end
     end)
 end
 
@@ -403,12 +405,13 @@ function InitializeWolf(hero)
     PlayerResource:SetGold(hero, gold)
     PlayerResource:SetLumber(hero, lumber)
     PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
+  
     local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")
     if abil ~= nil then
         abil:RemoveAbility("troll_warlord_battle_trance_datadriven")
     end
     if GameRules.trollHero.bear ~= nil then
-        hero:SetControllableByPlayer(playerID, false)
+        GameRules.trollHero.bear:SetControllableByPlayer(playerID, false)
     end
 end
 

@@ -24,7 +24,7 @@ function Stats.SubmitMatchData(winner,callback)
 			if GameRules.Bonus[pID] == nil then
 				GameRules.Bonus[pID] = 0
 			end
-				if GameRules:GetGameTime() - GameRules.startTime < 300 then
+			if GameRules:GetGameTime() - GameRules.startTime < 300 then
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 5
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 300 and GameRules:GetGameTime() - GameRules.startTime <  600 then -- 5-10 min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
@@ -59,7 +59,7 @@ function Stats.SubmitMatchData(winner,callback)
 				data.LumberGiven = tostring(PlayerResource:GetLumberGiven(pID)/1000 or 0)
 				data.Kill = tostring(PlayerResource:GetKills(pID) or 0)
 				data.Death = tostring(PlayerResource:GetDeaths(pID) or 0)
-
+				
 				data.Nick = tostring(PlayerResource:GetPlayerName(pID))
 				data.GPS = tostring(tonumber(data.GoldGained)/tonumber(GameRules:GetGameTime() - GameRules.startTime))
 				data.LPS = tostring(tonumber(data.LumberGained)/tonumber(GameRules:GetGameTime() - GameRules.startTime))
@@ -71,42 +71,47 @@ function Stats.SubmitMatchData(winner,callback)
 				data.GetScoreBonusLumberGained = tostring(PlayerResource:GetScoreBonusLumberGained(pID))
 				data.GetScoreBonusLumberGiven = tostring(PlayerResource:GetScoreBonusLumberGiven(pID))		
 				if hero then
-				data.Type = tostring(PlayerResource:GetType(pID) or "null")
-				if PlayerResource:GetConnectionState(pID) == 2 then
-					if PlayerResource:GetTeam(pID) == winner then
-						if hero:IsTroll() then
-							data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-							if tonumber(data.Score) < math.floor(10/koeff)  then
-								data.Score = tostring(math.floor(10/koeff))
+					data.Type = tostring(PlayerResource:GetType(pID) or "null")
+					if PlayerResource:GetConnectionState(pID) == 2 then
+						if PlayerResource:GetTeam(pID) == winner then
+							if hero:IsTroll() then
+								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								if tonumber(data.Score) < math.floor(10/koeff)  then
+									data.Score = tostring(math.floor(10/koeff))
+								end
+								elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
+								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								if tonumber(data.Score) < 1  then
+									data.Score = tostring(1)
+								end
 							end
-						elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
-							data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-							if tonumber(data.Score) < 1  then
-								data.Score = tostring(1)
+							elseif PlayerResource:GetTeam(pID) ~= winner then
+							if hero:IsTroll() then
+								data.Score = tostring( math.floor(-10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								elseif hero:IsElf() then 
+								data.Score = tostring(math.floor(0 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 							end
+						end 
+						if hero:IsAngel() or hero:IsWolf() then 
+							data.Score = tostring(math.floor(-5 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+							data.Team = tostring(2)
+							elseif hero:IsElf() and PlayerResource:GetDeaths(pID) > 0 then 
+							data.Score = tostring(math.floor(-2 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 						end
-					elseif PlayerResource:GetTeam(pID) ~= winner then
-						if hero:IsTroll() then
-							data.Score = tostring( math.floor(-10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-							elseif hero:IsElf() then 
-							data.Score = tostring(math.floor(0 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+					elseif PlayerResource:GetConnectionState(pID) ~= 2 and hero:IsTroll() and PlayerResource:GetTeam(pID) == winner then
+						data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+						if tonumber(data.Score) < math.floor(10/koeff)  then
+							data.Score = tostring(math.floor(10/koeff))
 						end
-					end 
-					if hero:IsAngel() or hero:IsWolf() then 
-						data.Score = tostring(math.floor(-5 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-						data.Team = tostring(2)
-						elseif hero:IsElf() and PlayerResource:GetDeaths(pID) > 0 then 
-						data.Score = tostring(math.floor(-2 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+					elseif PlayerResource:GetConnectionState(pID) ~= 2 then
+						data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
 					end
-				elseif PlayerResource:GetConnectionState(pID) ~= 2 then
-					data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
-				end
-				if tonumber(data.Score) >=  0 then
-					data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
-					else 
-					data.Score = tostring(math.floor(tonumber(data.Score) *  (1 - GameRules.BonusPercent)))
-				end
-				else
+					if tonumber(data.Score) >=  0 then
+						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
+						else 
+						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 - GameRules.BonusPercent)))
+					end
+					else
 					data.Type = "Elf"
 					data.Score = tostring(-45)
 					data.Team = tostring(2)
@@ -232,7 +237,7 @@ function Stats.RequestVip(pID, steam, callback)
 		local obj,pos,err = json.decode(res.Body)
 		DeepPrintTable(obj)
 		DebugPrint("***********************************************")
-		for id = 1, 35 do
+		for id = 1, 37 do
 			parts[id] = "nill"
 		end
 		CustomNetTables:SetTableValue("Particles_Tabel",tostring(pID),parts)
@@ -308,144 +313,144 @@ function Stats.GetVip(data,callback)
 			return
 		end
 		
-		if callback then
-			local obj,pos,err = json.decode(res.Body)
-			callback(obj)
-		end
-		
+	if callback then
+	local obj,pos,err = json.decode(res.Body)
+	callback(obj)
+	end
+	
 	end)
-end	
-
-function Stats.RequestVipDefaults(pID, steam, callback)
+	end	
+	
+	function Stats.RequestVipDefaults(pID, steam, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. "vip/defaults/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
-		if res.StatusCode ~= 200 then
-			DebugPrint("Connection failed! Code: ".. res.StatusCode)
-			DebugPrint(res.Body)
-			return -1
-		end
-		
-		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
-		DebugPrint("RequestVipDefaults ***********************************************")
-		if #obj > 0 then
-			if obj[1].num ~= nil then
-				GameRules.PartDefaults[pID] = obj[1].num
-			end
-		end
-		return obj
-		
+	if res.StatusCode ~= 200 then
+	DebugPrint("Connection failed! Code: ".. res.StatusCode)
+	DebugPrint(res.Body)
+	return -1
+	end
+	
+	local obj,pos,err = json.decode(res.Body)
+	DeepPrintTable(obj)
+	DebugPrint("RequestVipDefaults ***********************************************")
+	if #obj > 0 then
+	if obj[1].num ~= nil then
+	GameRules.PartDefaults[pID] = obj[1].num
+	end
+	end
+	return obj
+	
 	end)
-end
-
-function Stats.RequestPetsDefaults(pID, steam, callback)
+	end
+	
+	function Stats.RequestPetsDefaults(pID, steam, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. "pets/defaults/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
-		if res.StatusCode ~= 200 then
-			DebugPrint("Connection failed! Code: ".. res.StatusCode)
-			DebugPrint(res.Body)
-			return -1
-		end
-		
-		local obj,pos,err = json.decode(res.Body)
-		DeepPrintTable(obj)
-		DebugPrint("RequestPetsDefaults ***********************************************")
-		if #obj > 0 then
-			if obj[1].num ~= nil then
-				GameRules.PetsDefaults[pID] = obj[1].num
-			end
-		end
-		return obj
-		
+	if res.StatusCode ~= 200 then
+	DebugPrint("Connection failed! Code: ".. res.StatusCode)
+	DebugPrint(res.Body)
+	return -1
+	end
+	
+	local obj,pos,err = json.decode(res.Body)
+	DeepPrintTable(obj)
+	DebugPrint("RequestPetsDefaults ***********************************************")
+	if #obj > 0 then
+	if obj[1].num ~= nil then
+	GameRules.PetsDefaults[pID] = obj[1].num
+	end
+	end
+	return obj
+	
 	end)
-end
-
-function Stats.RequestBonus(pID, steam, callback)
+	end
+	
+	function Stats.RequestBonus(pID, steam, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. "bonus/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
-		if res.StatusCode ~= 200 then
-			DebugPrint("Connection failed! Code: ".. res.StatusCode)
-			DebugPrint(res.Body)
-			return -1
-		end
-		
-		local obj,pos,err = json.decode(res.Body)
-		--DeepPrintTable(obj)
-		DebugPrint("***********************************************")
-		if #obj > 0 then
-			if obj[1].srok ~= nil then
-				GameRules.BonusPercent = GameRules.BonusPercent  + 0.1
-				Timers:CreateTimer(60, function()
-					GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " thanks for the rating bonus!" .. "</font>" ,  0, 0)
-				end);
-			end
-		end
-		return obj
-		
+	if res.StatusCode ~= 200 then
+	DebugPrint("Connection failed! Code: ".. res.StatusCode)
+	DebugPrint(res.Body)
+	return -1
+	end
+	
+	local obj,pos,err = json.decode(res.Body)
+	--DeepPrintTable(obj)
+	DebugPrint("***********************************************")
+	if #obj > 0 then
+	if obj[1].srok ~= nil then
+	GameRules.BonusPercent = GameRules.BonusPercent  + 0.1
+	Timers:CreateTimer(60, function()
+	GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " thanks for the rating bonus!" .. "</font>" ,  0, 0)
+	end);
+	end
+	end
+	return obj
+	
 	end)
-end
-function Stats.RequestBonusTroll(pID, steam, callback)
+	end
+	function Stats.RequestBonusTroll(pID, steam, callback)
 	local req = CreateHTTPRequest("GET",Stats.server .. "troll/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	local tmp = 0
 	req:Send(function(res)
-		if res.StatusCode ~= 200 then
-			DebugPrint("Connection failed! Code: ".. res.StatusCode)
-			DebugPrint(res.Body)
-			return -1
-		end
-		
-		local obj,pos,err = json.decode(res.Body)
-		--DeepPrintTable(obj)
-		DebugPrint("***********************************************")
-		if #obj > 0 then
-			if obj[1].chance ~= nil then
-				local roll_chance = RandomFloat(0, 100)
-				DebugPrint("Donate Chance: ".. tonumber(obj[1].chance))
-				DebugPrint("Donate Random: ".. roll_chance)
-				GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " thank you for your support! Your chance is increased by " .. obj[1].chance .. "%.".. "</font>" ,  0, 0)
-				if roll_chance <= tonumber(obj[1].chance) and PlayerResource:GetConnectionState(pID) == 2 then
-					GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " you're in luck!" .. "</font>" ,  0, 0)
-					table.insert(GameRules.BonusTrollIDs, {pID, obj[1].chance})
-				end		
-			end
-		end						
+	if res.StatusCode ~= 200 then
+	DebugPrint("Connection failed! Code: ".. res.StatusCode)
+	DebugPrint(res.Body)
+	return -1
+	end
+	
+	local obj,pos,err = json.decode(res.Body)
+	--DeepPrintTable(obj)
+	DebugPrint("***********************************************")
+	if #obj > 0 then
+	if obj[1].chance ~= nil then
+	local roll_chance = RandomFloat(0, 100)
+	DebugPrint("Donate Chance: ".. tonumber(obj[1].chance))
+	DebugPrint("Donate Random: ".. roll_chance)
+	GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " thank you for your support! Your chance is increased by " .. obj[1].chance .. "%.".. "</font>" ,  0, 0)
+	if roll_chance <= tonumber(obj[1].chance) and PlayerResource:GetConnectionState(pID) == 2 then
+	GameRules:SendCustomMessage("<font color='#00FFFF '>"  .. tostring(PlayerResource:GetPlayerName(pID)) .. " you're in luck!" .. "</font>" ,  0, 0)
+	table.insert(GameRules.BonusTrollIDs, {pID, obj[1].chance})
+	end		
+	end
+	end						
 	end)
-end
-
-
-function Stats.RequestPets(pID, steam, callback)
+	end
+	
+	
+	function Stats.RequestPets(pID, steam, callback)
 	local parts = {}
 	local req = CreateHTTPRequest("GET",Stats.server .. "pets/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
-		if res.StatusCode ~= 200 then
-			DebugPrint("Connection failed! Code: ".. res.StatusCode)
-			DebugPrint(res.Body)
-			return -1
-		end
-		
-		local obj,pos,err = json.decode(res.Body)
-		--DeepPrintTable(obj)
-		DebugPrint("***********************************************")
-		for id = 0, 10 do
-			parts[id] = "nill"
-		end
-		CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
-		--DebugPrint("dateos " ..  GetSystemDate())
-		for id=1,#obj do
-			parts[obj[id].num] = "normal"
-			CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
-		end
-		return obj
-		
+	if res.StatusCode ~= 200 then
+	DebugPrint("Connection failed! Code: ".. res.StatusCode)
+	DebugPrint(res.Body)
+	return -1
+	end
+	
+	local obj,pos,err = json.decode(res.Body)
+	--DeepPrintTable(obj)
+	DebugPrint("***********************************************")
+	for id = 0, 11 do
+	parts[id] = "nill"
+	end
+	CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
+	--DebugPrint("dateos " ..  GetSystemDate())
+	for id=1,#obj do
+	parts[obj[id].num] = "normal"
+	CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)
+	end
+	return obj
+	
 	end)
-end
+	end	

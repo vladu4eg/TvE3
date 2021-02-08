@@ -53,8 +53,8 @@ function SpiritBearSpawn( event )
 			else
 			-- Create the unit and make it controllable
 			caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
+			caster.bear:SetOwner(caster)
 			caster.bear:SetControllableByPlayer(player, true)
-			
 			-- Apply the backslash on death modifier
 			if ability ~= nil then
 				ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
@@ -71,6 +71,7 @@ function SpiritBearSpawn( event )
 				if ability then ability:SetLevel(ability:GetMaxLevel()) end
 			end
 			ability:StartCooldown(999999)
+			SpiritCheckWolf(event)
 			-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
 		end
 		
@@ -107,8 +108,8 @@ function SpiritBearLevel( event )
 		
 		-- Create the unit and make it controllable
 		caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
+		caster.bear:SetOwner(caster)
 		caster.bear:SetControllableByPlayer(player, true)
-		
 		-- Apply the backslash on death modifier
 		ability:ApplyDataDrivenModifier(caster, caster.bear, "modifier_spirit_bear", nil)
 		
@@ -116,7 +117,7 @@ function SpiritBearLevel( event )
 		if synergyAbility ~= nil then
 			synergyAbility:ApplyDataDrivenModifier(caster, caster.bear, "modifier_bear_synergy", nil)
 		end
-		
+		SpiritCheckWolf(event)
 		-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
 	end
 end
@@ -135,4 +136,18 @@ function SpiritBearDeath( event )
 	ApplyDamage({ victim = caster, attacker = killer, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	ability:EndCooldown()
 	ability:StartCooldown(360)
+end
+
+function SpiritCheckWolf( event )
+	local caster = event.caster
+	for pID=0,DOTA_MAX_TEAM_PLAYERS do
+		if PlayerResource:IsValidPlayerID(pID) then
+			local wolf = PlayerResource:GetSelectedHeroEntity(pID)
+			if wolf ~= nil then
+				if wolf:IsWolf() then
+					caster.bear:SetControllableByPlayer(pID, false)
+				end
+			end
+		end
+	end
 end
