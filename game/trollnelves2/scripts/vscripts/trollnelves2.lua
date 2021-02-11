@@ -123,11 +123,11 @@ function SelectHeroes()
                         DebugPrint("sumChance: " .. sumChance)
                         trollPlayerID = playerID
                         break
-                    else 
+                        else 
                         check_chance_min = check_chance_max  
                     end
                 end
-            else 
+                else 
                 for _, donate in ipairs(donateTroll) do
                     local playerID, chance = unpack(donate)
                     trollPlayerID = playerID
@@ -359,30 +359,30 @@ function InitializeTroll(hero)
     hero:SetStashEnabled(false)
     
     -- check count elf 
-Timers:CreateTimer(function()
-	local countElf = 0
-	if not hero or hero:IsNull() then return end
-	if hero:IsAlive() then
-		local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 900 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
-		for _,unit in pairs(units) do
-			if unit ~= nil then
-				if unit:IsElf() then
-					countElf = countElf + 1
-				end
-			end
-		end
-		if countElf > 2 then			
-			if hero:HasModifier("modifier_antiblock") then
-                hero:RemoveModifierByName("modifier_antiblock")
-			end
-		else
-			if not hero:HasModifier("modifier_antiblock") then
-                hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
-			end
-		end
-	end
-	return 0.1
-end)
+    Timers:CreateTimer(function()
+        local countElf = 0
+        if not hero or hero:IsNull() then return end
+        if hero:IsAlive() then
+            local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 900 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+            for _,unit in pairs(units) do
+                if unit ~= nil then
+                    if unit:IsElf() then
+                        countElf = countElf + 1
+                    end
+                end
+            end
+            if countElf > 2 then			
+                if hero:HasModifier("modifier_antiblock") then
+                    hero:RemoveModifierByName("modifier_antiblock")
+                end
+                else
+                if not hero:HasModifier("modifier_antiblock") then
+                    hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
+                end
+            end
+        end
+        return 0.1
+    end)
     
 end
 
@@ -392,6 +392,35 @@ function InitializeAngel(hero)
     --if not string.match(GetMapName(),"halloween") then 
     --    hero:RemoveAbility("silence_datadriven")
     --end
+end
+
+function ControlUnitForTroll(hero)
+    local playerID = hero:GetPlayerOwnerID()
+    local units = Entities:FindAllByClassname("npc_dota_creature")
+    
+    for _, unit in pairs(units) do
+        local unit_name = unit:GetUnitName();
+        if string.match(unit_name, "shop") or
+            string.match(unit_name, "troll_hut") then
+            unit:SetOwner(hero)
+            unit:SetControllableByPlayer(playerID, true)
+        end
+    end
+    
+	for pID=0,DOTA_MAX_TEAM_PLAYERS do
+		if PlayerResource:IsValidPlayerID(pID) then
+			local badBoy = PlayerResource:GetSelectedHeroEntity(pID)
+            if badBoy then
+                local team = badBoy:GetTeamNumber()
+                if team ~= nil then
+                    if team == DOTA_TEAM_BADGUYS then
+                        PlayerResource:SetUnitShareMaskForPlayer(playerID, pID, 2, true)
+                        DebugPrint("GOOO1!! " .. pID)
+                    end
+                end
+            end
+        end
+    end
 end
 
 function InitializeWolf(hero)
@@ -404,14 +433,12 @@ function InitializeWolf(hero)
     lumber = math.floor(lumber)
     PlayerResource:SetGold(hero, gold)
     PlayerResource:SetLumber(hero, lumber)
-    PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
-  
+    
+    ControlUnitForTroll(hero)
+    
     local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")
     if abil ~= nil then
         abil:RemoveAbility("troll_warlord_battle_trance_datadriven")
-    end
-    if GameRules.trollHero.bear ~= nil then
-        GameRules.trollHero.bear:SetControllableByPlayer(playerID, false)
     end
 end
 
@@ -489,29 +516,29 @@ function trollnelves2:PreStart()
             end
         end
     end)
-
+    
     if IsServer() then
         for pID = 0, DOTA_MAX_TEAM_PLAYERS do
-        if PlayerResource:IsValidPlayerID(pID) then
-            local hero = PlayerResource:GetSelectedHeroEntity(pID)
-            local steam = tostring(PlayerResource:GetSteamID(pID))
-            Stats.RequestVip(pID, steam, callback)
-            Stats.RequestBonus(pID, steam, callback)
-            Stats.RequestData(pID)
-            Stats.RequestVipDefaults(pID, steam, callback)
-            Stats.RequestPetsDefaults(pID, steam, callback)
-            Stats.RequestPets(pID, steam, callback)
-            Timers:CreateTimer(15, function() wearables:SetPart() end)     
-            Timers:CreateTimer(30, function() SelectPets:SetPets() end)    
+            if PlayerResource:IsValidPlayerID(pID) then
+                local hero = PlayerResource:GetSelectedHeroEntity(pID)
+                local steam = tostring(PlayerResource:GetSteamID(pID))
+                Stats.RequestVip(pID, steam, callback)
+                Stats.RequestBonus(pID, steam, callback)
+                Stats.RequestData(pID)
+                Stats.RequestVipDefaults(pID, steam, callback)
+                Stats.RequestPetsDefaults(pID, steam, callback)
+                Stats.RequestPets(pID, steam, callback)
+                Timers:CreateTimer(15, function() wearables:SetPart() end)     
+                Timers:CreateTimer(30, function() SelectPets:SetPets() end)    
+            end
         end
+        Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
+        Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
+        Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
+        Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
+        Donate:CreateList()
     end
-    Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
-    Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
-    Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
-    Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
-    Donate:CreateList()
-    end
- 
+    
 end
 
 function StartCreatingMinimapBuildings()

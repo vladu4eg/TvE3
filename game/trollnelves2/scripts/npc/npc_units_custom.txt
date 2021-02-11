@@ -9637,7 +9637,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "50"
@@ -9708,7 +9708,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -9774,7 +9774,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -9839,7 +9839,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -9903,7 +9903,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -9975,7 +9975,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10032,7 +10032,7 @@
 		"CollisionSize"				"32"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10110,7 +10110,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_HERO"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10185,7 +10185,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10260,7 +10260,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10334,7 +10334,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10407,7 +10407,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10481,7 +10481,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"
@@ -10546,7 +10546,7 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	    "VisionDaytimeRange"        "900"

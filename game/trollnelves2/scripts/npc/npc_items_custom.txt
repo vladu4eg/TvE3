@@ -735,6 +735,7 @@
 		"ItemSellable" 					"1"
 		"ItemPermanent"                 "1"
 		"ItemDroppable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
 		"AbilitySpecial"
 		{
@@ -792,7 +793,7 @@
 		"ItemSellable" 					"1"
 		"ItemPermanent"                 "1"
 		"ItemDroppable"					"1"
-		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilitySpecial"
 		{
 			"01"

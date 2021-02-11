@@ -709,6 +709,14 @@ function BuyItem(event)
 	PlayerResource:ModifyLumber(hero,-lumber_cost)
 	PlayerResource:ModifyGold(hero,-gold_cost)
 	local item = CreateItem(item_name, hero, hero)
+	
+	--local units = Entities:FindAllByClassname("npc_dota_creature")
+	--for _,unit in pairs(units) do
+	--	local unit_name_hut = unit:GetUnitName();
+	--	if unit_name_hut == "troll_hut_7" then
+	--		item:SetShareability(ITEM_PARTIALLY_SHAREABLE)
+	--	end
+	--end
 	hero:AddItem(item)
 end
 

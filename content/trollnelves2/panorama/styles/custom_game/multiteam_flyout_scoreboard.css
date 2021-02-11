@@ -143,7 +143,7 @@
   background-color: BACKGROUND_COLOR;
   margin-top: 1px;
   border-left: 1px grey solid;
-  opacity: 0.85;
+  opacity: 0.90;
 }
 
 .LegendPanel {
@@ -336,7 +336,7 @@
 .ScoreCol_TeamScore {
   width: 50px;
   text-align: center;
-  opacity: 0.85;
+  opacity: 0.90;
 }
 
 .ScoreCol_Kills,
