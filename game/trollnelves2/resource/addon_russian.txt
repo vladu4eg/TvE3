@@ -10,6 +10,7 @@
 		"npc_dota_hero_troll_warlord"                                                     "Troll"
 		"npc_dota_hero_lycan"                                                             "Wolf"
 		"npc_dota_hero_crystal_maiden"                                                    "Angel"
+		"npc_dota_hero_dark_willow"                                                       "Forest Fairy"
 		"npc_dota_hero_bear"                                                    		  "Baby Bear"
 
 		// ******************** UNITS ********************
@@ -616,7 +617,8 @@
 
 		"DOTA_Tooltip_ability_reveal_area"                                                "Reveal Area"
 		"DOTA_Tooltip_ability_reveal_area_Description"                                    "Показывает территорию в радиусе 2600 (1500 на карте Стандарт/Арена) на 10 секунд. Отлично подходит для разведки вражеских баз! Делает вражеских юнитов неспособными стать невидимыми на 10 секунд. "
-
+		"DOTA_Tooltip_ability_reveal_area_maximum_charges"						 		"МАКС. ЧИСЛО ЭФФЕКТОВ:"
+		
 		"DOTA_Tooltip_ability_troll_invis"                                                "Troll Invis"
 		"DOTA_Tooltip_ability_troll_invis_Description"                                    "Дает невидимость, чтобы быстрее перемещаться по карте или избежать смерти! "
 
@@ -625,6 +627,12 @@
 
 		"DOTA_Tooltip_ability_attack_gold"                                                "Attack Gold"
 		"DOTA_Tooltip_ability_attack_gold_Description"                                    "Дает золото каждый раз, когда вы наносите урон врагу!"
+		
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven"							  "Teleportation"
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven_Description"				  "Телепортирует к ближающему союзнику."
+		
+		"DOTA_Tooltip_ability_penitence_datadriven"										  ""
+		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  ""
 		
 		"DOTA_Tooltip_ability_monkey_king"											"True strike."
 		"DOTA_Tooltip_ability_monkey_king_Description"  							"Игнорирует промахи"

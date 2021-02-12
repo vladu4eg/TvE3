@@ -4889,6 +4889,9 @@
 		"AbilityTextureName"			"keeper_of_the_light_blinding_light"
 		//"AbilityCooldown"				"45"
 		"MaxLevel"						"1"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -9727,7 +9730,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"0" // ?? global
 	"AbilityCastPoint"				"3"
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"60"
 	"AbilityManaCost"				"100"
 
 	"precache"
@@ -9831,7 +9834,7 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"chen_penitence"
+	"AbilityTextureName"			"omniknight_degen_aura"
 
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
@@ -9848,12 +9851,12 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"400"
 	"AbilityCooldown"				"60"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"70"
+	"AbilityManaCost"				"200"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -9862,7 +9865,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"8"
+			"duration"				"6"
 		}
 		"02"
 		{
@@ -9872,12 +9875,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movement_speed"	"-30"
+			"bonus_movement_speed"	"-50"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage_taken"	"30"
+			"bonus_damage_taken"	"10"
 		}
 	}
 

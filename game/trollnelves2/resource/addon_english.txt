@@ -10,6 +10,7 @@
 		"npc_dota_hero_troll_warlord"                                                     "Troll"
 		"npc_dota_hero_lycan"                                                             "Wolf"
 		"npc_dota_hero_crystal_maiden"                                                    "Angel"
+		"npc_dota_hero_dark_willow"                                                       "Forest Fairy"
 		"npc_dota_hero_bear"                                                    		  "Baby Bear"
 
 		// ******************** UNITS ********************
@@ -663,6 +664,12 @@
 
 		"DOTA_Tooltip_ability_attack_gold"                                                "Attack Gold"
 		"DOTA_Tooltip_ability_attack_gold_Description"                                    "Gives gold every time you deal damage to an enemy"
+		
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven"							  "Teleportation"
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven_Description"				  "Teleports to a nearby ally."
+		
+		"DOTA_Tooltip_ability_penitence_datadriven"										  ""
+		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  ""
 		
 		"DOTA_Tooltip_ability_monkey_king"											"True strike"
 		"DOTA_Tooltip_ability_monkey_king_Description"  							"Ignores Angel Evasion."

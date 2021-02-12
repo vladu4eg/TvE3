@@ -66,6 +66,8 @@ function VoteKick(eventSourceIndex, event)
 		UTIL_Remove(hero)
 		SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 		votes[ event.playerID1 ] = 0
+		GameRules.KickList[event.playerID1] = 1
+		return nil
 	end
 	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
 	or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
