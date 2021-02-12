@@ -842,15 +842,9 @@ function BuildingHelper:OrderFilter(order)
         if units["0"] then
             shop = EntIndexToHScript(units["0"])
             local unit_name = shop:GetUnitName()
-            if string.match(unit_name, "shop") or
-                string.match(unit_name, "troll_hut") then
+            if string.match(unit_name, "shop") or string.match(unit_name, "troll_hut") then
                 shop.buyer = issuerID
-                if string.match(unit_name, "troll_hut") and
-                    string.match(
-                        EntIndexToHScript(abilityIndex):GetAbilityName(),
-                    "upgrade_to") and
-                    PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~=
-                    TROLL_HERO then
+                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO then
                     SendErrorMessage(issuerID, "#error_only_troll_can_upgrade")
                     return false
                 end
@@ -860,18 +854,15 @@ function BuildingHelper:OrderFilter(order)
         local ability = EntIndexToHScript(abilityIndex)
         if ability then
             local abilityName = ability:GetAbilityName()
-            local selectedEntities =
-            PlayerResource:GetSelectedEntities(issuerID)
+            local selectedEntities = PlayerResource:GetSelectedEntities(issuerID)
             if string.match(abilityName, "upgrade_to") then
                 local unitName = unit:GetUnitName()
                 for _, selectedEntityIndex in pairs(selectedEntities) do
-                    local selectedEntityHandle =
-                    EntIndexToHScript(selectedEntityIndex)
+                    local selectedEntityHandle = EntIndexToHScript(selectedEntityIndex)
                     if selectedEntityHandle and
                         selectedEntityHandle:GetUnitName() == unitName then
                         for a = 0, selectedEntityHandle:GetAbilityCount() - 1 do
-                            local upgradeAbility =
-                            selectedEntityHandle:GetAbilityByIndex(a)
+                            local upgradeAbility = selectedEntityHandle:GetAbilityByIndex(a)
                             if upgradeAbility and
                                 upgradeAbility:GetAbilityName() == abilityName then
                                 ExecuteOrderFromTable(

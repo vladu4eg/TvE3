@@ -720,6 +720,9 @@ function DisableAbilityIfMissingRequirements(playerID, hero, abilityHandle, unit
     local missingRequirements = {}
     local disableAbility = false
     local requirements = GameRules.buildingRequirements[unitName]
+    if string.match(unitName,"troll_hut") then
+        hero = GameRules.trollHero
+    end
     if requirements then
         for _, requiredUnitName in ipairs(requirements) do
             local requiredBuildingCurrentCount = hero.buildings[requiredUnitName].completedConstructionCount
@@ -737,6 +740,8 @@ function DisableAbilityIfMissingRequirements(playerID, hero, abilityHandle, unit
         local currentCount = hero.buildings[unitName].startedConstructionCount
         if currentCount >= limit then disableAbility = true end
     end
+    
+    
     
     if disableAbility and not GameRules.test then
         abilityHandle:SetLevel(0)

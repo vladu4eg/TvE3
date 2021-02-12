@@ -28,7 +28,7 @@
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/event.xml" />  
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/pets.xml" />  
-	<!--<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" /> -->
+	<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
   </Panel>
 
 </root>

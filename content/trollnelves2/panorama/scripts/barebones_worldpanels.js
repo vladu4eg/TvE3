@@ -34,7 +34,7 @@ function WorldPanelChange(id, changes, dels)
       wp.panel = $.CreatePanel( "Panel", $.GetContextPanel(), "" );
       wp.panel.BLoadLayout(changes[k].layout, false, false);
       wp.panel.WorldPanel = wp;
-      wp.panel.OnEdge = false;
+      wp.panel.OnEdge = true;
       wp.panel.OffScreen = false;
       wp.panel.Data = wp.data;
       wp.panel.DeleteWorldPanel = function(pan){ 

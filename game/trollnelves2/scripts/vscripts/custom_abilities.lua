@@ -796,11 +796,12 @@ end
 function StealGold(event)
 	local caster = event.caster
 	local target = event.target
-	local playerID = target:GetPlayerOwnerID()
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local playerID = GameRules.trollID
+	local hero = GameRules.trollHero
 	local sum = math.ceil(hero:GetNetworth()*0.003)+10
 	local maxSum = 50000
 	local units = Entities:FindAllByClassname("npc_dota_creature")
+
 	for _,unit in pairs(units) do
 		local unit_name = unit:GetUnitName();
 		if unit_name == "troll_hut_6" or unit_name == "troll_hut_7" then

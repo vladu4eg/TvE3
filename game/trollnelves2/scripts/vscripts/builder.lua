@@ -251,6 +251,12 @@ function UpgradeBuilding( event )
     local gold_cost
     local lumber_cost
     local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(building:GetPlayerOwnerID()))
+    
+    if string.match(building:GetUnitName(),"troll_hut") then
+        hero = GameRules.trollHero
+        playerID = GameRules.trollID
+    end
+    
     -- I do it like this so you are able to have two buildings upgrade into the same upgraded building with different prices and only having one ability
     local count = tonumber(upgrades.Count)
     for i = 1, count, 1 do

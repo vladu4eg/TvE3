@@ -335,7 +335,9 @@ function trollnelves2:OnEntityKilled(keys)
         end
         else
         local hero = PlayerResource:GetSelectedHeroEntity(killedPlayerID)
-        
+        if string.match(killed:GetUnitName(),"troll_hut") then
+            hero = GameRules.trollHero
+        end
         if hero and hero.units and hero.alive then -- hero.units can contain other units besides buildings
             for i = #hero.units, 1, -1 do
                 if not hero.units[i]:IsNull() then
