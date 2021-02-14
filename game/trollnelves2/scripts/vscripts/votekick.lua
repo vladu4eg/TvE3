@@ -62,30 +62,32 @@ function VoteKick(eventSourceIndex, event)
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
-	then
+		then
 		UTIL_Remove(hero)
 		SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 		votes[ event.playerID1 ] = 0
+		GameRules.KickList[event.playerID1] = 1
+		CheckWolfInTeam(hero)
 	end
 	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
-	or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
 	or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
-		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
+	votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
 	end
 	local disKick = 0
-		if tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll) <= -500 then
-			disKick = math.floor((tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll))/500) * 0.1
-		end
+	if tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll) <= -500 then
+		disKick = math.floor((tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll))/500) * 0.1
+	end
 	local text = "Vote: " .. votes[ event.playerID1 ] .. "; Count Player: " .. countVote[event.playerID1] .. "; Percent: " .. votes[ event.playerID1 ]/countVote[event.playerID1] .. "; Need perc.: " .. PERC_KICK_PLAYER + disKick .. "; Min player: 8" 
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>" ..  text  .. "</font>", team, 0, 0)
 	if team == DOTA_TEAM_GOODGUYS then
 		Timers:CreateTimer(35.0, function() 
-
+			
 			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER + disKick and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
-			then
+				then
 				GameRules.PlayersBase[event.playerID1] = nil
 				GameRules.KickList[event.playerID1] = 1
 				hero = PlayerResource:GetSelectedHeroEntity(event.playerID1)
@@ -101,9 +103,38 @@ function VoteKick(eventSourceIndex, event)
 				--PlayerResource:SetCustomTeamAssignment(event.playerID1, DOTA_TEAM_NOTEAM)
 				UTIL_Remove(hero)
 				SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
+				CheckWolfInTeam(hero)
 			end
 			votes[ event.playerID1 ] = 0
 			countVote[event.playerID1] = 0
 		end);
-	end 
+	end 	
+end
+
+
+function CheckWolfInTeam(hero)
+	for pID=0,DOTA_MAX_TEAM_PLAYERS do
+		if PlayerResource:IsValidPlayerID(pID) then
+			local wolf = PlayerResource:GetSelectedHeroEntity(pID)
+			if wolf ~= nil and hero ~= wolf and wolf ~= GameRules.trollHero and GameRules.KickList[pID] == nil then
+				if wolf:IsWolf() then
+					DebugPrintTable(wolf)
+					DebugPrint("ControlUnitForTroll")
+					trollnelves2:ControlUnitForTroll(wolf)
+					return nil
+				end
+			end
+		end
+	end
+	hero = GameRules.trollHero
+	local playerID = GameRules.trollID
+	local units = Entities:FindAllByClassname("npc_dota_creature")
+	for _, unit in pairs(units) do
+		local unit_name = unit:GetUnitName();
+		if string.match(unit_name, "shop") or
+			string.match(unit_name, "troll_hut") then
+			unit:SetOwner(hero)
+			unit:SetControllableByPlayer(playerID, true)
+		end
+	end
 end

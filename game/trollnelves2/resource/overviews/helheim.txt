@@ -1,8 +1,8 @@
 helheim
 {
 	material materials/overviews/helheim.vmat
-	pos_x -8173
-	pos_y 8496
-	scale 16.856
+	pos_x -9280
+	pos_y 9088
+	scale 18.063
 }
 

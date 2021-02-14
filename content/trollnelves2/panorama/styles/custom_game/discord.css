@@ -8,25 +8,16 @@
 
 
 #DonateToggleButton {
-	width: 60px;
-	height: 60px;
-	background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_psd.vtex");
-	brightness: 1.0;
-	z-index: -1;
-	/*box-shadow: #000000aa 0px 0px 2px 2px;*/
-	transition-property: background-image,brightness,transform;
-	transition-duration: .25s;
+	width: 250px;
+	height: 75px;
 	background-size: 100% 100%;
-	transition-timing-function: ease-in-out;
-	vertical-align: top;
+	vertical-align: bottom;
 	/*transform: translateX(-150px);*/
 	horizontal-align: left;
 /*	margin-left: 1120px;
 	margin-bottom: 30px;*/
-	margin-top: 220px;
 	text-align: center;
-	margin-bottom: 5px;
-	border-radius: 5px;
+	margin-bottom: 270px;
 }
 
 #Arrow{
@@ -53,7 +44,7 @@
 	margin-left: 0px;
 }
 #DonateToggleButtonText {
-	color: #ffcc33;
+	color: #ffffff;
 	font-size: 22px;
 	font-weight: bold;
 	letter-spacing: 1px;

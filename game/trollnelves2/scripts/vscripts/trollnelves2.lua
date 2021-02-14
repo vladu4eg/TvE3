@@ -394,10 +394,9 @@ function InitializeAngel(hero)
     --end
 end
 
-function ControlUnitForTroll(hero)
+function trollnelves2:ControlUnitForTroll(hero)
     local playerID = hero:GetPlayerOwnerID()
     local units = Entities:FindAllByClassname("npc_dota_creature")
-    
     for _, unit in pairs(units) do
         local unit_name = unit:GetUnitName();
         if string.match(unit_name, "shop") or
@@ -434,7 +433,7 @@ function InitializeWolf(hero)
     PlayerResource:SetGold(hero, gold)
     PlayerResource:SetLumber(hero, lumber)
     
-    ControlUnitForTroll(hero)
+    trollnelves2:ControlUnitForTroll(hero)
     
     local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")
     if abil ~= nil then
