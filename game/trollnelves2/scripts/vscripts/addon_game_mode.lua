@@ -345,7 +345,8 @@ function Precache( context )
     PrecacheResource("model", "models/courier/baby_rosh/babyroshan_elemental.vmdl", context)
 	PrecacheResource("model", "models/items/courier/duskie/duskie.vmdl", context)
 	
-	
+	PrecacheResource("model", "models/items/courier/dc_demon/dc_demon_flying.vmdl", context)
+		
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)
 --	PrecacheResource("model", "models/items/death_prophet/drowned_siren_head/drowned_siren_head.vmdl", context)
@@ -408,6 +409,7 @@ function Activate()
 	GameRules.goldGiven = {}
 	GameRules.lumberGiven = {}
 	GameRules.scores = {}
+	GameRules.xp = {}
 	GameRules.types = {}
 	GameRules.trollID = nil
 	GameRules.trollHero = nil

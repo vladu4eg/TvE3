@@ -421,6 +421,9 @@ function SpawnUnitOnChannelSucceeded(event)
 						elseif string.match(GetMapName(),"desert") then 
 						wearables:RemoveWearables(unit)
 						UpdateModel(unit, "models/items/courier/ig_dragon/ig_dragon_flying.vmdl", 1.2)    
+						elseif string.match(GetMapName(),"helheim") then 
+						wearables:RemoveWearables(unit)
+						UpdateModel(unit, "models/items/courier/dc_demon/dc_demon_flying.vmdl", 1.2) 
 					end
 					--elseif parts["3"] == "normal" and unit_name == "gold_wisp" then
 					--		wearables:RemoveWearables(unit)

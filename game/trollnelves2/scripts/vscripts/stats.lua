@@ -10,6 +10,7 @@ function Stats.SubmitMatchData(winner,callback)
 		if GameRules:IsCheatMode() then return end
 	end
 	local data = {}
+	local xp = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
 	local maxGoldSum = 0
@@ -52,6 +53,7 @@ function Stats.SubmitMatchData(winner,callback)
 				data.Map = GetMapName()
 				local hero = PlayerResource:GetSelectedHeroEntity(pID)
 				data.SteamID = tostring(PlayerResource:GetSteamID(pID) or 0)
+				xp.SteamID = tostring(PlayerResource:GetSteamID(pID) or 0)
 				data.Time = tostring(tonumber(GameRules:GetGameTime() - GameRules.startTime)/60 or 0)
 				data.GoldGained = tostring(PlayerResource:GetGoldGained(pID)/1000 or 0)
 				data.GoldGiven = tostring(PlayerResource:GetGoldGiven(pID)/1000 or 0)
@@ -76,11 +78,13 @@ function Stats.SubmitMatchData(winner,callback)
 						if PlayerResource:GetTeam(pID) == winner then
 							if hero:IsTroll() then
 								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								xp.Score = tostring(tonumber(GameRules.xp[pID]) + 5 )
 								if tonumber(data.Score) < math.floor(10/koeff)  then
 									data.Score = tostring(math.floor(10/koeff))
 								end
-								elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
+							elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
 								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								xp.Score = tostring(tonumber(GameRules.xp[pID]) + 5 )
 								if tonumber(data.Score) < 1  then
 									data.Score = tostring(1)
 								end
@@ -88,22 +92,28 @@ function Stats.SubmitMatchData(winner,callback)
 							elseif PlayerResource:GetTeam(pID) ~= winner then
 							if hero:IsTroll() then
 								data.Score = tostring( math.floor(-10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-								elseif hero:IsElf() then 
+								xp.Score = tostring(tonumber(GameRules.xp[pID]) - 5 )
+							elseif hero:IsElf() then 
 								data.Score = tostring(math.floor(0 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								xp.Score = tostring(tonumber(GameRules.xp[pID]) - 2 )
 							end
 						end 
 						if hero:IsAngel() or hero:IsWolf() then 
 							data.Score = tostring(math.floor(-5 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+							xp.Score = tostring(tonumber(GameRules.xp[pID]) - 5 )
 							data.Team = tostring(2)
-							elseif hero:IsElf() and PlayerResource:GetDeaths(pID) > 0 then 
+						elseif hero:IsElf() and PlayerResource:GetDeaths(pID) > 0 then 
+							xp.Score = tostring(tonumber(GameRules.xp[pID]) - 4 )
 							data.Score = tostring(math.floor(-2 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 						end
 					elseif PlayerResource:GetConnectionState(pID) ~= 2 and hero:IsTroll() and PlayerResource:GetTeam(pID) == winner then
 						data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+						xp.Score = tostring(tonumber(GameRules.xp[pID]) + 5 )
 						if tonumber(data.Score) < math.floor(10/koeff)  then
 							data.Score = tostring(math.floor(10/koeff))
 						end
 					elseif PlayerResource:GetConnectionState(pID) ~= 2 then
+						xp.Score = tostring(tonumber(GameRules.xp[pID]) - 10 )
 						data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
 					end
 					if tonumber(data.Score) >=  0 then
@@ -122,6 +132,10 @@ function Stats.SubmitMatchData(winner,callback)
 				GameRules.Score[pID] = data.Score
 				GameRules:SendCustomMessage(text, 1, 1)
 				Stats.SendData(data,callback)
+				if tonumber(xp.Score ) < 0 then 
+					xp.Score = "0"
+				end
+				Stats.SendData(xp,callback)
 			end 
 		end
 	end
@@ -219,6 +233,30 @@ function Stats.RequestDataTop10(idTop, callback)
 		---CustomNetTables:SetTableValue("stats", tostring( pId ), { steamID = obj.steamID, score = obj.score })
 		return obj
 		
+	end)
+end
+
+function Stats.RequestXp(pId, callback)
+	local req = CreateHTTPRequest("GET",Stats.server .. "xp/" .. tostring(PlayerResource:GetSteamID(pId)))
+	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
+	DebugPrint("***********************************************")
+	
+	GameRules.xp[pId] = 0
+	
+	req:Send(function(res)
+		if res.StatusCode ~= 200 then
+			DebugPrint("Connection failed! Code: ".. res.StatusCode)
+			DebugPrint(res.Body)
+			return -1
+		end
+		local obj,pos,err = json.decode(res.Body)
+		DebugPrint(obj.steamID)
+		DebugPrint("***********************************************"  .. #obj)
+		DebugPrintTable(obj)
+		if #obj > 0 then
+				GameRules.xp[pId] = obj[2].score
+		end
+		return obj
 	end)
 end
 

@@ -198,6 +198,7 @@ function InitializeHero(hero)
     hero:SetStashEnabled(false)
     
     hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
+    hero:SetDeathXP(0)
 end
 
 function InitializeBadHero(hero)

@@ -459,6 +459,9 @@ function UpgradeBuilding( event )
                 elseif string.match(GetMapName(),"desert") and newBuildingName == "true_sight_tower" then 
                 wearables:RemoveWearables(newBuilding)
                 UpdateModel(newBuilding, "models/items/wards/megagreevil_ward/megagreevil_ward.vmdl", 1)    
+                elseif string.match(GetMapName(),"helheim") and newBuildingName == "true_sight_tower" then 
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/dire_ward_eye/dire_ward_eye.vmdl", 1)   
                 --elseif newBuildingName == "rock_18" then
                 --   wearables:RemoveWearables(newBuilding)
                 --   UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower.vmdl", 0.3)
