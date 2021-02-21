@@ -11,6 +11,7 @@
 
   <Panel>
     <!-- CustomUIElements go here.-->
+		<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
     <CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" /> 
     <CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/building_helper.xml" />
     <CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/selection.xml" /> 
@@ -28,7 +29,6 @@
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/event.xml" />  
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
 	<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/pets.xml" />  
-	<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
   </Panel>
 
 </root>

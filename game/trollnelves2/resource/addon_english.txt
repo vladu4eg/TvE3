@@ -1792,6 +1792,19 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"error_need_buy_hut_7"																"You need to buy a level 7 hut!"		
 		"error_not_upgrade_tower19_x4"														"You cannot build Enigma in x4."
 		"error_not_destroy_building"														"The owner has not left the game. Wait until the game is completely exited."
+		
+		"trigs1"																			"There is never too much gold!"
+		"trigs2"																			"Waiting pays the cost!"
+		"trigs3"																			"But my brother and I could be Wangs..."
+		"trigs4"																			"You always pray to Thor, Freyr and Odin..."
+		"trigs5"																			"I had to go to Liesalfheim!"
+		"trigs6"																			"Greed will destroy everyone, even the smallest offering can satisfy the gods!"
+		"trigs7"																			"Traveling to the world of the free with Thor is the best memory..."
+		"trigs8"																			"To return to the Vanakwisl River again..."
+		"trigs9"																			"Rumor has it that the three worlds were completely destroyed..."
+		"trigs10"																			"How beautiful the Norns are, I would give a lot to see them again..."
+		
+		
 		"loading_text"																		"&lt;=Click this for tips!<br>
 		                                                                                    Don't change your hotkeys after starting the game.
 		                                                                                    "
