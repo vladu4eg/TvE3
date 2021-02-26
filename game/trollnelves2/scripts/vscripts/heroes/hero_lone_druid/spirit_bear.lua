@@ -52,6 +52,7 @@ function SpiritBearSpawn( event )
 			
 			else
 			-- Create the unit and make it controllable
+			SpiritCheckWolf( event )
 			caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
 			caster.bear:SetControllableByPlayer(player, true)
 			-- Apply the backslash on death modifier
@@ -104,7 +105,7 @@ function SpiritBearLevel( event )
 		-- Remove the old bear in its position
 		local origin = caster.bear:GetAbsOrigin()
 		caster.bear:RemoveSelf()
-		
+		SpiritCheckWolf( event )
 		-- Create the unit and make it controllable
 		caster.bear = CreateUnitByName(unit_name, origin, true, caster, caster, caster:GetTeamNumber())
 		caster.bear:SetControllableByPlayer(player, true)
@@ -143,7 +144,9 @@ function SpiritCheckWolf( event )
 			local wolf = PlayerResource:GetSelectedHeroEntity(pID)
 			if wolf ~= nil then
 				if wolf:IsWolf() then
-					caster.bear:SetControllableByPlayer(pID, false)
+					DebugPrint("in1")
+					trollnelves2:ControlUnitForTroll(wolf)
+					return nil
 				end
 			end
 		end

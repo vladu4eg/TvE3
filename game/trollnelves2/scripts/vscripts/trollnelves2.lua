@@ -180,6 +180,8 @@ function trollnelves2:OnHeroInGame(hero)
     end
 end
 
+
+
 function InitializeHero(hero)
     DebugPrint("Initialize hero")
     PlayerResource:SetGold(hero, 0)
@@ -398,10 +400,23 @@ end
 function trollnelves2:ControlUnitForTroll(hero)
     local playerID = hero:GetPlayerOwnerID()
     local units = Entities:FindAllByClassname("npc_dota_creature")
+    local checkTrollHutLevel6 = false
+    for _,unit in pairs(units) do
+    local unit_name_hut = unit:GetUnitName();
+        if unit_name_hut == "troll_hut_7" then
+            DebugPrint("in2")
+            checkTrollHutLevel6 = true
+        end
+	end 
+    if not checkTrollHutLevel6 then
+        PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
+		return nil
+    end
     for _, unit in pairs(units) do
         local unit_name = unit:GetUnitName();
         if string.match(unit_name, "shop") or
             string.match(unit_name, "troll_hut") then
+            DebugPrint("in3")
             unit:SetOwner(hero)
             unit:SetControllableByPlayer(playerID, true)
         end
