@@ -13,7 +13,7 @@
 		<include src="s2r://panorama/scripts/custom_game/tops.vjs_c" />
 	</scripts>
 
-	<Panel hittest="false" class="CustomUIContainerGameInfo2">
+	<Panel hittest="false" class="CustomUIContainerGameInfo2" style="z-index:10;">
 		<Panel id="GameInfoPanel">
 			<Panel id="GameInfoPanelScrollArea">
 				<Panel id="GameInfoPanelPaddingTop"/>

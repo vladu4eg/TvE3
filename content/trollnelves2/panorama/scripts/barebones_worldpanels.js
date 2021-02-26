@@ -26,7 +26,6 @@ function WorldPanelChange(id, changes, dels)
       wp = {};
       panels[k] = wp;
     }
-
     if (changes[k].layout !== wp.layout){
       if (wp.panel)
         wp.panel.DeleteAsync(0);

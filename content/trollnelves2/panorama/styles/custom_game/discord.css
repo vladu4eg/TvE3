@@ -8,23 +8,24 @@
 
 
 #DonateToggleButton {
-	width: 250px;
-	height: 75px;
+	width: 210px;
+	height: 71px;
 	background-size: 100% 100%;
-	vertical-align: bottom;
+	vertical-align: top;
 	/*transform: translateX(-150px);*/
-	horizontal-align: left;
+	horizontal-align: right;
 /*	margin-left: 1120px;
 	margin-bottom: 30px;*/
 	text-align: center;
-	margin-bottom: 270px;
+	margin-top: 50px;
+	margin-left: 400px;
 }
 
 #Arrow{
 	width: 100%;
 	height: 100%;
 	background-image: url('file://{images}/custom_game/loading_screen/discord.png');
-	background-size: 90% 90%;
+	background-size: 100% 100%;
 	background-repeat: no-repeat; 
 	background-position: 50% 50%;
 	/*transform: scaleX(-1);*/
