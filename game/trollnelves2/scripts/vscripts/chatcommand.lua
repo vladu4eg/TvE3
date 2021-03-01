@@ -80,10 +80,10 @@ function chatcommand:OnPlayerChat(event)
 			GameRules.PlayersFPS[event.playerid] = true
 		elseif event.text == "!unfps" then
 			GameRules.PlayersFPS[event.playerid] = false
-		elseif event.text == "!xp" then
-			GameRules:SendCustomMessage("<font color='#00FF80'>" .. hero:GetCurrentXP() ..  "</font>" , 1, 1)
-		elseif event.text == "!xpup" then
-			hero:AddExperience(50,DOTA_ModifyXP_Unspecified,false,false)
+		--elseif event.text == "!xp" then
+		--	GameRules:SendCustomMessage("<font color='#00FF80'>" .. hero:GetCurrentXP() ..  "</font>" , 1, 1)
+		--elseif event.text == "!xpup" then
+		--	hero:AddExperience(50,DOTA_ModifyXP_Unspecified,false,false)
 		--elseif event.text == "!map" then
 				-- Must set the map name prior to getting the neighboring room height difference
 				--local mapList = EncounterData.szMapNames

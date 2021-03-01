@@ -190,6 +190,23 @@ function InitializeHero(hero)
         hero:AddNewModifier(nil, nil, "modifier_stunned", nil)
     end
     
+    Timers:CreateTimer(30, function()
+        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll)
+        if hero ~= nil then
+            if point > 0 then 
+                hero:AddExperience(point, DOTA_ModifyXP_Unspecified, false,false)
+                -- Learn all abilities (this isn't necessary on creatures)
+                for i = 0, hero:GetAbilityCount() - 1 do
+                    local ability = hero:GetAbilityByIndex(i)
+                    if ability then 
+                        ability:SetLevel(ability:GetMaxLevel()) 
+                    end
+                end
+                hero:SetAbilityPoints(0)
+            end
+        end
+    end)
+    
     hero:ClearInventory()
     -- Learn all abilities (this isn't necessary on creatures)
     for i = 0, hero:GetAbilityCount() - 1 do
@@ -402,12 +419,12 @@ function trollnelves2:ControlUnitForTroll(hero)
     local units = Entities:FindAllByClassname("npc_dota_creature")
     local checkTrollHutLevel6 = false
     for _,unit in pairs(units) do
-    local unit_name_hut = unit:GetUnitName();
+        local unit_name_hut = unit:GetUnitName();
         if unit_name_hut == "troll_hut_7" then
             DebugPrint("in2")
             checkTrollHutLevel6 = true
         end
-	end 
+    end 
     if not checkTrollHutLevel6 then
         PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
 		return nil
@@ -544,13 +561,13 @@ function trollnelves2:PreStart()
                 Stats.RequestPetsDefaults(pID, steam, callback)
                 Stats.RequestPets(pID, steam, callback)
                 Timers:CreateTimer(15, function() wearables:SetPart() end)     
-                Timers:CreateTimer(30, function() SelectPets:SetPets() end)    
+                Timers:CreateTimer(30, function() SelectPets:SetPets() end)       
             end
         end
         Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
-        Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
-        Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
-        Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
+        Timers:CreateTimer(10, function() Stats.RequestDataTop10("2", callback) end)
+        Timers:CreateTimer(15, function() Stats.RequestDataTop10("3", callback) end)
+        Timers:CreateTimer(20, function() Stats.RequestDataTop10("4", callback) end)
         Donate:CreateList()
     end
     

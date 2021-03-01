@@ -63,7 +63,7 @@ function Build( event )
         end
     end)
     
-    --local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = Debug.ErrorCheck(function() 
         -- A building unit was created
         event:OnConstructionStarted(function(unit)
             BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
@@ -229,18 +229,6 @@ function DestroyBuilding( keys )
     end
 end
 
-function printTryError(...)
-	local stack = debug.traceback(...)
-	print(stack) 
-    GameRules:SendCustomMessage(stack, 1, 1)
-	return stack
-end
-
-function ErrorCheck(callback, ...)
-    print("BuildError")
-	return xpcall(callback, printTryError, ...)
-end
-
 function UpgradeBuilding( event )
     local building = event.caster
     local NewBuildingName = event.NewName
@@ -282,7 +270,7 @@ function UpgradeBuilding( event )
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
-    --local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = Debug.ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
    -- end)
     local newBuildingName = newBuilding:GetUnitName()

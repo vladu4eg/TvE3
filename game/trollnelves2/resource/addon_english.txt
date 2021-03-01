@@ -340,6 +340,10 @@
 		"DOTA_Tooltip_ability_upgrade_to_rock_19"                              "Water Dragon Wall"
 		"DOTA_Tooltip_ability_upgrade_to_rock_19_Description"                  "Upgrade your dragon wall!<br>HP:999999<br>ARMOR:192"
 
+		"DOTA_Tooltip_ability_upgrade_to_rock_20"                              "Fire Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_20_Description"                  "Upgrade your dragon wall!<br>HP:999999<br>ARMOR:256"
+
+
 		"DOTA_Tooltip_ability_build_tower_1"                                              "Build Tower 1"
 		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "Build tower to defend yourself from the mighty troll!<br>Damage: 1"
 		"DOTA_Tooltip_ability_build_tower_1_gold_cost"                                    "GOLD COST: "
@@ -1659,7 +1663,11 @@
 		
 		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
-		
+
+		"DOTA_Tooltip_ability_item_spring"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_spring_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
+
+
 		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
 		"DOTA_Tooltip_ability_item_winter_stress_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>You can only activate from 12 people."
 		

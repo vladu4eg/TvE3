@@ -8,17 +8,17 @@
 
 
 #DonateToggleButton {
-	width: 210px;
+	width: 71px;
 	height: 71px;
 	background-size: 100% 100%;
-	vertical-align: top;
+
 	/*transform: translateX(-150px);*/
-	horizontal-align: right;
+	horizontal-align: left;
 /*	margin-left: 1120px;
 	margin-bottom: 30px;*/
 	text-align: center;
-	margin-top: 50px;
-	margin-left: 400px;
+	margin-top: 220px;
+	margin-left: -5px;
 }
 
 #Arrow{

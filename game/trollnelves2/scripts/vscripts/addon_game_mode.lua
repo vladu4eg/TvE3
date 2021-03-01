@@ -409,7 +409,7 @@ function Activate()
 	GameRules.goldGiven = {}
 	GameRules.lumberGiven = {}
 	GameRules.scores = {}
-	GameRules.xp = {}
+	--GameRules.xp = {}
 	GameRules.types = {}
 	GameRules.trollID = nil
 	GameRules.trollHero = nil

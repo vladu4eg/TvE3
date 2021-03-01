@@ -85,6 +85,8 @@ function trollnelves2:_Inittrollnelves2()
   
   CustomNetTables:SetTableValue("building_settings", "team_choice_time", { value = TEAM_CHOICE_TIME })
   
+  mode:SetModifyExperienceFilter( Dynamic_Wrap( trollnelves2, "ExperienceFilter" ), self )
+  
  -- mode:SetItemAddedToInventoryFilter(Dynamic_Wrap(trollnelves2, "ItemPickFilter"), self)
   
   
@@ -118,4 +120,11 @@ function trollnelves2:prequire(...)
     local status, lib = pcall(require, ...)
     if (status) then return lib end
     return nil
+end
+
+function trollnelves2:ExperienceFilter( kv )
+    if kv.reason_const ~= 0 then
+        kv.experience = 0
+    end
+    return true
 end

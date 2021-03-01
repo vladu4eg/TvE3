@@ -2,6 +2,7 @@ require('libraries/util')
 require('libraries/entity')
 require('trollnelves2')
 require('wearables')
+require('error_debug')
 --Ability for tents to give gold
 function GainGoldCreate(event)
 	if IsServer() then
@@ -54,7 +55,7 @@ function ItemEvent(event)
 	data.Srok = "01/09/2020"
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		Stats.GetVip(data, callback)
-		local item = caster:FindItemInInventory("item_winter_1")
+		local item = caster:FindItemInInventory("item_spring")
 		caster:RemoveItem(item)
 	end
 end
@@ -243,8 +244,8 @@ function RevealAreaItem( event )
 end
 
 function RevealArea( event )
-	if IsServer() then
-		local caster = event.caster
+	local status, nextCall = Error_debug.ErrorCheck(function() 
+		local caster = event.caster1
 		local point = event.target_points[1]
 		local visionRadius = string.match(GetMapName(),"standart") and event.Radius*0.58 or string.match(GetMapName(),"arena") and event.Radius*0.58 or event.Radius
 		local visionDuration = event.Duration
@@ -265,7 +266,7 @@ function RevealArea( event )
 				return 0.03
 			end
 		end)
-	end
+	end)
 end
 
 function TeleportTo (event)
