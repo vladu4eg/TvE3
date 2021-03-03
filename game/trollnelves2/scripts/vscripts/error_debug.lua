@@ -4,7 +4,7 @@ local isTesting = IsInToolsMode() and false
 Error_debug.server = "https://tve3.us/debug/" -- "https://localhost:5001/test/" --
 
 function Error_debug.SendData(data,callback)
-	local req = CreateHTTPRequest("POST",Error_debug.server)
+	local req = CreateHTTPRequestScriptVM("POST",Error_debug.server)
 	local encData = json.encode(data)
 	DebugPrint("***********************************************")
 	DebugPrint(Error_debug.server)

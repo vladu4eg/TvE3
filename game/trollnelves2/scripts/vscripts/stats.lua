@@ -125,17 +125,19 @@ function Stats.SubmitMatchData(winner,callback)
 			end 
 		end
 	end
-	SetResourceValues()
+	Timers:CreateTimer(3, function() 
+		GameRules:SetGameWinner(winner)
+		SetResourceValues()
+	end)
 end
 
 function Stats.SendData(data,callback)
-	local req = CreateHTTPRequest("POST",Stats.server)
+	local req = CreateHTTPRequestScriptVM("POST",Stats.server)
 	local encData = json.encode(data)
 	DebugPrint("***********************************************")
 	DebugPrint(Stats.server)
 	DebugPrint(encData)
 	DebugPrint("***********************************************")
-	
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	req:SetHTTPRequestRawPostBody("application/json", encData)
 	req:Send(function(res)
@@ -158,7 +160,7 @@ function Stats.SendData(data,callback)
 end
 
 function Stats.RequestData(pId, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. tostring(PlayerResource:GetSteamID(pId)))
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. tostring(PlayerResource:GetSteamID(pId)))
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	
@@ -202,7 +204,7 @@ function Stats.RequestData(pId, callback)
 end
 
 function Stats.RequestDataTop10(idTop, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "all/" .. idTop)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "all/" .. idTop)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -224,7 +226,7 @@ end
 
 function Stats.RequestVip(pID, steam, callback)
 	local parts = {}
-	local req = CreateHTTPRequest("GET",Stats.server .. "vip/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "vip/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("RequestVip ***********************************************" .. Stats.server )
 	req:Send(function(res)
@@ -264,7 +266,7 @@ end
 
 function Stats.RequestEvent(pID, steam, callback)
 	local parts = {}
-	local req = CreateHTTPRequest("GET",Stats.server .. "event/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "event/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -294,7 +296,7 @@ function Stats.GetVip(data,callback)
 	--if not isTesting then
 	--	if GameRules:IsCheatMode() then return end
 	--end
-	local req = CreateHTTPRequest("POST",Stats.server)
+	local req = CreateHTTPRequestScriptVM("POST",Stats.server)
 	local encData = json.encode(data)
 	DebugPrint("***********************************************")
 	DebugPrint(Stats.server)
@@ -322,7 +324,7 @@ function Stats.GetVip(data,callback)
 	end	
 	
 	function Stats.RequestVipDefaults(pID, steam, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "vip/defaults/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "vip/defaults/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -346,7 +348,7 @@ function Stats.GetVip(data,callback)
 	end
 	
 	function Stats.RequestPetsDefaults(pID, steam, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "pets/defaults/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "pets/defaults/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -370,7 +372,7 @@ function Stats.GetVip(data,callback)
 	end
 	
 	function Stats.RequestBonus(pID, steam, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "bonus/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "bonus/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -396,7 +398,7 @@ function Stats.GetVip(data,callback)
 	end)
 	end
 	function Stats.RequestBonusTroll(pID, steam, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "troll/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "troll/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	local tmp = 0
@@ -428,7 +430,7 @@ function Stats.GetVip(data,callback)
 	
 	function Stats.RequestPets(pID, steam, callback)
 	local parts = {}
-	local req = CreateHTTPRequest("GET",Stats.server .. "pets/" .. steam)
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "pets/" .. steam)
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	req:Send(function(res)
@@ -457,7 +459,7 @@ function Stats.GetVip(data,callback)
 	
 	--[[
 function Stats.RequestXp(pId, callback)
-	local req = CreateHTTPRequest("GET",Stats.server .. "xp/" .. tostring(PlayerResource:GetSteamID(pId)))
+	local req = CreateHTTPRequestScriptVM("GET",Stats.server .. "xp/" .. tostring(PlayerResource:GetSteamID(pId)))
 	req:SetHTTPRequestHeaderValue("Dedicated-Server-Key", dedicatedServerKey)
 	DebugPrint("***********************************************")
 	

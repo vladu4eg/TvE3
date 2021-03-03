@@ -4909,7 +4909,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"charge_replenish_time"	"60.0"
+				"charge_replenish_time"		"60.0"
 			}
 			"05"
 			{
@@ -4946,6 +4946,7 @@
 			}
 		}
 	}
+	
 	"troll_invis"{
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"				    "abilities/troll_invis"

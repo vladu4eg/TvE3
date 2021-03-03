@@ -3,6 +3,7 @@ require('stats')
 require('libraries/entity')
 require('drop')
 require('settings')
+require('error_debug')
 
 function trollnelves2:OnGameRulesStateChange()
     DebugPrint("GameRulesStateChange ******************")
@@ -130,9 +131,8 @@ function trollnelves2:OnDisconnect(event)
                             elseif elfLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 2 then
                             return nil
                             elseif elfLoseTimer <= 0 or PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 4 then
-                            GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
                             GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-                            local status, nextCall = ErrorCheck(function() 
+                            local status, nextCall = Error_debug.ErrorCheck(function() 
                                 Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
                             end)
                             GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
@@ -178,9 +178,8 @@ function trollnelves2:OnDisconnect(event)
                     elseif trollLoseTimer > 0 and PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 2 then
                     return nil
                     elseif trollLoseTimer <= 0 or PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) == 4 then
-                    GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
                     GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-                    local status, nextCall = ErrorCheck(function() 
+                    local status, nextCall = Error_debug.ErrorCheck(function() 
                         Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
                     end)
                     GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
@@ -241,7 +240,7 @@ function printTryError(...)
 	return stack
 end
 
-function ErrorCheck(callback, ...)
+function Error_debug.ErrorCheck(callback, ...)
     print("BuildError")
 	return xpcall(callback, printTryError, ...)
 end
@@ -268,9 +267,8 @@ function trollnelves2:OnEntityKilled(keys)
             GameRules.Bonus[attackerPlayerID] =
             GameRules.Bonus[attackerPlayerID] + 1
             if CheckTrollVictory() then
-                GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
                 GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-                local status, nextCall = ErrorCheck(function() 
+                local status, nextCall = Error_debug.ErrorCheck(function() 
                     Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
                 end)
                 GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)
@@ -279,10 +277,9 @@ function trollnelves2:OnEntityKilled(keys)
             drop:RollItemDrop(killed)
             Pets.DeletePet(info)
             elseif killed:IsTroll() then
-            GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
             GameRules.Bonus[attackerPlayerID] = GameRules.Bonus[attackerPlayerID] + 2
             GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
-            local status, nextCall = ErrorCheck(function() 
+            local status, nextCall = Error_debug.ErrorCheck(function() 
                 Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
             end)
             GameRules:SendCustomMessage("The game can be left, thanks!", 1, 1)

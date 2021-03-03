@@ -189,16 +189,15 @@ function InitializeHero(hero)
     if not GameRules.startTime then
         hero:AddNewModifier(nil, nil, "modifier_stunned", nil)
     end
-    
-    Timers:CreateTimer(30, function()
-        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll)
+        Timers:CreateTimer(30, function()
+        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll) or 0
         if hero ~= nil then
             if point > 0 then 
                 hero:AddExperience(point, DOTA_ModifyXP_Unspecified, false,false)
                 -- Learn all abilities (this isn't necessary on creatures)
                 for i = 0, hero:GetAbilityCount() - 1 do
                     local ability = hero:GetAbilityByIndex(i)
-                    if ability then 
+                    if ability and hero:GetTeamNumber() ~= 3 then 
                         ability:SetLevel(ability:GetMaxLevel()) 
                     end
                 end
@@ -206,7 +205,6 @@ function InitializeHero(hero)
             end
         end
     end)
-    
     hero:ClearInventory()
     -- Learn all abilities (this isn't necessary on creatures)
     for i = 0, hero:GetAbilityCount() - 1 do

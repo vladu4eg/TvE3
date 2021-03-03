@@ -1,7 +1,7 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "spring spring2x spring4x desert desert2x autumn autumn2x"
+  "maps"      "spring spring2x spring4x desert desert2x autumn autumn2x winter winter2x"
   "IsPlayable"  "1"
   "spring"
   {
@@ -28,6 +28,14 @@
     "MaxPlayers"                    "16"
   }
   "autumn2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "winter"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "winter2x"
   {
     "MaxPlayers"                    "16"
   }  

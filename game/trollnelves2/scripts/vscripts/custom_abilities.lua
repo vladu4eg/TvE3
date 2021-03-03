@@ -132,8 +132,8 @@ function shrapnel_start_charge( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 	local modifierName = "modifier_shrapnel_stack_counter_datadriven"
-	local maximum_charges = ability:GetLevelSpecialValueFor( "maximum_charges", ( ability:GetLevel() - 1 ) )
-	local charge_replenish_time = ability:GetLevelSpecialValueFor( "charge_replenish_time", ( ability:GetLevel() - 1 ) )
+	local maximum_charges = 2
+	local charge_replenish_time = 60
 	if GameRules.MapSpeed ~= 1  then
 		charge_replenish_time = 30
 	end
@@ -187,8 +187,8 @@ function shrapnel_fire( keys )
 		local modifierName = "modifier_shrapnel_stack_counter_datadriven"
 		local dummyModifierName = "modifier_shrapnel_dummy_datadriven"
 		local radius = ability:GetLevelSpecialValueFor( "radius", ( ability:GetLevel() - 1 ) )
-		local maximum_charges = ability:GetLevelSpecialValueFor( "maximum_charges", ( ability:GetLevel() - 1 ) )
-		local charge_replenish_time = ability:GetLevelSpecialValueFor( "charge_replenish_time", ( ability:GetLevel() - 1 ) )
+		local maximum_charges = 2
+		local charge_replenish_time = 60
 		local dummy_duration = ability:GetLevelSpecialValueFor( "duration", ( ability:GetLevel() - 1 ) ) + 0.1
 		local damage_delay = ability:GetLevelSpecialValueFor( "damage_delay", ( ability:GetLevel() - 1 ) ) + 0.1
 		local next_charge = 0
@@ -245,7 +245,7 @@ end
 
 function RevealArea( event )
 	local status, nextCall = Error_debug.ErrorCheck(function() 
-		local caster = event.caster1
+		local caster = event.caster
 		local point = event.target_points[1]
 		local visionRadius = string.match(GetMapName(),"standart") and event.Radius*0.58 or string.match(GetMapName(),"arena") and event.Radius*0.58 or event.Radius
 		local visionDuration = event.Duration
