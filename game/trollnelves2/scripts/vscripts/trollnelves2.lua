@@ -269,7 +269,9 @@ function InitializeBuilder(hero)
     hero:AddItemByName("item_glyph_ability")
     hero:AddItemByName("item_night_ability")
     hero:AddItemByName("item_blink_datadriven")
-    
+    if GameRules.MapSpeed == 4 then
+        hero:AddItemByName("item_max_move")
+    end
     hero.goldPerSecond = 0
     hero.lumberPerSecond = 0
     Timers:CreateTimer(function()
@@ -362,6 +364,9 @@ function InitializeTroll(hero)
                 BuildingHelper:AddModifierBuilding(unit)
                 BuildingHelper:BlockGridSquares(GetUnitKV(unit_name, "ConstructionSize"), 0, unit:GetAbsOrigin())
             end
+        elseif string.match(unit_name, "npc_dota_units_base2") then
+            unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+            unit:AddNewModifier(unit, nil, "modifier_phased", {})
         end
     end
     

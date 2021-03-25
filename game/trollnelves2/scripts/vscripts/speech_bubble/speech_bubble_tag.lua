@@ -46,7 +46,18 @@ return {
     ["trigs10"] = {
         text = "#trigs10"
     },
-
+    ["podskazka1"] = {
+        text = "#podskazka1"
+    },
+    ["aa2trigger"] = {
+        text = "#aa2trigger"
+    },
+    ["fountaingoldt"] = {
+        text = "#fountaingoldt"
+    },
+    ["failtrigger"] = {
+        text = "#failtrigger"
+    },
     ["BABY_ROSHAN"] = {
         text = "#SPEECH_BABY_ROSHAN"
     },

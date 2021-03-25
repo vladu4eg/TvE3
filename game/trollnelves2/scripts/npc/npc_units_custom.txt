@@ -97,12 +97,12 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"                             "npc_dota_creature"
-		"Model"                                 "models/heroes/techies/techies.vmdl"
+		"Model"                                 "models/courier/flopjaw/flopjaw_flying.vmdl"
 		"precache"
 		{
-			"model"                                 "models/heroes/techies/techies.vmdl"
+			"model"                                 "models/courier/flopjaw/flopjaw_flying.vmdl"
 		}
-		"ModelScale"                            "1"
+		"ModelScale"                            "1.4"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "140"
 
@@ -171,19 +171,6 @@
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		// Creature Data
 		//----------------------------------------------------------------
-		"Creature"
-	    {
-	        "AttachWearables" // Dark wood set
-	        {
-		"Wearable1" {"ItemDef" "12836"}//mount("Powdersled Rookery Sled")
-		"Wearable2" {"ItemDef" "12834"}//("Powdersled Rookery Cannon")
-		"Wearable3" {"ItemDef" "12835"}//arms("Powdersled Rookery Bomb")
-		"Wearable4" {"ItemDef" "12837"}//belt("Powdersled Rookerya Sign")
-		"Wearable5" {"ItemDef" "12833"}//head("Powdersled Rookery Spleen")
-		"Wearable6" {"ItemDef" "12839"}//shoulder("Powdersled Rookery Squee")
-		"Wearable7" {"ItemDef" "12840"}//back("Powdersled Rookery Spoon")
-	        }
-	    }
 	}
 
 	"minimap_entity"{
@@ -2974,7 +2961,7 @@
 		{
 			"model"						"models/fire_dragon_wall.vmdl"
 	    }
-		"ModelScale"                "0.75"
+		"ModelScale"                "0.65"
 	    "ModelRotation"             "90"
 		"HealthBarOffset"			"150"
 		"PlayerCanControl"			"1"

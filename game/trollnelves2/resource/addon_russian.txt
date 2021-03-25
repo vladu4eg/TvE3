@@ -137,7 +137,7 @@
 		"troll_hut_7"                                                                     "Troll Hut 7"
 		
 		"event_boss"																		"Guardian of Crystals"
-		"event_line_boss"																	"Festive stresS_"
+		"event_line_boss"																	"Chest of the Damned"
 		
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
@@ -1538,9 +1538,17 @@
 		"DOTA_Tooltip_ability_item_event_winter"                                           "Winter Event Item"
 		"DOTA_Tooltip_ability_item_event_winter_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Winter 2.<br>Можно активаровать только от 12 человек."
 
-		"DOTA_Tooltip_ability_drop_gift"                                           "Happy New Year!"
-		"DOTA_Tooltip_ability_drop_gift_Description"                               "Спасибо за прохождение квеста!<br>Праздничный stresS_ выдаст вам от 25 до 200 ивент предметов в случайное время.<br>Квест разработан совместно с stresS_"
+		"DOTA_Tooltip_ability_item_event_helheim"                                           "Helheim Event Item"
+		"DOTA_Tooltip_ability_item_event_helheim_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Donater 10.<br>Можно активаровать только от 12 человек."
 
+		"DOTA_Tooltip_ability_item_event_birthday"                                           "C Днем Рождения!"
+		"DOTA_Tooltip_ability_item_event_birthday_Description"                               "Сообществу ТвЕ3 исполнился 1 год!<br>Спасибо за активную поддержку!<br>Я ценю Вашу помощь!<br>Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Birthday.<br>Можно активаровать только от 12 человек."
+
+		"DOTA_Tooltip_ability_drop_gift"                                           "Chest of the Damned!"
+		"DOTA_Tooltip_ability_drop_gift_Description"                               "Спасибо за прохождение квеста!<br>Сундук Проклятых выдаст вам от 25 до 200 ивент предметов в случайное время."
+
+		"DOTA_Tooltip_ability_item_max_move"                                          	 "Бутылка скорости."
+		"DOTA_Tooltip_ability_item_max_move_Description"                              	 "Дает +190 к скорости бега на 20 секунд."
 
 		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
 		"DOTA_Tooltip_ability_item_event_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек. "
@@ -1674,6 +1682,11 @@
 		"trigs8"																			"Вернуться бы вновь к реке Ванаквисль..."
 		"trigs9"																			"Поговаривают, что три мира были полностью уничтожены..."
 		"trigs10"																			"Как же прекрасны Норны, я бы многое отдал, чтобы вновь увидеть их..."
+		"podskazka1"																		"Для того чтобы начать ритуал тебе необходимо принести кровную жертву!!!"
+		"aa2trigger"																		"Принеси подношение к их ногам и тогда ты сможешь снять проклятие, за это боги наградят тебя."
+		"fountaingoldt"																		"Вернись к фонтану, чтобы закончить ритуал и получить доступ к сокровищам."
+		"failtrigger"																		"Боги не одобрили твоё подношение, теперь вы прокляты навечно."
+		
 		
 		"loading_text"																		"&lt;=Щелкните здесь, чтобы получить советы!<br>
 		                                                                                    Не меняйте горячие клавиши после запуска игры.

@@ -164,7 +164,7 @@
 		"SPEECH_TEST1"																				"хуй<br>thingsd fsd fsd  get<br>a reward from me"
 		
 		"event_boss"																		"Guardian of Crystals"
-		"event_line_boss"																	"Festive stresS_"
+		"event_line_boss"																	"Chest of the Damned"
 		
 		"npc_dota_creep_goodguys_melee_upgraded_mega"										"stresS_"
 		// ******************** ABILITY MODIFIERS ********************
@@ -1677,8 +1677,17 @@
 		"DOTA_Tooltip_ability_item_event_winter"                                           "Winter Event Item"
 		"DOTA_Tooltip_ability_item_event_winter_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Winter 2.<br>You can only activate from 12 people."
 
-		"DOTA_Tooltip_ability_drop_gift"                                           "Happy New Year!"
-		"DOTA_Tooltip_ability_drop_gift_Description"                               "Thanks for completing the quest!<br>Festive stresS_ will give you 25 to 200 event items at a random time.<br>Quest developed in collaboration with stresS_"
+		"DOTA_Tooltip_ability_item_event_helheim"                                           "Helheim Event Item"
+		"DOTA_Tooltip_ability_item_event_helheim_Description"                               "Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Donater 10.<br>You can only activate from 12 people."
+
+		"DOTA_Tooltip_ability_item_event_birthday"                                           "Happy Birthday!"
+		"DOTA_Tooltip_ability_item_event_birthday_Description"                               "The TvE3 community is 1 year old!<br>Thank you for your active support!<br>I appreciate your help!<br>Activate the item to collect the item for yourself.<br>Non-activated items do not sync at the end of the game!<br>Gives the effect Birthday.<br>You can only activate from 12 people."
+
+		"DOTA_Tooltip_ability_item_max_move"                                          	 "Speed ​​bottle."
+		"DOTA_Tooltip_ability_item_max_move_Description"                              	 "Gives +190 running speed for 20 seconds."
+
+		"DOTA_Tooltip_ability_drop_gift"                                           "Chest of the Damned"
+		"DOTA_Tooltip_ability_drop_gift_Description"                               "Thanks for completing the quest!<br>Chest of the Damned will give you 25 to 200 event items at a random time."
 
 		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Applies a debuff on an autoattack that makes the target unrepairable & lessens the effect of angel heal twice! Lasts for 5 seconds. "
@@ -1811,7 +1820,10 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"trigs8"																			"To return to the Vanakwisl River again..."
 		"trigs9"																			"Rumor has it that the three worlds were completely destroyed..."
 		"trigs10"																			"How beautiful the Norns are, I would give a lot to see them again..."
-		
+		"podskazka1"																		"In order to start the ritual, you need to make a blood sacrifice!!!"
+		"aa2trigger"																		"Bring an offering at their feet and then you can remove the curse, for which the gods will reward you."
+		"fountaingoldt"																		"Return to the fountain to complete the ritual and access the treasures."
+		"failtrigger"																		"The gods did not approve of your offering, now you are cursed forever."
 		
 		"loading_text"																		"&lt;=Click this for tips!<br>
 		                                                                                    Don't change your hotkeys after starting the game.

@@ -2,9 +2,12 @@ require('libraries/util')
 require('trollnelves2')
 require('stats')
 require('wearables')
-
+require('drop')
+require('error_debug')
+CheckBarak3 = false
 -- A build ability is used (not yet confirmed)
 function Build( event )
+    local status, nextCall = Error_debug.ErrorCheck(function() 
     local caster = event.caster
     local ability = event.ability
     local ability_name = ability:GetAbilityName()
@@ -190,6 +193,7 @@ function Build( event )
 	--		DebugPrint("Test3.2")
 	--	end
     --	end
+    end)
 end
 
 -- Called when the Cancel ability-item is used
@@ -230,6 +234,7 @@ function DestroyBuilding( keys )
 end
 
 function UpgradeBuilding( event )
+    local status, nextCall = Error_debug.ErrorCheck(function() 
     local building = event.caster
     local NewBuildingName = event.NewName
     local playerID = building:GetPlayerOwnerID()
@@ -483,7 +488,15 @@ function UpgradeBuilding( event )
                 
             end
         end
-    end    
+    end
+    if newBuildingName == "barracks_3" and not CheckBarak3 then
+        if GameRules.Bonus[playerID] == nil then
+            GameRules.Bonus[playerID] = 0
+        end
+        GameRules.Bonus[playerID] = GameRules.Bonus[playerID] + 2
+        drop:RollItemDrop(newBuilding)
+        CheckBarak3 = true
+    end
     Timers:CreateTimer(buildTime,function()
         if newBuilding:IsNull() or not newBuilding:IsAlive() then
             return
@@ -499,6 +512,7 @@ function UpgradeBuilding( event )
         for _, value in ipairs(hero.units) do
             UpdateUpgrades(value)
         end
+    end)
     end)
 end
 

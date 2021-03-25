@@ -233,18 +233,6 @@ function trollnelves2:OnAllPlayersLoaded()
     
 end
 
-function printTryError(...)
-	local stack = debug.traceback(...)
-	print(stack) 
-    GameRules:SendCustomMessage(stack, 1, 1)
-	return stack
-end
-
-function Error_debug.ErrorCheck(callback, ...)
-    print("BuildError")
-	return xpcall(callback, printTryError, ...)
-end
-
 function trollnelves2:OnEntityKilled(keys)
     local killed = EntIndexToHScript(keys.entindex_killed)
     local attacker = EntIndexToHScript(keys.entindex_attacker)

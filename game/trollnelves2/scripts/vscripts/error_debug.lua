@@ -41,7 +41,7 @@ function Error_debug.printTryError(...)
 	data.Log = stack
 	data.Srok = ""
 	Error_debug.SendData(data,callback)
-    --GameRules:SendCustomMessage(stack, 1, 1)
+    -- GameRules:SendCustomMessage(stack, 1, 1)
 	end
 	return stack
 end

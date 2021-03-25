@@ -7,12 +7,19 @@ Stats.server = "https://tve3.us/test/" -- "https://localhost:5001/test/" --
 
 function Stats.SubmitMatchData(winner,callback)
 	if not isTesting then
-		if GameRules:IsCheatMode() then return end
+		if GameRules:IsCheatMode() then 
+			GameRules:SetGameWinner(winner)
+			SetResourceValues()
+			return 
+		end
 	end
 	local data = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
 	local maxGoldSum = 0
+	if GameRules.startTime == nil then
+		GameRules.startTime = 0
+	end
 	for pID=0,DOTA_MAX_TEAM_PLAYERS do
 		if PlayerResource:IsValidPlayerID(pID) and PlayerResource:GetTeam(pID) ~= 5 then
 			if GameRules.scores[pID] == nil then
@@ -105,6 +112,7 @@ function Stats.SubmitMatchData(winner,callback)
 						end
 					elseif PlayerResource:GetConnectionState(pID) ~= 2 then
 						data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
+						data.Team = tostring(2)
 					end
 					if tonumber(data.Score) >=  0 then
 						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
@@ -113,7 +121,7 @@ function Stats.SubmitMatchData(winner,callback)
 					end
 					else
 					data.Type = "Elf"
-					data.Score = tostring(-45)
+					data.Score = tostring(-20)
 					data.Team = tostring(2)
 				end
 				data.Key = dedicatedServerKey
@@ -125,7 +133,7 @@ function Stats.SubmitMatchData(winner,callback)
 			end 
 		end
 	end
-	Timers:CreateTimer(3, function() 
+	Timers:CreateTimer(5, function() 
 		GameRules:SetGameWinner(winner)
 		SetResourceValues()
 	end)
@@ -293,9 +301,9 @@ function Stats.RequestEvent(pID, steam, callback)
 end
 
 function Stats.GetVip(data,callback)
-	--if not isTesting then
-	--	if GameRules:IsCheatMode() then return end
-	--end
+	if not isTesting then
+		if GameRules:IsCheatMode() then return end
+	end
 	local req = CreateHTTPRequestScriptVM("POST",Stats.server)
 	local encData = json.encode(data)
 	DebugPrint("***********************************************")
