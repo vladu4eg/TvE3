@@ -124,8 +124,7 @@ DOTACustomUITypeContainer
 
     vertical-align: top;
     horizontal-align: right;
-    
-   background-image: url("file://{images}/custom_game/all/pe.png");
+   background-image: url('file://{images}/custom_game/all/pe.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

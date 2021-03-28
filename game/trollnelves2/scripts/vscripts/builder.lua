@@ -7,7 +7,6 @@ require('error_debug')
 CheckBarak3 = false
 -- A build ability is used (not yet confirmed)
 function Build( event )
-    local status, nextCall = Error_debug.ErrorCheck(function() 
     local caster = event.caster
     local ability = event.ability
     local ability_name = ability:GetAbilityName()
@@ -94,7 +93,7 @@ function Build( event )
             AddUpgradeAbilities(unit)
             UpdateSpells(hero)
             local item = CreateItem("item_building_cancel", unit, unit)
-            if building_name ~= "flag"  then
+            if building_name ~= "flag" and not string.match(building_name,"mine") then
                 unit:AddItem(item)
             elseif building_name == "flag" then 
                 unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
@@ -193,7 +192,6 @@ function Build( event )
 	--		DebugPrint("Test3.2")
 	--	end
     --	end
-    end)
 end
 
 -- Called when the Cancel ability-item is used
@@ -234,7 +232,6 @@ function DestroyBuilding( keys )
 end
 
 function UpgradeBuilding( event )
-    local status, nextCall = Error_debug.ErrorCheck(function() 
     local building = event.caster
     local NewBuildingName = event.NewName
     local playerID = building:GetPlayerOwnerID()
@@ -512,7 +509,6 @@ function UpgradeBuilding( event )
         for _, value in ipairs(hero.units) do
             UpdateUpgrades(value)
         end
-    end)
     end)
 end
 

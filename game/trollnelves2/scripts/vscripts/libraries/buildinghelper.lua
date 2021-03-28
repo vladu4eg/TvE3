@@ -2019,14 +2019,9 @@ function BuildingHelper:StartRepair(builder, target)
                     else
                     local hpGain = 0
                     for _, uBuilder in pairs(target.units_repairing) do
-                        local bIsFixedRepair =
-                        BuildingHelper:IsFixedRepair(uBuilder)
-                        local repairSpeed =
-                        BuildingHelper:GetRepairSpeed(uBuilder)
-                        hpGain = hpGain +
-                        (bIsFixedRepair == 1 and repairSpeed or
-                            target:GetMaxHealth() * repairSpeed /
-                        100)
+                        local bIsFixedRepair = BuildingHelper:IsFixedRepair(uBuilder)
+                        local repairSpeed = BuildingHelper:GetRepairSpeed(uBuilder) or 0
+                        hpGain = hpGain + (bIsFixedRepair == 1 and repairSpeed or target:GetMaxHealth() * repairSpeed / 100)
                     end
                     local nextTick = 1 / hpGain
                     if nextTick > fserverFrameRate then
