@@ -11,6 +11,11 @@
 	<Panel id = "LoadingTextNoTrollContainer">
 		<Label id = "LoadingText" text = "#loading_text_no_troll" html = "true"/>
 	</Panel> 
+	<Panel class="Hud" hittest="false"> 
+		<Button id="DonateToggleButton" onactivate="ExternalBrowserGoToURL('https://discord.gg/zwYYbex')"> 
+			<Panel id="Arrow" />
+		</Button> 
+	</Panel>
 	
 	<!--
 	<Panel id="TitlePanel">

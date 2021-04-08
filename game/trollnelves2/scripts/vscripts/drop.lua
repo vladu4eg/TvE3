@@ -6,7 +6,7 @@ require('settings')
 item_drop = {
 	--{items = {"item_branches"}, chance = 5, duration = 5, limit = 3, units = {} },
 	{items = {"item_vip"}, limit = 1, chance = 1, units = {"npc_dota_hero_crystal_maiden","npc_dota_hero_lycan","npc_dota_hero_treant"} },
-	
+	{items = {"item_event_birthday"}, limit = 1, chance = 2, units = {"barracks_3"} },
 	--{items = {"item_lifesteal"}, limit = 200, chance = 70, units = {"npc_neutral_boss_1"} },
 	--{items = {"item_dmg_14"}, limit = 200, chance = 70, units = {"npc_neutral_boss_1"} },
 	--{items = {"item_reaver"}, limit = 200, chance = 70, units = {"npc_neutral_boss_1"} },
@@ -70,7 +70,7 @@ function drop:RollItemDrop(unit)
 		
 		local randTime = RandomInt( 30, 240 )
 		Timers:CreateTimer(randTime, function()
-			if string.match(GetMapName(),"winter")  then
+			if string.match(GetMapName(),"spring")  then
 				RandomDropLoot()
 				--elseif string.match(GetMapName(),"halloween") then 
 				--	RandomDropLoot()
@@ -99,7 +99,7 @@ end
 
 function RandomDropLoot()
 	local spawnPoint = Vector(-320,-320,256)
-	local newItem = CreateItem( "item_winter_1", nil, nil )
+	local newItem = CreateItem( "item_spring", nil, nil )
 	local dropRadius = RandomFloat( 3600, 7800 )
 	local randRadius = spawnPoint + RandomVector( dropRadius )
 	local drop = CreateItemOnPositionForLaunch( randRadius, newItem )
@@ -112,9 +112,9 @@ function TimerRandomDrop(event)
 	local maxGift = RandomInt( 25, 200 )
 	Timers:CreateTimer(function()
 		if countGift < maxGift then
-			local randTime = RandomInt( 20, 120 )
+			local randTime = RandomInt( 20, 60 )
 			local spawnPoint = unit:GetAbsOrigin()	
-			local newItem = CreateItem( "item_winter_1", nil, nil )
+			local newItem = CreateItem( "item_spring", nil, nil )
 			local dropRadius = RandomFloat( 10, 360 )
 			local randRadius = spawnPoint + RandomVector( dropRadius )
 			local drop = CreateItemOnPositionForLaunch( randRadius, newItem )

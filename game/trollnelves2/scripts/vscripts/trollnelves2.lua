@@ -1,7 +1,7 @@
 -- This is the primary trollnelves2 trollnelves2 script and should be used to assist in initializing your game mode
 -- Set this to true if you want to see a complete debug output of all events/processes done by trollnelves2
 -- You can also change the cvar 'trollnelves2_spew' at any time to 1 or 0 for output/no output
-TROLLNELVES2_DEBUG_SPEW = true
+TROLLNELVES2_DEBUG_SPEW = false
 LinkLuaModifier("modifier_movespeed_x4",
     "libraries/modifiers/modifier_movespeed_x4.lua",
 LUA_MODIFIER_MOTION_NONE)
@@ -116,14 +116,9 @@ function SelectHeroes()
                     local playerID, chance = unpack(bonus)
                     check_chance_max = check_chance_max + (tonumber(chance)/sumChance)
                     if check_chance_max > roll_chance and check_chance_min <= roll_chance then
-                        DebugPrint("Win troll: " .. playerID)
-                        DebugPrint("roll_chance: " .. roll_chance)
-                        DebugPrint("check_chance_max: " .. check_chance_max)
-                        DebugPrint("check_chance_min troll: " .. check_chance_min)
-                        DebugPrint("sumChance: " .. sumChance)
                         trollPlayerID = playerID
                         break
-                        else 
+                    else 
                         check_chance_min = check_chance_max  
                     end
                 end
@@ -180,6 +175,8 @@ function trollnelves2:OnHeroInGame(hero)
     end
 end
 
+
+
 function InitializeHero(hero)
     DebugPrint("Initialize hero")
     PlayerResource:SetGold(hero, 0)
@@ -187,7 +184,22 @@ function InitializeHero(hero)
     if not GameRules.startTime then
         hero:AddNewModifier(nil, nil, "modifier_stunned", nil)
     end
-    
+        Timers:CreateTimer(30, function()
+        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll) or 0
+        if hero ~= nil then
+            if point > 0 then 
+                hero:AddExperience(point, DOTA_ModifyXP_Unspecified, false,false)
+                -- Learn all abilities (this isn't necessary on creatures)
+                for i = 0, hero:GetAbilityCount() - 1 do
+                    local ability = hero:GetAbilityByIndex(i)
+                    if ability and hero:GetTeamNumber() ~= 3 then 
+                        ability:SetLevel(ability:GetMaxLevel()) 
+                    end
+                end
+                hero:SetAbilityPoints(0)
+            end
+        end
+    end)
     hero:ClearInventory()
     -- Learn all abilities (this isn't necessary on creatures)
     for i = 0, hero:GetAbilityCount() - 1 do
@@ -198,6 +210,7 @@ function InitializeHero(hero)
     hero:SetStashEnabled(false)
     
     hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
+    hero:SetDeathXP(0)
 end
 
 function InitializeBadHero(hero)
@@ -251,7 +264,9 @@ function InitializeBuilder(hero)
     hero:AddItemByName("item_glyph_ability")
     hero:AddItemByName("item_night_ability")
     hero:AddItemByName("item_blink_datadriven")
-    
+    if GameRules.MapSpeed == 4 then
+        hero:AddItemByName("item_max_move")
+    end
     hero.goldPerSecond = 0
     hero.lumberPerSecond = 0
     Timers:CreateTimer(function()
@@ -344,6 +359,9 @@ function InitializeTroll(hero)
                 BuildingHelper:AddModifierBuilding(unit)
                 BuildingHelper:BlockGridSquares(GetUnitKV(unit_name, "ConstructionSize"), 0, unit:GetAbsOrigin())
             end
+        elseif string.match(unit_name, "npc_dota_units_base2") then
+            unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+            unit:AddNewModifier(unit, nil, "modifier_phased", {})
         end
     end
     
@@ -394,14 +412,26 @@ function InitializeAngel(hero)
     --end
 end
 
-function ControlUnitForTroll(hero)
+function trollnelves2:ControlUnitForTroll(hero)
     local playerID = hero:GetPlayerOwnerID()
     local units = Entities:FindAllByClassname("npc_dota_creature")
-    
+    local checkTrollHutLevel6 = false
+    for _,unit in pairs(units) do
+        local unit_name_hut = unit:GetUnitName();
+        if unit_name_hut == "troll_hut_7" then
+            DebugPrint("in2")
+            checkTrollHutLevel6 = true
+        end
+    end 
+    if not checkTrollHutLevel6 then
+        PlayerResource:SetUnitShareMaskForPlayer(GameRules.trollID, playerID, 2, true)
+		return nil
+    end
     for _, unit in pairs(units) do
         local unit_name = unit:GetUnitName();
         if string.match(unit_name, "shop") or
             string.match(unit_name, "troll_hut") then
+            DebugPrint("in3")
             unit:SetOwner(hero)
             unit:SetControllableByPlayer(playerID, true)
         end
@@ -434,7 +464,7 @@ function InitializeWolf(hero)
     PlayerResource:SetGold(hero, gold)
     PlayerResource:SetLumber(hero, lumber)
     
-    ControlUnitForTroll(hero)
+    trollnelves2:ControlUnitForTroll(hero)
     
     local abil = hero:FindAbilityByName("troll_warlord_battle_trance_datadriven")
     if abil ~= nil then
@@ -529,13 +559,13 @@ function trollnelves2:PreStart()
                 Stats.RequestPetsDefaults(pID, steam, callback)
                 Stats.RequestPets(pID, steam, callback)
                 Timers:CreateTimer(15, function() wearables:SetPart() end)     
-                Timers:CreateTimer(30, function() SelectPets:SetPets() end)    
+                Timers:CreateTimer(30, function() SelectPets:SetPets() end)       
             end
         end
         Timers:CreateTimer(5, function() Stats.RequestDataTop10("1", callback) end)
-        Timers:CreateTimer(15, function() Stats.RequestDataTop10("2", callback) end)
-        Timers:CreateTimer(25, function() Stats.RequestDataTop10("3", callback) end)
-        Timers:CreateTimer(45, function() Stats.RequestDataTop10("4", callback) end)
+        Timers:CreateTimer(10, function() Stats.RequestDataTop10("2", callback) end)
+        Timers:CreateTimer(15, function() Stats.RequestDataTop10("3", callback) end)
+        Timers:CreateTimer(20, function() Stats.RequestDataTop10("4", callback) end)
         Donate:CreateList()
     end
     

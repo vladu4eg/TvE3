@@ -149,6 +149,70 @@
 		}
 	}
 	
+	"item_event_helheim"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_vip"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_winter/present.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEventHelheim"
+			}
+		}
+	}
+	
+	"item_event_birthday"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_birthday"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/props_gameplay/aegis.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_aegis.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEventBirthday"
+			}
+		}
+	}
+	
 	"item_autumn"
 	{
 		// General
@@ -246,6 +310,37 @@
 		}
 	}
 	
+	"item_spring"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_spring"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"                         "models/items/courier/onibi_lvl_03/onibi_lvl_03.vmdl"
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		// Stats        
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"				"0.1"
+		"AbilityCastPoint"              "0.0"
+		"AbilityManaCost"               "0"
+		"ItemSellable"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable" 				"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE "
+		"ItemPermanent"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"Event item"
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"            "custom_abilities.lua"
+				"Function"              "ItemEvent"
+			}
+		}
+	}
 	
 	"item_recipe_winter_end"
 	{
@@ -5147,150 +5242,95 @@
 		}
 	}
 	
-		//=================================================================================================================
-	// Recipe: Octarine Core
-	//=================================================================================================================
-	"item_recipe_octarine_core"
+	"item_max_move"
+    {
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"Model"							"models/props_gameplay/salve.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_max_move"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"              "0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"healing salve"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"ItemDroppable"					"0"
+	
+	"AbilitySpecial"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_octarine_core"
-		"ItemRequirements"
+		"01"
 		{
-			"01"						"item_mystic_staff;item_soul_booster"
+			"var_type"				"FIELD_INTEGER"
+			"buff_duration"			"20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"move"		"800"
 		}
 	}
 	
-	//=================================================================================================================
-	// Octarine Core
-	//=================================================================================================================
-	"item_octarine_core"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"mana;mb;octarine core"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+	"OnSpellStart"
+	{				
+		"ApplyModifier"
 		{
-			"01"
+			"Target"				"CASTER"
+			"ModifierName"			"modifier_item_max_move_active"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"			"DOTA_Item.HealingSalve.Activate"
+			"Target"				"CASTER"
+		}
+		"SpendCharge"
+		{}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_max_move_active"
+		{
+			"Duration"              	"%buff_duration"
+			"Passive"					"0"
+			"IsHidden"					"0"
+			"IsBuff"					"1"
+			"IsPurgable"				"1"
+			"TextureName"				"item_max_move"
+			"EffectName"            	"particles/items_fx/abyssal_blade_crimson_impact_elec.vpcf"
+			"EffectAttachType"      	"follow_origin"
+			
+			"Properties"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"25000"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move"
 			}
-			"02"
+			
+			"OnTakeDamage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2000000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2000000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_magical_armor"	"80"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cooldown"		"360"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hero_lifesteal"		"25"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"creep_lifesteal"		"5"
-			}	
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_duration"		"12"
+				"RemoveModifier"
+				{
+					"Target"			"UNIT"
+					"ModifierName"		"modifier_item_max_move_active"
+				}
 			}
 		}
 	}
-		//=================================================================================================================
-	// Mystic Staff
-	//=================================================================================================================
-	"item_mystic_staff"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"int"
-		"ItemQuality"					"secret_shop"
-		"ItemAliases"					"mystic staff"
-		"SecretShop"					"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"20000"
-			}
-		}
-	}
-		//=================================================================================================================
-	//	 Booster
-	//=================================================================================================================
-	"item_soul_booster"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemShopTags"					"regen_health;regen_mana;health_pool;mana_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"soul booster"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1500000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1500000"
-			}
-		}
-	}
+    }
 	
 }

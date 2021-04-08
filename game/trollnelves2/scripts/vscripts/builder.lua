@@ -2,7 +2,9 @@ require('libraries/util')
 require('trollnelves2')
 require('stats')
 require('wearables')
-
+require('drop')
+require('error_debug')
+CheckBarak3 = false
 -- A build ability is used (not yet confirmed)
 function Build( event )
     local caster = event.caster
@@ -63,7 +65,7 @@ function Build( event )
         end
     end)
     
-    --local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = Debug.ErrorCheck(function() 
         -- A building unit was created
         event:OnConstructionStarted(function(unit)
             BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
@@ -91,7 +93,7 @@ function Build( event )
             AddUpgradeAbilities(unit)
             UpdateSpells(hero)
             local item = CreateItem("item_building_cancel", unit, unit)
-            if building_name ~= "flag"  then
+            if building_name ~= "flag" and not string.match(building_name,"mine") then
                 unit:AddItem(item)
             elseif building_name == "flag" then 
                 unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
@@ -229,18 +231,6 @@ function DestroyBuilding( keys )
     end
 end
 
-function printTryError(...)
-	local stack = debug.traceback(...)
-	print(stack) 
-    GameRules:SendCustomMessage(stack, 1, 1)
-	return stack
-end
-
-function ErrorCheck(callback, ...)
-    print("BuildError")
-	return xpcall(callback, printTryError, ...)
-end
-
 function UpgradeBuilding( event )
     local building = event.caster
     local NewBuildingName = event.NewName
@@ -282,7 +272,7 @@ function UpgradeBuilding( event )
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
-    --local status, nextCall = ErrorCheck(function() 
+    --local status, nextCall = Debug.ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
    -- end)
     local newBuildingName = newBuilding:GetUnitName()
@@ -459,6 +449,9 @@ function UpgradeBuilding( event )
                 elseif string.match(GetMapName(),"desert") and newBuildingName == "true_sight_tower" then 
                 wearables:RemoveWearables(newBuilding)
                 UpdateModel(newBuilding, "models/items/wards/megagreevil_ward/megagreevil_ward.vmdl", 1)    
+                elseif string.match(GetMapName(),"helheim") and newBuildingName == "true_sight_tower" then 
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/dire_ward_eye/dire_ward_eye.vmdl", 1)   
                 --elseif newBuildingName == "rock_18" then
                 --   wearables:RemoveWearables(newBuilding)
                 --   UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower.vmdl", 0.3)
@@ -492,7 +485,14 @@ function UpgradeBuilding( event )
                 
             end
         end
-    end    
+    end
+    if newBuildingName == "barracks_3" and not CheckBarak3 then
+        if GameRules.Bonus[playerID] == nil then
+            GameRules.Bonus[playerID] = 0
+        end
+        GameRules.Bonus[playerID] = GameRules.Bonus[playerID] + 2
+        CheckBarak3 = true
+    end
     Timers:CreateTimer(buildTime,function()
         if newBuilding:IsNull() or not newBuilding:IsAlive() then
             return

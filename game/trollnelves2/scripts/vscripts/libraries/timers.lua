@@ -67,47 +67,27 @@ TIMERS_THINK = 0.01
 if Timers == nil then
   print ( '[Timers] creating Timers' )
   Timers = {}
-  Timers.__index = Timers
-end
-
-function Timers:new( o )
-  o = o or {}
-  setmetatable( o, Timers )
-  return o
-end
-
-function Timers:_xpcall (f, ...)
-  print(f)
-  print({...})
-  PrintTable({...})
-  local result = xpcall (function () return f(unpack(arg)) end,
-    function (msg)
-      -- build the error message
-      return msg..'\n'..debug.traceback()..'\n'
-    end)
-
-  print(result)
-  PrintTable(result)
-  if not result[1] then
-    -- throw an error
-  end
-  -- remove status code
-  table.remove (result, 1)
-  return unpack (result)
+  setmetatable(Timers, {
+    __call = function(t, ...)
+      return t:CreateTimer(...)
+    end
+  })
+  --Timers.__index = Timers
 end
 
 function Timers:start()
   Timers = self
   self.timers = {}
   
-  local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
+  --local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
+  local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
   ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
 
 function Timers:Think()
-  if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-    return
-  end
+  --if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+    --return
+  --end
 
   -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
   local now = GameRules:GetGameTime()
@@ -135,6 +115,9 @@ function Timers:Think()
     if now >= v.endTime then
       -- Remove from timers list
       Timers.timers[k] = nil
+
+      Timers.runningTimer = k
+      Timers.removeSelf = false
       
       -- Run the callback
       local status, nextCall
@@ -148,10 +131,12 @@ function Timers:Think()
                                   end)
       end
 
+      Timers.runningTimer = nil
+
       -- Make sure it worked
       if status then
         -- Check if it needs to loop
-        if nextCall then
+        if nextCall and not Timers.removeSelf then
           -- Change its end time
 
           if bOldStyle then
@@ -234,10 +219,14 @@ end
 
 function Timers:RemoveTimer(name)
   Timers.timers[name] = nil
+  if Timers.runningTimer == name then
+    Timers.removeSelf = true
+  end
 end
 
 function Timers:RemoveTimers(killAll)
   local timers = {}
+  Timers.removeSelf = true
 
   if not killAll then
     for k,v in pairs(Timers.timers) do
@@ -251,3 +240,5 @@ function Timers:RemoveTimers(killAll)
 end
 
 if not Timers.timers then Timers:start() end
+
+GameRules.Timers = Timers

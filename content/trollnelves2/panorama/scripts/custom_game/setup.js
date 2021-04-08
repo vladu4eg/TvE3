@@ -48,8 +48,8 @@ var uiWaitingSchedules = [];
     });
 
     // Remove xp circle
-    centerBlock.FindChildTraverse("xp").style.visibility = "collapse";
-    centerBlock.FindChildTraverse("stragiint").style.visibility = "collapse";
+   // centerBlock.FindChildTraverse("xp").style.visibility = "collapse";
+   // centerBlock.FindChildTraverse("stragiint").style.visibility = "collapse";
     //Fuck that levelup button
     centerBlock.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
     // Hide tp slot

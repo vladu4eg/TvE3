@@ -1,0 +1,8 @@
+helheim2x
+{
+	material materials/overviews/helheim2x.vmat
+	pos_x -9280
+	pos_y 9088
+	scale 18.063
+}
+

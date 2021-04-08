@@ -34,5 +34,5 @@
     };
 
     //$.GetContextPanel().BLoadLayoutSnippet('bubble');
-    $.GetContextPanel().GetParent().GetParent().GetParent().style['z-index'] = '-10';
+    $.GetContextPanel().GetParent().GetParent().GetParent().style['z-index'] = '5';
 })();

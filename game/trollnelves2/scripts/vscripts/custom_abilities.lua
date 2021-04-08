@@ -2,6 +2,7 @@ require('libraries/util')
 require('libraries/entity')
 require('trollnelves2')
 require('wearables')
+require('error_debug')
 --Ability for tents to give gold
 function GainGoldCreate(event)
 	if IsServer() then
@@ -54,7 +55,7 @@ function ItemEvent(event)
 	data.Srok = "01/09/2020"
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		Stats.GetVip(data, callback)
-		local item = caster:FindItemInInventory("item_winter_1")
+		local item = caster:FindItemInInventory("item_spring")
 		caster:RemoveItem(item)
 	end
 end
@@ -104,6 +105,38 @@ function ItemEventWinter(event)
 	end
 end
 
+function ItemEventHelheim(event)
+	DebugPrintTable(event.ability)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "29"
+	data.Srok = "01/09/2020"
+	
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_event_helheim")
+		caster:RemoveItem(item)
+	end
+end
+
+function ItemEventBirthday(event)
+	DebugPrintTable(event.ability)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Num = "23"
+	data.Srok = "01/09/2020"
+	
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Stats.GetVip(data, callback)
+		local item = caster:FindItemInInventory("item_event_birthday")
+		caster:RemoveItem(item)
+	end
+end
+
 function GainGoldTeamThinker(event)
 	if IsServer() then
 		if event.caster then
@@ -131,8 +164,8 @@ function shrapnel_start_charge( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 	local modifierName = "modifier_shrapnel_stack_counter_datadriven"
-	local maximum_charges = ability:GetLevelSpecialValueFor( "maximum_charges", ( ability:GetLevel() - 1 ) )
-	local charge_replenish_time = ability:GetLevelSpecialValueFor( "charge_replenish_time", ( ability:GetLevel() - 1 ) )
+	local maximum_charges = 2
+	local charge_replenish_time = 60
 	if GameRules.MapSpeed ~= 1  then
 		charge_replenish_time = 30
 	end
@@ -186,8 +219,8 @@ function shrapnel_fire( keys )
 		local modifierName = "modifier_shrapnel_stack_counter_datadriven"
 		local dummyModifierName = "modifier_shrapnel_dummy_datadriven"
 		local radius = ability:GetLevelSpecialValueFor( "radius", ( ability:GetLevel() - 1 ) )
-		local maximum_charges = ability:GetLevelSpecialValueFor( "maximum_charges", ( ability:GetLevel() - 1 ) )
-		local charge_replenish_time = ability:GetLevelSpecialValueFor( "charge_replenish_time", ( ability:GetLevel() - 1 ) )
+		local maximum_charges = 2
+		local charge_replenish_time = 60
 		local dummy_duration = ability:GetLevelSpecialValueFor( "duration", ( ability:GetLevel() - 1 ) ) + 0.1
 		local damage_delay = ability:GetLevelSpecialValueFor( "damage_delay", ( ability:GetLevel() - 1 ) ) + 0.1
 		local next_charge = 0
@@ -243,7 +276,7 @@ function RevealAreaItem( event )
 end
 
 function RevealArea( event )
-	if IsServer() then
+	local status, nextCall = Error_debug.ErrorCheck(function() 
 		local caster = event.caster
 		local point = event.target_points[1]
 		local visionRadius = string.match(GetMapName(),"standart") and event.Radius*0.58 or string.match(GetMapName(),"arena") and event.Radius*0.58 or event.Radius
@@ -265,7 +298,7 @@ function RevealArea( event )
 				return 0.03
 			end
 		end)
-	end
+	end)
 end
 
 function TeleportTo (event)
@@ -421,11 +454,18 @@ function SpawnUnitOnChannelSucceeded(event)
 						elseif string.match(GetMapName(),"desert") then 
 						wearables:RemoveWearables(unit)
 						UpdateModel(unit, "models/items/courier/ig_dragon/ig_dragon_flying.vmdl", 1.2)    
+						elseif string.match(GetMapName(),"helheim") then 
+						wearables:RemoveWearables(unit)
+						UpdateModel(unit, "models/items/courier/dc_demon/dc_demon_flying.vmdl", 1.2) 
 					end
 					--elseif parts["3"] == "normal" and unit_name == "gold_wisp" then
 					--		wearables:RemoveWearables(unit)
 					--		UpdateModel(unit, "models/gold_wisp.vmdl", 1)     
 				end
+			end
+			if string.match(unit_name,"%a+") == "worker" then
+				ABILITY_Repair = unit:FindAbilityByName("repair")
+				ABILITY_Repair:ToggleAutoCast()
 			end
 		end
 	end
@@ -455,15 +495,18 @@ THINK_INTERVAL = 0.5
 
 function Repair(event)
 	if IsServer() then
+		local status, nextCall = Error_debug.ErrorCheck(function() 
 		local args = {}
 		args.PlayerID = event.caster:GetPlayerOwnerID()
 		args.targetIndex = event.target:GetEntityIndex()
 		args.queue = false
 		BuildingHelper:RepairCommand(args)
+		end)
 	end
 end
 
 function RepairAutocast(event)
+	local status, nextCall = Error_debug.ErrorCheck(function() 
 	if IsServer() then
 		local caster = event.caster
 		local ability = event.ability
@@ -483,6 +526,7 @@ function RepairAutocast(event)
 			return 0.5
 		end)
 	end
+	end)
 end
 
 function GatherLumber(event)
@@ -642,6 +686,7 @@ end
 
 function HpRegenModifier(keys)
 	print ( '[vladu4eg] HpRegenModifier' )
+	local status, nextCall = Error_debug.ErrorCheck(function() 
 	local caster = keys.caster
 	
 	if caster.hpReg == nil then
@@ -650,17 +695,19 @@ function HpRegenModifier(keys)
 	
 	if caster.hpRegDebuff == nil then
 		caster.hpRegDebuff = 0
-	end
-	
+	end	
 	if caster and caster.hpReg then
 		caster.hpReg = caster.hpReg + keys.Amount
 		CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=(caster.hpReg-caster.hpRegDebuff),unit=caster:GetEntityIndex() })
 	end
+	end)
 end
 
 function HpRegenDestroy(keys)
+	local status, nextCall = Error_debug.ErrorCheck(function() 
 	keys.Amount = keys.Amount * (-1)
 	HpRegenModifier(keys)
+	end)
 end
 
 

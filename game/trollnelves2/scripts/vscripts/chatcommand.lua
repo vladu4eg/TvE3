@@ -77,9 +77,21 @@ function chatcommand:OnPlayerChat(event)
 			GameRules.test = true
 		end
 		elseif event.text == "!fps" then
-		GameRules.PlayersFPS[event.playerid] = true
+			GameRules.PlayersFPS[event.playerid] = true
 		elseif event.text == "!unfps" then
-		GameRules.PlayersFPS[event.playerid] = false
+			GameRules.PlayersFPS[event.playerid] = false
+		elseif event.text == "!birthday" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 ) then
+		local spawnPoint = hero:GetAbsOrigin()	
+		local newItem = CreateItem("item_event_birthday", nil, nil )
+		local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
+		local dropRadius = RandomFloat( 50, 100 )
+		newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+		--elseif event.text == "!xp" then
+		--	GameRules:SendCustomMessage("<font color='#00FF80'>" .. hero:GetCurrentXP() ..  "</font>" , 1, 1)
+		--elseif event.text == "!xpup" then
+		--	hero:AddExperience(50,DOTA_ModifyXP_Unspecified,false,false)
 		--elseif event.text == "!map" then
 				-- Must set the map name prior to getting the neighboring room height difference
 				--local mapList = EncounterData.szMapNames
