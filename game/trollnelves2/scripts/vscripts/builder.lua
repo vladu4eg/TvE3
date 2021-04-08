@@ -491,7 +491,6 @@ function UpgradeBuilding( event )
             GameRules.Bonus[playerID] = 0
         end
         GameRules.Bonus[playerID] = GameRules.Bonus[playerID] + 2
-        drop:RollItemDrop(newBuilding)
         CheckBarak3 = true
     end
     Timers:CreateTimer(buildTime,function()

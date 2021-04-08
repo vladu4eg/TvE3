@@ -9826,10 +9826,10 @@
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+		"Model"						"models/creeps/neutral_creeps/n_creep_vulture_a/n_creep_vulture_a.vmdl"
 	    "precache"
 		{
-			"model"						"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+			"model"						"models/creeps/neutral_creeps/n_creep_vulture_a/n_creep_vulture_a.vmdl"
 	    }
 		"ModelScale"                "1.2"
 	    "ModelRotation"             "90"
@@ -9892,10 +9892,10 @@
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
+		"Model"						"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"
 	    "precache"
 		{
-			"model"						"models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
+			"model"						"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"
 	    }
 		"ModelScale"                "1.2"
 	    "ModelRotation"             "90"
@@ -9956,10 +9956,10 @@
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
+		"Model"						"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"
 	    "precache"
 		{
-			"model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
+			"model"						"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"
 	    }
 		"ModelScale"                "1.2"
 	    "ModelRotation"             "90"
@@ -10020,10 +10020,10 @@
 	    // Visual
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
-		"Model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.vmdl"
+		"Model"						"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
 	    "precache"
 		{
-			"model"						"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.vmdl"
+			"model"						"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
 	    }
 		"ModelScale"                "1.2"
 	    "ModelRotation"             "90"

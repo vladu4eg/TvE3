@@ -463,6 +463,10 @@ function SpawnUnitOnChannelSucceeded(event)
 					--		UpdateModel(unit, "models/gold_wisp.vmdl", 1)     
 				end
 			end
+			if string.match(unit_name,"%a+") == "worker" then
+				ABILITY_Repair = unit:FindAbilityByName("repair")
+				ABILITY_Repair:ToggleAutoCast()
+			end
 		end
 	end
 end

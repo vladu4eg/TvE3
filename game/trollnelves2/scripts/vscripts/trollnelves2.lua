@@ -1,7 +1,7 @@
 -- This is the primary trollnelves2 trollnelves2 script and should be used to assist in initializing your game mode
 -- Set this to true if you want to see a complete debug output of all events/processes done by trollnelves2
 -- You can also change the cvar 'trollnelves2_spew' at any time to 1 or 0 for output/no output
-TROLLNELVES2_DEBUG_SPEW = true
+TROLLNELVES2_DEBUG_SPEW = false
 LinkLuaModifier("modifier_movespeed_x4",
     "libraries/modifiers/modifier_movespeed_x4.lua",
 LUA_MODIFIER_MOTION_NONE)
@@ -116,14 +116,9 @@ function SelectHeroes()
                     local playerID, chance = unpack(bonus)
                     check_chance_max = check_chance_max + (tonumber(chance)/sumChance)
                     if check_chance_max > roll_chance and check_chance_min <= roll_chance then
-                        DebugPrint("Win troll: " .. playerID)
-                        DebugPrint("roll_chance: " .. roll_chance)
-                        DebugPrint("check_chance_max: " .. check_chance_max)
-                        DebugPrint("check_chance_min troll: " .. check_chance_min)
-                        DebugPrint("sumChance: " .. sumChance)
                         trollPlayerID = playerID
                         break
-                        else 
+                    else 
                         check_chance_min = check_chance_max  
                     end
                 end

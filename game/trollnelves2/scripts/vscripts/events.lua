@@ -58,6 +58,7 @@ function trollnelves2:OnPlayerReconnect(event)
     local playerID = event.PlayerID
     if GameRules.KickList[playerID] == 1 then 
         SendToServerConsole("kick " .. PlayerResource:GetPlayerName(playerID))
+        return
     end
     local notSelectedHero = GameRules.disconnectedHeroSelects[playerID]
     if notSelectedHero then
@@ -89,9 +90,6 @@ function trollnelves2:OnPlayerReconnect(event)
                 end
             end
         end
-    end
-    if GameRules.KickList[playerID] == 1 then 
-        SendToServerConsole("kick " .. PlayerResource:GetPlayerName(playerID))
     end
 end
 
