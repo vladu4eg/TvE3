@@ -1470,32 +1470,25 @@ function BuildingHelper:StartBuilding(builder)
     local pathing_size = buildingTable:GetVal("BlockPathingSize", "number")
     
     -- Check gridnav and cancel if invalid
-    if not BuildingHelper:ValidPosition(construction_size, location, builder,
-    callbacks) or
-    playersHero.disabledBuildings[building:GetUnitName()] or
-    builder:HasAbility("build_" .. unitName) == false then
-    
-    -- Remove the model particle and Advance Queue
-    BuildingHelper:AdvanceQueue(builder)
-    BuildingHelper:ClearWorkParticles(work)
-    
-    -- Remove pedestal
-    BuildingHelper:RemoveEntity(work.entity.prop)
-    
-    -- Building canceled, refund resources
-    work.refund = true
-    callbacks.onConstructionCancelled(work)
-    return
+    if not BuildingHelper:ValidPosition(construction_size, location, builder,callbacks) 
+        or playersHero.disabledBuildings[building:GetUnitName()] or builder:HasAbility("build_" .. unitName) == false 
+        or not IsInsideBaseArea(playersHero, builder, unitName, true) then
+        
+        -- Remove the model particle and Advance Queue
+        BuildingHelper:AdvanceQueue(builder)
+        BuildingHelper:ClearWorkParticles(work)
+        
+        -- Remove pedestal
+        BuildingHelper:RemoveEntity(work.entity.prop)
+        
+        -- Building canceled, refund resources
+        work.refund = true
+        callbacks.onConstructionCancelled(work)
+        return
     end
     
     if IdBaseAreaBlock(location) ~= nil then 
         DebugPrint("NOT! IsInsideBaseArea")
-        return false
-    end
-    
-    if not IsInsideBaseArea(playersHero, location, unitName, true) then 
-        DebugPrint("NOT! IsInsideBaseArea")
-        SendErrorMessage(playerID, "#error_place_is_taken")
         return false
     end
     
@@ -2598,8 +2591,8 @@ end
 
 function IdBaseArea(location)
     for index, shopTrigger in ipairs(GameRules.base) do
-        if IsInsideBoxEntity(shopTrigger, location) then
-            DebugPrint("IdBaseArea index " .. index)
+        if shopTrigger:IsTouching(location) then
+            DebugPrint("truee")
             return index
         end
     end
@@ -2610,6 +2603,7 @@ function IdBaseAreaBlock(location)
     for index, shopTrigger in ipairs(GameRules.baseBlock) do
         if IsInsideBoxEntity(shopTrigger, location) then
             DebugPrint("IdBaseArea index " .. index)
+            
             return index
         end
     end
@@ -2656,10 +2650,10 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         return false
     end
     
-    if not IsInsideBaseArea(hero, location, buildingName, false) then 
-        DebugPrint("NOT! IsInsideBaseArea")
-        return false
-    end
+    --if not IsInsideBaseArea(hero, builder, buildingName, false) then 
+    --    DebugPrint("NOT! IsInsideBaseArea")
+    --    return false
+    --end
     
     --[[if hero.disabledBuildings[buildingName] == true then
         return
