@@ -12,6 +12,7 @@
 		"npc_dota_hero_crystal_maiden"                                                    "Angel"
 		"npc_dota_hero_dark_willow"                                                       "Forest Fairy"
 		"npc_dota_hero_bear"                                                    		  "Baby Bear"
+		"npc_dota_hero_night_stalker"                                                     "Night Hunter"
 
 		// ******************** UNITS ********************
 		"tent"                                                                            "Tent"
@@ -635,8 +636,11 @@
 		"DOTA_Tooltip_ability_furion_teleportation_datadriven"							  "Teleportation"
 		"DOTA_Tooltip_ability_furion_teleportation_datadriven_Description"				  "Телепортирует к ближающему союзнику."
 		
-		"DOTA_Tooltip_ability_penitence_datadriven"										  ""
-		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  ""
+		"DOTA_Tooltip_ability_penitence_datadriven"										  "Forest curse"
+		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  "Снижает скорость передвижения на 55.<br>Увеличает получаемый урон на 10%. "
+		
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven"					"Hunter in the Night"
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven_Description"		"Ночью герой оказывается в своей стихии: он атакует и передвигается увеличенной скоростью.<br>Дает +1 к уклонению."
 		
 		"DOTA_Tooltip_ability_monkey_king"											"True strike."
 		"DOTA_Tooltip_ability_monkey_king_Description"  							"Игнорирует промахи"

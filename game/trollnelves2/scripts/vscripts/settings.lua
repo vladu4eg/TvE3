@@ -4,7 +4,7 @@ MINIMUM_ATTACK_SPEED = 20
 TROLL_HERO = "npc_dota_hero_troll_warlord"
 ELF_HERO = "npc_dota_hero_treant"
 ANGEL_HERO = {"npc_dota_hero_crystal_maiden","npc_dota_hero_dark_willow"}
-WOLF_HERO = "npc_dota_hero_lycan"
+WOLF_HERO = {"npc_dota_hero_lycan","npc_dota_hero_night_stalker"} 
 BEAR_HERO = "npc_dota_hero_bear"
 
 TEAM_CHOICE_TIME = 30
@@ -30,6 +30,8 @@ BUFF_ENIGMA_TIME = 7200
 MIN_RATING_PLAYER = 12
 PERC_KICK_PLAYER = 0.80
 MIN_PLAYER_KICK = 8
+
+CHANCE_NEW_PERSON = 10
 
 EVENT_START = false
 

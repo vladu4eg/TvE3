@@ -651,9 +651,9 @@ function GetModifiedName(orgName)
         return "<font color='#FF0000'>The Mighty Troll</font>"
         elseif string.match(orgName, ELF_HERO) then
         return "<font color='#00CC00'>Elf</font>"
-        elseif string.match(orgName, WOLF_HERO) then
+        elseif string.match(orgName, WOLF_HERO[1]) or string.match(orgName, WOLF_HERO[2]) then
         return "<font color='#800000'>Wolf</font>"
-    elseif string.match((orgName,ANGEL_HERO[1]) or string.match(orgName,ANGEL_HERO[2])) then 
+    elseif string.match(orgName, ANGEL_HERO[1]) or string.match(orgName, ANGEL_HERO[2]) then 
         return "<font color='#0099FF'>Angel</font>"
         else
         return "?"

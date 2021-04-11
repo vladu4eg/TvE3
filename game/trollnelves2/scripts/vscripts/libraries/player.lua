@@ -166,7 +166,8 @@ function CDOTA_PlayerResource:GetType(pID)
     return string.match(heroName,TROLL_HERO) and "troll"
 	or string.match(heroName,ANGEL_HERO[1]) and "angel"
 	or string.match(heroName,ANGEL_HERO[2]) and "angel"
-	or string.match(heroName,WOLF_HERO) and "wolf"
+	or string.match(heroName,WOLF_HERO[1]) and "wolf"
+	or string.match(heroName,WOLF_HERO[2]) and "wolf"
 	or "elf"
 end
 
@@ -277,14 +278,10 @@ function CDOTA_BaseNPC:IsTroll()
     return self:GetUnitName() == TROLL_HERO
 end
 function CDOTA_BaseNPC:IsAngel()
-	if self:GetUnitName() == ANGEL_HERO[1] then
-		return self:GetUnitName()
-	elseif self:GetUnitName() == ANGEL_HERO[2] then
-		return self:GetUnitName()
-	end
-end
+	return self:GetUnitName() == ANGEL_HERO[1] or self:GetUnitName() == ANGEL_HERO[2] 
+end 
 function CDOTA_BaseNPC:IsWolf()
-    return self:GetUnitName() == WOLF_HERO
+	return self:GetUnitName() == WOLF_HERO[1] or self:GetUnitName() == WOLF_HERO[2] 
 end
 function CDOTA_BaseNPC:IsBear()
     return self:GetUnitName() == BEAR_HERO

@@ -467,9 +467,7 @@ function GiveResources(eventSourceIndex, event)
                     SendErrorMessage(casterID, "#error_not_enough_resources")
                     return
                 end
-                if (lastSendTime[event.target] == nil or
-                lastSendTime[event.target] + 120 < GameRules:GetGameTime()) or
-                casterHero:IsAngel() then
+                if (lastSendTime[targetID] == nil or lastSendTime[targetID] + 120 < GameRules:GetGameTime()) or casterHero:IsAngel() then
                 PlayerResource:ModifyGold(casterHero, -gold, true)
                 PlayerResource:ModifyLumber(casterHero, -lumber, true)
                 PlayerResource:ModifyGold(hero, gold, true)
@@ -503,15 +501,12 @@ function GiveResources(eventSourceIndex, event)
                         casterHero:GetTeamNumber(),
                     0, 0)
                     if casterHero:IsAngel() == false then
-                        lastSendTime[event.target] = GameRules:GetGameTime()
+                        lastSendTime[targetID] = GameRules:GetGameTime()
                     end
                 end
                 else
-                local timeLeft = math.ceil(
-                    lastSendTime[event.target] + 120 -
-                GameRules:GetGameTime())
-                SendErrorMessage(event.casterID, "You can send money in " ..
-                timeLeft .. " seconds!")
+                local timeLeft = math.ceil(lastSendTime[targetID] + 120 - GameRules:GetGameTime())
+                SendErrorMessage(event.casterID, "You can send money in " .. timeLeft .. " seconds!")
                 end
                 else
                 SendErrorMessage(event.casterID, "#error_enter_only_digits")
@@ -535,17 +530,22 @@ function ChooseHelpSide(eventSourceIndex, event)
     local message
     local timer
     local pos
+    local i = 1
+    local roll_chance = RandomFloat(0, 100)
+    if roll_chance <= CHANCE_NEW_PERSON then
+        i = 2
+    end
     if team == DOTA_TEAM_GOODGUYS then
-        newHeroName = ANGEL_HERO
+        newHeroName = ANGEL_HERO[i]
         message = "%s1 will keep helping elves and now is an " ..
-        GetModifiedName(ANGEL_HERO)
+        GetModifiedName(ANGEL_HERO[i])
         timer = ANGEL_RESPAWN_TIME
         pos = RandomAngelLocation()
         elseif team == DOTA_TEAM_BADGUYS then
-        newHeroName = WOLF_HERO
+        newHeroName = WOLF_HERO[i]
         message = "%s1 has joined the dark side and now will help " ..
         GetModifiedName(TROLL_HERO) .. ". %s1 is now a" ..
-        GetModifiedName(WOLF_HERO)
+        GetModifiedName(WOLF_HERO[i])
         timer = WOLF_RESPAWN_TIME
         pos = Vector(0, -640, 256)
     end
@@ -553,7 +553,6 @@ function ChooseHelpSide(eventSourceIndex, event)
     Timers:CreateTimer(function()
         GameRules:SendCustomMessage(message, playerID, 0)
     end)
-    
     hero:SetTimeUntilRespawn(timer)
     Timers:CreateTimer(timer, function()
         PlayerResource:ReplaceHeroWith(playerID, newHeroName, 0, 0)

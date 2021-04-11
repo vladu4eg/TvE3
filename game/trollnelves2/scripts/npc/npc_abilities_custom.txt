@@ -65,6 +65,45 @@
 			}
 		}		
 	}
+	
+		//Start of file attribute_bonus.txt
+	"attribute_antibonuses"
+	 {
+	  // General
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	  "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	  "BaseClass"	"ability_datadriven" 
+	
+	  "MaxLevel"               "1"
+	  
+	  // Special
+	  //-------------------------------------------------------------------------------------------------------------
+	  "AbilitySpecial"
+	  {
+	   "01"
+	   {
+	    "var_type"      "FIELD_FLOAT"
+	    "attribute_bonus_per_level"  "-14"
+	   }
+	  }
+		"Modifiers"
+		{
+			"modifier_attribute_bonuses"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%attribute_bonus_per_level"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%attribute_bonus_per_level"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%attribute_bonus_per_level"
+				}
+			}
+		}
+	 }
+	 
 
 	//=================================================================================================================
 	// Ability: Special Bonus
@@ -9821,6 +9860,103 @@
 	}
 }
 
+"night_stalker_hunter_in_the_night_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"night_stalker_hunter_in_the_night"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_night_stalker/nightstalker_night_buff.vpcf"
+		"particle"			"particles/units/heroes/hero_night_stalker/nightstalker_change.vpcf"
+	}
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_movement_speed_pct_night"	"200"
+		}
+		"02"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_attack_speed_night"			"100"
+		}
+		"03"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_evasion"						"1"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_hunter_in_the_night_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"AllowIllusionDuplicate"	"1"
+
+			"ThinkInterval"	"0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_night_stalker/hunter_in_the_night.lua"
+					"Function"		"HunterInTheNight"
+					"modifier"		"modifier_hunter_in_the_night_buff_datadriven"
+				}
+			}
+		}
+
+		"modifier_hunter_in_the_night_buff_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"AllowIllusionDuplicate"	"1"
+
+			"EffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_night_buff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_change.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"		"CASTER"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_change.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"		"CASTER"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_movement_speed_pct_night"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_night"
+				"MODIFIER_PROPERTY_EVASION_CONSTANT"			"%bonus_evasion"
+			}
+		}
+	}
+}
+
 // Rewrite of the Chen Penitence ability
 // Author: Pizzalol
 // Date: December 30, 2015
@@ -9876,7 +10012,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movement_speed"	"-50"
+			"bonus_movement_speed"	"-55"
 		}
 		"04"
 		{
