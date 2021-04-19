@@ -76,6 +76,11 @@ function chatcommand:OnPlayerChat(event)
 		if GameRules:IsCheatMode() then 
 			GameRules.test = true
 		end
+		elseif event.text == "!test2" then
+		if GameRules:IsCheatMode() then 
+			GameRules.test = true
+			GameRules.test2 = true
+		end
 		elseif event.text == "!fps" then
 			GameRules.PlayersFPS[event.playerid] = true
 		elseif event.text == "!unfps" then

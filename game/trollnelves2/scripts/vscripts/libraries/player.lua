@@ -37,7 +37,7 @@ function CDOTA_PlayerResource:SetGold(hero,gold)
 end
 
 function CDOTA_PlayerResource:ModifyGold(hero,gold,noGain)
-    if GameRules.test then
+    if GameRules.test2 then
 		PlayerResource:SetGold(hero, 1000000)
 		return
 	end
@@ -70,7 +70,7 @@ function CDOTA_PlayerResource:SetLumber(hero, lumber)
 end
 
 function CDOTA_PlayerResource:ModifyLumber(hero,lumber,noGain)
-    if GameRules.test then
+    if GameRules.test2 then
 		PlayerResource:SetLumber(hero,1000000)
 		return
 	end

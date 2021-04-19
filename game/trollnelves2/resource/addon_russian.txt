@@ -1700,6 +1700,13 @@
 		"failtrigger"																		"Боги не одобрили твоё подношение, теперь вы прокляты навечно."
 		
 		
+		"donate1"																			"<font color='#58ACFA'>Вы можете поддержать игру на Patreon.</font>"
+		"donate2"																			"<font color='#58ACFA'>Вы можете повысить шанс на получения Тролля, увеличить количество получаемых очков или получить один из уникальных косметических эффектов, поддержав наш проект на Patreon.</font>"
+		"donate3"																			"<font color='#58ACFA'>Patreon: https://patreon.com/troll_vs_elves3</font>"
+		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/zwYYbex</font>"
+		"donate5"																			"<font color='#58ACFA'>Вы можете поделиться идеями/багами/пожеланиями на нашем сервере Discord!</font>"
+		"donate6"																			"<font color='#58ACFA'>Спасибо всем  тестирам  за  такой значительный  вклад  в развитие кастомки! Спасибо:*</font>"
+		
 		"loading_text"																		"&lt;=Щелкните здесь, чтобы получить советы!<br>
 		                                                                                    Не меняйте горячие клавиши после запуска игры.
 		                                                                                    "

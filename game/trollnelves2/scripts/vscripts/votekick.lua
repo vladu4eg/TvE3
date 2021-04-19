@@ -70,9 +70,8 @@ function VoteKick(eventSourceIndex, event)
 		CheckWolfInTeam(hero)
 	end
 	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
-		or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 
-	or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
-	votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
+		or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
+		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
 	end
 	local disKick = 0
 	if tonumber(GameRules.scores[event.playerID1].elf) + tonumber(GameRules.scores[event.playerID1].troll) <= -500 then

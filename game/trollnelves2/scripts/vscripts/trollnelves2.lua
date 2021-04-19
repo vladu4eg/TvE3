@@ -487,7 +487,7 @@ function trollnelves2:PreStart()
             gameStartTimer = gameStartTimer - 1
             return 1
             else
-            if GameRules.trollHero then
+            if GameRules.trollHero or GameRules.test then
                 Notifications:ClearBottomFromAll()
                 Notifications:BottomToAll(
                     {

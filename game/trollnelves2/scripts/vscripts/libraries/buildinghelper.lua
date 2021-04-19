@@ -3359,17 +3359,12 @@ end
 
 -- Builders are stored in a nettable in addition to the builder label
 function IsBuilder(unit)
-    local table = CustomNetTables:GetTableValue("builders",
-    tostring(unit:GetEntityIndex()))
-    return unit:GetUnitLabel() == "builder" or
-    (table and (table["IsBuilder"] == 1)) or
-    unit:HasAbility("repair") or false
-end
-
--- Builders are stored in a nettable in addition to the builder label
-function IsBuilder(unit)
     local table = CustomNetTables:GetTableValue("builders", tostring(unit:GetEntityIndex()))
-    return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == 1)) or unit:HasAbility("repair") or false
+    if unit ~= nil then
+        return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == 1)) or unit:HasAbility("repair") or false
+    else
+        return false
+    end
 end
 
 function CDOTA_BaseNPC:GetFollowRange(target)

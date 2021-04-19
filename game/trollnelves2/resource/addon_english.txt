@@ -1836,6 +1836,13 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"fountaingoldt"																		"Return to the fountain to complete the ritual and access the treasures."
 		"failtrigger"																		"The gods did not approve of your offering, now you are cursed forever."
 		
+		"donate1"																			"<font color='#58ACFA'>You can support the game on Patreon.</font>"
+		"donate2"																			"<font color='#58ACFA'>You can increase the chance of getting a Troll, increase the number of points you receive or get one of the unique cosmetic effects by supporting our project on Patreon.</font>"
+		"donate3"																			"<font color='#58ACFA'>Patreon: https://patreon.com/troll_vs_elves3</font>"
+		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/zwYYbex</font>"
+		"donate5"																			"<font color='#58ACFA'>Submit your ideas on what to add to the game in our Discord server!</font>"
+		"donate6"																			"<font color='#58ACFA'>Thanks to all the testers for such a significant contribution to the development of the game! Thank:*</font>"
+		
 		"loading_text"																		"&lt;=Click this for tips!<br>
 		                                                                                    Don't change your hotkeys after starting the game.
 		                                                                                    "

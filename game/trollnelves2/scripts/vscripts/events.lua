@@ -253,6 +253,11 @@ function trollnelves2:OnEntityKilled(keys)
             GameRules.Bonus[attackerPlayerID] =
             GameRules.Bonus[attackerPlayerID] + 1
             if CheckTrollVictory() then
+                for pID = 0, DOTA_MAX_TEAM_PLAYERS do
+                    if PlayerResource:IsValidPlayerID(pID) then
+                        PlayerResource:SetCameraTarget(pID, killed)
+                    end
+                end
                 GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
                 local status, nextCall = Error_debug.ErrorCheck(function() 
                     Stats.SubmitMatchData(DOTA_TEAM_BADGUYS, callback)
@@ -264,6 +269,11 @@ function trollnelves2:OnEntityKilled(keys)
             Pets.DeletePet(info)
             elseif killed:IsTroll() then
             GameRules.Bonus[attackerPlayerID] = GameRules.Bonus[attackerPlayerID] + 2
+            for pID = 0, DOTA_MAX_TEAM_PLAYERS do
+                if PlayerResource:IsValidPlayerID(pID) then
+                    PlayerResource:SetCameraTarget(pID, killed)
+                end
+            end
             GameRules:SendCustomMessage("Please do not leave the game.", 1, 1)
             local status, nextCall = Error_debug.ErrorCheck(function() 
                 Stats.SubmitMatchData(DOTA_TEAM_GOODGUYS, callback)
