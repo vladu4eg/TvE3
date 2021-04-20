@@ -13,6 +13,10 @@ LinkLuaModifier("modifier_antiblock",
     "libraries/modifiers/modifier_antiblock.lua",
 LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_innate_controller",
+    "libraries/modifiers/modifier_innate_controller.lua",
+LUA_MODIFIER_MOTION_NONE)
+
 if trollnelves2 == nil then
     DebugPrint('[TROLLNELVES2] creating trollnelves2 game mode')
     _G.trollnelves2 = class({})
@@ -185,7 +189,7 @@ function InitializeHero(hero)
         hero:AddNewModifier(nil, nil, "modifier_stunned", nil)
     end
         Timers:CreateTimer(30, function()
-        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll) or 0
+        local point = tonumber(GameRules.scores[hero:GetPlayerOwnerID()].elf or 0) + tonumber(GameRules.scores[hero:GetPlayerOwnerID()].troll or 0) 
         if hero ~= nil then
             if point > 0 then 
                 hero:AddExperience(point, DOTA_ModifyXP_Unspecified, false,false)
@@ -211,6 +215,7 @@ function InitializeHero(hero)
     
     hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
     hero:SetDeathXP(0)
+    PlayerResource:NewSelection(hero:GetPlayerOwnerID(), PlayerResource:GetSelectedHeroEntity(hero:GetPlayerOwnerID()))
 end
 
 function InitializeBadHero(hero)
@@ -365,7 +370,7 @@ function InitializeTroll(hero)
         end
     end
     
-    if GameRules.test then
+    if GameRules.test2 then
         hero:AddItemByName("item_dmg_12")
         hero:AddItemByName("item_armor_12")
         hero:AddItemByName("item_hp_12")
@@ -379,27 +384,45 @@ function InitializeTroll(hero)
     -- check count elf 
     Timers:CreateTimer(function()
         local countElf = 0
+        local countAngel = 0
         if not hero or hero:IsNull() then return end
         if hero:IsAlive() then
-            local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 900 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+            local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 900 , DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
             for _,unit in pairs(units) do
                 if unit ~= nil then
-                    if unit:IsElf() then
+                    if unit:IsElf() and PlayerResource:GetConnectionState(unit:GetPlayerOwnerID()) == 2 then
                         countElf = countElf + 1
+                    elseif unit:IsAngel() and PlayerResource:GetConnectionState(unit:GetPlayerOwnerID()) == 2 then
+                        countAngel = countAngel + 1 
                     end
                 end
             end
+            DebugPrint("countAngel " .. countAngel)
             if countElf > 2 then			
                 if hero:HasModifier("modifier_antiblock") then
                     hero:RemoveModifierByName("modifier_antiblock")
                 end
-                else
+            else
                 if not hero:HasModifier("modifier_antiblock") then
                     hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
                 end
             end
+
+            if countAngel > 2 then			
+                if not hero:HasModifier("modifier_innate_controller") then
+                    local buff = hero:AddNewModifier(hero, nil, "modifier_innate_controller", {})
+                    buff:SetStackCount(countAngel)
+                    DebugPrint("buff:SetStackCount(countAngel)")
+                end
+            else
+                if hero:HasModifier("modifier_innate_controller") then
+                    hero:RemoveModifierByName("modifier_innate_controller")
+                    DebugPrint("hero:RemoveModifierByName(")
+                end
+            end
+
         end
-        return 0.1
+        return 1
     end)
     
 end
@@ -773,7 +796,7 @@ function DisableAbilityIfMissingRequirements(playerID, hero, abilityHandle, unit
     
     
     
-    if disableAbility and not GameRules.test then
+    if disableAbility and not GameRules.test2 then
         abilityHandle:SetLevel(0)
         hero.disabledBuildings[unitName] = true
         else

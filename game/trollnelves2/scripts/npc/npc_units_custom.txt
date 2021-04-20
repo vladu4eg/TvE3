@@ -8660,6 +8660,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_2"
 	{
@@ -8731,6 +8735,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_3"
 	{
@@ -8803,6 +8811,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_4"
 	{
@@ -8875,6 +8887,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_5"
 	{
@@ -8947,6 +8963,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_6"
 	{
@@ -9019,6 +9039,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_7"
 	{
@@ -9090,6 +9114,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"wisp_8"
 	{
@@ -9161,6 +9189,10 @@
 		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+	   {
+	    	"DisableClumpingBehavior"  "1"
+	   }
 	}
 	"gold_wisp"
 	{

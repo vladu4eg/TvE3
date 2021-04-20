@@ -93,7 +93,7 @@ function Build( event )
             AddUpgradeAbilities(unit)
             UpdateSpells(hero)
             local item = CreateItem("item_building_cancel", unit, unit)
-            if building_name ~= "flag" and not string.match(building_name,"mine") then
+            if building_name ~= "flag" then
                 unit:AddItem(item)
             elseif building_name == "flag" then 
                 unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
@@ -206,11 +206,6 @@ function CancelBuilding( keys )
     PlayerResource:ModifyGold(hero,building.gold_cost,true)
     PlayerResource:ModifyLumber(hero,building.lumber_cost,true)
     
-    -- Eject builder
-    local builder = building.builder_inside
-    if builder then
-        BuildingHelper:ShowBuilder(builder)
-    end
     building:ForceKill(true)
     Timers:CreateTimer(0.1,function()
         UTIL_Remove(building)    

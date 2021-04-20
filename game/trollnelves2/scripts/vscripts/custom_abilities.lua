@@ -865,20 +865,20 @@ function StealGold(event)
 		SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_time")
 		sum = 0
 	end
-	--[[ 
-		if sum > 0 then
+	if sum > 0 then
 		local countAngel = 0
-		local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, hero:GetAbsOrigin() , nil, 1800 , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+		local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, caster:GetAbsOrigin() , nil, 1200 , DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
 		for _,unit in pairs(units) do
-		if unit ~= nil then
-		if unit:IsAngel() then
-		countAngel = countAngel + 1
+			if unit ~= nil then
+				if unit:IsAngel() and PlayerResource:GetConnectionState(caster:GetPlayerOwnerID()) == 2 then
+					countAngel = countAngel + 1
+				end
+			end
 		end
+		if countAngel > 2 then
+			sum = math.ceil(sum/(countAngel-1))
 		end
-		end
-		sum = sum/countAngel or sum
-		end
-	--]]
+	end
 	PlayerResource:ModifyGold(caster,sum)
 end
 

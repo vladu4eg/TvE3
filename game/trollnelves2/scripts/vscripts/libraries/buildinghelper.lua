@@ -1610,8 +1610,7 @@ function BuildingHelper:StartBuilding(builder)
         
         -- Put the builder invulnerable inside the building in construction
         if bBuilderInside then
-            BuildingHelper:HideBuilder(builder, location, building)
-            PlayerResource:RemoveFromSelection(playerID, builder)
+            builder:ForceKill(true)
         end
         
         -- Health Update Timer and Behaviors
@@ -1693,8 +1692,8 @@ function BuildingHelper:StartBuilding(builder)
                                 
                                 -- Consume Builder
                                 if bConsumesBuilder then
-                                    builder:ForceKill(true)
-                                    else
+                                    --null
+                                else
                                     BuildingHelper:ShowBuilder(builder)
                                 end
                                 
@@ -1705,13 +1704,6 @@ function BuildingHelper:StartBuilding(builder)
                             return
                         end
                         else
-                        -- Building destroyed
-                        
-                        -- Eject Builder
-                        if bBuilderInside then
-                            builder:RemoveModifierByName("modifier_builder_hidden")
-                            builder:RemoveNoDraw()
-                        end
                         
                         -- Advance Queue
                         BuildingHelper:AdvanceQueue(builder)

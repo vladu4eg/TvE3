@@ -75,6 +75,8 @@ function chatcommand:OnPlayerChat(event)
 		elseif event.text == "!test" then
 		if GameRules:IsCheatMode() then 
 			GameRules.test = true
+			TROLL_SPAWN_TIME = 5
+			PRE_GAME_TIME = 10
 		end
 		elseif event.text == "!test2" then
 		if GameRules:IsCheatMode() then 
