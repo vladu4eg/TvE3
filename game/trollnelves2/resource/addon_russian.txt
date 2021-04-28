@@ -108,6 +108,7 @@
 		"worker_4"                                                                        "Worker 4"
 		"worker_5"                                                                        "Worker 5"
 		"worker_6"                                                                        "Worker 6"
+		"worker_7"                                                                        "Worker 7"
 		"wisp_1"                                                                          "Wisp 1"
 		"wisp_2"                                                                          "Wisp 2"
 		"wisp_3"                                                                          "Wisp 3"
@@ -581,11 +582,14 @@
 		"DOTA_Tooltip_Ability_shallow_grave_datadriven"								"Shallow Grave"
 		"DOTA_Tooltip_Ability_shallow_grave_datadriven_Description"					"Дарует бессмертие на 6 секунд."
 		
-		"DOTA_Tooltip_modifier_shallow_grave_datadrive"								"Shallow Grave"
-		"DOTA_Tooltip_modifier_shallow_grave_datadrive_Description"					"Дарует бессмертие на 6 секунд."
-		
 		"DOTA_Tooltip_modifier_shallow_grave_datadriven"							"Shallow Grave"
 		"DOTA_Tooltip_modifier_shallow_grave_datadriven_Description"				"Дарует бессмертие на 6 секунд."
+		
+		"DOTA_Tooltip_Ability_paralyzing_cask_datadriven"								"Paralyzing Cask"
+		"DOTA_Tooltip_Ability_paralyzing_cask_datadriven_Description"					"Стан 1.2 секунды. 3 отскока. Наносит 10 000 магического урона. "
+		
+		"DOTA_Tooltip_modifier_paralyzing_cask_datadriven"								"Paralyzing Cask"
+		"DOTA_Tooltip_modifier_paralyzing_cask_datadriven_Description"					"Стан 1.2 секунды. 3 отскока. Наносит 10 000 магического урона. "
 		
 		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven"                  "Buff/Debuff Troll"
 		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven_Description"      "Buff/Debuff: Скорость атаки +600 и раскрытие видимость Тролля и Волков."
@@ -740,6 +744,13 @@
 		"DOTA_Tooltip_ability_train_worker_6_lumber_cost"                                 "LUMBER COST: "
 		"DOTA_Tooltip_ability_train_worker_6_food_cost"                                   "FOOD COST: "
 		"DOTA_Tooltip_ability_train_worker_6_unit_count"                                  "UNIT COUNT: "
+		
+		"DOTA_Tooltip_ability_train_worker_7"                                             "Train Worker 7"
+		"DOTA_Tooltip_ability_train_worker_7_Description"                                 "Создайте рабочих. Рабочие отлично умеют ремонтировать здания! "
+		"DOTA_Tooltip_ability_train_worker_7_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_7_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_7_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_7_unit_count"                                  "UNIT COUNT: "
 
 		"DOTA_Tooltip_ability_train_wisp_1"                                               "Train Son of Nature 1"
 		"DOTA_Tooltip_ability_train_wisp_1_Description"                                   "Создайте WISP. WISP добывает деревья(lumber) с деревьев!"
@@ -1682,7 +1693,7 @@
 		"error_need_buy_hut_7"																"Вам нужно улучшить  Troll Hut до 7 уровня!"	
 		"error_not_upgrade_tower19_x4"														"Вы не можете построить Enigma в х4."
 		"error_not_destroy_building"														"Владелец не покинул игру. Дождитесь полного выхода из игры. "
-		
+		"error_enter_need_money"															"Нельзя передать меньше 100 золота или 1 дерева(lumber)."
 		
 		"trigs1"																			"Золота много не бывает!"
 		"trigs2"																			"Ожидание окупает затраты!"

@@ -12,7 +12,7 @@ WOLF_START_SPAWN_TIME = 300 -- When the players will be able to choose wolf inst
 TROLL_SPAWN_TIME = 30
 PRE_GAME_TIME = 40
 
-ANGEL_RESPAWN_TIME = 15
+ANGEL_RESPAWN_TIME = 10
 WOLF_RESPAWN_TIME = 30
 WOLF_STARTING_RESOURCES_FRACTION = 0.20 -- What percentage of troll's networth wolves should start with
 
@@ -32,6 +32,8 @@ PERC_KICK_PLAYER = 0.80
 MIN_PLAYER_KICK = 8
 
 CHANCE_NEW_PERSON = 13
+
+TIMER_SAVER_HERO = 60
 
 EVENT_START = false
 

@@ -16,10 +16,10 @@
 		"Ability7" 					"build_research_lab"
 		"Ability8"					"repair"
 		"Ability9"					"build_flag"
-		"Ability10"					"attribute_antibonuses"
+		"Ability10"					""
 		"Ability11"					""
-		"Ability12"   	    		""
-		"Ability13"   	    		""
+		"Ability12"   	    		"attribute_antibonuses"
+		"Ability13"   	    		"antiblock"
 		"RepairAbility"				"repair"
 		"FixedRepair"				"0"
 		"RepairSpeed"				"2"
@@ -73,13 +73,13 @@
 		"Ability5"    	    "attack_gold"
 		"Ability6"    	    "block_buff"
 		"Ability7"    	    "lone_druid_spirit_bear_datadriven"
-		"Ability8"    	    "attribute_antibonuses"
+		"Ability8"    	    ""
 		"Ability9"    	    ""
 		"Ability10"   	    ""
 		"Ability11"   	    ""
 		"Ability12"   	    ""
-		"Ability13"   	    ""
-		"Ability14"   	    ""
+		"Ability13"   	    "attribute_antibonuses"
+		"Ability14"   	    "antiblock"
 		"Ability15"   	    "special_bonus_cooldown_reduction_50"
 		"Ability16"   	    "special_bonus_cooldown_reduction_30"
 		
@@ -127,7 +127,7 @@
 		"Ability1" 			"reveal_area"
 		"Ability2" 			"troll_teleport"
 		"Ability3" 			"attack_gold"
-		"Ability4" 			"attribute_antibonuses"
+		"Ability4" 			""
 		"Ability5"    	    ""
 		"Ability6"    	    ""
 		"Ability7"    	    ""
@@ -138,8 +138,8 @@
 		"Ability12"   	    ""
 		"Ability13"   	    ""
 		"Ability14"   	    ""
-		"Ability15"   	    ""
-		"Ability16"   	    ""
+		"Ability15"   	    "attribute_antibonuses"
+		"Ability16"   	    "antiblock"
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
 		"MagicalResistance"       "0"                 // Magical protection (percentage).
@@ -187,7 +187,7 @@
 		"Ability2" 			"troll_teleport"
 		"Ability3" 			"attack_gold"
 		"Ability4" 			"night_stalker_hunter_in_the_night_datadriven"
-		"Ability5"    	    "attribute_antibonuses"
+		"Ability5"    	    ""
 		"Ability6"    	    ""
 		"Ability7"    	    ""
 		"Ability8"    	    ""
@@ -197,8 +197,8 @@
 		"Ability12"   	    ""
 		"Ability13"   	    ""
 		"Ability14"   	    ""
-		"Ability15"   	    ""
-		"Ability16"   	    ""
+		"Ability15"   	    "attribute_antibonuses"
+		"Ability16"   	    "antiblock"
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
 		"MagicalResistance"       "0"                 // Magical protection (percentage).
@@ -247,7 +247,7 @@
 		"Ability4" 			"cm_stun"
 		"Ability5"    	    "cm_heal_building"
 		"Ability6"    	    "stand_invis"
-		"Ability7"    	    "attribute_antibonuses"
+		"Ability7"    	    ""
 		"Ability8"    	    ""
 		"Ability9"    	    ""
 		"Ability10"   	    ""
@@ -255,8 +255,8 @@
 		"Ability12"   	    ""
 		"Ability13"   	    ""
 		"Ability14"   	    ""
-		"Ability15"   	    ""
-		"Ability16"   	    ""
+		"Ability15"   	    "attribute_antibonuses"
+		"Ability16"   	    "antiblock"
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
 		"MagicalResistance"       "0"                 // Magical protection (percentage).
@@ -306,15 +306,15 @@
 		"Ability5"    	    "cm_heal_building"
 		"Ability6"    	    "stand_invis"
 		"Ability7"    	    "furion_teleportation_datadriven"
-		"Ability8"    	    "attribute_antibonuses"
+		"Ability8"    	    ""
 		"Ability9"    	    ""
 		"Ability10"   	    ""
 		"Ability11"   	    ""
 		"Ability12"   	    ""
 		"Ability13"   	    ""
 		"Ability14"   	    ""
-		"Ability15"   	    ""
-		"Ability16"   	    ""
+		"Ability15"   	    "attribute_antibonuses"
+		"Ability16"   	    "antiblock"
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
 		"MagicalResistance"       "0"                 // Magical protection (percentage).

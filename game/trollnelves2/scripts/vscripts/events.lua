@@ -486,7 +486,7 @@ function GiveResources(eventSourceIndex, event)
                 PlayerResource:ModifyLumberGiven(targetID, -lumber)
                 PlayerResource:ModifyGoldGiven(casterID, gold)
                 PlayerResource:ModifyLumberGiven(casterID, lumber)
-                if gold > 0 or lumber > 0 then
+                if gold > 99 or lumber > 1 then
                     local text = PlayerResource:GetPlayerName(
                     casterHero:GetPlayerOwnerID()) .. "(" ..
                     GetModifiedName(
@@ -513,6 +513,8 @@ function GiveResources(eventSourceIndex, event)
                     if casterHero:IsAngel() == false then
                         lastSendTime[targetID] = GameRules:GetGameTime()
                     end
+                else
+                    SendErrorMessage(event.casterID, "#error_enter_need_money")
                 end
                 else
                 local timeLeft = math.ceil(lastSendTime[targetID] + 120 - GameRules:GetGameTime())

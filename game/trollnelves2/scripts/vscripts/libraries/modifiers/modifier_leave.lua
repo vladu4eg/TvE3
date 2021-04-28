@@ -3,7 +3,8 @@ modifier_leave = class({})
 
 function modifier_leave:CheckState() 
     return { [MODIFIER_STATE_MUTED] = true,
-			[MODIFIER_STATE_SILENCED] = true,}
+			[MODIFIER_STATE_SILENCED] = true,
+			[MODIFIER_STATE_STUNNED] = true,}
 end
 
 function modifier_leave:IsHidden()

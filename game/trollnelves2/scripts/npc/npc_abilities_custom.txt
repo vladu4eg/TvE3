@@ -165,7 +165,7 @@
 		{
 			"modifier_antiblock"
 			{
-			"IsHidden"			"0" 
+			"IsHidden"			"1" 
 			"Passive"			"1"
 				"States"
 				{
@@ -918,7 +918,6 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"575"
-	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -1183,7 +1182,6 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"550"
-	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -5179,7 +5177,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCastRange"				"150"
+		"AbilityCastRange"				"200"
 		
 		"OnSpellStart"
 		{
@@ -5544,6 +5542,68 @@
 		"AbilityTextureName"		"train_worker_6"
 		"MaxLevel"					"1"
 		"UnitName"					"worker_6"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"999999"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"999999"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"20"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"50"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_worker_7"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_worker_7"
+		"MaxLevel"					"1"
+		"UnitName"					"worker_7"
 		
 		"AbilitySpecial"
 		{
@@ -7592,7 +7652,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityDamage"                 "10"
+		"AbilityDamage"                 "10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -7637,6 +7697,11 @@
 				"EffectName"        "Hero_Sven.StormBolt"
 				"Target"            "CASTER"
 			}
+			
+			"ApplyModifier" {
+				"Target"        "TARGET"
+				"ModifierName"  "modifier_buff_target_stun"
+			}
 		}
 
 		"OnProjectileHitUnit"
@@ -7661,12 +7726,12 @@
 				}
 			}
 
-			//"Damage"
-			//{
-			//	"Target"    "TARGET"
-			//	"Type"      "DAMAGE_TYPE_MAGICAL"
-			//	"Damage"    "%AbilityDamage"
-			//}
+			"Damage"
+			{
+				"Target"    "TARGET"
+				"Type"      "DAMAGE_TYPE_MAGICAL"
+				"Damage"    "%AbilityDamage"
+			}
 
 			"ApplyModifier"
 			{
@@ -7692,6 +7757,45 @@
 					"MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
+			
+			"modifier_buff_counter_stun" {
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsPurgable"		"0"
+				"Passive"			"0"
+				"IsBuff"			"1"
+				"IsHidden"          "0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%status_resistance_reduction" 
+				}
+
+			}
+			
+			"modifier_buff_target_stun"{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsPurgable"		"0"
+				"Duration"			"20"
+				"Passive"			"0"
+				"IsBuff"			"1"
+				"IsHidden"          "1"
+
+				"OnCreated" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierCreated3"
+						"Modifier"      "modifier_buff_counter_stun"
+					}
+				}
+				
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"	"custom_abilities.lua"
+						"Function"		"StackModifierExpired"
+						"Modifier"      "modifier_buff_counter_stun"
+					}
+				}
+			}
+			
 		}
 		
 	}
@@ -9654,15 +9758,14 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"600"
-	"AbilityCastPoint"				"0.1"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"360"
+	"AbilityCooldown"				"300"
 
 	// Damage.
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"75"
+	"AbilityDamage"					"10000"
 
 
 	// Stats
@@ -9676,27 +9779,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"hero_duration"			"1.0"
+			"hero_duration"			"1.2"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"creep_duration"		"5.0"
+			"creep_duration"		"2.0"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hero_damage"			"50"
+			"hero_damage"			"10000"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_range"			"575"
+			"bounce_range"			"600"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounces"				"2"
+			"bounces"				"3"
 		}
 		"06"
 		{

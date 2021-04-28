@@ -1057,6 +1057,31 @@ function StackModifierCreated(keys)
 	target:SetModifierStackCount(modifier, ability, stack_count + 1)
 end
 
+function StackModifierCreated3(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local modifier = keys.Modifier
+	
+	local stack_count = 0
+	if target:HasModifier("modifier_buff_counter_stun") then
+		stack_count = target:GetModifierStackCount(modifier, ability)
+		else 
+		ability:ApplyDataDrivenModifier(caster, target, modifier, {})
+	end
+	target:SetModifierStackCount(modifier, ability, stack_count + 1)
+	
+	local tar = target:FindModifierByName( "modifier_storm_bolt_datadriven" )
+	
+	if target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 2 and tar then
+		tar:SetDuration(2,true)
+		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 3 and tar  then
+		tar:SetDuration(1.5,true)
+		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 > 3 and tar  then
+		tar:SetDuration(1,true)
+	end
+end
+
 function StackModifierCreated2(keys)
 	local caster = keys.caster
 	local target = keys.target
@@ -1089,7 +1114,6 @@ function StackModifierCreated2(keys)
 		tar3:SetDuration(1,true)
 	end
 end
-
 
 function StackModifierExpired(keys)
 	local caster = keys.caster

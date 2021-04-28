@@ -213,7 +213,6 @@ function InitializeHero(hero)
     hero:SetAbilityPoints(0)
     hero:SetStashEnabled(false)
     
-    hero:AddNewModifier(hero, nil, "modifier_antiblock", {})
     hero:SetDeathXP(0)
     PlayerResource:NewSelection(hero:GetPlayerOwnerID(), PlayerResource:GetSelectedHeroEntity(hero:GetPlayerOwnerID()))
 end
@@ -392,8 +391,8 @@ function InitializeTroll(hero)
                 if unit ~= nil then
                     if unit:IsElf() and PlayerResource:GetConnectionState(unit:GetPlayerOwnerID()) == 2 then
                         countElf = countElf + 1
-                    elseif unit:IsAngel() and PlayerResource:GetConnectionState(unit:GetPlayerOwnerID()) == 2 then
-                        countAngel = countAngel + 1 
+                   -- elseif unit:IsAngel() and PlayerResource:GetConnectionState(unit:GetPlayerOwnerID()) == 2 then
+                   --     countAngel = countAngel + 1 
                     end
                 end
             end
@@ -408,18 +407,16 @@ function InitializeTroll(hero)
                 end
             end
 
-            if countAngel > 2 then			
-                if not hero:HasModifier("modifier_innate_controller") then
-                    local buff = hero:AddNewModifier(hero, nil, "modifier_innate_controller", {})
-                    buff:SetStackCount(countAngel)
-                    DebugPrint("buff:SetStackCount(countAngel)")
-                end
-            else
-                if hero:HasModifier("modifier_innate_controller") then
-                    hero:RemoveModifierByName("modifier_innate_controller")
-                    DebugPrint("hero:RemoveModifierByName(")
-                end
-            end
+           -- if countAngel > 2 then			
+           --     if not hero:HasModifier("modifier_innate_controller") then
+           --         hero:AddNewModifier(hero, nil, "modifier_innate_controller", {}):SetStackCount(countAngel)
+           --         DebugPrint("buff:SetStackCount(countAngel)")
+           --     end
+           -- else 
+           --     if hero:HasModifier("modifier_innate_controller") then
+           --         hero:RemoveModifierByName("modifier_innate_controller")
+           --     end
+           -- end
 
         end
         return 1

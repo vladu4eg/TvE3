@@ -6120,13 +6120,14 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"AbilityLayout"				"6"
+		"AbilityLayout"				"7"
 		"Ability1"					"train_worker_1"
 		"Ability2"					"train_worker_2"
 		"Ability3"					"train_worker_3"
 		"Ability4"					"train_worker_4"
 		"Ability5"					"train_worker_5"
 		"Ability6"					"train_worker_6"
+		"Ability7"					"train_worker_7"
 		"Ability10"					""
 	    
 	    // General
@@ -8516,7 +8517,7 @@
 		"AttackRate"                            "1.00"
 		"AttackAnimationPoint"					"0.5"
 		"AttackAcquisitionRange"				"500"
-		"AttackRange"							"180"
+		"AttackRange"							"220"
 
 		"AbilityLayout"				"4"
 		"Ability1" 					"repair"
@@ -8580,11 +8581,11 @@
 	    {
 	        "AttachWearables" // Dark wood set
 	        {
-		"Wearable1" {"ItemDef" "7356"}//back("Darkclaw Emissary Cowl")
-		"Wearable2" {"ItemDef" "7357"}//misc("Darkclaw Emissary Cloak")
-		"Wearable3" {"ItemDef" "7358"}//legs("Darkclaw Emissary Dress")
-		"Wearable4" {"ItemDef" "7359"}//arms("Darkclaw Emissary Arms")
-		"Wearable5" {"ItemDef" "7361"}//("Darkclaw Emissary Staff")
+		"Wearable1" {"ItemDef" "9522"}//belt("Apron of the Outlandish Gourmet")
+		"Wearable2" {"ItemDef" "9520"}//("Implements of the Outlandish Gourmet")
+		"Wearable3" {"ItemDef" "9519"}//head("Visage of the Outlandish Gourmet")
+		"Wearable4" {"ItemDef" "9518"}//shoulder("Garb of the Outlandish Gourmet")
+		"Wearable5" {"ItemDef" "9517"}//back("Cauldron of the Outlandish Gourmet")
 	        }
 	    }
 	}
@@ -9332,8 +9333,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9395,8 +9396,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9458,8 +9459,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9521,8 +9522,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9538,7 +9539,7 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_gameplay/gold_bag.vmdl"
-	    "ModelScale"                "2.5"
+	    "ModelScale"                "3"
 	    "ModelRotation"             "0"
 		"PlayerCanControl"			"1"
 		"Scale"						"1"
@@ -9583,8 +9584,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9600,7 +9601,7 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_gameplay/gold_bag.vmdl"
-	    "ModelScale"                "2.5"
+	    "ModelScale"                "3"
 	    "ModelRotation"             "0"
 		"PlayerCanControl"			"1"
 		"Scale"						"1"
@@ -9646,8 +9647,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9663,7 +9664,7 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_gameplay/gold_bag.vmdl"
-	    "ModelScale"                "2.5"
+	    "ModelScale"                "3"
 	    "ModelRotation"             "0"
 		"PlayerCanControl"			"1"
 		"Scale"						"1"
@@ -9708,8 +9709,8 @@
 	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
@@ -9725,7 +9726,7 @@
 	    //-----------------------------
 		"BaseClass"                 "npc_dota_creature"
 	    "Model"                     "models/props_gameplay/gold_bag.vmdl"
-	    "ModelScale"                "2.5"
+	    "ModelScale"                "3"
 	    "ModelRotation"             "0"
 		"PlayerCanControl"			"1"
 		"Scale"						"1"
@@ -9767,18 +9768,17 @@
 		"CollisionSize"				"128"
 
 	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-	    "TeamName"                  "DOTA_TEAM_BADGUYS"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
 	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	    "VisionDaytimeRange"        "50"
-	    "VisionNighttimeRange"        "25"
+	    "VisionDaytimeRange"        "1"
+	    "VisionNighttimeRange"        "1"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	    "ProjectileCollisionSize"   "100"
 	    "RingRadius"                "100"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"             "0"
 	}
-
 
 	//=================================================================================
 	// Building: Shop 1 Weapon shop

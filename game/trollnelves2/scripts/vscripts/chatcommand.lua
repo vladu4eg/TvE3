@@ -82,6 +82,13 @@ function chatcommand:OnPlayerChat(event)
 		if GameRules:IsCheatMode() then 
 			GameRules.test = true
 			GameRules.test2 = true
+			TROLL_SPAWN_TIME = 5
+			PRE_GAME_TIME = 10
+		end
+		elseif event.text == "!notest" then
+		if GameRules:IsCheatMode() then 
+			GameRules.test = false
+			GameRules.test2 = false
 		end
 		elseif event.text == "!fps" then
 			GameRules.PlayersFPS[event.playerid] = true
