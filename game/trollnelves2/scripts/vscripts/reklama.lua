@@ -28,6 +28,11 @@ local msgs = {
 		StartTime = 3000,
 		Interval = 2000,
 		MaxCount = 3	
+	},
+	["#donate7"] = {
+		StartTime = 120,
+		Interval = 300,
+		MaxCount = 5	
 	}
 }
 

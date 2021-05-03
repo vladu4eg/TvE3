@@ -3305,7 +3305,7 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tower_3"
-				"gold_cost"			"32"
+				"gold_cost"			"16"
 				"lumber_cost"		"0"
 			}
 	    }
@@ -3393,7 +3393,7 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tower_4"
-				"gold_cost"			"64"
+				"gold_cost"			"32"
 				"lumber_cost"		"0"
 			}
 	    }
@@ -3655,7 +3655,7 @@
 	        "1"{
 				"unit_name"			"tower_7"
 				"gold_cost"			"512"
-				"lumber_cost"		"16"
+				"lumber_cost"		"4"
 			}
 	    }
 		
@@ -3742,7 +3742,7 @@
 	        "1"{
 				"unit_name"			"tower_8"
 				"gold_cost"			"1024"
-				"lumber_cost"		"32"
+				"lumber_cost"		"8"
 			}
 	    }
 		
@@ -3829,7 +3829,7 @@
 	        "1"{
 				"unit_name"			"tower_9"
 				"gold_cost"			"2048"
-				"lumber_cost"		"32"
+				"lumber_cost"		"16"
 			}
 	    }
 		
@@ -3916,7 +3916,7 @@
 	        "1"{
 				"unit_name"			"tower_10"
 				"gold_cost"			"4096"
-				"lumber_cost"		"64"
+				"lumber_cost"		"32"
 			}
 	    }
 		
@@ -4008,7 +4008,7 @@
 			"2"{
 				"unit_name"			"tower_10_1"
 				"gold_cost"			"20480"
-				"lumber_cost"		"256"
+				"lumber_cost"		"128"
 			}
 	    }
 		

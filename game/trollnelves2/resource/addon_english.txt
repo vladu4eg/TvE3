@@ -1856,6 +1856,7 @@ The effect is issued for 1 year. Your support helps the game develop."
 		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/zwYYbex</font>"
 		"donate5"																			"<font color='#58ACFA'>Submit your ideas on what to add to the game in our Discord server!</font>"
 		"donate6"																			"<font color='#58ACFA'>Thanks to all the testers for such a significant contribution to the development of the game! Thank:*</font>"
+		"donate7"																			"<font color='#58ACFA'>Registration for Tournament #1 in Discord is open: https://discord.gg/zwYYbex</font>"
 		
 		"loading_text"																		"&lt;=Click this for tips!<br>
 		                                                                                    Don't change your hotkeys after starting the game.

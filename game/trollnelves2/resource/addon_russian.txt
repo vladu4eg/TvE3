@@ -1717,6 +1717,7 @@
 		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/zwYYbex</font>"
 		"donate5"																			"<font color='#58ACFA'>Вы можете поделиться идеями/багами/пожеланиями на нашем сервере Discord!</font>"
 		"donate6"																			"<font color='#58ACFA'>Спасибо всем  тестирам  за  такой значительный  вклад  в развитие кастомки! Спасибо:*</font>"
+		"donate7"																			"<font color='#58ACFA'>Открыта регистрация на Турнир #1 в Discord: https://discord.gg/zwYYbex</font>"
 		
 		"loading_text"																		"&lt;=Щелкните здесь, чтобы получить советы!<br>
 		                                                                                    Не меняйте горячие клавиши после запуска игры.

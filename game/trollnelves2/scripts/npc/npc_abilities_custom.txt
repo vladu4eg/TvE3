@@ -2358,7 +2358,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_cost"				"1"
+				"gold_cost"				"0"
 			}
 			"02"
 			{
@@ -3347,7 +3347,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_cost"				"16"
+				"gold_cost"				"4"
 			}
 			"02"
 			{

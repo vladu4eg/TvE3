@@ -38,9 +38,9 @@ function Stats.SubmitMatchData(winner,callback)
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 40-60 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 2
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 4
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 3
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 5
 			end
 			if PlayerResource:GetDeaths(pID) >= 10 then 
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2

@@ -42,6 +42,8 @@ function FlagGive(eventSourceIndex, event)
 		hero:RemoveAbility("build_flag")
 		countFlag[event.playerID1] = GameRules.PlayersBase[event.casterID]
 		countFlag[event.casterID] = GameRules.PlayersBase[event.casterID]
+		text = PlayerResource:GetPlayerName(event.target) .. " accepted the invitation to private the base."
+		GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , team, 0, 0)
 	else
 	text = PlayerResource:GetPlayerName(event.target) .. " canceled the request for a private base."
 	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , team, 0, 0)

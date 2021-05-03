@@ -478,15 +478,15 @@ function GiveResources(eventSourceIndex, event)
                     return
                 end
                 if (lastSendTime[targetID] == nil or lastSendTime[targetID] + 120 < GameRules:GetGameTime()) or casterHero:IsAngel() then
-                PlayerResource:ModifyGold(casterHero, -gold, true)
-                PlayerResource:ModifyLumber(casterHero, -lumber, true)
-                PlayerResource:ModifyGold(hero, gold, true)
-                PlayerResource:ModifyLumber(hero, lumber, true)
-                PlayerResource:ModifyGoldGiven(targetID, -gold)
-                PlayerResource:ModifyLumberGiven(targetID, -lumber)
-                PlayerResource:ModifyGoldGiven(casterID, gold)
-                PlayerResource:ModifyLumberGiven(casterID, lumber)
                 if gold > 99 or lumber > 1 then
+                    PlayerResource:ModifyGold(casterHero, -gold, true)
+                    PlayerResource:ModifyLumber(casterHero, -lumber, true)
+                    PlayerResource:ModifyGold(hero, gold, true)
+                    PlayerResource:ModifyLumber(hero, lumber, true)
+                    PlayerResource:ModifyGoldGiven(targetID, -gold)
+                    PlayerResource:ModifyLumberGiven(targetID, -lumber)
+                    PlayerResource:ModifyGoldGiven(casterID, gold)
+                    PlayerResource:ModifyLumberGiven(casterID, lumber)
                     local text = PlayerResource:GetPlayerName(
                     casterHero:GetPlayerOwnerID()) .. "(" ..
                     GetModifiedName(
