@@ -334,6 +334,24 @@ function GoldOnAttack (event)
 	end
 end
 
+function KillWispOnAttack (event)
+		local caster = event.caster
+		local dmg = math.floor(event.DamageDealt) * GameRules.MapSpeed
+		local target = event.unit
+		caster.attackTarget = target:GetEntityIndex()
+		target.attackers = target.attackers or {}
+		target.attackers[caster:GetEntityIndex()] = true
+		if target:GetUnitName() == 'gold_wisp' then
+			local units = Entities:FindAllByClassname("npc_dota_creature")
+			units = FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin() , nil, 64 , DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_CREEP , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
+    		for _, unit in pairs(units) do
+				if unit:GetUnitName() == 'gold_wisp'  then
+					ApplyDamage({victim = unit, attacker = caster, damage = 1, damage_type = DAMAGE_TYPE_PHYSICAL })
+				end
+			end	
+		end
+end
+
 function ExchangeLumber(event)
 	if IsServer() then
 		local caster = event.caster
@@ -463,6 +481,14 @@ function SpawnUnitOnChannelSucceeded(event)
 					--		UpdateModel(unit, "models/gold_wisp.vmdl", 1)     
 				end
 			end
+			if tonumber(string.match(unit_name,"%d+")) ~= nil then
+				if tonumber(string.match(unit_name,"%d+")) >= 1 and tonumber(string.match(unit_name,"%d+")) <= 6 and string.match(unit_name,"%a+") == "wisp"  then
+					unit:AddNewModifier(unit, nil, "modifier_kill", {duration = TIME_LIFE_WISP1_6/GameRules.MapSpeed})
+				end
+			elseif unit_name == "gold_wisp" then 
+				unit:AddNewModifier(unit, nil, "modifier_kill", {duration = TIME_LIFE_WISP1_6/GameRules.MapSpeed})
+			end
+			
 			if string.match(unit_name,"%a+") == "worker" then
 				ABILITY_Repair = unit:FindAbilityByName("repair")
 				ABILITY_Repair:ToggleAutoCast()
@@ -720,7 +746,7 @@ function BuyItem(event)
 	local lumber_cost = GetItemKV(item_name)["AbilitySpecial"]["03"]["lumber_cost"];
 	local playerID = caster.buyer
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	
+
 	if not IsInsideShopArea(hero) and item_name ~=  "item_book_of_agility" and item_name ~=  "item_book_of_strength" and item_name ~=  "item_book_of_intelligence" then
 		SendErrorMessage(playerID, "#error_shop_out_of_range")
 		ability:EndCooldown()
@@ -753,9 +779,12 @@ function BuyItem(event)
 		return	
 	end
 	
+	
 	PlayerResource:ModifyLumber(hero,-lumber_cost)
 	PlayerResource:ModifyGold(hero,-gold_cost)
 	local item = CreateItem(item_name, hero, hero)
+	
+
 	
 	--local units = Entities:FindAllByClassname("npc_dota_creature")
 	--for _,unit in pairs(units) do
@@ -765,6 +794,69 @@ function BuyItem(event)
 	--	end
 	--end
 	hero:AddItem(item)
+end
+
+function BuySkill(event)
+	local ability = event.ability
+	local caster = event.caster
+	local item_name = GetAbilityKV(ability:GetAbilityName()).ItemName
+	local gold_cost = GetItemKV(item_name)["AbilitySpecial"]["02"]["gold_cost"];
+	local lumber_cost = GetItemKV(item_name)["AbilitySpecial"]["03"]["lumber_cost"];
+	local playerID = caster.buyer
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local checkBear = false
+	local bearHero
+	item_name = string.gsub(item_name, "item_", "")
+	
+	if hero ~= GameRules.trollHero then
+		SendErrorMessage(playerID, "#error_buy_skill_only_troll")
+		return
+	end
+	
+	local units = Entities:FindAllByClassname("npc_dota_lone_druid_bear")
+	for _,unit in pairs(units) do
+		local unit_name = unit:GetUnitName();
+		if unit_name == "npc_dota_hero_bear" then
+			checkBear = true
+			bearHero = unit
+			break
+		end
+	end
+	
+	if not checkBear then
+		SendErrorMessage(playerID, "#error_no_bear_team")
+		return
+	end
+	
+	if not IsInsideShopArea(hero) then
+		SendErrorMessage(playerID, "#error_shop_out_of_range")
+		ability:EndCooldown()
+		return
+	end
+	if gold_cost > PlayerResource:GetGold(playerID) then
+		SendErrorMessage(playerID, "#error_not_enough_gold")
+		ability:EndCooldown()
+		return
+	end
+	if lumber_cost > PlayerResource:GetLumber(playerID) then
+		SendErrorMessage(playerID, "#error_not_enough_lumber")
+		ability:EndCooldown()
+		return
+	end 
+	
+	if bearHero:HasAbility(item_name) then
+		SendErrorMessage(playerID, "#error_bear_have_skill")
+		ability:EndCooldown()
+		return	
+	end
+	
+	PlayerResource:ModifyLumber(hero,-lumber_cost)
+	PlayerResource:ModifyGold(hero,-gold_cost)
+	
+	bearHero:AddAbility(item_name)
+    local abil = bearHero:FindAbilityByName(item_name)
+    abil:SetLevel(abil:GetMaxLevel())
+	
 end
 
 function IsInsideShopArea(unit) 

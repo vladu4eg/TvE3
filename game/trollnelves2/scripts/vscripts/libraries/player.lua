@@ -6,7 +6,7 @@ local goldGainedImportance = 8
 local goldGivenImportance = 3
 local lumberGainedImportance = 8
 local lumberGivenImportance = 3
-local rankImportance = 25
+local rankImportance = 30
 local rankPers = 5
 
 if GameRules.disconnectedHeroSelects == nil then
@@ -25,9 +25,9 @@ end
 function CDOTA_PlayerResource:SetGold(hero,gold)
     local playerID = hero:GetPlayerOwnerID()
 	if GameRules.MapSpeed >= 4 then
-		gold = math.min(gold, 2000000)
+		gold = math.min(gold, math.floor(2000000 * GameRules.MultiMapSpeed))
 	else
-		gold = math.min(gold, 1000000)
+		gold = math.min(gold, math.floor(1000000 * GameRules.MultiMapSpeed)) 
 	end
     GameRules.gold[playerID] = gold
 	CustomGameEventManager:Send_ServerToTeam(hero:GetTeam(), "player_custom_gold_changed", {
@@ -38,7 +38,7 @@ end
 
 function CDOTA_PlayerResource:ModifyGold(hero,gold,noGain)
     if GameRules.test2 then
-		PlayerResource:SetGold(hero, 1000000)
+		PlayerResource:SetGold(hero, math.floor(1000000 * GameRules.MultiMapSpeed))
 		return
 	end
     noGain = noGain or false
@@ -58,9 +58,9 @@ function CDOTA_PlayerResource:SetLumber(hero, lumber)
     local playerID = hero:GetPlayerOwnerID()
 	
 	if GameRules.MapSpeed >= 4 then
-		lumber = math.min(lumber, 2000000)
+		lumber = math.min(lumber, math.floor(2000000 * GameRules.MultiMapSpeed))
 	else
-		lumber = math.min(lumber, 1000000)
+		lumber = math.min(lumber, math.floor(1000000 * GameRules.MultiMapSpeed))
 	end
 	GameRules.lumber[playerID] = lumber
 	CustomGameEventManager:Send_ServerToTeam(hero:GetTeam(), "player_lumber_changed", {
@@ -71,7 +71,7 @@ end
 
 function CDOTA_PlayerResource:ModifyLumber(hero,lumber,noGain)
     if GameRules.test2 then
-		PlayerResource:SetLumber(hero,1000000)
+		PlayerResource:SetLumber(hero, math.floor(1000000 * GameRules.MultiMapSpeed))
 		return
 	end
     noGain = noGain or false

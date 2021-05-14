@@ -4,6 +4,7 @@ require('stats')
 require('wearables')
 require('drop')
 require('error_debug')
+require('settings')
 CheckBarak3 = false
 -- A build ability is used (not yet confirmed)
 function Build( event )
@@ -320,6 +321,7 @@ function UpgradeBuilding( event )
         hero:AddAbility("lone_druid_spirit_bear_datadriven")
         local abil = hero:FindAbilityByName("lone_druid_spirit_bear_datadriven")
         abil:SetLevel(abil:GetMaxLevel())
+        GameRules.MultiMapSpeed = 2
     end
     local p
     if parts ~= nil then    

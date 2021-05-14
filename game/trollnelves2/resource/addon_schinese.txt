@@ -186,10 +186,10 @@
 		"DOTA_Tooltip_ability_gain_gold"                                                  "产生金钱"
 		"DOTA_Tooltip_ability_gain_gold_Description"                                      "每秒产生一定金钱！"
 
-		"DOTA_Tooltip_ability_build_rock"                                                 "建造石墙"
-		"DOTA_Tooltip_ability_build_rock_Description"                                     "基础防御建筑，可以阻碍巨魔的入侵!/n 提示：升级农场的前置建筑，最好只在重要位置建造一个以节约资源发展。 "
-		"DOTA_Tooltip_ability_build_rock_gold_cost"                                       "花费金钱: "
-		"DOTA_Tooltip_ability_build_rock_lumber_cost"                                     "花费木材: "
+		"DOTA_Tooltip_ability_build_rock_1"                                                 "建造石墙"
+		"DOTA_Tooltip_ability_build_rock_1_Description"                                     "基础防御建筑，可以阻碍巨魔的入侵!/n 提示：升级农场的前置建筑，最好只在重要位置建造一个以节约资源发展。 "
+		"DOTA_Tooltip_ability_build_rock_1_gold_cost"                                       "花费金钱: "
+		"DOTA_Tooltip_ability_build_rock_1_lumber_cost"                                     "花费木材: "
 
 		"DOTA_Tooltip_ability_upgrade_to_rock_2"                                          "升级至石墙 2"
 		"DOTA_Tooltip_ability_upgrade_to_rock_2_Description"                              "升级你的石墙! "

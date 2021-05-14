@@ -318,7 +318,21 @@
 		"DOTA_Tooltip_ability_upgrade_to_rock_20"                              "Fire Dragon Wall"
 		"DOTA_Tooltip_ability_upgrade_to_rock_20_Description"                  "Улучшить свой Dragon wall!<br>HP:999999<br>ARMOR:256"
 
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear"								"Buy Teleport for Bear"
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack"								"Buy Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack_Description"					"Убивает всех Gold Wisp в радиусе 64."
 
+		"DOTA_Tooltip_Ability_attack_gold_wisp"								"Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_attack_gold_wisp_Description"					"Убивает всех Gold Wisp в радиусе 64."
+		
 		"DOTA_Tooltip_ability_build_tower_1"                                              "Build Tower 1"
 		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "Постройте башню, чтобы защититься от могущественного Тролля!<br>Урон: 1"
 		"DOTA_Tooltip_ability_build_tower_1_gold_cost"                                    "GOLD COST: "
@@ -352,7 +366,7 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_10_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 2048-4096"
 
 		"DOTA_Tooltip_ability_upgrade_to_tower_10_1"                                        "Upgrade To Tower 10 lvl 2"
-		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 1-10240"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 512-10240"
 
 		"DOTA_Tooltip_ability_upgrade_to_tower_11"                                        "Upgrade To Tower 11 lvl 1"
 		"DOTA_Tooltip_ability_upgrade_to_tower_11_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 40960"

@@ -19,7 +19,7 @@ function UpdateParticles( table_name, key, data )
                     $("#NAPartButt"+x).visible = false;
                     if (data[poriadok[x-1]+1] != "nill")
                     {
-                        if (data[poriadok[x-1]+1] != "normal" && x < 17)
+                        if (data[poriadok[x-1]+1] != "normal")
                         {
                             $("#NewPartButt"+myint).visible = true;
                             $("#partname"+myint).text = names[poriadok[x-1]];

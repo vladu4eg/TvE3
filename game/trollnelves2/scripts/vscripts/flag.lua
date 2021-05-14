@@ -30,6 +30,7 @@ end
 function FlagGive(eventSourceIndex, event)
 	DebugPrint("event.vote " .. event.vote)
 	local hero = PlayerResource:GetSelectedHeroEntity(event.playerID1)
+	local team = hero:GetTeamNumber()
 	if event.vote == 1 then
         DebugPrint("GameRules.PlayersBase[event.casterID] FlagGive " .. GameRules.PlayersBase[event.casterID])
         DebugPrint("event.casterID FlagGive " .. event.casterID)

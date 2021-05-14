@@ -348,6 +348,7 @@ function Precache( context )
 	PrecacheResource("model", "models/items/courier/duskie/duskie.vmdl", context)
 	
 	PrecacheResource("model", "models/items/courier/dc_demon/dc_demon_flying.vmdl", context)
+	PrecacheResource("model", "models/items/courier/little_sapplingnew_bloom_style/little_sapplingnew_bloom_style.vmdl", context) -- spring winner
 		
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)
@@ -427,6 +428,7 @@ function Activate()
 	GameRules.test2 = false
 	GameRules.PlayersCount = 0
 	GameRules.KickList = {}
+	GameRules.MultiMapSpeed = 1
 	
 	GameRules.trollnelves2 = trollnelves2()
 	GameRules.trollnelves2:Inittrollnelves2()

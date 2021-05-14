@@ -10,6 +10,7 @@ function SpiritBearSpawn( event )
 	local checkHut = false
 	-- Set the unit name, concatenated with the level number
 	local unit_name = "npc_dota_hero_bear" 
+
 	--[[
 	for pID=0,DOTA_MAX_TEAM_PLAYERS do
 		if PlayerResource:IsValidPlayerID(pID) then
@@ -73,6 +74,9 @@ function SpiritBearSpawn( event )
 			ability:StartCooldown(999999)
 			--SpiritCheckWolf(event)
 			-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
+			caster.bear:RemoveAbility("attack_gold_wisp")
+			caster.bear:RemoveAbility("reveal_area")
+			caster.bear:RemoveAbility("troll_teleport")
 		end
 		
 		else 
@@ -118,6 +122,9 @@ function SpiritBearLevel( event )
 		end
 		--SpiritCheckWolf(event)
 		-- Learn its abilities: return lvl 2, entangle lvl 3, demolish lvl 4. By Index
+		caster.bear:RemoveAbility("attack_gold_wisp")
+		caster.bear:RemoveAbility("reveal_area")
+		caster.bear:RemoveAbility("troll_teleport")
 	end
 end
 

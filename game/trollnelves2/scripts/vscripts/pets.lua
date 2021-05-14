@@ -212,6 +212,9 @@ function Pets.CreatePet( keys, num )
 	elseif num == "12" then
 		model = "models/items/courier/duskie/duskie.vmdl" -- Winter Winner
 		effect = "particles/econ/courier/courier_wyvern_hatchling/courier_wyvern_hatchling_ice.vpcf"
+	elseif num == "13" then
+		model = "models/items/courier/little_sapplingnew_bloom_style/little_sapplingnew_bloom_style.vmdl" -- Spring Winner
+		effect = "particles/econ/courier/courier_greevil_green/courier_greevil_green_ambient_3.vpcf"
 	end
 	
 	

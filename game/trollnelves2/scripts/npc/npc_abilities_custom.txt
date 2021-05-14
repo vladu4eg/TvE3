@@ -5104,6 +5104,35 @@
 			}
 		}
 	}
+	
+	"attack_gold_wisp"{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"wisp_attack"
+		"MaxLevel"						"1"
+		"OnCreated"
+		{
+			"ApplyModifier"
+			{
+				"Target"            "CASTER"
+				"ModifierName"      "gold_wisp_on_attack"
+			}
+		}
+		"Modifiers"{
+			"gold_wisp_on_attack"{
+				"IsHidden"			"1"
+				"Passive"			"1"
+				"OnDealDamage"{
+					"RunScript"{
+						"ScriptFile"		"custom_abilities.lua"
+						"Function"			"KillWispOnAttack"
+						"DamageDealt"		"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+	
 	"troll_range"{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6219,6 +6248,63 @@
 			}
 		}
 	}
+	
+	
+	"buy_skill_wisp_on_attack"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wisp_attack"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_attack_gold_wisp"
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuySkill"
+			}
+		}
+
+	}
+	"buy_reveal_area_bear"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"keeper_of_the_light_blinding_light"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_reveal_area"
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuySkill"
+			}
+		}
+
+	}
+	"buy_troll_teleport_bear"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"chen_penitence"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"					"1"
+		"ItemName"					"item_troll_teleport"
+		"BuyItem"					"1"
+				
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"BuySkill"
+			}
+		}
+
+	}
+	
 	"buy_item_dmg_1"
 	{
 		"BaseClass"					"ability_datadriven"

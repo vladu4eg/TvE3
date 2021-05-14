@@ -144,6 +144,7 @@
 		"hp_shop"                                                                         "HP Shop"
 		"hp_reg_shop"                                                                     "HP Reg Shop"
 		"atk_spd_shop"                                                                    "Atk Spd Shop"
+		"bear_shop"                                                                   	  "Bear Skill Shop"
 		"troll_hut_1"                                                                     "Troll Hut 1"
 		"troll_hut_2"                                                                     "Troll Hut 2"
 		"troll_hut_3"                                                                     "Troll Hut 3"
@@ -348,6 +349,20 @@
 		"DOTA_Tooltip_ability_upgrade_to_rock_20"                              "Fire Dragon Wall"
 		"DOTA_Tooltip_ability_upgrade_to_rock_20_Description"                  "Upgrade your dragon wall!<br>HP:999999<br>ARMOR:256"
 
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear"								"Buy Teleport for Bear"
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack"								"Buy Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack_Description"					"Kills all Gold Wisp within a 64 radius."
+
+		"DOTA_Tooltip_Ability_attack_gold_wisp"								"Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_attack_gold_wisp_Description"					"Kills all Gold Wisp within a 64 radius."
 
 		"DOTA_Tooltip_ability_build_tower_1"                                              "Build Tower 1"
 		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "Build tower to defend yourself from the mighty troll!<br>Damage: 1"
@@ -382,7 +397,7 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_10_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 2048-4096"
 
 		"DOTA_Tooltip_ability_upgrade_to_tower_10_1"                                        "Upgrade To Tower 10 lvl 2"
-		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 1-10240"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 512-10240"
 
 		"DOTA_Tooltip_ability_upgrade_to_tower_11"                                        "Upgrade To Tower 11 lvl 1"
 		"DOTA_Tooltip_ability_upgrade_to_tower_11_Description"                            "Upgrade your tower to improve your defence!<br>Damage: 40960"
@@ -1782,6 +1797,7 @@
 		"ppatron6"																				"Available to sixth level donater or higher. Pets are not included in the donation effect."
 		"peventdesert"																			"Awarded for participating in a Desert event. Pets are not included in the donation effect."
 		"peventwinter"																			"Awarded for participating in a Winter event. Pets are not included in the donation effect."
+		"peventspring"																			"Awarded for participating in a Spring event. Pets are not included in the donation effect."
 		
 		
 		

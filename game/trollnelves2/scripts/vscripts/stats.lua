@@ -451,7 +451,7 @@ function Stats.RequestPets(pID, steam, callback)
 		local obj,pos,err = json.decode(res.Body)
 		--DeepPrintTable(obj)
 		DebugPrint("***********************************************")
-		for id = 0, 11 do
+		for id = 0, 12 do
 			parts[id] = "nill"
 		end
 		CustomNetTables:SetTableValue("Pets_Tabel",tostring(pID),parts)

@@ -3305,7 +3305,7 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tower_3"
-				"gold_cost"			"16"
+				"gold_cost"			"32"
 				"lumber_cost"		"0"
 			}
 	    }
@@ -3393,7 +3393,7 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tower_4"
-				"gold_cost"			"32"
+				"gold_cost"			"64"
 				"lumber_cost"		"0"
 			}
 	    }
@@ -4114,7 +4114,7 @@
 	    "SoundSet"                  "Tower.Fire"
 		
 	
-		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMin"			"512"		// Damage range min.
 		"AttackDamageMax"			"10240"		// Damage range max.
 	    "ArmorPhysical"             "4"
 		"StatusHealth"              "800"
@@ -7826,10 +7826,10 @@
 		"ModelScale"                            "0.7"
 		"Level"                                 "1"
 		"HealthBarOffset"                       "200"
-		"AbilityLayout"     "4"
-		"Ability1" 			"antiblock" //treant_debuff
-		"Ability2" 			""
-		"Ability3" 			""
+		"AbilityLayout"     "16"
+		"Ability1" 			"reveal_area" //treant_debuff
+		"Ability2" 			"troll_teleport"
+		"Ability3" 			"attack_gold_wisp"
 		"Ability4" 			""
 		"Ability5"    	    ""
 		"Ability6"    	    ""
@@ -7842,7 +7842,7 @@
 		"Ability13"   	    ""
 		"Ability14"   	    ""
 		"Ability15"   	    ""
-		"Ability16"   	    ""
+		"Ability16"   	    "antiblock"
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
 		"MagicalResistance"       "0"                 // Magical protection (percentage).
@@ -10044,6 +10044,84 @@
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"             "0"
 	}
+	
+	//=================================================================================
+	// Building: Shop 3 HP Shop
+	//=================================================================================
+	"bear_shop"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/heroes/brewmaster/brewmaster.vmdl"
+	    "precache"
+		{
+			"model"						"models/heroes/brewmaster/brewmaster.vmdl"
+	    }
+		"ModelScale"                "1"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+
+	    // Stats
+	    //-----------------------------
+	    "Level"                     "1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"13"
+		"Ability1"					"buy_reveal_area_bear"
+		"Ability2"					"buy_troll_teleport_bear"
+		"Ability3"					"buy_skill_wisp_on_attack"
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+	    // General
+	    //-----------------------------
+
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "250"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+
+		"ConstructionSize"          "1"
+	    "BlockPathingSize"          "1"
+		"CollisionSize"				"32"
+
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_BADGUYS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "9949"}//shoulder("Apron of the Loaded Prospects")
+		"Wearable2" {"ItemDef" "9948"}//("Lantern of the Loaded Prospects")
+		"Wearable3" {"ItemDef" "9947"}//back("Pack of the Loaded Prospects")
+		"Wearable4" {"ItemDef" "9946"}//head("Helmet of the Loaded Prospects")
+		"Wearable5" {"ItemDef" "9945"}//offhand_weapon("Drill-Barrel of the Loaded Prospects")
+		"Wearable6" {"ItemDef" "9944"}//arms("Gloves of the Loaded Prospects")
+	        }
+	    }
+	}
+	
 	//=================================================================================
 	// Building: Shop 3 Atk Spd Shop
 	//=================================================================================
