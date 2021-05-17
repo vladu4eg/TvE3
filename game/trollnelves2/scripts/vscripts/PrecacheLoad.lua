@@ -18,12 +18,12 @@ local function PrecacheEverythingFromTable( context, kvtable)
                PrecacheEverythingFromTable( context, value )
             end
         else
-            --if string.find(value, "vpcf") then
-            --    PrecacheResource( "particle", value, context)
-            --end
-            --if string.find(value, "vmdl") then
-            --    PrecacheResource( "model", value, context)
-            --end
+            if string.find(value, "vpcf") then
+                PrecacheResource( "particle", value, context)
+            end
+            if string.find(value, "vmdl") then
+                PrecacheResource( "model", value, context)
+            end
             if string.find(value, "vsndevts") and  value ~= "tower.fire" then            
                 PrecacheResource( "soundfile", value, context)
             end

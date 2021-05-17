@@ -513,7 +513,7 @@ function GiveResources(eventSourceIndex, event)
                     if casterHero:IsAngel() == false then
                         lastSendTime[targetID] = GameRules:GetGameTime()
                     end
-                else
+                elseif not casterHero:IsAngel() then
                     SendErrorMessage(event.casterID, "#error_enter_need_money")
                 end
                 else
