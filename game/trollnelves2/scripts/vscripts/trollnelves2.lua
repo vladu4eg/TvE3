@@ -1,7 +1,7 @@
 -- This is the primary trollnelves2 trollnelves2 script and should be used to assist in initializing your game mode
 -- Set this to true if you want to see a complete debug output of all events/processes done by trollnelves2
 -- You can also change the cvar 'trollnelves2_spew' at any time to 1 or 0 for output/no output
-TROLLNELVES2_DEBUG_SPEW = true
+TROLLNELVES2_DEBUG_SPEW = false
 LinkLuaModifier("modifier_movespeed_x4",
     "libraries/modifiers/modifier_movespeed_x4.lua",
 LUA_MODIFIER_MOTION_NONE)

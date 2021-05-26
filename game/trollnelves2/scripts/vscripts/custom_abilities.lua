@@ -440,6 +440,13 @@ function SpawnUnitOnSpellStart(event)
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
+		if tonumber(string.match(unit_name,"%d+")) ~= nil then
+			if tonumber(string.match(unit_name,"%d+")) >= 1 and tonumber(string.match(unit_name,"%d+")) <= 6 and string.match(unit_name,"%a+") == "wisp" and (GameRules:GetGameTime() - GameRules.startTime) > NO_CREATE_WISP/GameRules.MapSpeed then
+				SendErrorMessage(playerID, "#error_not_create_wisp")
+				caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
+				return false
+			end
+		end
 	end
 end
 
@@ -483,10 +490,10 @@ function SpawnUnitOnChannelSucceeded(event)
 			end
 			if tonumber(string.match(unit_name,"%d+")) ~= nil then
 				if tonumber(string.match(unit_name,"%d+")) >= 1 and tonumber(string.match(unit_name,"%d+")) <= 6 and string.match(unit_name,"%a+") == "wisp"  then
-					unit:AddNewModifier(unit, nil, "modifier_kill", {duration = TIME_LIFE_WISP1_6/GameRules.MapSpeed})
+					unit:AddNewModifier(unit, nil, "modifier_kill", {duration = (NO_CREATE_WISP - (GameRules:GetGameTime() - GameRules.startTime))/GameRules.MapSpeed})
 				end
 			elseif unit_name == "gold_wisp" then 
-				unit:AddNewModifier(unit, nil, "modifier_kill", {duration = TIME_LIFE_WISP1_6/GameRules.MapSpeed})
+				unit:AddNewModifier(unit, nil, "modifier_kill", {duration = TIME_LIFE_GOLD_WISP})
 			end
 			
 			if string.match(unit_name,"%a+") == "worker" then

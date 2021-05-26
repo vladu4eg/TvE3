@@ -30,7 +30,6 @@ end
 function FlagGive(eventSourceIndex, event)
 	DebugPrint("event.vote " .. event.vote)
 	local hero = PlayerResource:GetSelectedHeroEntity(event.playerID1)
-	local team = hero:GetTeamNumber()
 	if event.vote == 1 then
         DebugPrint("GameRules.PlayersBase[event.casterID] FlagGive " .. GameRules.PlayersBase[event.casterID])
         DebugPrint("event.casterID FlagGive " .. event.casterID)
@@ -47,9 +46,9 @@ function FlagGive(eventSourceIndex, event)
 		countFlag[event.playerID1] = GameRules.PlayersBase[event.casterID]
 		countFlag[event.casterID] = GameRules.PlayersBase[event.casterID]
 		text = PlayerResource:GetPlayerName(event.target) .. " accepted the invitation to private the base."
-		GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , team, 0, 0)
+		GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , hero:GetTeamNumber(), 0, 0)
 	else
 	text = PlayerResource:GetPlayerName(event.target) .. " canceled the request for a private base."
-	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , team, 0, 0)
+	GameRules:SendCustomMessageToTeam("<font color='#FF0000'>"  .. text  .. "</font>" , hero:GetTeamNumber(), 0, 0)
 end
 end

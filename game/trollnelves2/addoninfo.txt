@@ -1,7 +1,7 @@
 "AddonInfo"
 {
   "TeamCount" "2"
-  "maps"      "helheim helheim2x helheim4x spring spring2x spring4x desert desert2x desert4x autumn autumn2x autumn4x winter winter2x winter4x"
+  "maps"      "helheim helheim2x helheim4x spring spring2x spring4x autumn autumn2x autumn4x winter winter2x winter4x"
   "IsPlayable"  "1" 
   "helheim"
   {
@@ -24,18 +24,6 @@
     "MaxPlayers"                    "16"
   }
   "spring4x"
-  {
-    "MaxPlayers"                    "12"
-  }
-  "desert"
-  {
-    "MaxPlayers"                    "16"
-  }
-  "desert2x"
-  {
-    "MaxPlayers"                    "16"
-  }
-  "desert4x"
   {
     "MaxPlayers"                    "12"
   }
