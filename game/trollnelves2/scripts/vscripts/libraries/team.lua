@@ -57,15 +57,26 @@ end
 
 function Team.GetScore(team)
 	local sum = 0
-	for i=1,PlayerResource:GetPlayerCountForTeam(team) do
-		local pID = PlayerResource:GetNthPlayerIDOnTeam(team,i)
-		sum = sum + PlayerResource:GetScore(pID,team)
+	local count = 0
+	for pID=0,DOTA_MAX_TEAM_PLAYERS do
+		if PlayerResource:IsValidPlayerID(pID) then
+			local hero = PlayerResource:GetSelectedHeroEntity(pID)
+			if hero ~= nil then
+				if not hero:IsTroll() and team == 2 then
+					sum = sum + PlayerResource:GetScore(pID,2)
+					count = count + 1
+				elseif team == 3 then
+					sum = sum + PlayerResource:GetScore(pID,3)
+					count = count + 1
+				end
+			end
+		end
 	end
-	return sum
+	return sum/count
 end
 
 function Team.GetAverageScore(team)
-	return Team.GetScore(team)/PlayerResource:GetPlayerCountForTeam(team)
+	return Team.GetScore(team)
 end
 
 function Team.GetAllAverages(team)

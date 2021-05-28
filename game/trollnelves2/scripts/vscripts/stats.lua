@@ -32,9 +32,9 @@ function Stats.SubmitMatchData(winner,callback)
 				GameRules.Bonus[pID] = 0
 			end
 			if GameRules:GetGameTime() - GameRules.startTime < 300 then
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 5
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 10
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 300 and GameRules:GetGameTime() - GameRules.startTime <  600 then -- 5-10 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 5
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 40-60 min
@@ -120,7 +120,7 @@ function Stats.SubmitMatchData(winner,callback)
 						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 - GameRules.BonusPercent)))
 					end
 					else
-					data.Type = "Elf"
+					data.Type = "ELF KICK"
 					data.Score = tostring(-20)
 					data.Team = tostring(2)
 				end

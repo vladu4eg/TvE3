@@ -70,7 +70,7 @@ function drop:RollItemDrop(unit)
 		
 		local randTime = RandomInt( 30, 240 )
 		Timers:CreateTimer(randTime, function()
-			if string.match(GetMapName(),"spring")  then
+			if string.match(GetMapName(),SEASON_MAP)  then
 				RandomDropLoot()
 				--elseif string.match(GetMapName(),"halloween") then 
 				--	RandomDropLoot()
@@ -99,7 +99,7 @@ end
 
 function RandomDropLoot()
 	local spawnPoint = Vector(-320,-320,256)
-	local newItem = CreateItem( "item_spring", nil, nil )
+	local newItem = CreateItem( SEASON_ITEM, nil, nil )
 	local dropRadius = RandomFloat( 3600, 7800 )
 	local randRadius = spawnPoint + RandomVector( dropRadius )
 	local drop = CreateItemOnPositionForLaunch( randRadius, newItem )
@@ -114,7 +114,7 @@ function TimerRandomDrop(event)
 		if countGift < maxGift then
 			local randTime = RandomInt( 20, 60 )
 			local spawnPoint = unit:GetAbsOrigin()	
-			local newItem = CreateItem( "item_spring", nil, nil )
+			local newItem = CreateItem( SEASON_ITEM, nil, nil )
 			local dropRadius = RandomFloat( 10, 360 )
 			local randRadius = spawnPoint + RandomVector( dropRadius )
 			local drop = CreateItemOnPositionForLaunch( randRadius, newItem )

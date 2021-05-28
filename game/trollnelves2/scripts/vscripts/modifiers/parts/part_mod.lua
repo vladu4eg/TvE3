@@ -41,7 +41,12 @@ function part_mod:GetEffectName()
     
     "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf", --36 top2-3
     "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf", --37 top1
-    "particles/customgames/capturepoints/cp_allied_1.vpcf", -- 38 top1 spring
+    "particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl3.vpcf", -- 38 top1 spring
+    "particles/econ/events/fall_major_2016/force_staff_fm06.vpcf", -- 39 top2 spring
+    "particles/econ/events/fall_major_2016/force_staff_fm06_glow_trail.vpcf", -- 40 top3 sring
+
+    
+    
     "particles/econ/events/ti9/bottle_ti9.vpcf", -- 39 top2 sring
     "particles/econ/events/ti9/bottle_b_ti9.vpcf", -- 40 top3 spring
     
