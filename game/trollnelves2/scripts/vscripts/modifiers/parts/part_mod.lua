@@ -38,7 +38,13 @@ function part_mod:GetEffectName()
     "particles/econ/events/diretide_2020/emblem/fall20_emblem_v2_effect.vpcf", --33
     "particles/econ/events/diretide_2020/emblem/fall20_emblem_v1_effect.vpcf", --34
 	"particles/econ/events/diretide_2020/emblem/fall20_emblem_effect.vpcf", --35
-    
+
+    "particles/econ/courier/courier_baekho/courier_baekho_ambient.vpcf", --36 top2-3
+    "particles/econ/courier/courier_crystal_rift/courier_ambient_crystal_rift.vpcf", --37 top1
+    "particles/econ/courier/courier_babyroshan_ti10/courier_babyroshan_ti10_ambient_flying.vpcf", -- 38 top1 spring
+    "particles/econ/courier/courier_axolotl_ambient/courier_axolotl_ambient.vpcf", -- 39 top2 spring
+    "particles/econ/courier/courier_babyroshan_ti9/courier_babyroshan_ti9_ambient_bees.vpcf", -- 40 top3 sring
+
     "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf", --36 top2-3
     "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf", --37 top1
     "particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl3.vpcf", -- 38 top1 spring
@@ -46,6 +52,10 @@ function part_mod:GetEffectName()
     "particles/econ/events/fall_major_2016/force_staff_fm06_glow_trail.vpcf", -- 40 top3 sring
 
     
+    
+    "particles/econ/items/omniknight/omniknight_fall20_immortal/omniknight_fall20_immortal_degen_aura_debuff.vpcf", -- цепь и кольцо
+    "particles/econ/events/ti10/aghanim_aura_ti10/agh_aura_ti10.vpcf", --кольцо
+    "particles/econ/courier/courier_dc/dccourier_angel_flame.vpcf", -- ангелы и лед
     
     "particles/econ/events/ti9/bottle_ti9.vpcf", -- 39 top2 sring
     "particles/econ/events/ti9/bottle_b_ti9.vpcf", -- 40 top3 spring

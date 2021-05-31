@@ -6,17 +6,19 @@ local isTesting = IsInToolsMode() and false
 Stats.server = "https://tve3.us/test/" -- "https://localhost:5001/test/" --
 
 function Stats.SubmitMatchData(winner,callback)
-	if not isTesting then
-		if GameRules:IsCheatMode() then 
-			GameRules:SetGameWinner(winner)
-			SetResourceValues()
-			return 
-		end
-	end
+	--if not isTesting then
+	--	if GameRules:IsCheatMode() then 
+	--		GameRules:SetGameWinner(winner)
+	--		SetResourceValues()
+	--		return 
+	--	end
+	--end
 	local data = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
 	local maxGoldSum = 0
+	local debuffPoint = 0
+	local sign = 1 
 	if GameRules.startTime == nil then
 		GameRules.startTime = 0
 	end
@@ -32,15 +34,21 @@ function Stats.SubmitMatchData(winner,callback)
 				GameRules.Bonus[pID] = 0
 			end
 			if GameRules:GetGameTime() - GameRules.startTime < 300 then
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 10
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 20
+				debuffPoint = -40
+				sign = 0
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 300 and GameRules:GetGameTime() - GameRules.startTime <  600 then -- 5-10 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 5
-				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 2400 then -- 10-40min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 1
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 10
+				debuffPoint = -30
+				sign = 0
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 600 and GameRules:GetGameTime() - GameRules.startTime < 1140 then -- 10-19min
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 1
+				debuffPoint = -20
+				sign = 0.5
 				elseif GameRules:GetGameTime() - GameRules.startTime >= 2400 and GameRules:GetGameTime() - GameRules.startTime <  3600 then -- 40-60 min
-				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 4
-				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 5
+				elseif GameRules:GetGameTime() - GameRules.startTime >= 3600 then
+				GameRules.Bonus[pID] = GameRules.Bonus[pID] + 10
 			end
 			if PlayerResource:GetDeaths(pID) >= 10 then 
 				GameRules.Bonus[pID] = GameRules.Bonus[pID] - 2
@@ -72,6 +80,9 @@ function Stats.SubmitMatchData(winner,callback)
 				data.LPS = tostring(tonumber(data.LumberGained)/tonumber(GameRules:GetGameTime() - GameRules.startTime))
 				
 				data.GetScoreBonus = tostring(PlayerResource:GetScoreBonus(pID))
+				if tonumber(data.GetScoreBonus) > 0 then
+					data.GetScoreBonus = tonumber(data.GetScoreBonus) * sign
+				end
 				data.GetScoreBonusRank = tostring(PlayerResource:GetScoreBonusRank(pID))
 				data.GetScoreBonusGoldGained = tostring(PlayerResource:GetScoreBonusGoldGained(pID))
 				data.GetScoreBonusGoldGiven = tostring(PlayerResource:GetScoreBonusGoldGiven(pID))
@@ -83,8 +94,10 @@ function Stats.SubmitMatchData(winner,callback)
 						if PlayerResource:GetTeam(pID) == winner then
 							if hero:IsTroll() then
 								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-								if tonumber(data.Score) < math.floor(10/koeff)  then
+								if tonumber(data.Score) < math.floor(10/koeff) and sign == 1 then
 									data.Score = tostring(math.floor(10/koeff))
+								elseif tonumber(data.Score) < math.floor(10/koeff) and sign < 1 then 
+									data.Score = tostring(2)
 								end
 								elseif hero:IsElf() and PlayerResource:GetDeaths(pID) == 0 then 
 								data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
@@ -92,11 +105,11 @@ function Stats.SubmitMatchData(winner,callback)
 									data.Score = tostring(1)
 								end
 							end
-							elseif PlayerResource:GetTeam(pID) ~= winner then
+						elseif PlayerResource:GetTeam(pID) ~= winner then
 							if hero:IsTroll() then
-								data.Score = tostring( math.floor(-10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								data.Score = tostring( math.floor(debuffPoint - 10 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 								elseif hero:IsElf() then 
-								data.Score = tostring(math.floor(0 + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
+								data.Score = tostring(math.floor(debuffPoint + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
 							end
 						end 
 						if hero:IsAngel() or hero:IsWolf() then 
@@ -107,12 +120,13 @@ function Stats.SubmitMatchData(winner,callback)
 						end
 						elseif PlayerResource:GetConnectionState(pID) ~= 2 and hero:IsTroll() and PlayerResource:GetTeam(pID) == winner then
 						data.Score = tostring(math.floor(10/koeff + GameRules.Bonus[pID] + tonumber(data.GetScoreBonus)))
-						if tonumber(data.Score) < math.floor(10/koeff)  then
+						if tonumber(data.Score) < math.floor(10/koeff) then
 							data.Score = tostring(math.floor(10/koeff))
 						end
 						elseif PlayerResource:GetConnectionState(pID) ~= 2 then
 						data.Score = tostring(math.floor(-35 + tonumber(data.GetScoreBonus)))
 						data.Team = tostring(2)
+						data.Type = data.Type .. " LEAVE"
 					end
 					if tonumber(data.Score) >=  0 then
 						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
