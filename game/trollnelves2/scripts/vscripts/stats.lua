@@ -6,13 +6,13 @@ local isTesting = IsInToolsMode() and false
 Stats.server = "https://tve3.us/test/" -- "https://localhost:5001/test/" --
 
 function Stats.SubmitMatchData(winner,callback)
-	--if not isTesting then
-	--	if GameRules:IsCheatMode() then 
-	--		GameRules:SetGameWinner(winner)
-	--		SetResourceValues()
-	--		return 
-	--	end
-	--end
+	if not isTesting then
+		if GameRules:IsCheatMode() then 
+			GameRules:SetGameWinner(winner)
+			SetResourceValues()
+			return 
+			end
+	end
 	local data = {}
 	local koeff = string.match(GetMapName(),"%d+") or 1
 	local maxGoldId = 0
@@ -81,7 +81,7 @@ function Stats.SubmitMatchData(winner,callback)
 				
 				data.GetScoreBonus = tostring(PlayerResource:GetScoreBonus(pID))
 				if tonumber(data.GetScoreBonus) > 0 then
-					data.GetScoreBonus = tonumber(data.GetScoreBonus) * sign
+					data.GetScoreBonus = tostring(math.floor(tonumber(data.GetScoreBonus) * sign))
 				end
 				data.GetScoreBonusRank = tostring(PlayerResource:GetScoreBonusRank(pID))
 				data.GetScoreBonusGoldGained = tostring(PlayerResource:GetScoreBonusGoldGained(pID))
@@ -128,7 +128,7 @@ function Stats.SubmitMatchData(winner,callback)
 						data.Team = tostring(2)
 						data.Type = data.Type .. " LEAVE"
 					end
-					if tonumber(data.Score) >=  0 then
+					if tonumber(data.Score) >= 0 then
 						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 + GameRules.BonusPercent)))
 						else 
 						data.Score = tostring(math.floor(tonumber(data.Score) *  (1 - GameRules.BonusPercent)))
@@ -261,7 +261,7 @@ function Stats.RequestVip(pID, steam, callback)
 		local obj,pos,err = json.decode(res.Body)
 		DeepPrintTable(obj)
 		DebugPrint("***********************************************")
-		for id = 1, 37 do
+		for id = 1, 39 do
 			parts[id] = "nill"
 		end
 		CustomNetTables:SetTableValue("Particles_Tabel",tostring(pID),parts)

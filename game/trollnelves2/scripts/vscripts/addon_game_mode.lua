@@ -349,6 +349,13 @@ function Precache( context )
 	
 	PrecacheResource("model", "models/items/courier/dc_demon/dc_demon_flying.vmdl", context)
 	PrecacheResource("model", "models/items/courier/little_sapplingnew_bloom_style/little_sapplingnew_bloom_style.vmdl", context) -- spring winner
+	
+	PrecacheResource("particle", "particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl3.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/fall_major_2016/force_staff_fm06.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/fall_major_2016/force_staff_fm06_glow_trail.vpcf", context)
+	
+	PrecacheResource("particle", "particles/econ/items/omniknight/omniknight_fall20_immortal/omniknight_fall20_immortal_degen_aura_debuff.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/ti10/aghanim_aura_ti10/agh_aura_ti10.vpcf", context)
 		
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)

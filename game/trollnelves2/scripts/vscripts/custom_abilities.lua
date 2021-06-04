@@ -47,6 +47,7 @@ function ItemEffect(event)
 end
 
 function ItemEvent(event)
+	DebugPrintTable(event)
 	local data = {}
 	local caster = event.caster
 	local playerID = caster:GetPlayerOwnerID()
@@ -55,7 +56,7 @@ function ItemEvent(event)
 	data.Srok = "01/09/2020"
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
 		Stats.GetVip(data, callback)
-		local item = caster:FindItemInInventory("item_spring")
+		local item = caster:FindItemInInventory(event.ability:GetAbilityName())
 		caster:RemoveItem(item)
 	end
 end

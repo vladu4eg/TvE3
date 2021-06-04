@@ -33,7 +33,7 @@ function wearables:SelectPart(info)
 			elseif info.part == "25" then
 				npc:SetCustomHealthLabel("#top2-3autumn",  250, 179, 0)
 			elseif info.part == "5" then
-				npc:SetCustomHealthLabel("#top10autumn",  95, 89, 255)
+				npc:SetCustomHealthLabel("#top10autumn",  24, 181, 29)
 			elseif info.part == "4" then
 				npc:SetCustomHealthLabel("#tester1",  0, 217, 7)
 			elseif info.part == "8" then
