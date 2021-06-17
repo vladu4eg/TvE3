@@ -77,6 +77,7 @@ function SpiritBearSpawn( event )
 			caster.bear:RemoveAbility("attack_gold_wisp")
 			caster.bear:RemoveAbility("reveal_area")
 			caster.bear:RemoveAbility("troll_teleport")
+			caster.bear:RemoveModifierByName("gold_wisp_on_attack")
 		end
 		
 		else 
@@ -125,6 +126,7 @@ function SpiritBearLevel( event )
 		caster.bear:RemoveAbility("attack_gold_wisp")
 		caster.bear:RemoveAbility("reveal_area")
 		caster.bear:RemoveAbility("troll_teleport")
+		caster.bear:RemoveModifierByName("gold_wisp_on_attack")
 	end
 end
 
